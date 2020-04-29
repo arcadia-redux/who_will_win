@@ -18,7 +18,7 @@ function new_round(t) {
 	$("#rightPct").text = "0%"
 	$("#leftBar").style.width = "50%"
 	$("#rightBar").style.width = "50%"
-	$("#round").text = "Round " + (++round)
+	$("#round").text = ++round
 	$.Schedule(1,function() {
 		let ids = Game.GetAllPlayerIDs()
 		ids.forEach(function(id,_) {
@@ -59,3 +59,16 @@ Start()
 })
 GameEvents.Subscribe("new_round",new_round);
 GameEvents.Subscribe("change_top",change);
+
+function UpdateSelectedUnit() {
+	let selectedEntity = Players.GetLocalPlayerPortraitUnit(),
+		sel = Players.GetSelectedEntities(Players.GetLocalPlayer())[0]
+	if(selectedEntity == sel){
+		GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ACTION_PANEL, false );
+	}else{
+		GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ACTION_PANEL, true );
+	}
+}
+GameEvents.Subscribe("dota_player_update_query_unit",UpdateSelectedUnit)
+GameEvents.Subscribe('dota_player_update_hero_selection', UpdateSelectedUnit);
+GameEvents.Subscribe('dota_player_update_selected_unit', UpdateSelectedUnit);
