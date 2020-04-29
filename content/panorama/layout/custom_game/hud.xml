@@ -6,9 +6,23 @@
 	<scripts>
 		<include src="file://{resources}/scripts/baw.js" />
 	</scripts>
+	<snippets>
+		<snippet name="topBarPlayer">
+			<Panel class="playertb">
+				<DOTAAvatarImage id="image" class="avatarimage" steamid="local" />
+				<Panel class="hpbg">
+					<Panel id="hp" class="hp"/>
+					<Label id="hpt" text="5"/>
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
 	<Panel class="bawhud" hittest='false'>
+		<Panel id="topbar" class="topbar">
+		</Panel>
 		<Panel class="betsBg">
 			<Label id="leftTeam" text="Satyrs"/>
+			<Label id="round" text="Round 7"/>
 			<Label id="rightTeam" text="Dragons"/>
 			<Panel class="betsBar">
 				<Panel id="leftBar">

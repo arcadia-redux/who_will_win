@@ -118,3 +118,42 @@
 	align: right center;
 	margin: 0 100px 50px 0;
 }
+#round{
+	align: center top;
+}
+.topbar{
+	align: center top;
+	height: 50px;
+flow-children: right;
+}
+.playertb{
+width: 65px;
+height: 100%;
+}
+.hpbg{
+	align: right center;
+	width: 15px;
+	height: 50px;
+	background-color: #6E0606;
+}
+.hp{
+	width: 100%;
+	height: 100%;
+	align: right bottom;
+	background-color: gradient( linear, 0% 50%, 100% 50%, from( #208310 ), color-stop( .5, #28FD1D), to( #208310 ) );
+}
+.avatarimage
+{
+	align: left center;
+	width: 50px;
+	height: 50px;
+	box-shadow: #000000aa 0px 0px 5px 0px;
+}
+.hpbg Label{
+	color:white;
+	font-weight: bold;
+	font-size: 16;
+	align: center center;
+	text-align: center;
+	text-shadow: 1px 1px 10px 10 #00000099;
+}
