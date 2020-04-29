@@ -18,7 +18,7 @@ function new_round(t) {
 	$("#rightPct").text = "0%"
 	$("#leftBar").style.width = "50%"
 	$("#rightBar").style.width = "50%"
-	$("#round").text = ++round
+	$("#round").text = "Round " + (++round)
 	$.Schedule(1,function() {
 		let ids = Game.GetAllPlayerIDs()
 		ids.forEach(function(id,_) {
