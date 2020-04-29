@@ -1,0 +1,118 @@
+"DOTAUnits"
+{
+	"npc_dota_neutral_kobold"	
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+	}
+	"npc_dota_neutral_kobold_taskmaster"	
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+	}
+	"npc_dota_neutral_kobold_tunneler"	
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+	}
+	"npc_dota_neutral_forest_troll_high_priest"	
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+	}
+	"npc_dota_neutral_forest_troll_berserker"	
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+	}
+	"npc_dota_neutral_gnoll_assassin"	
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+	}
+	"npc_dota_neutral_alpha_wolf"	
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+	}
+	"npc_dota_neutral_giant_wolf"	
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+	}
+	"npc_dota_neutral_centaur_khan"	
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+	}
+	"npc_dota_neutral_centaur_outrunner"	
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+	}
+	"npc_dota_neutral_ogre_magi"	
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+	}
+	"npc_dota_neutral_ogre_mauler"	
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+	}
+	"npc_dota_neutral_mud_golem"	
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+	}
+	"npc_dota_neutral_enraged_wildkin"	
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+	}
+	"npc_dota_neutral_wildkin"	
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+	}
+	"npc_dota_neutral_dark_troll"	
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+	}
+	"npc_dota_neutral_dark_troll_warlord"	
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+	}
+	"npc_dota_neutral_black_dragon"	
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+	}
+	"npc_dota_neutral_black_drake"	
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+	}
+	"npc_dota_neutral_granite_golem"	
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+	}
+	"npc_dota_neutral_rock_golem"	
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+	}
+	"npc_dota_neutral_big_thunder_lizard"	
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+	}
+	"npc_dota_neutral_small_thunder_lizard"	
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+	}
+}

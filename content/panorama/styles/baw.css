@@ -1,0 +1,120 @@
+.bawhud{
+	height: 100%;
+	width: 100%;
+}
+.betsBg{
+	align: center top;
+	height: 40px;
+	width: 500px;
+	margin-top: 50px;
+	overflow: noclip noclip;
+}
+.betsBg Label{
+	color:white;
+	font-weight: bold;
+	font-size: 16;
+	text-shadow: 1px 1px 1px 2 #00000099;
+}
+#rightTeam{
+	align: right top;
+	text-align: right;
+}
+.betsBar{
+	align: center bottom;
+	height: 15px;
+	width: 100%;
+	background-color: #6E0909;
+	box-shadow: #000000f5 -4px -4px 8px 8px;
+	border-radius: 5px;
+}
+#leftBar{
+	height: 100%;
+	width: 50%;
+	align: left center;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #103683 ), color-stop( .5, #1D37FD), to( #103683 ) );
+}
+#rightBar{
+	height: 100%;
+	width: 50%;
+	align: right center;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #831010 ), color-stop( .5, #fd1d1d), to( #831010 ) );
+}
+.betsBar Label{
+	font-size: 13;
+}
+#rightPct{
+	margin-left: 5px;
+}
+#leftPct{
+	text-align: right;
+	align: right center;
+	margin-right: 5px;
+}
+.makeBetPanel{
+	align: center center;
+	height: 500px;
+	width: 900px;
+	background-image: url("s2r://panorama/images/hud/reborn/bg_hud_inspect_psd.vtex");
+	box-shadow: #000000 -12px -12px 24px 24px;
+	background-size: 100%;
+	visibility: collapse;
+}
+.versus{
+	align: center center;
+	color:white;
+	font-weight: bold;
+	font-size: 60;
+	text-shadow: 1px 1px 1px 2 #00000099;
+	margin: 0 0 50px 0;
+}
+.makeBetPanel Button{
+	height: 20px;
+	width: 100px;
+	background-color: #1D37FD;
+	box-shadow: #000000f5 -4px -4px 8px 8px;
+	align: left bottom;
+}
+.makeBetPanel Button:hover{
+	brightness: 2;
+}
+.makeBetPanel Button:active{
+	brightness: 0.2;
+}
+#leftBet{
+	margin: 0 0 50px 150px;
+}
+#rightBet{
+	background-color: #fd1d1d;
+	align: right bottom;
+	margin: 0 150px 50px 0;
+}
+.makeBetPanel Button Label{
+	color:white;
+	font-weight: bold;
+	font-size: 16;
+	text-shadow: 1px 1px 1px 2 #00000099;
+	align: center center;
+	text-align: center;
+}
+.teamG Label{
+	color:white;
+	font-weight: bold;
+	font-size: 16;
+	text-shadow: 1px 1px 1px 2 #00000099;
+}
+.teamG{
+	width: 200px;
+	flow-children:down;
+}
+#leftTeamG Label{
+	text-align: right;
+	align: right center;
+}
+#leftTeamG{
+	align: left center;
+	margin: 0 0 50px 100px;
+}
+#rightTeamG{
+	align: right center;
+	margin: 0 100px 50px 0;
+}

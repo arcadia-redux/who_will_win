@@ -1,0 +1,46 @@
+<root>
+	<styles>
+    	<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+    	<include src="file://{resources}/styles/baw.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/baw.js" />
+	</scripts>
+	<Panel class="bawhud" hittest='false'>
+		<Panel class="betsBg">
+			<Label id="leftTeam" text="Satyrs"/>
+			<Label id="rightTeam" text="Dragons"/>
+			<Panel class="betsBar">
+				<Panel id="leftBar">
+					<Label id="leftPct" text="50%"/>
+				</Panel>
+				<Panel id="rightBar">
+					<Label id="rightPct" text="50%"/>
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel id="makeBetPanel" class="makeBetPanel">
+			<Panel class="teamG" id="leftTeamG">
+				<Label text="npc_dota_eidolon"/>
+				<Label text="npc_dota_eidolon"/>
+				<Label text="npc_dota_eidolon"/>
+				<Label text="npc_dota_eidolon"/>
+				<Label text="npc_dota_eidolon"/>
+				<Label text="npc_dota_eidolon"/>
+			</Panel>
+			<Panel class="teamG" id="rightTeamG">
+				<Label text="npc_dota_eidolon"/>
+				<Label text="npc_dota_eidolon"/>
+				<Label text="npc_dota_eidolon"/>
+				<Label text="npc_dota_eidolon"/>
+			</Panel>
+			<Label class="versus" text=" VS "/>
+			<Button id="leftBet" onmouseactivate="Pick('left')">
+				<Label text="BET"/>
+			</Button>
+			<Button id="rightBet" onmouseactivate="Pick('right')">
+				<Label text="BET"/>
+			</Button>
+		</Panel>
+	</Panel>
+</root>
