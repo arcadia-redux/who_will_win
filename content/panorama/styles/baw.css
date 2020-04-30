@@ -96,27 +96,23 @@
 	align: center center;
 	text-align: center;
 }
-.teamG Label{
+Label{
 	color:white;
 	font-weight: bold;
 	font-size: 16;
 	text-shadow: 1px 1px 1px 2 #00000099;
 }
 .teamG{
-	width: 200px;
-	flow-children:down;
-}
-#leftTeamG Label{
-	text-align: right;
-	align: right center;
+	width: 300px;
+	flow-children:right-wrap;
 }
 #leftTeamG{
 	align: left center;
-	margin: 0 0 50px 100px;
+	margin: 0 0 50px 50px;
 }
 #rightTeamG{
 	align: right center;
-	margin: 0 100px 50px 0;
+	margin: 0 50px 50px 0;
 }
 #round{
 	align: center top;
@@ -156,4 +152,36 @@ height: 100%;
 	align: center center;
 	text-align: center;
 	text-shadow: 1px 1px 10px 10 #00000099;
+}
+.teamScenePanel{
+	height: 150px;
+	width: 100px;
+	border: 1px solid black;
+}
+.teamScene{
+	height: 100%;
+	width: 100%;
+}
+.sceneAbilityList{
+	width: 100%;
+	align: left bottom;
+	flow-children: right-wrap;
+	z-index: 10;
+}
+.sceneAbilityList DOTAAbilityImage{
+	width: 32.25px;
+	height: 32.25px;
+	flow-children: right-wrap;
+}
+.teamSceneLabel{
+	align: center top;
+	text-align: center;
+	margin: 0;
+	width: 100%;
+	font-size: 10;
+	z-index: 10;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #103683 ), color-stop( .5, #1D37FD), to( #103683 ) );
+}
+#rightTeamG .teamSceneLabel{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #831010 ), color-stop( .5, #fd1d1d), to( #831010 ) );
 }

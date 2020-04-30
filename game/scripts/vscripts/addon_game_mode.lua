@@ -144,24 +144,14 @@ function removeFromTable(t,val)
 	end
 end
 function BAW:StartFight()
-FIGHT = true
-ALIVES = {left = {},right = {}}
-	for k,v in ipairs(LEFT) do
-		if k ~= 1 then
-			local unit = CreateUnitByName( v, Vector(-1280,-1088,128), true, nil, nil, DOTA_TEAM_GOODGUYS)
-			Timers:CreateTimer(1,function()
-			unit:MoveToPositionAggressive(Vector(1280,1088,128))
-			end)
-			table.insert(ALIVES['left'],unit)
-		end
-	end
-	for k,v in ipairs(RIGHT) do
-		if k ~= 1 then
-			local unit = CreateUnitByName( v, Vector(1280,1088,128), true, nil, nil, DOTA_TEAM_BADGUYS)
-			Timers:CreateTimer(1,function()
-			unit:MoveToPositionAggressive(Vector(-1280,-1088,128))
-			end)
-			table.insert(ALIVES['right'],unit)
+	FIGHT = true
+	for k,v in pairs(ALIVES) do
+		for e,u in pairs(v) do
+			if k == "left" then
+				u:MoveToPositionAggressive(Vector(1280,1088,128))
+			else
+				u:MoveToPositionAggressive(Vector(-1280,-1088,128))
+			end
 		end
 	end
 	Timers:CreateTimer(function()
@@ -183,8 +173,6 @@ ALIVES = {left = {},right = {}}
 		return 1
 	end)
 end
-LEFT = {}
-RIGHT = {}
 function BAW:StartGame()
 	for d,e in pairs(ALIVES) do
 		for k,v in pairs(e) do
@@ -201,12 +189,34 @@ function BAW:StartGame()
 	local rightN = RandomInt(1,#first)
 	local right = table.copy(first[rightN])
 	PICKED = {left = {},right = {}}
+	ALIVES = {left = {},right = {}}
+	for k,v in ipairs(left) do
+		if k ~= 1 then
+			local unit = CreateUnitByName( v, Vector(-1280,-1088,128), true, nil, nil, DOTA_TEAM_GOODGUYS)
+			table.insert(ALIVES['left'],unit)
+		end
+	end
+	for k,v in ipairs(right) do
+		if k ~= 1 then
+			local unit = CreateUnitByName( v, Vector(1280,1088,128), true, nil, nil, DOTA_TEAM_BADGUYS)
+			table.insert(ALIVES['right'],unit)
+		end
+	end
+	local ar = {left = {},right = {}}
+	for k,v in pairs(ALIVES) do
+		for e,u in pairs(v) do
+			if k == "left" then
+				table.insert(ar['left'],u:entindex())
+			else
+				table.insert(ar['right'],u:entindex())
+			end
+		end
+	end
 	CustomGameEventManager:Send_ServerToAllClients('new_round',{
-		left=left,
-		right=right,
+		left=left[1],
+		right=right[1],
+		indexes=ar
 	})
-	LEFT = left
-	RIGHT = right
 	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 10)
 end
 TEAMS = {
