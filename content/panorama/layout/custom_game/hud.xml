@@ -19,9 +19,18 @@
 		<snippet name="teamScene">
 			<Panel class="teamScenePanel">
 				
+				<DOTAItemImage class="shopsellitem" id="shopsellitem5" hittest="true" itemname=""/>
 				<Panel id="abils" class="sceneAbilityList"><!-- 
 					<DOTAAbilityImage abilityname="lina_dragon_slave" />
 					<DOTAAbilityImage abilityname="lina_dragon_slave" /> -->
+				</Panel>
+				<Panel class="itemSlots">
+					<DOTAItemImage class="item" hittest="true" itemname=""/>
+					<DOTAItemImage class="item" hittest="true" itemname=""/>
+					<DOTAItemImage class="item" hittest="true" itemname=""/>
+					<DOTAItemImage class="item" hittest="true" itemname=""/>
+					<DOTAItemImage class="item" hittest="true" itemname=""/>
+					<DOTAItemImage class="item" hittest="true" itemname=""/>
 				</Panel>
 				<Label id="name" class="teamSceneLabel" text="npc_dota_hero_elder_titan"/>
 			</Panel>

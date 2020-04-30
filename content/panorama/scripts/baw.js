@@ -39,20 +39,30 @@ function createSceneVersus(t,k,i,parent) {
 	ab,abpan,abname
 	pan.BLoadLayoutSnippet("teamScene")
 	pan.BCreateChildren('<DOTAScenePanel id="unit" class="teamScene" light="global_light" environment="default" particleonly="false" renderwaterreflections="true" antialias="true" drawbackground="0" renderdeferred="false" unit="'+name+'"/>')
+	AddUnitTooltip(pan.FindChildTraverse("unit"),t.indexes[k][i])
 	pan.FindChildTraverse("name").text = $.Localize(name)
 	let abs = pan.FindChildTraverse("abils")
 	for (let d = 0; d < 6; d++) {
 		ab = Entities.GetAbility(t.indexes[k][i],d)
+		let abpan = $.CreatePanel("DOTAAbilityImage", abs, "ab")
+		abname = Abilities.GetAbilityName(ab)
+		abpan.abilityname = abname
 		if(ab != -1){
-			let abpan = $.CreatePanel("DOTAAbilityImage", abs, "ab")
-			abname = Abilities.GetAbilityName(ab)
-			abpan.abilityname = abname
 			abpan.SetPanelEvent('onmouseover',ShowAbTooltip(abpan,abname))
 			abpan.SetPanelEvent('onmouseout',function() {
 				$.DispatchEvent('DOTAHideAbilityTooltip',abpan);
 			})
 		}
 	}
+}
+function AddUnitTooltip( panel, unit )
+{
+	panel.SetPanelEvent("onmouseover", function(){
+		$.DispatchEvent( 'UIShowCustomLayoutParametersTooltip', panel, panel.id, "file://{resources}/layout/custom_game/tooltips.xml", "unit="+unit);
+	})
+	panel.SetPanelEvent("onmouseout", function() {
+		$.DispatchEvent("UIHideCustomLayoutTooltip", panel, panel.id)
+	})
 }
 function ShowAbTooltip(panel,ab) {
 	return function() {

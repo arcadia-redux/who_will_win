@@ -154,23 +154,27 @@ height: 100%;
 	text-shadow: 1px 1px 10px 10 #00000099;
 }
 .teamScenePanel{
-	height: 150px;
-	width: 100px;
+	height: 175px;
+	width: 120px;
 	border: 1px solid black;
 }
 .teamScene{
-	height: 100%;
+	height: 70%;
 	width: 100%;
+	margin-top: 12px;
+	z-index: -10;
 }
 .sceneAbilityList{
 	width: 100%;
-	align: left bottom;
+	align: center bottom;
 	flow-children: right-wrap;
 	z-index: 10;
+	margin-bottom: 40px;
+	background-color: black;
 }
 .sceneAbilityList DOTAAbilityImage{
-	width: 32.25px;
-	height: 32.25px;
+	width: 19.5px;
+	height: 20px;
 	flow-children: right-wrap;
 }
 .teamSceneLabel{
@@ -184,4 +188,22 @@ height: 100%;
 }
 #rightTeamG .teamSceneLabel{
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #831010 ), color-stop( .5, #fd1d1d), to( #831010 ) );
+}
+.itemSlots{
+	height: 40px;
+	width: 100%;
+	flow-children: right-wrap;
+	align: center bottom;
+	background-color: black;
+}
+.item{
+	height: 50%;
+	width: 33%;
+	background-image: url("s2r://panorama/images/hud/reborn/inventory_item_well_psd.vtex");
+	background-color: #1a1c1d;
+	background-repeat: no-repeat;
+	background-size: cover;
+	box-shadow: inset #00000099 5px 5px 10px 10px 5;
+	border: 1px solid black;
+	border-bottom: 1px solid #ffffff06;
 }

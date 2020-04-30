@@ -1,0 +1,80 @@
+<root>
+    <styles>
+		<include src="s2r://panorama/styles/hud/tooltip_unit_damage_armor.vcss_c" />
+        <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+        <include src="file://{resources}/styles/tooltips.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/tooltips.js" /> 
+    </scripts>
+    <snippets>
+    	<snippet name='UnitTooltip'>
+	    	<Panel class="UnitTooltip">
+	    		<Panel id="AttackDefenseContainer">
+					<Panel id="AttackContainer" class="TopBottomFlow">
+						<Label id="AttackHeader" text="#DOTA_HUD_Attack"/>
+						<Panel id="AttackSpeedRow" class="StatRow">
+							<Label id="AttackSpeedLabel" text="#DOTA_HUD_AttackSpeed" class="StatName"/>
+							<Panel class="LeftRightFlow">
+								<Label id="AttackSpeed" text="{d:attack_speed}" class="BaseValue"/>
+								<Label id="AttacksPerSecond" text="{s:seconds_per_attack}" />
+							<!--	<Label id="AttackSpeedBonus" text="{s:bonus_attack_speed}" class="BonusValue"/> -->
+							</Panel>		
+						</Panel>
+						<Panel id="DamageRow" class="StatRow">
+							<Label id="DamageLabel" text="#DOTA_HUD_Damage" class="StatName"/>
+							<Panel class="LeftRightFlow">
+								<Label id="Damage" text="{d:base_damage_min} - {d:base_damage_max}" class="BaseValue"/>
+								<Label id="DamageBonus" text="{s:bonus_damage}" class="BonusValue"/>
+							</Panel>				
+						</Panel>
+						<Panel id="AttackRangeRow" class="StatRow">
+							<Label id="RangeLabel" text="#DOTA_HUD_AttackRange" class="StatName"/>
+							<Panel class="LeftRightFlow">
+								<Label id="Range" text="{d:base_attack_range}" class="BaseValue"/>
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel id="DefenseContainer" class="TopBottomFlow">
+						<Label id="DefenseHeader" text="#DOTA_HUD_Defense"/>
+						<Panel id="ArmorRow" class="StatRow">
+							<Label id="ArmorLabel" text="#DOTA_HUD_Armor" class="StatName"/>
+							<Panel class="LeftRightFlow">
+								<Label id="Armor" text="{s:base_armor}" class="BaseValue"/>
+								<Label id="ArmorBonus" text="{s:bonus_armor}" class="BonusValue"/>
+							</Panel>
+						</Panel>
+						<Panel id="PhysicalResistRow" class="StatRow">
+							<Label id="PhysicalResistLabel" text="#DOTA_HUD_PhysicalResist" class="StatName"/>
+							<Panel class="LeftRightFlow">
+								<Label id="PhysicalResist" text="{d:base_physical_resist}%" class="BaseValue"/>
+							<!--	<Label id="PhysicalResistBonus" text="{s:bonus_physical_resist}%" class="BonusValue"/> -->
+							</Panel>
+						</Panel>
+						<Panel id="MagicResistRow" class="StatRow">
+							<Label id="MagicResistLabel" text="#DOTA_HUD_MagicResist" class="StatName"/>
+							<Panel class="LeftRightFlow">
+								<Label id="MagicResist" text="{d:base_magic_resistance}%" class="BaseValue"/>
+							<!--	<Label id="MagicResistBonus" text="{s:bonus_magic_resistance}%" class="BonusValue"/> -->
+							</Panel>
+						</Panel>
+				        <Panel id="HealthRow" class="StatRow">
+				          	<Label id="HealthLabel" text="#DOTA_Health" class="StatName"/>
+				          	<Panel class="LeftRightFlow">
+				            	<Label id="Health" text="{s:base_health_regen}" class="BaseValue"/>
+				          	</Panel>
+				        </Panel>
+				        <Panel id="HealthRegenRow" class="StatRow">
+				          	<Label id="HealthRegenLabel" text="#DOTA_HUD_HealthRegenDetail" class="StatName"/>
+				          	<Panel class="LeftRightFlow">
+				            	<Label id="HealthRegen" text="{s:base_health_regen}" class="BaseValue"/>
+				          	</Panel>
+				        </Panel>
+					</Panel>
+	   			</Panel>
+		    </Panel>
+	    </snippet>
+    </snippets>
+    <Panel class="TooltipContents" ontooltiploaded="SetupTooltip()">
+    </Panel>
+</root>
