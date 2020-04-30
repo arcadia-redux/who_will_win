@@ -8,46 +8,12 @@ function new_round(t) {
 		for(let i in t.indexes[k]){
 			if(k == "left"){
 				// $.CreatePanel("Label", $("#leftTeamG"), "lb").text = $.Localize(Entities.GetUnitName(t.indexes[k][i]))
-				let pan = $.CreatePanel("Panel", $("#leftTeamG"), "lb"),
-				name = Entities.GetUnitName(t.indexes[k][i]),
-				ab,abpan,abname
-				pan.BLoadLayoutSnippet("teamScene")
-				pan.BCreateChildren('<DOTAScenePanel id="unit" class="teamScene" light="global_light" environment="default" particleonly="false" renderwaterreflections="true" antialias="true" drawbackground="0" renderdeferred="false" unit="'+name+'"/>')
-				pan.FindChildTraverse("name").text = $.Localize(name)
-				let abs = pan.FindChildTraverse("abils")
-				for (let d = 0; d < 6; d++) {
-					ab = Entities.GetAbility(t.indexes[k][i],d)
-					if(ab != -1){
-						let abpan = $.CreatePanel("DOTAAbilityImage", abs, "ab")
-						abname = Abilities.GetAbilityName(ab)
-						abpan.abilityname = abname
-						abpan.SetPanelEvent('onmouseover',ShowAbTooltip(abpan,abname))
-						abpan.SetPanelEvent('onmouseout',function() {
-							$.DispatchEvent('DOTAHideAbilityTooltip',abpan);
-						})
-					}
-				}
+				// let pan = $.CreatePanel("Panel", $("#leftTeamG"), "lb"),
+				createSceneVersus(t,k,i,$("#leftTeamG"))
 			}else{
 				// $.CreatePanel("Label", $("#rightTeamG"), "lb").text = $.Localize(Entities.GetUnitName(t.indexes[k][i]))
-				let pan = $.CreatePanel("Panel", $("#rightTeamG"), "lb"),
-				name = Entities.GetUnitName(t.indexes[k][i]),
-				ab,abpan,abname
-				pan.BLoadLayoutSnippet("teamScene")
-				pan.BCreateChildren('<DOTAScenePanel id="unit" class="teamScene" light="global_light" environment="default" particleonly="false" renderwaterreflections="true" antialias="true" drawbackground="0" renderdeferred="false" unit="'+name+'"/>')
-				pan.FindChildTraverse("name").text = $.Localize(name)
-				let abs = pan.FindChildTraverse("abils")
-				for (let d = 0; d < 6; d++) {
-					ab = Entities.GetAbility(t.indexes[k][i],d)
-					if(ab != -1){
-						let abpan = $.CreatePanel("DOTAAbilityImage", abs, "ab")
-						abname = Abilities.GetAbilityName(ab)
-						abpan.abilityname = abname
-						abpan.SetPanelEvent('onmouseover',ShowAbTooltip(abpan,abname))
-						abpan.SetPanelEvent('onmouseout',function() {
-							$.DispatchEvent('DOTAHideAbilityTooltip',abpan);
-						})
-					}
-				}
+				// let pan = $.CreatePanel("Panel", $("#rightTeamG"), "lb"),
+				createSceneVersus(t,k,i,$("#rightTeamG"))
 			}
 		}
 	}
@@ -66,6 +32,27 @@ function new_round(t) {
 			panel.FindChildTraverse("hpt").text = Entities.GetHealth(hero)
 		})
 	})
+}
+function createSceneVersus(t,k,i,parent) {
+	let pan = $.CreatePanel("Panel", parent, "lb"),
+	name = Entities.GetUnitName(t.indexes[k][i]),
+	ab,abpan,abname
+	pan.BLoadLayoutSnippet("teamScene")
+	pan.BCreateChildren('<DOTAScenePanel id="unit" class="teamScene" light="global_light" environment="default" particleonly="false" renderwaterreflections="true" antialias="true" drawbackground="0" renderdeferred="false" unit="'+name+'"/>')
+	pan.FindChildTraverse("name").text = $.Localize(name)
+	let abs = pan.FindChildTraverse("abils")
+	for (let d = 0; d < 6; d++) {
+		ab = Entities.GetAbility(t.indexes[k][i],d)
+		if(ab != -1){
+			let abpan = $.CreatePanel("DOTAAbilityImage", abs, "ab")
+			abname = Abilities.GetAbilityName(ab)
+			abpan.abilityname = abname
+			abpan.SetPanelEvent('onmouseover',ShowAbTooltip(abpan,abname))
+			abpan.SetPanelEvent('onmouseout',function() {
+				$.DispatchEvent('DOTAHideAbilityTooltip',abpan);
+			})
+		}
+	}
 }
 function ShowAbTooltip(panel,ab) {
 	return function() {

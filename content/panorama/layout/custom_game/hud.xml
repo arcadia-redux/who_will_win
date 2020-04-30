@@ -32,7 +32,7 @@
 		</Panel>
 		<Panel class="betsBg">
 			<Label id="leftTeam" text="Satyrs"/>
-			<Label id="round" text="Round 7"/>
+			<Label id="round" text="Round 1"/>
 			<Label id="rightTeam" text="Dragons"/>
 			<Panel class="betsBar">
 				<Panel id="leftBar">
