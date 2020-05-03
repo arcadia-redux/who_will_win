@@ -420,43 +420,10 @@ function BAW:StartGame()
 	local leftpw = 0
 	local lrightpw = 0
 	for k,v in ipairs(left) do
-		local unit = CreateUnitByName( v, Vector(-1280,-1088,128), true, nil, nil, DOTA_TEAM_GOODGUYS)
-		if unit then
-			if not unit:HasGroundMovementCapability() and not unit:HasFlyMovementCapability() then
-				FindClearSpaceForUnit(unit, Vector(0,0)+RandomVector(RandomInt(0, 200)), true)
-			end
-			for i=0,5 do
-				local ab = unit:GetAbilityByIndex(i)
-				if ab then
-					ab:SetLevel(1)
-					ab:SetActivated(true)
-					ab:ToggleAutoCast()
-				end
-			end
-			unit.targetPoint = Vector(1280,1088,128)
-			table.insert(ALIVES['left'],unit)
-			leftpw = leftpw + UNIT2POINT[v]
-		else
-			error("UNIT NOT FOUND: "..v)
-		end
+		BAW:SpawnUnits("left",Vector(-1280,-1088,128),Vector(1280,1088,128))
 	end
 	for k,v in ipairs(right) do
-		local unit = CreateUnitByName( v, Vector(1280,1088,128), true, nil, nil, DOTA_TEAM_GOODGUYS)
-		if unit then
-			for i=0,5 do
-				local ab = unit:GetAbilityByIndex(i)
-				if ab then
-					ab:SetLevel(1)
-					ab:SetActivated(true)
-					ab:ToggleAutoCast()
-				end
-			end
-			unit.targetPoint = Vector(-1280,-1088,128)
-			table.insert(ALIVES['right'],unit)
-			lrightpw = lrightpw + UNIT2POINT[v]
-		else
-			error("UNIT NOT FOUND: "..v)
-		end
+		BAW:SpawnUnits("right",Vector(1280,1088,128),Vector(-1280,-1088,128))
 	end
 	local ar = {left = {},right = {}}
 	for k,v in pairs(ALIVES) do
@@ -475,6 +442,27 @@ function BAW:StartGame()
 		indexes=ar
 	})
 	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 10)
+end
+function BAW:SpawnUnits(team,vec,target)
+	local unit = CreateUnitByName( v, vec, true, nil, nil, DOTA_TEAM_GOODGUYS)
+	if unit then
+		if not unit:HasGroundMovementCapability() and not unit:HasFlyMovementCapability() then
+			FindClearSpaceForUnit(unit, Vector(0,0)+RandomVector(RandomInt(0, 200)), true)
+		end
+		for i=0,5 do
+			local ab = unit:GetAbilityByIndex(i)
+			if ab then
+				ab:SetLevel(1)
+				ab:SetActivated(true)
+				ab:ToggleAutoCast()
+			end
+		end
+		unit.targetPoint = target
+		table.insert(ALIVES[team],unit)
+		leftpw = leftpw + UNIT2POINT[v]
+	else
+		error("UNIT NOT FOUND: "..v)
+	end
 end
 TEAMS = {
 	{
