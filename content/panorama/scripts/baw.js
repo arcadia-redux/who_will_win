@@ -28,6 +28,7 @@ function new_round(t) {
 	$("#round").text = ++round
 	$.Schedule(1,function() {
 		let ids = Game.GetAllPlayerIDs()
+		$.Msg(ids)
 		ids.forEach(function(id,_) {
 			let hero = Players.GetSelectedEntities(id)[0],
 				panel = $("#player_"+id)
@@ -91,6 +92,7 @@ function ShowAbTooltip(panel,ent,abname) {
 }
 let round = 0
 function change(t) {
+	$.Msg(t)
 	let pct = Math.round(t.left / (t.left+t.right))* 100
 	$("#leftPct").text = `${pct}%`
 	$("#rightPct").text = `${100-pct}%`
@@ -103,6 +105,7 @@ function Pick(v) {
 }
 function Start() {	
 	let ids = Game.GetAllPlayerIDs()
+	$.Msg(ids)
 	$("#topbar").RemoveAndDeleteChildren()
 	ids.forEach(function(id,_) {
 		let plysteamid = Game.GetPlayerInfo(id).player_steamid,
@@ -114,8 +117,8 @@ function Start() {
 		panel.FindChildTraverse("hpt").text = Entities.GetHealth(hero)
 	})
 }
-	$.Schedule(1,function() {
-Start()
+$.Schedule(1,function() {
+	Start()
 })
 GameEvents.Subscribe("new_round",new_round);
 GameEvents.Subscribe("change_top",change);

@@ -418,12 +418,12 @@ function BAW:StartGame()
 	PICKED = {left = {},right = {}}
 	ALIVES = {left = {},right = {}}
 	local leftpw = 0
-	local lrightpw = 0
+	local rightpw = 0
 	for k,v in ipairs(left) do
-		BAW:SpawnUnits("left",Vector(-1280,-1088,128),Vector(1280,1088,128))
+		leftpw = BAW:SpawnUnits(v,"left",Vector(-1280,-1088,128),Vector(1280,1088,128),leftpw)
 	end
 	for k,v in ipairs(right) do
-		BAW:SpawnUnits("right",Vector(1280,1088,128),Vector(-1280,-1088,128))
+		rightpw = BAW:SpawnUnits(v,"right",Vector(1280,1088,128),Vector(-1280,-1088,128),rightpw)
 	end
 	local ar = {left = {},right = {}}
 	for k,v in pairs(ALIVES) do
@@ -438,12 +438,12 @@ function BAW:StartGame()
 	ROUND = ROUND + 1
 	CustomGameEventManager:Send_ServerToAllClients('new_round',{
 		left=leftpw,
-		right=lrightpw,
+		right=rightpw,
 		indexes=ar
 	})
 	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 10)
 end
-function BAW:SpawnUnits(team,vec,target)
+function BAW:SpawnUnits(v,team,vec,target,points)
 	local unit = CreateUnitByName( v, vec, true, nil, nil, DOTA_TEAM_GOODGUYS)
 	if unit then
 		if not unit:HasGroundMovementCapability() and not unit:HasFlyMovementCapability() then
@@ -459,10 +459,11 @@ function BAW:SpawnUnits(team,vec,target)
 		end
 		unit.targetPoint = target
 		table.insert(ALIVES[team],unit)
-		leftpw = leftpw + UNIT2POINT[v]
+		points = points + UNIT2POINT[v]
 	else
 		error("UNIT NOT FOUND: "..v)
 	end
+	return points
 end
 TEAMS = {
 	{
