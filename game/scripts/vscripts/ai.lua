@@ -70,10 +70,12 @@ function AutoCasterThink()
     return 1
   
 end
-
+REJECTABILITIES = {
+    lone_druid_spirit_bear_return = true
+}
 function FindAbility(unit, index)
     local ability = unit:GetAbilityByIndex(index)
-    if ability then
+    if ability and not REJECTABILITIES[ability:GetName()] then
         local ability_behavior = ability:GetBehavior()
         if bit.band( ability_behavior, DOTA_ABILITY_BEHAVIOR_PASSIVE ) == DOTA_ABILITY_BEHAVIOR_PASSIVE then
             ability.behavior = "passive"
