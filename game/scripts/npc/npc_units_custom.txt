@@ -1,118 +1,1503 @@
 "DOTAUnits"
 {
-	"npc_dota_neutral_kobold"	
+	"npc_dota_plasma_field"
 	{
 		"UseNeutralCreepBehavior"	"0"
 		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
 	}
-	"npc_dota_neutral_kobold_taskmaster"	
+	"npc_dota_creep_goodguys_melee_upgraded_mega"
 	{
 		"UseNeutralCreepBehavior"	"0"
 		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
 	}
-	"npc_dota_neutral_kobold_tunneler"	
+	"npc_dota_neutral_forest_troll_high_priest"
 	{
 		"UseNeutralCreepBehavior"	"0"
 		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
 	}
-	"npc_dota_neutral_forest_troll_high_priest"	
+	"npc_dota_dire_eidolon"
 	{
 		"UseNeutralCreepBehavior"	"0"
 		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
 	}
-	"npc_dota_neutral_forest_troll_berserker"	
+	"npc_dota_furion_treant_3"
 	{
 		"UseNeutralCreepBehavior"	"0"
 		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
 	}
-	"npc_dota_neutral_gnoll_assassin"	
+	"npc_dota_badguys_range_rax_mid"
 	{
 		"UseNeutralCreepBehavior"	"0"
 		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
 	}
-	"npc_dota_neutral_alpha_wolf"	
+	"npc_dota_neutral_satyr_soulstealer"
 	{
 		"UseNeutralCreepBehavior"	"0"
 		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
 	}
-	"npc_dota_neutral_giant_wolf"	
+	"npc_dota_neutral_satyr_hellcaller"
 	{
 		"UseNeutralCreepBehavior"	"0"
 		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
 	}
-	"npc_dota_neutral_centaur_khan"	
+	"npc_dota_venomancer_plague_ward_2"
 	{
 		"UseNeutralCreepBehavior"	"0"
 		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
 	}
-	"npc_dota_neutral_centaur_outrunner"	
+	"npc_dota_target_dummy"
 	{
 		"UseNeutralCreepBehavior"	"0"
 		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
 	}
-	"npc_dota_neutral_ogre_magi"	
+	"npc_dota_scout_hawk"
 	{
 		"UseNeutralCreepBehavior"	"0"
 		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
 	}
-	"npc_dota_neutral_ogre_mauler"	
+	"npc_dota_seasonal_ti9_drums"
 	{
 		"UseNeutralCreepBehavior"	"0"
 		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
 	}
-	"npc_dota_neutral_mud_golem"	
+	"npc_dota_badguys_siege_diretide"
 	{
 		"UseNeutralCreepBehavior"	"0"
 		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
 	}
-	"npc_dota_neutral_enraged_wildkin"	
+	"ent_dota_promo"
 	{
 		"UseNeutralCreepBehavior"	"0"
 		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
 	}
-	"npc_dota_neutral_wildkin"	
+	"npc_dota_necronomicon_warrior_1"
 	{
 		"UseNeutralCreepBehavior"	"0"
 		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
 	}
-	"npc_dota_neutral_dark_troll"	
+	"npc_dota_neutral_alpha_wolf"
 	{
 		"UseNeutralCreepBehavior"	"0"
 		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
 	}
-	"npc_dota_neutral_dark_troll_warlord"	
+	"npc_dota_zeus_cloud"
 	{
 		"UseNeutralCreepBehavior"	"0"
 		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
 	}
-	"npc_dota_neutral_black_dragon"	
+	"npc_dota_ember_spirit_remnant"
 	{
 		"UseNeutralCreepBehavior"	"0"
 		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
 	}
-	"npc_dota_neutral_black_drake"	
+	"npc_dota_neutral_mud_golem_split"
 	{
 		"UseNeutralCreepBehavior"	"0"
 		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
 	}
-	"npc_dota_neutral_granite_golem"	
+	"npc_dota_looping_sound"
 	{
 		"UseNeutralCreepBehavior"	"0"
 		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
 	}
-	"npc_dota_neutral_rock_golem"	
+	"npc_dota_eidolon"
 	{
 		"UseNeutralCreepBehavior"	"0"
 		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
 	}
-	"npc_dota_neutral_big_thunder_lizard"	
+	"npc_dota_neutral_ogre_magi"
 	{
 		"UseNeutralCreepBehavior"	"0"
 		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
 	}
-	"npc_dota_neutral_small_thunder_lizard"	
+	"npc_dota_stormspirit_remnant"
 	{
 		"UseNeutralCreepBehavior"	"0"
 		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_badguys_fillers"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_invisible_vision_source"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_prowler_shaman"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_techies_stasis_trap"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_wraith_ghost"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_treant_eyes"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_goodguys_fort"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_mutation_pocket_roshan"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_lycan_wolf1"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_lycan_wolf_lane"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_beastmaster_greater_boar"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_techies_land_mine"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_goodguys_siege_upgraded_mega"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_lycan_wolf3"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_warlock_golem_1"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_badguys_cny_beast"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_brewmaster_fire_3"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_phantomassassin_gravestone"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_prowler_acolyte"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_broodmother_spiderite"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_venomancer_plague_ward_4"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_mud_golem"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_lone_druid_bear4"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_goodguys_tower4"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_beastmaster_axe"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_rattletrap_rocket"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_goodguys_cny_beast"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_furion_treant_2"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_dark_willow_creature"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_goodguys_tower1_top"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"ent_dota_halloffame"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_frostivus2018_snowman"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_beastmaster_boar_4"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_goodguys_melee_rax_bot"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_ogre_mauler"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_badguys_tower2_bot"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_beastmaster_boar"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_creep_badguys_ranged_diretide"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_pugna_nether_ward_1"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_tusk_frozen_sigil4"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"dota_fountain"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_gyrocopter_homing_missile"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_witch_doctor_death_ward"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_pugna_nether_ward_2"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_brewmaster_fire_1"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_templar_assassin_psionic_trap"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"ent_dota_dire_candybucket"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_black_dragon"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_goodguys_siege_diretide"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_pugna_nether_ward_4"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_unit_undying_zombie_torso"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_observer_wards"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_badguys_siege_upgraded_mega"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_venomancer_plague_ward_3"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_creep_goodguys_ranged_upgraded_mega"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_creep_badguys_ranged_upgraded_mega"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_brewmaster_storm_1"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_warlock_golem_3"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_warlock_golem_scepter_2"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_goodguys_siege"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_unit_tombstone3"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_creep_badguys_melee_upgraded_mega"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_harpy_storm"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_furion_treant_4"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_juggernaut_healing_ward"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"ent_dota_radiant_candybucket"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_brewmaster_earth_3"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_creep_badguys_melee"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_elder_jungle_stalker"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_creep_badguys_ranged"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_slark_visual"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_harpy_scout"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"Version"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_unit_tombstone1"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_goodguys_siege_upgraded"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_wildkin"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_sentry_wards"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_brewmaster_storm_2"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_goodguys_range_rax_mid"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_lycan_wolf4"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_necronomicon_archer_1"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_greater_eidolon"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_enraged_wildkin_tornado"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_necronomicon_archer_3"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_aether_remnant"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"dota_death_prophet_exorcism_spirit"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_kobold_tunneler"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_goodguys_tower1_bot"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_seasonal_penguin"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_beastmaster_boar_3"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_badguys_range_rax_bot"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_polar_furbolg_ursa_warrior"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_beastmaster_boar_1"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_death_prophet_torment"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_big_thunder_lizard"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_wisp_spirit"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_creep_badguys_ranged_upgraded"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_small_thunder_lizard"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_watch_tower"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_ignis_fatuus"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_beastmaster_hawk_3"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_lone_druid_bear1"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_halloween_chaos_unit"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_brewmaster_fire_2"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_seasonal_ti9_shovel_ghost"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_seasonal_ti9_shovel_baby_roshan"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_badguys_melee_rax_top"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_jungle_stalker"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_forest_troll_berserker"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_furion_treant_1"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_roquelaire"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_unit_undying_zombie"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_broodmother_spiderling"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_fel_beast"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_lone_druid_bear3"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_necronomicon_archer_2"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_techies_remote_mine"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_polar_furbolg_champion"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_badguys_tower2_mid"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_furion_treant_large"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_black_drake"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_dark_troll_warlord"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_tusk_frozen_sigil1"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_roshan_halloween_minion"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_badguys_siege"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_beastmaster_hawk"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_lesser_eidolon"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_roshan_halloween"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_seasonal_ti9_monkey"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_seasonal_ti9_balloon"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_seasonal_cny_balloon"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_badguys_tower3_bot"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_seasonal_snowman"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_grimstroke_ink_creature"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_goodguys_tower3_mid"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_phoenix_sun"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_kobold"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_dark_troll"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_metamorphosis_fear"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_ghost"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_kobold_taskmaster"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_granite_golem"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_badguys_healers"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_badguys_tower1_top"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_goodguys_tower3_top"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_courier"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_weaver_swarm"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_goodguys_fillers"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_visage_familiar1"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_beastmaster_hawk_2"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_visage_familiar2"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_lone_druid_bear2"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_goodguys_range_rax_bot"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_goodguys_melee_rax_top"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_elder_titan_ancestral_spirit"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_enraged_wildkin"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_shadow_shaman_ward_2"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_wraith_king_skeleton_warrior"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_goodguys_tower2_top"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_badguys_range_rax_top"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_roshan"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_satyr_trickster"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_badguys_melee_rax_bot"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_pugna_nether_ward_3"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_unit_tombstone2"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_shadow_shaman_ward_1"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_badguys_tower4"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_beastmaster_boar_2"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_flying_courier"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_creep_goodguys_melee_upgraded"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_badguys_tower1_mid"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_creep_goodguys_ranged"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_creep_goodguys_melee"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_gnoll_assassin"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_goodguys_tower3_bot"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_warlock_golem_2"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_shadow_shaman_ward_3"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_badguys_tower3_top"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_creep_badguys_melee_upgraded"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_creep_goodguys_melee_diretide"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_invoker_forged_spirit"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_badguys_tower3_mid"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_goodguys_tower2_mid"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_goodguys_range_rax_top"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_necronomicon_warrior_2"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_necronomicon_warrior_3"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_venomancer_plague_ward_1"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_goodguys_tower2_bot"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_tusk_frozen_sigil3"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_tusk_frozen_sigil2"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_troll_warlord_axe"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_brewmaster_earth_1"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_techies_minefield_sign"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_healing_campfire"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_giant_wolf"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_goodguys_healers"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_beastmaster_hawk_4"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_badguys_fort"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_warlock_golem_scepter_1"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_centaur_khan"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_badguys_tower1_bot"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_badguys_tower2_top"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_badguys_siege_upgraded"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_earth_spirit_stone"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_centaur_outrunner"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_goodguys_melee_rax_mid"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_visage_familiar3"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_unit_tombstone4"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_seasonal_ti9_shovel_stasis_trap"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_badguys_melee_rax_mid"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_rattletrap_cog"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_broodmother_web"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_beastmaster_hawk_1"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_lycan_wolf2"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_creep_goodguys_ranged_diretide"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_warlock_golem_scepter_3"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_mud_golem_split_doom"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_seasonal_dragon"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_neutral_rock_golem"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_creep_badguys_melee_diretide"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_creep_goodguys_ranged_upgraded"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_seasonal_ti9_shovel_pudgling"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_brewmaster_earth_2"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_dark_troll_warlord_skeleton_warrior"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_greater_hawk"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_brewmaster_storm_3"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
+	}
+	"npc_dota_goodguys_tower1_mid"
+	{
+		"UseNeutralCreepBehavior"	"0"
+		"vscripts"					"ai.lua"
+		"AttackAcquisitionRange"	"5000"
 	}
 }
