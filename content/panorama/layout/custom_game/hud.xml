@@ -40,9 +40,9 @@
 		<Panel id="topbar" class="topbar">
 		</Panel>
 		<Panel class="betsBg">
-			<Label id="leftTeam" text="Satyrs"/>
+			<Label id="leftTeam" text="Blue team"/>
 			<Label id="round" text="Round 1"/>
-			<Label id="rightTeam" text="Dragons"/>
+			<Label id="rightTeam" text="Red team"/>
 			<Panel class="betsBar">
 				<Panel id="leftBar">
 					<Label id="leftPct" text="50%"/>
@@ -51,8 +51,22 @@
 					<Label id="rightPct" text="50%"/>
 				</Panel>
 			</Panel>
+			<Panel class="hpbarbg">
+				<Panel class="hpteambg">
+					<Panel id="lefthp" class="teamhp">
+					</Panel>
+					<Label id="leftHpPct" text="50%"/>
+				</Panel>
+				<Panel class="hpteambg right">
+					<Panel id="righthp" class="teamhp right">
+					</Panel>
+					<Label id="rightHpPct" text="50%"/>
+				</Panel>
+			</Panel>
 		</Panel>
 		<Panel id="makeBetPanel" class="makeBetPanel">
+			<Label class="pwlabel" id="pwleft" text="Power: 1000"/>
+			<Label class="pwlabel" id="pwright" text="Power: 1000"/>
 			<Panel class="teamG" id="leftTeamG">
 			</Panel>
 			<Panel class="teamG" id="rightTeamG">
@@ -65,5 +79,8 @@
 				<Label text="BET"/>
 			</Button>
 		</Panel>
+		<Button class="vote" onmouseactivate="vote()">
+			<Label text="Vote to speed-up"></Label>
+		</Button>
 	</Panel>
 </root>

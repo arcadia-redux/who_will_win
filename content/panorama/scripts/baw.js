@@ -1,9 +1,13 @@
+let cur_units = {}
 function new_round(t) {
-	$("#leftTeam").text = t.left
-	$("#rightTeam").text = t.right
+	// $("#leftTeam").text = t.left
+	// $("#rightTeam").text = t.right
+	$("#pwleft").text = "Power: "+t.left
+	$("#pwright").text = "Power: "+t.right
 	$("#makeBetPanel").style.visibility = "visible"
 	$("#leftTeamG").RemoveAndDeleteChildren()
 	$("#rightTeamG").RemoveAndDeleteChildren()
+	cur_units = t.indexes
 	for(let k in t.indexes){
 		for(let i in t.indexes[k]){
 			if(k == "left"){
@@ -27,11 +31,26 @@ function new_round(t) {
 		ids.forEach(function(id,_) {
 			let hero = Players.GetSelectedEntities(id)[0],
 				panel = $("#player_"+id)
-				$.Msg(Entities.GetHealth(hero))
 			panel.FindChildTraverse("hp").style.height = Math.round(Entities.GetHealth(hero)/5*100)+"%"
 			panel.FindChildTraverse("hpt").text = Entities.GetHealth(hero)
 		})
 	})
+}
+function checkHp() {
+	if(Object.keys(cur_units).length){
+		let hps = {"left":0,"right":0,"leftmax":0,"rightmax":0}
+		for(let k in cur_units){
+			for(let i in cur_units[k]){
+				hps[k] += Entities.GetHealth(cur_units[k][i])
+				hps[k+"max"] += Entities.GetMaxHealth(cur_units[k][i])
+			}
+		}
+		$("#leftHpPct").text = hps.left
+		$("#rightHpPct").text = hps.right
+		$("#lefthp").style.width = Math.round(hps.left/hps.leftmax*100)+"%"
+		$("#righthp").style.width = Math.round(hps.right/hps.rightmax*100)+"%"
+	}
+	$.Schedule(0.33, checkHp)
 }
 function createSceneVersus(t,k,i,parent) {
 	let pan = $.CreatePanel("Panel", parent, "lb"),
@@ -46,9 +65,10 @@ function createSceneVersus(t,k,i,parent) {
 		ab = Entities.GetAbility(t.indexes[k][i],d)
 		let abpan = $.CreatePanel("DOTAAbilityImage", abs, "ab")
 		abname = Abilities.GetAbilityName(ab)
-		abpan.abilityname = abname
+		// abpan.abilityname = abname
+		abpan.contextEntityIndex = ab
 		if(ab != -1){
-			abpan.SetPanelEvent('onmouseover',ShowAbTooltip(abpan,abname))
+			abpan.SetPanelEvent('onmouseover',ShowAbTooltip(abpan,t.indexes[k][i],abname))
 			abpan.SetPanelEvent('onmouseout',function() {
 				$.DispatchEvent('DOTAHideAbilityTooltip',abpan);
 			})
@@ -64,9 +84,9 @@ function AddUnitTooltip( panel, unit )
 		$.DispatchEvent("UIHideCustomLayoutTooltip", panel, panel.id)
 	})
 }
-function ShowAbTooltip(panel,ab) {
+function ShowAbTooltip(panel,ent,abname) {
 	return function() {
-		$.DispatchEvent('DOTAShowAbilityTooltip',panel,ab);
+		$.DispatchEvent('DOTAShowAbilityTooltipForEntityIndex',panel,abname,ent);
 	}
 }
 let round = 0
@@ -109,6 +129,11 @@ function UpdateSelectedUnit() {
 		GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ACTION_PANEL, true );
 	}
 }
+function vote() {
+	GameEvents.SendCustomGameEventToServer("speedup",{})
+}
 GameEvents.Subscribe("dota_player_update_query_unit",UpdateSelectedUnit)
 GameEvents.Subscribe('dota_player_update_hero_selection', UpdateSelectedUnit);
 GameEvents.Subscribe('dota_player_update_selected_unit', UpdateSelectedUnit);
+
+checkHp()

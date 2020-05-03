@@ -15,17 +15,16 @@ function AutoCasterThink()
         return -1 
     end
   
-    if GameRules:IsGamePaused() == true then
-        return 1 
-    end
-
-    if thisEntity:IsChanneling() then
+    if GameRules:IsGamePaused() or thisEntity:IsChanneling() then
         return 1 
     end
   
     if thisEntity:IsControllableByAnyPlayer() then
         return -1
     end
+    -- if thisEntity:IsAttacking() then
+    --     return 1
+    -- end
   
     local npc = thisEntity
 
@@ -63,6 +62,10 @@ function AutoCasterThink()
     TryCastAbility(npc.ability3, npc, enemy)
     TryCastAbility(npc.ability4, npc, enemy)
     TryCastAbility(npc.ability5, npc, enemy)
+    -- DeepPrintTable(thisEntity)
+    if _G.FIGHT and thisEntity.targetPoint and not thisEntity:IsAttacking() then
+        thisEntity:MoveToPositionAggressive(thisEntity.targetPoint)
+    end
 
     return 1
   
@@ -116,5 +119,5 @@ function TryCastAbility(ability, caster, enemy)
         Position = enemy:GetOrigin(),
         Queue = false,
     })
-    caster:SetContextThink( "AutoCasterThink", AutoCasterThink, 1 )
+    -- caster:SetContextThink( "AutoCasterThink", AutoCasterThink, 1 )
 end

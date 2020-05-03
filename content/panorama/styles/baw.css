@@ -4,7 +4,7 @@
 }
 .betsBg{
 	align: center top;
-	height: 40px;
+	height: 60px;
 	width: 500px;
 	margin-top: 50px;
 	overflow: noclip noclip;
@@ -26,6 +26,12 @@
 	background-color: #6E0909;
 	box-shadow: #000000f5 -4px -4px 8px 8px;
 	border-radius: 5px;
+	margin-bottom: 20px;
+}
+.hpbarbg{
+	align: center bottom;
+	height: 10px;
+	width: 100%;
 }
 #leftBar{
 	height: 100%;
@@ -103,16 +109,18 @@ Label{
 	text-shadow: 1px 1px 1px 2 #00000099;
 }
 .teamG{
-	width: 300px;
+	width: 360px;
+	max-height: 350px;
 	flow-children:right-wrap;
+	overflow: clip scroll;
 }
 #leftTeamG{
 	align: left center;
-	margin: 0 0 50px 50px;
+	margin: 0 0 50px 20px;
 }
 #rightTeamG{
 	align: right center;
-	margin: 0 50px 50px 0;
+	margin: 0 20px 50px 0;
 }
 #round{
 	align: center top;
@@ -206,4 +214,56 @@ height: 100%;
 	box-shadow: inset #00000099 5px 5px 10px 10px 5;
 	border: 1px solid black;
 	border-bottom: 1px solid #ffffff06;
+}
+#pwleft{
+	text-align: right;
+	margin: 20px 0 0 160px;
+}
+#pwright{
+	align: right top;
+	margin: 20px 160px 0 0;
+}
+.hpteambg{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #232323 ), color-stop( .5, #4D4D4D), to( #232323 ) );
+	box-shadow: #000000f5 -3px -2.5px 5px 5px;
+	border-radius: 5px;
+	height: 100%;
+	width: 45%;
+}
+.teamhp{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #0F4F00 ), color-stop( .5, #167400), to( #0F4F00 ) );
+	height: 100%;
+	width: 100%;
+}
+.hpteambg Label{
+	align: center center;
+	text-align: center;
+	font-size: 10;
+}
+.vote{
+	background-color: #195903;
+	padding: 10px;
+	box-shadow: #000000f5 -3px -2.5px 5px 5px;
+	align: right bottom;
+	margin: 100px;
+}
+.vote:hover{
+	brightness: 2;
+}
+.vote:active{
+	brightness: 0.7;
+}
+
+
+
+
+
+
+
+
+
+
+
+.right{
+	horizontal-align: right;
 }
