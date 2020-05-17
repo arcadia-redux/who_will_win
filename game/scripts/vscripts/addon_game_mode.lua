@@ -1,16 +1,33 @@
 if BAW == nil then
 	BAW = class({})
+
+	_G.FIGHT = false
+	UNIT2POINT = {}
+	VOTED_ID = {}
+	PICKED_ID = {}
+	PLAYERS_ID = {}
+	PLAYERS = 0
+	PICKED = {}
+	ALIVES = {}
+	ROUND = 0
+	POINTS = 1000
 end
+
 require('timers')
+require('utils')
 require('ai')
+
 function Precache( context )
 end
+
 function Activate()
 	BAW:InitGameMode()
 end
+
 _G.UnitsKV = LoadKeyValues("scripts/npc/npc_units.txt")
 _G.HeroesKV = LoadKeyValues("scripts/npc/npc_heroes.txt")
 _G.AbilityPowers = LoadKeyValues("scripts/kv/ability_power.txt")
+
 bannedUnits = {
 	npc_dota_units_base = true,
 	npc_dota_thinker = true,
@@ -62,6 +79,13 @@ bannedUnits = {
 	npc_dota_goodguys_siege_diretide = true,
 	npc_dota_badguys_siege_diretide = true,
 	npc_dota_roshan_halloween = true,
+	npc_dota_shadow_shaman_ward_1 = true,
+	npc_dota_shadow_shaman_ward_2 = true,
+	npc_dota_shadow_shaman_ward_3 = true,
+	npc_dota_venomancer_plague_ward_1 = true,
+	npc_dota_venomancer_plague_ward_2 = true,
+	npc_dota_venomancer_plague_ward_3 = true,
+	npc_dota_venomancer_plague_ward_4 = true,
 }
 function BAW:InitGameMode()
 	GameRules:SetStartingGold(322)
@@ -81,8 +105,6 @@ function BAW:InitGameMode()
 	GameRules:SetHeroRespawnEnabled(false)
 	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, 10)
 	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 0)
-
-
 
     local mode = GameRules:GetGameModeEntity()
     mode:SetDaynightCycleDisabled(true)
@@ -128,11 +150,7 @@ function BAW:InitGameMode()
 	-- print('}')
     for k,v in pairs(UnitsKV) do
     	if not bannedUnits[k] and type(v) == "table" and v['AttackCapabilities'] ~= "DOTA_UNIT_CAP_NO_ATTACK" and ((v["AttackDamageMin"] or 0) ~= 0 or (v["AttackDamageMax"] or 0) ~= 0) then
-    		UNIT2POINT[k] = ((v["AttackDamageMax"] or 0) - (((v["AttackDamageMax"] or 0) - (v["AttackDamageMin"] or 0)) * 0.5)) + (1.7/(v["AttackRate"] or 1.7)*100) + (v['AttackRange'] or 100) - 100 + (v['StatusHealth'] or 0) + (v['StatusMana'] or 0)* 0.75 + (v['StatusHealthRegen'] or 0) * 20 + (v['StatusManaRegen'] or 0) * 10
-    		if v['AttackCapabilities'] == "DOTA_UNIT_CAP_RANGED_ATTACK" then
-    			UNIT2POINT[k] = UNIT2POINT[k] + 20
-    		end
-    		UNIT2POINT[k] = math.floor(UNIT2POINT[k])
+    		UNIT2POINT[k] = CalculateUnitPoints(k,v)
     	end
     end
     --[[
@@ -190,11 +208,37 @@ function BAW:InitGameMode()
     end
     ]]
 end
-UNIT2POINT = {
 
-}
-_G.FIGHT = false
-VOTED_ID = {}
+function CalculateUnitPoints(unitName, kv)
+	local points = 0
+
+	local damage = ((kv["AttackDamageMax"] or 0) + (kv["AttackDamageMin"] or 0)) / 2
+	local attackRate = kv["AttackRate"] or 1.7
+	local damageBased = damage/attackRate
+	
+	local attackRange = (kv["AttackRange"] or 100) - 100
+	
+	local health = kv["StatusHealth"] or 0
+	local armor = kv["ArmorPhysical"] or 0
+
+	local damageMult = 1 - ((0.052 * armor) / (0.9 + 0.048 * math.abs(armor)))
+	local effectiveHP = health / damageMult
+
+	local mana = (kv["StatusMana"] or 0) * 0.75
+	local healthRegen = (kv["StatusHealthRegen"] or 0) * 20
+	local manaRegen = (kv['StatusManaRegen'] or 0) * 10
+
+	if kv['AttackCapabilities'] == "DOTA_UNIT_CAP_RANGED_ATTACK" then
+    	damageBased = damageBased * 1.1
+    end
+
+
+	points = damageBased + attackRange + effectiveHP + mana + healthRegen + manaRegen
+
+
+	return math.floor(points)
+end
+
 function BAW:speedup(t)
 	local pid = t.PlayerID
 	if _G.FIGHT and not table.contains(VOTED_ID,pid) then
@@ -204,14 +248,7 @@ function BAW:speedup(t)
 		end
 	end
 end
-function table.contains(table, element)
-  for _, value in pairs(table) do
-    if value == element then
-      return true
-    end
-  end
-  return false
-end
+
 function BAW:Pick(t)
 	local pid = t.PlayerID
 	local pick = t.v
@@ -236,9 +273,7 @@ function BAW:Pick(t)
 		end
 	end
 end
-PICKED_ID = {}
-PLAYERS_ID = {}
-PLAYERS = 0
+
 function BAW:OnHeroPicked(t)
 	if t.player == -1 then
 		return
@@ -259,9 +294,11 @@ function BAW:OnHeroPicked(t)
 	hero:AddNewModifier(hero,nil,'modifier_removed_hero',{})
 	table.insert(PLAYERS_ID, playerownerid)
 end
+
 function BAW:linkmod(string,motion)
     LinkLuaModifier(string, "modifiers/"..string, motion or LUA_MODIFIER_MOTION_NONE)
 end
+
 function BAW:linkmodifiers()
     local modTable = {
         'modifier_removed_hero',
@@ -274,6 +311,7 @@ function BAW:linkmodifiers()
         end
     end
 end
+
 function BAW:OnGameRulesStateChange()
 	local nNewState = GameRules:State_Get()
 	if nNewState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
@@ -284,22 +322,7 @@ function BAW:OnGameRulesStateChange()
 		self:StartGame()
 	end
 end
-function table.copy(t)
-  local t2 = {}
-  for k,v in pairs(t) do
-    t2[k] = v
-  end
-  return t2
-end
-PICKED = {}
-ALIVES = {}
-function removeFromTable(t,val)
-	for k,v in pairs(t) do
-		if v == val then
-			table.remove(t, k)
-		end
-	end
-end
+
 function BAW:StartFight()
 	_G.FIGHT = true
 	for k,v in pairs(ALIVES) do
@@ -354,8 +377,7 @@ function BAW:StartFight()
 	end)
 	CustomGameEventManager:Send_ServerToAllClients('start_fight', nil)
 end
-ROUND = 0
-POINTS = 1000
+
 function BAW:StartGame()
 	PICKED_ID = {}
 	VOTED_ID = {}
@@ -405,8 +427,9 @@ function BAW:StartGame()
 	-- cache = {}
 	-- cheapest = {POINTS,''}
 	-- teams = {left = {},right = {}}
+	local minPoints = POINTS * 0.05
 	for k,v in pairs(UNIT2POINT) do
-		if v <= POINTS then
+		if v <= POINTS and v >= minPoints then
 			table.insert(cache, {v,k})
 			if cheapest[1] > v then
 				cheapest = {v,k}
@@ -520,6 +543,7 @@ function BAW:StartGame()
 		end
 	end)
 end
+
 function BAW:SpawnUnits(v,team,vec,target,points)
 	local unit = CreateUnitByName( v, vec, true, nil, nil, DOTA_TEAM_GOODGUYS)
 	if unit then
