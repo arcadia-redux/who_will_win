@@ -2,12 +2,15 @@ if BAW == nil then
 	BAW = class({})
 end
 require('timers')
+require('ai')
 function Precache( context )
 end
 function Activate()
 	BAW:InitGameMode()
 end
 _G.UnitsKV = LoadKeyValues("scripts/npc/npc_units.txt")
+_G.HeroesKV = LoadKeyValues("scripts/npc/npc_heroes.txt")
+_G.AbilityPowers = LoadKeyValues("scripts/kv/ability_power.txt")
 bannedUnits = {
 	npc_dota_units_base = true,
 	npc_dota_thinker = true,
@@ -55,6 +58,10 @@ bannedUnits = {
 	npc_dota_badguys_tower2_bot = true,
 	npc_dota_badguys_tower3_bot = true,
 	npc_dota_badguys_tower4 = true,
+	dota_fountain = true,
+	npc_dota_goodguys_siege_diretide = true,
+	npc_dota_badguys_siege_diretide = true,
+	npc_dota_roshan_halloween = true,
 }
 function BAW:InitGameMode()
 	GameRules:SetStartingGold(322)
@@ -89,7 +96,7 @@ function BAW:InitGameMode()
     mode:SetRemoveIllusionsOnDeath(false)
     mode:SetBotThinkingEnabled(false)
     mode:SetTowerBackdoorProtectionEnabled(false)
-  	mode:SetCameraDistanceOverride(1800)
+  	mode:SetCameraDistanceOverride(1500)
   	mode:SetFogOfWarDisabled(true)
   	-- mode:SetMinimumAttackSpeed(0)
   	-- mode:SetMaximumAttackSpeed(999999)
@@ -107,18 +114,17 @@ function BAW:InitGameMode()
 	ListenToGameEvent("game_rules_state_change",Dynamic_Wrap(self,'OnGameRulesStateChange'),self)
     CustomGameEventManager:RegisterListener("Pick", Dynamic_Wrap(self, 'Pick'))
     CustomGameEventManager:RegisterListener("speedup", Dynamic_Wrap(self, 'speedup'))
- --    print('"DOTAUnits"')
- --    print("{")
- --    for k,v in pairs(UnitsKV) do
- --    	if not bannedUnits[k] then
- --    		print('	"'..k..'"')
-	-- 	    print("	{")
-	-- 	    print('		"UseNeutralCreepBehavior"	"0"')
-	-- 	    print('		"vscripts"					"ai.lua"')
-	-- 	    print('		"AttackAcquisitionRange"	"5000"')
-	-- 		print('	}')
- --    	end
- --    end
+    -- print('"DOTAUnits"')
+    -- print("{")
+   --  for k,v in pairs(HeroesKV) do
+   --  	if not bannedUnits[k] then
+   --  		print('	"'..k..'"')
+		 --    print("	{")
+		 --    print('		"vscripts"					"ai.lua"')
+		 --    print('		"AttackAcquisitionRange"	"5000"')
+			-- print('	}')
+   --  	end
+   --  end
 	-- print('}')
     for k,v in pairs(UnitsKV) do
     	if not bannedUnits[k] and type(v) == "table" and v['AttackCapabilities'] ~= "DOTA_UNIT_CAP_NO_ATTACK" and ((v["AttackDamageMin"] or 0) ~= 0 or (v["AttackDamageMax"] or 0) ~= 0) then
@@ -234,6 +240,9 @@ PICKED_ID = {}
 PLAYERS_ID = {}
 PLAYERS = 0
 function BAW:OnHeroPicked(t)
+	if t.player == -1 then
+		return
+	end
     local hero = EntIndexToHScript(t.heroindex)
     local playerowner = hero:GetPlayerOwner()
     local playerownerid = hero:GetPlayerOwnerID()
@@ -271,6 +280,7 @@ function BAW:OnGameRulesStateChange()
 	elseif nNewState == DOTA_GAMERULES_STATE_HERO_SELECTION then
 	elseif nNewState == DOTA_GAMERULES_STATE_PRE_GAME then
 	elseif nNewState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 10)
 		self:StartGame()
 	end
 end
@@ -301,21 +311,44 @@ function BAW:StartFight()
 			end
 		end
 	end
+	CustomGameEventManager:Send_ServerToAllClients('hide_versus',{})
+	local time = 120
+	CustomGameEventManager:Send_ServerToAllClients('new_timer',{time=time})
 	Timers:CreateTimer(function()
+		ALIVES = {left = FindUnitsInRadius(DOTA_TEAM_GOODGUYS,
+          Vector(0, 0, 0),
+          nil,
+          10000,
+          DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+          DOTA_UNIT_TARGET_ALL-DOTA_UNIT_TARGET_HERO,
+          DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES+DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD,
+          FIND_ANY_ORDER,
+          false),
+		right = FindUnitsInRadius(DOTA_TEAM_BADGUYS,
+          Vector(0, 0, 0),
+          nil,
+          10000,
+          DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+          DOTA_UNIT_TARGET_ALL-DOTA_UNIT_TARGET_HERO,
+          DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES+DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD,
+          FIND_ANY_ORDER,
+          false)}
 		for d,e in pairs(ALIVES) do
-			if #e > 0 then
-				for k,v in pairs(e) do
-					if not v:IsAlive() then
-						removeFromTable(ALIVES[d],v)
-					end
-				end
-			else
+			if #e <= 0 then
 				for n,p in pairs(PICKED[d]) do
 					p:SetHealth(p:GetHealth()-1)
 				end
 				BAW:StartGame()
+				CustomGameEventManager:Send_ServerToAllClients('new_timer',{time=45})
 				return nil
 			end
+		end
+		CustomGameEventManager:Send_ServerToAllClients('new_timer',{time=time})
+		time = time - 1
+		if time <= 0 then
+			BAW:StartGame()
+			CustomGameEventManager:Send_ServerToAllClients('new_timer',{time=45})
+			return nil
 		end
 		return 1
 	end)
@@ -334,10 +367,10 @@ function BAW:StartGame()
 	local units = FindUnitsInRadius(DOTA_TEAM_BADGUYS,
                               Vector(0, 0, 0),
                               nil,
-                              FIND_UNITS_EVERYWHERE,
+                              10000,
                               DOTA_UNIT_TARGET_TEAM_BOTH,
                               DOTA_UNIT_TARGET_ALL,
-                              DOTA_UNIT_TARGET_FLAG_NONE,
+                              DOTA_UNIT_TARGET_FLAG_DEAD+DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES+DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD,
                               FIND_ANY_ORDER,
                               false)
 	for i,v in ipairs(units) do
@@ -425,13 +458,16 @@ function BAW:StartGame()
 	for k,v in ipairs(right) do
 		rightpw = BAW:SpawnUnits(v,"right",Vector(1280,1088,128),Vector(-1280,-1088,128),rightpw)
 	end
-	local ar = {left = {},right = {}}
+	local ar = {left = {},right = {},regens = {}}
+	local index
 	for k,v in pairs(ALIVES) do
 		for e,u in pairs(v) do
+			index = u:entindex()
+			ar['regens'][index] = {u:GetHealthRegen(),u:GetManaRegen(),(u:GetBaseDamageMax()+u:GetBaseDamageMin())*0.5,u:GetPhysicalArmorValue(false),u:GetSecondsPerAttack(),u:Script_GetAttackRange()}
 			if k == "left" then
-				table.insert(ar['left'],u:entindex())
+				table.insert(ar['left'],index)
 			else
-				table.insert(ar['right'],u:entindex())
+				table.insert(ar['right'],index)
 			end
 		end
 	end
@@ -441,7 +477,47 @@ function BAW:StartGame()
 		right=rightpw,
 		indexes=ar
 	})
-	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 10)
+	local timer = 15
+	Timers:CreateTimer(function()
+		if timer <= 0 then
+			for k,pid in pairs(PLAYERS_ID) do
+				if not table.contains(PICKED_ID,pid) then
+					local pick = RollPercentage(50)
+					if pick then
+						pick = "right"
+					else
+						pick = "left"
+					end
+					local ply = PlayerResource:GetPlayer(pid)
+					local hero = ply:GetAssignedHero()
+					if pick == "right" then
+						ply:SetTeam(DOTA_TEAM_BADGUYS)
+						hero:SetTeam(DOTA_TEAM_BADGUYS)
+					else
+						ply:SetTeam(DOTA_TEAM_GOODGUYS)
+						hero:SetTeam(DOTA_TEAM_GOODGUYS)
+					end
+					table.insert(PICKED[pick], hero)
+					table.insert(PICKED_ID, pid)
+					CustomGameEventManager:Send_ServerToAllClients('change_top',{
+						left=#PICKED["left"],
+						right=#PICKED["right"],
+					})
+					if #PICKED_ID >= PLAYERS then
+						BAW:StartFight()
+					end
+				end
+			end
+			return nil
+		end
+		if not _G.FIGHT then
+			timer = timer - 1
+			CustomGameEventManager:Send_ServerToAllClients('new_timer',{time=timer})
+			return 1
+		else
+			return nil
+		end
+	end)
 end
 function BAW:SpawnUnits(v,team,vec,target,points)
 	local unit = CreateUnitByName( v, vec, true, nil, nil, DOTA_TEAM_GOODGUYS)
@@ -460,108 +536,9 @@ function BAW:SpawnUnits(v,team,vec,target,points)
 		unit.targetPoint = target
 		table.insert(ALIVES[team],unit)
 		points = points + UNIT2POINT[v]
+		unit:StartAI()
 	else
 		error("UNIT NOT FOUND: "..v)
 	end
 	return points
 end
-TEAMS = {
-	{
-		{
-			"Kobolds",
-			"npc_dota_neutral_kobold",
-			"npc_dota_neutral_kobold",
-			"npc_dota_neutral_kobold",
-			"npc_dota_neutral_kobold_taskmaster",
-			"npc_dota_neutral_kobold_tunneler",
-		},
-		{
-			"Hill Trolls",
-			"npc_dota_neutral_forest_troll_high_priest",
-			"npc_dota_neutral_forest_troll_berserker",
-			"npc_dota_neutral_forest_troll_berserker",
-		},
-		{
-			"Hill Trolls and Kobold",
-			"npc_dota_neutral_kobold_taskmaster",
-			"npc_dota_neutral_forest_troll_berserker",
-			"npc_dota_neutral_forest_troll_berserker",
-		},
-		{
-			"Vhouls Assassins",
-			"npc_dota_neutral_gnoll_assassin",
-			"npc_dota_neutral_gnoll_assassin",
-			"npc_dota_neutral_gnoll_assassin",
-		},
-		{
-			"Ghosts",
-			"npc_dota_neutral_gnoll_assassin",
-			"npc_dota_neutral_gnoll_assassin",
-			"npc_dota_neutral_gnoll_assassin",
-		}
-	},
-	{
-		{
-			"Wolves",
-			"npc_dota_neutral_alpha_wolf",
-			"npc_dota_neutral_giant_wolf",
-			"npc_dota_neutral_giant_wolf",
-		},
-		{
-			"Centaurs",
-			"npc_dota_neutral_centaur_khan",
-			"npc_dota_neutral_centaur_outrunner",
-		},
-		{
-			"Ogres",
-			"npc_dota_neutral_ogre_magi",
-			"npc_dota_neutral_ogre_mauler",
-			"npc_dota_neutral_ogre_mauler",
-		},
-		-- {
-		-- 	"Golems",
-		-- 	"npc_dota_neutral_mud_golem",
-		-- 	"npc_dota_neutral_mud_golem",
-		-- },
-	},
-	{
-		{
-			"Centaurs",
-			"npc_dota_neutral_centaur_khan",
-			"npc_dota_neutral_centaur_outrunner",
-			"npc_dota_neutral_centaur_outrunner",
-		},
-		{
-			"Chickens",
-			"npc_dota_neutral_enraged_wildkin",
-			"npc_dota_neutral_wildkin",
-			"npc_dota_neutral_wildkin",
-		},
-		{
-			"Dark Trolls",
-			"npc_dota_neutral_dark_troll",
-			"npc_dota_neutral_dark_troll",
-			"npc_dota_neutral_dark_troll_warlord",
-		},
-	},
-	{
-		{
-			"Drakes",
-			"npc_dota_neutral_black_drake",
-			"npc_dota_neutral_black_dragon",
-			"npc_dota_neutral_black_drake",
-		},
-		{
-			"Golems",
-			"npc_dota_neutral_granite_golem",
-			"npc_dota_neutral_rock_golem",
-			"npc_dota_neutral_rock_golem",
-		},
-		{
-			"bLizards",
-			"npc_dota_neutral_big_thunder_lizard",
-			"npc_dota_neutral_small_thunder_lizard",
-			"npc_dota_neutral_small_thunder_lizard",
-		},
-	}
-}

@@ -1,80 +1,88 @@
-function Spawn( entityKeyValues )
-    if not IsServer() then
-        return
-    end
+function CBaseEntity:StartAI()
+    self:SetContextThink( "AutoCasterThink", function()
+        if ( not self:IsAlive() ) then
+            return -1 
+        end
+      
+        if GameRules:IsGamePaused() or self:IsChanneling() then
+            return 1 
+        end
+      
+        if self:IsControllableByAnyPlayer() then
+            return -1
+        end
+        -- if thisEntity:IsAttacking() then
+        --     return 1
+        -- end
+        local npc = self
 
-    if thisEntity == nil then
-        return
-    end
-  
-    thisEntity:SetContextThink( "AutoCasterThink", AutoCasterThink, 1 )
+        if not npc.bInitialized then
+            npc.fMaxDist = npc:GetAcquisitionRange()
+            npc.bInitialized = true
+          
+            npc.ability0 = FindAbility(npc, 0)
+            npc.ability1 = FindAbility(npc, 1)
+            npc.ability2 = FindAbility(npc, 2)
+            npc.ability3 = FindAbility(npc, 3)
+            npc.ability4 = FindAbility(npc, 4)
+            npc.ability5 = FindAbility(npc, 5)
+            npc.item0 = FindAbility(npc, 0)
+            npc.item1 = FindAbility(npc, 1)
+            npc.item2 = FindAbility(npc, 2)
+            npc.item3 = FindAbility(npc, 3)
+            npc.item4 = FindAbility(npc, 4)
+            npc.item5 = FindAbility(npc, 5)
+          
+        end
+
+        local search_radius = npc.fMaxDist
+      
+        local enemies = FindUnitsInRadius(
+                            npc:GetTeamNumber(),
+                            npc:GetAbsOrigin() ,
+                            nil,
+                            search_radius + 50,
+                            DOTA_UNIT_TARGET_TEAM_ENEMY,
+                            DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 
+                            DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, 
+                            FIND_CLOSEST,
+                            false )
+
+        local enemy = enemies[1]
+      
+        TryCastAbility(npc.ability0, npc, enemy)
+        TryCastAbility(npc.ability1, npc, enemy)
+        TryCastAbility(npc.ability2, npc, enemy)
+        TryCastAbility(npc.ability3, npc, enemy)
+        TryCastAbility(npc.ability4, npc, enemy)
+        TryCastAbility(npc.ability5, npc, enemy)
+        
+        TryCastAbility(npc.item0, npc, enemy)
+        TryCastAbility(npc.item1, npc, enemy)
+        TryCastAbility(npc.item2, npc, enemy)
+        TryCastAbility(npc.item3, npc, enemy)
+        TryCastAbility(npc.item4, npc, enemy)
+        TryCastAbility(npc.item5, npc, enemy)
+        -- DeepPrintTable(thisEntity)
+        if _G.FIGHT and npc.targetPoint and not npc:IsAttacking() then
+            npc:MoveToPositionAggressive(npc.targetPoint)
+        end
+
+        return 1
+      
+    end, 1 )
 end
 
-function AutoCasterThink()
-    if ( not thisEntity:IsAlive() ) then
-        return -1 
-    end
-  
-    if GameRules:IsGamePaused() or thisEntity:IsChanneling() then
-        return 1 
-    end
-  
-    if thisEntity:IsControllableByAnyPlayer() then
-        return -1
-    end
-    -- if thisEntity:IsAttacking() then
-    --     return 1
-    -- end
-  
-    local npc = thisEntity
-
-    if not thisEntity.bInitialized then
-        npc.fMaxDist = npc:GetAcquisitionRange()
-        npc.bInitialized = true
-      
-        npc.ability0 = FindAbility(npc, 0)
-        npc.ability1 = FindAbility(npc, 1)
-        npc.ability2 = FindAbility(npc, 2)
-        npc.ability3 = FindAbility(npc, 3)
-        npc.ability4 = FindAbility(npc, 4)
-        npc.ability5 = FindAbility(npc, 5)
-      
-    end
-
-    local search_radius = npc.fMaxDist
-  
-    local enemies = FindUnitsInRadius(
-                        npc:GetTeamNumber(),
-                        npc:GetAbsOrigin() ,
-                        nil,
-                        search_radius + 50,
-                        DOTA_UNIT_TARGET_TEAM_ENEMY,
-                        DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 
-                        DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, 
-                        FIND_CLOSEST,
-                        false )
-
-    local enemy = enemies[1]
-  
-    TryCastAbility(npc.ability0, npc, enemy)
-    TryCastAbility(npc.ability1, npc, enemy)
-    TryCastAbility(npc.ability2, npc, enemy)
-    TryCastAbility(npc.ability3, npc, enemy)
-    TryCastAbility(npc.ability4, npc, enemy)
-    TryCastAbility(npc.ability5, npc, enemy)
-    -- DeepPrintTable(thisEntity)
-    if _G.FIGHT and thisEntity.targetPoint and not thisEntity:IsAttacking() then
-        thisEntity:MoveToPositionAggressive(thisEntity.targetPoint)
-    end
-
-    return 1
-  
-end
 REJECTABILITIES = {
     lone_druid_spirit_bear_return = true
 }
-function FindAbility(unit, index)
-    local ability = unit:GetAbilityByIndex(index)
+function FindAbility(unit, index, item)
+    local ability
+    if not item then
+        ability = unit:GetAbilityByIndex(index)
+    else
+        ability = unit:GetItemInSlot(index)
+    end
     if ability and not REJECTABILITIES[ability:GetName()] then
         local ability_behavior = ability:GetBehavior()
         if bit.band( ability_behavior, DOTA_ABILITY_BEHAVIOR_PASSIVE ) == DOTA_ABILITY_BEHAVIOR_PASSIVE then

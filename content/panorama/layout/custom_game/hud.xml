@@ -18,7 +18,12 @@
 		</snippet>
 		<snippet name="teamScene">
 			<Panel class="teamScenePanel">
-				
+				<Panel class="unitstats" hittest="false">
+					<Label class="unitstat" id="unitdamage" text="20"></Label>
+					<Label class="unitstat" id="unitarmor" text="2.5"></Label>
+					<Label class="unitstat" id="unitatkspd" text="1.7"></Label>
+					<Label class="unitstat" id="unitatkrng" text="200"></Label>
+				</Panel>
 				<DOTAItemImage class="shopsellitem" id="shopsellitem5" hittest="true" itemname=""/>
 				<Panel id="abils" class="sceneAbilityList"><!-- 
 					<DOTAAbilityImage abilityname="lina_dragon_slave" />
@@ -33,6 +38,20 @@
 					<DOTAItemImage class="item" hittest="true" itemname=""/>
 				</Panel>
 				<Label id="name" class="teamSceneLabel" text="npc_dota_hero_elder_titan"/>
+				<Panel class="bar">
+					<Panel id="unithp">
+						<DOTAScenePanel map="scenes/hud/healthbarburner" renderdeferred="false" rendershadows="false" camera="camera_1" hittest="false" particleonly="true"/>
+					</Panel>
+					<Label id="unithptext" text="10000"></Label>
+					<Label id="unithpplus" text="+1"></Label>
+				</Panel>
+				<Panel class="bar mpbar">
+					<Panel id="unitmp">
+						<DOTAScenePanel map="scenes/hud/healthbarburner" renderdeferred="false" rendershadows="false" camera="camera_1" hittest="false" particleonly="true"/>
+					</Panel>
+					<Label id="unitmptext" text="10000"></Label>
+					<Label id="unitmpplus" text="+1"></Label>
+				</Panel>
 			</Panel>
 		</snippet>
 	</snippets>
@@ -55,14 +74,15 @@
 				<Panel class="hpteambg">
 					<Panel id="lefthp" class="teamhp">
 					</Panel>
-					<Label id="leftHpPct" text="50%"/>
+					<Label id="leftHpPct" text="0"/>
 				</Panel>
 				<Panel class="hpteambg right">
 					<Panel id="righthp" class="teamhp right">
 					</Panel>
-					<Label id="rightHpPct" text="50%"/>
+					<Label id="rightHpPct" text="0"/>
 				</Panel>
 			</Panel>
+			<Label id="time" text="120"></Label>
 		</Panel>
 		<Panel id="makeBetPanel" class="makeBetPanel">
 			<Label class="pwlabel" id="pwleft" text="Power: 1000"/>

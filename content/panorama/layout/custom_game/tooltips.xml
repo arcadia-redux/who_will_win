@@ -13,6 +13,13 @@
 	    		<Panel id="AttackDefenseContainer">
 					<Panel id="AttackContainer" class="TopBottomFlow">
 						<Label id="AttackHeader" text="#DOTA_HUD_Attack"/>
+						<Panel id="DamageRow" class="StatRow">
+							<Label id="DamageLabel" text="#DOTA_HUD_Damage" class="StatName"/>
+							<Panel class="LeftRightFlow">
+								<Label id="Damage" text="{d:base_damage_min} - {d:base_damage_max}" class="BaseValue"/>
+								<Label id="DamageBonus" text="{s:bonus_damage}" class="BonusValue"/>
+							</Panel>				
+						</Panel>
 						<Panel id="AttackSpeedRow" class="StatRow">
 							<Label id="AttackSpeedLabel" text="#DOTA_HUD_AttackSpeed" class="StatName"/>
 							<Panel class="LeftRightFlow">
@@ -20,13 +27,6 @@
 								<Label id="AttacksPerSecond" text="{s:seconds_per_attack}" />
 							<!--	<Label id="AttackSpeedBonus" text="{s:bonus_attack_speed}" class="BonusValue"/> -->
 							</Panel>		
-						</Panel>
-						<Panel id="DamageRow" class="StatRow">
-							<Label id="DamageLabel" text="#DOTA_HUD_Damage" class="StatName"/>
-							<Panel class="LeftRightFlow">
-								<Label id="Damage" text="{d:base_damage_min} - {d:base_damage_max}" class="BaseValue"/>
-								<Label id="DamageBonus" text="{s:bonus_damage}" class="BonusValue"/>
-							</Panel>				
 						</Panel>
 						<Panel id="AttackRangeRow" class="StatRow">
 							<Label id="RangeLabel" text="#DOTA_HUD_AttackRange" class="StatName"/>
@@ -58,7 +58,7 @@
 							<!--	<Label id="MagicResistBonus" text="{s:bonus_magic_resistance}%" class="BonusValue"/> -->
 							</Panel>
 						</Panel>
-				        <Panel id="HealthRow" class="StatRow">
+				        <!-- <Panel id="HealthRow" class="StatRow">
 				          	<Label id="HealthLabel" text="#DOTA_Health" class="StatName"/>
 				          	<Panel class="LeftRightFlow">
 				            	<Label id="Health" text="{s:base_health_regen}" class="BaseValue"/>
@@ -69,7 +69,7 @@
 				          	<Panel class="LeftRightFlow">
 				            	<Label id="HealthRegen" text="{s:base_health_regen}" class="BaseValue"/>
 				          	</Panel>
-				        </Panel>
+				        </Panel> -->
 					</Panel>
 	   			</Panel>
 		    </Panel>
