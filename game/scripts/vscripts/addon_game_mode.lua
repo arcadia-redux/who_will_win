@@ -352,6 +352,7 @@ function BAW:StartFight()
 		end
 		return 1
 	end)
+	CustomGameEventManager:Send_ServerToAllClients('start_fight', nil)
 end
 ROUND = 0
 POINTS = 1000

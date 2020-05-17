@@ -1,0 +1,141 @@
+<root>
+	<styles>
+    	<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+    	<include src="s2r://panorama/styles/hudstyles.vcss_c" />
+
+		<include src="file://{resources}/styles/healthmana.css" />
+		<include src="file://{resources}/styles/stragiint.css" />
+		<include src="file://{resources}/styles/stats.css" />
+    	<include src="file://{resources}/styles/units.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/units.js" />
+	</scripts>
+	<snippets>
+		<snippet name="UnitInfo">
+			<Panel class="unit_info" hittest='false'>
+				<Label id="UnitNameLabel" text="Unit"/>
+
+				<Panel id="PortraitGroup">
+					<Panel id="PortraitBacker" hittest="false" />
+					<Panel id="PortraitContainer">
+						<DOTAScenePanel id="UnitPortrait" unit="npc_dota_roshan" live-mode="high_end_only" environment="default" particleonly='false'/>
+					</Panel> 
+				</Panel>
+
+				<Panel id="health_mana" class="ValidUnit ShowMana" hittest="false">
+					<Panel id="HealthManaContainer" hittest="false" >
+						<Panel id="HealthContainer" hittest="false" >
+			                <Label id="HealthLabel" class="MonoNumbersFont" hittest="false"/>
+			                <ProgressBar id="HealthProgress" onactivate="DOTAHUDHealthManaClick();" >
+								<Panel id="HealthProgress_Left" class="ProgressBarLeft">
+									<Panel class="DotaSceneContainer">
+										<DOTAScenePanel id="HealthBurner" map="scenes/hud/healthbarburner" renderdeferred="false" rendershadows="false" camera="camera_1" hittest="false" particleonly="true"/>
+									</Panel>
+								</Panel>
+							</ProgressBar>
+			                <Label id="HealthRegenLabel" class="MonoNumbersFont" text="#DOTA_Hud_HealthRegen" hittest="false" />
+						</Panel>
+						<Panel id="BarSpacer" />
+						<Panel id="ManaContainer" hittest="false" >
+			                <Label id="ManaLabel" class="MonoNumbersFont" hittest="false"/>
+			                <ProgressBar id="ManaProgress" onactivate="DOTAHUDHealthManaClick();" >
+								<Panel id="ManaProgress_Left" class="ProgressBarLeft">
+									<Panel class="DotaSceneContainer">
+										<DOTAScenePanel id="ManaBurner" map="scenes/hud/healthbarburner" renderdeferred="false" rendershadows="false" camera="camera_1" hittest="false" particleonly="true"/>
+									</Panel>
+								</Panel>
+							</ProgressBar>
+			                <Label id="ManaRegenLabel" class="MonoNumbersFont" text="#DOTA_Hud_ManaRegen" hittest="false" />
+						</Panel>
+					</Panel>
+				</Panel>
+
+				<Panel id="stats_container" hittest="false" > 
+					<Panel id="stats_container_bg" hittest="false" />
+					<Panel id="HUDSkinStatBranchBG" hittest="false"/>
+					<Panel id="HUDSkinStatBranchGlow" hittest="false"/>							
+					<Panel id="stats" class="ShowSplitLabels" hittest="false" />	
+					<Panel id="stragiint" always-cache-composition-layer="true" require-composition-layer="true" hittest="false" />
+					<DOTAPortraitStatsClickRegion id="stats_tooltip_region" acceptsinput="true" onmouseover="DOTAHUDShowDamageArmorTooltip();" onmouseout="DOTAHUDHideDamageArmorTooltip();" />
+				</Panel> 
+				
+				<Panel id="center_bg">
+					<Panel class="AbilityInsetShadowLeft"/>
+					<Panel class="AbilityInsetShadowRight"/>
+					<Panel id="AbilityContainer"/>
+				</Panel>
+
+				<Panel id="Dead">
+					<Label id="DeadLabel" text="DEAD"/>
+				</Panel>
+
+			</Panel>
+			
+		</snippet>
+		<snippet name="Stats">
+			<Panel>
+				<Panel id="Aligner" >
+					<Panel id="StatContainer">
+						<Panel id="Damage" class="StatIconLabel">						
+							<Panel class="LabelColumn">
+								<Panel class="DamageLabelContainer">
+									<Label id="DamageLabel" class="MonoNumbersFont StatRegionLabel CombinedLabel" text="{s:combined_damage}" />
+									<Label id="DamageLabelBase" class="MonoNumbersFont StatRegionLabel BaseLabel" text="{d:damage}" />
+								</Panel>
+								<Label id="DamageLabelModifier" class="MonoNumbersFont StatRegionLabel StatModifier" text="{s:bonus_damage}" />
+							</Panel>
+							<Panel id="DamageIcon" class="StatIcon"/>
+						</Panel>
+						<Panel id="Armor" class="StatIconLabel" >			
+							<Panel class="LabelColumn">
+								<Label id="PhysicalDamageResist" class="MonoNumbersFont StatRegionLabel" text="{d:physical_resistance}%" />
+								<Panel class="DamageLabelContainer">
+									<Label id="ArmorLabel" class="MonoNumbersFont StatRegionLabel CombinedLabel" text="{s:combined_armor}" />
+									<Label id="ArmorLabelBase" class="MonoNumbersFont StatRegionLabel BaseLabel" text="{s:armor}" />
+								</Panel>
+								<Label id="ArmorModifierLabel" class="MonoNumbersFont StatRegionLabel StatModifier" text="{s:bonus_armor}" />
+							</Panel>
+							<Panel id="ArmorIcon" class="StatIcon" />
+						</Panel>
+						<Panel id="MoveSpeed" class="StatIconLabel" >					
+							<Label id="MoveSpeedLabelBase" class="MonoNumbersFont StatRegionLabel BaseLabel" text="{d:base_move_speed}" />
+							<Label id="MoveSpeedModifierLabel" class="MonoNumbersFont StatRegionLabel StatModifier" text="{s:bonus_move_speed}" />
+							<Panel id="MoveSpeedIcon" class="StatIcon" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="StrAgiInt" >
+			<Panel>
+				<Panel id="Strength" class="AttrIconContainer">
+					
+					<Panel class="HighlightStatIcon" hittest="false" />
+					<Label id="StrengthLabel" class="StatLabel" text="{s:strength}" hittest="false" />
+					<Label id="StrengthModifierLabel" class="MonoNumbersFont StatModifier" text="{s:strength_bonus}" />
+					<Panel id="StrengthIcon" class="StatIcon" hittest="false" />
+				</Panel>
+				<Panel id="Agility" class="AttrIconContainer" onactivate="DOTAHUDLevelUpStats()" >
+					
+					<Panel class="HighlightStatIcon" hittest="false" />
+					<Label id="AgilityLabel" class="StatLabel" text="{s:agility}" hittest="false" />
+					<Label id="AgilityModifierLabel" class="MonoNumbersFont StatModifier" text="{s:agility_bonus}" />
+					<Panel id="AgilityIcon" class="StatIcon" hittest="false" />
+				</Panel>
+				<Panel id="Intelligence" class="AttrIconContainer" onactivate="DOTAHUDLevelUpStats()" >
+					
+					<Panel class="HighlightStatIcon" hittest="false" />
+					<Label id="IntelligenceLabel" class="StatLabel" text="{s:intelligence}" hittest="false" />
+					<Label id="IntelligenceModifierLabel" class="MonoNumbersFont StatModifier" text="{s:intelligence_bonus}" />
+					<Panel id="IntelligenceIcon" class="StatIcon" hittest="false" />
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+
+	<Panel class="Units" hittest='false'>
+		<Panel id="LeftUnits"/>
+		<Panel id="RightUnits"/>
+	</Panel>
+</root>

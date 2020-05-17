@@ -1,0 +1,238 @@
+.Units {
+	margin-top: 60px;
+
+	width: 100%;
+}
+
+.UnitPanel {
+	margin-bottom: 5px;
+	margin-right: 10px;
+
+	transition-property: saturation, blur;
+	transition-duration: 1s;
+
+	vertical-align: center;
+}
+
+#LeftUnits, #RightUnits {
+	transition-property: transform;
+	transition-duration: 1s;
+	transition-timing-function: ease-in;
+	//transition-delay: 1s;
+}
+
+#LeftUnits.Hidden {
+	transform: translatex(-450px);
+}
+
+#RightUnits.Hidden {
+	transform: translatex(-450px) scalex(-1);
+}
+
+#LeftUnits.Appear {
+	transform: translatex(0px);
+}
+
+#RightUnits.Appear {
+	transform: translatex(0px) scalex(-1);
+}
+
+.Death {
+	saturation: 0;
+}
+
+#Dead {
+	width: 100%;
+	height: 100%;
+
+	opacity: 0;
+
+	z-index: 9;
+
+	transition-property: opacity;
+	transition-duration: 1s;
+	transition-timing-function: ease-in;
+}
+
+.Death #Dead {
+	opacity: 0;
+}
+
+#Dead #DeadLabel {
+	color: red;
+	
+
+	font-size: 35px;
+
+	vertical-align: center;
+	horizontal-align: center;
+}
+
+.Death #health_mana,
+.Death #center_bg,
+.Death #stats_container,
+.Death #PortraitGroup,
+{
+	//blur: gaussian(1);
+}
+
+#PortraitGroup
+{
+	width: 129px;
+	height: 120px;
+	vertical-align: bottom;
+
+	margin-top: 18px;
+}
+
+#PortraitContainer
+{
+	width: 100%;
+	height: 100%;
+	overflow: clip;
+	z-index: 8;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #ff000000 ), color-stop( .5, #ff000000 ), to( #000000 ) );
+	opacity-mask: url("s2r://panorama/images/masks/gradient_leftright_tight_psd.vtex") 1.0;
+}
+
+#UnitPortrait {
+	width: 129px;
+	height: 120px;
+}
+
+#PortraitBacker
+{
+	width: 100%;
+	height: 100%;
+	background-image: url("s2r://panorama/images/hud/reborn/inventory_bg_psd.vtex");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+#stats_container
+{
+	margin-left: 21px;
+	vertical-align: bottom;
+	z-index: 5;
+	width: 109px;
+    height: 120px;
+}
+
+#stats_container_bg
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: right;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #00000000 ),  color-stop( .75, #00000000 ), to( #00000055 ) );
+
+	border-right: 1px solid #ffffff04;
+}
+
+#stats
+{
+	width: 100%;
+	height: 70px;
+	margin-top: 2px;
+	margin-right: 0px;
+	horizontal-align: right;
+}
+
+#stragiint
+{
+	vertical-align: bottom;
+    z-index: 7;
+	width: fit-children;
+	height: 70px;
+	margin-right: 5px;
+	margin-bottom: 2px;
+}
+
+#center_bg
+{
+	width: 85px;
+	height: 120px; 
+
+	margin-left: 129px;
+
+
+	transition-duration: .05s;
+	transition-property: background-image;
+	transition-timing-function: ease-in-out;
+
+	//background-color: #16203484;
+	//background-color: gradient( linear, 0% 0%, 0% 100%, from( #25282acc ), color-stop( .5, #25282acc), to( #000000dd ) );
+    background-image: url("s2r://panorama/images/hud/reborn/ability_bg_psd.vtex");
+	background-size: 400% 100%;
+    vertical-align: bottom;
+
+}
+
+.AbilityInsetShadowLeft
+{
+    background-image: url("s2r://panorama/images/hud/reborn/ability_inset_shadow_psd.vtex");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 10px;
+	height: 120px;
+    vertical-align: bottom;
+    horizontal-align: left;
+    z-index: 800;
+}
+
+.AbilityInsetShadowRight
+{
+    background-image: url("s2r://panorama/images/hud/reborn/ability_inset_shadow_psd.vtex");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transform: scaleX(-1);
+    width: 10px;
+	height: 120px;
+    vertical-align: bottom;
+    horizontal-align: right;
+	z-index: 800;
+
+}
+
+#AbilityContainer {
+	width: 85px;
+	height: 145px; 
+ 
+
+	margin: 3px;
+
+	flow-children: right-wrap;
+}
+
+
+#UnitNameLabel
+{
+	width: 129px;
+	text-align: center;
+	text-transform: uppercase;
+	color: white;
+	text-shadow: 1px 1px 0px 3 #00000066;
+	font-weight: bold;
+	letter-spacing: 2px;
+    font-size: 14px;
+	text-overflow: shrink;
+}
+
+#LeftUnits {
+	flow-children: down-wrap;
+}
+
+#RightUnits {
+	flow-children: down-wrap;
+	horizontal-align: right;
+
+	transform: scalex(-1);
+}
+
+#RightUnits .UnitPanel #health_mana,
+#RightUnits .UnitPanel #UnitNameLabel,
+#RightUnits .UnitPanel #center_bg,
+#RightUnits .UnitPanel .LabelColumn,
+#RightUnits .UnitPanel #MoveSpeedLabelBase,
+#RightUnits .UnitPanel #Dead, {
+	transform: scalex(-1);
+}
