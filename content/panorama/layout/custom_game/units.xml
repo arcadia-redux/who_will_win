@@ -13,11 +13,11 @@
 	</scripts>
 	<snippets>
 		<snippet name="UnitInfo">
-			<Panel class="unit_info" hittest='false'>
-				<Label id="UnitNameLabel" text="Unit"/>
+			<Panel class="unit_info">
+				<!--<Label id="UnitNameLabel" text="Unit"/>!-->
 
 				<Panel id="PortraitGroup">
-					<Panel id="PortraitBacker" hittest="false" />
+					<!--<Panel id="PortraitBacker" hittest="false" />!-->
 					<Panel id="PortraitContainer">
 						<DOTAScenePanel id="UnitPortrait" unit="npc_dota_roshan" live-mode="high_end_only" environment="default" particleonly='false'/>
 					</Panel> 
@@ -27,7 +27,7 @@
 					<Panel id="HealthManaContainer" hittest="false" >
 						<Panel id="HealthContainer" hittest="false" >
 			                <Label id="HealthLabel" class="MonoNumbersFont" hittest="false"/>
-			                <ProgressBar id="HealthProgress" onactivate="DOTAHUDHealthManaClick();" >
+			                <ProgressBar id="HealthProgress" >
 								<Panel id="HealthProgress_Left" class="ProgressBarLeft">
 									<Panel class="DotaSceneContainer">
 										<DOTAScenePanel id="HealthBurner" map="scenes/hud/healthbarburner" renderdeferred="false" rendershadows="false" camera="camera_1" hittest="false" particleonly="true"/>
@@ -39,7 +39,7 @@
 						<Panel id="BarSpacer" />
 						<Panel id="ManaContainer" hittest="false" >
 			                <Label id="ManaLabel" class="MonoNumbersFont" hittest="false"/>
-			                <ProgressBar id="ManaProgress" onactivate="DOTAHUDHealthManaClick();" >
+			                <ProgressBar id="ManaProgress">
 								<Panel id="ManaProgress_Left" class="ProgressBarLeft">
 									<Panel class="DotaSceneContainer">
 										<DOTAScenePanel id="ManaBurner" map="scenes/hud/healthbarburner" renderdeferred="false" rendershadows="false" camera="camera_1" hittest="false" particleonly="true"/>
@@ -51,14 +51,11 @@
 					</Panel>
 				</Panel>
 
-				<Panel id="stats_container" hittest="false" > 
+				<!--<Panel id="stats_container" hittest="false" > 
 					<Panel id="stats_container_bg" hittest="false" />
-					<Panel id="HUDSkinStatBranchBG" hittest="false"/>
-					<Panel id="HUDSkinStatBranchGlow" hittest="false"/>							
 					<Panel id="stats" class="ShowSplitLabels" hittest="false" />	
 					<Panel id="stragiint" always-cache-composition-layer="true" require-composition-layer="true" hittest="false" />
-					<DOTAPortraitStatsClickRegion id="stats_tooltip_region" acceptsinput="true" onmouseover="DOTAHUDShowDamageArmorTooltip();" onmouseout="DOTAHUDHideDamageArmorTooltip();" />
-				</Panel> 
+				</Panel>!-->
 				
 				<Panel id="center_bg">
 					<Panel class="AbilityInsetShadowLeft"/>

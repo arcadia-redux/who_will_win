@@ -5,12 +5,16 @@
 
 #health_mana
 {
-	width: 129px;
-	height: 40px;
+	width: 100%;
+	height: 20px;
+
+	margin-bottom: -1px;
 
 	vertical-align: bottom;
 
 	//horizontal-align: bottom;
+
+	z-index: 9;
 }
 
 #HealthManaContainer
@@ -33,19 +37,18 @@
 #HealthContainer
 {
 	width: 100%;
-	height: 22px;
+	height: 15px;
 }
 
-#health_mana:not(.ShowMana) #HealthContainer {
-	margin-top: 20px;
-}
+/*#health_mana:not(.ShowMana) #HealthContainer {
+	margin-top: 15px;
+}*/
 
 #HealthProgress
 {
 	width: 100%;
 	height: 100%;
-	border: 0px;
-    z-index: 2;
+	z-index: 2;
 }
 
 #HealthTicks
@@ -61,7 +64,6 @@
 {
 	background-color: #339933;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #1A3D1A  ), color-stop( 0.2, #67A163 ), color-stop( .5, #187019), to( #175D17 ) );
-	border-radius: 6px;
 }
 
 .ColorBlindModeEnabled #HealthProgress .ProgressBarLeft
@@ -113,7 +115,7 @@
 {
 	width: 100%;
 	height: 14px;
-	opacity: 0;
+	//opacity: 0;
 }
 
 .ShowMana #ManaContainer
@@ -125,7 +127,6 @@
 {
 	width: 100%;
 	height: 100%;
-	border: 0px;
 }
 
 #ManaTicks
@@ -140,7 +141,6 @@
 {
 	background-color: #0000FF;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #6A90BA  ), color-stop( 0.4, #144B91 ), to( #2E5187 ) );	
-	border-radius: 5px;
 }
 
 #ManaProgress .ProgressBarRight
@@ -191,32 +191,24 @@
 
 }
 
-.Reborn .FiveAbilities #HealthManaContainer
-{
-
-}
-
-
 .Reborn #HealthContainer
 {
     width: 100%;
-	height: 20px;
-//	height: 16px;
+	height: 10px;
+
     //flow-children: right;
 }
 
 .Reborn #HealthProgress
 {
-	border-radius: 0px;
 	height: 100%;
     width: 100%;
-    margin-top: -2px;
-	background-color: none;
+    background-color: none;
+    border-radius: 0px;
 }
 
 .Reborn #HealthProgress .ProgressBarLeft
 {
-	border-radius: 3px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #425d25  ), color-stop( 0.2, #5BA539 ), color-stop( .5, #4D9030), to( #425d25) );
 }
 
@@ -249,9 +241,8 @@
 .Reborn #HealthLabel
 {
     text-align: center;
-	font-weight: bold;
-	font-size: 15px;
-	//font-size: 14px;
+	//font-weight: bold;
+	font-size: 12px;
 	color: white;
     width: 332px;
     margin-top: 1px;
@@ -259,21 +250,23 @@
     horizontal-align: center;
     text-shadow: 1px 1px 0px 2.0 #000000;
     overflow: noclip;
+
+    opacity: 0;
+
 }
 
 .Reborn #ManaContainer
 {
     width: 100%;
-	height: 20px;
-//	height: 16px;
+	height: 10px;
 }
 
 .Reborn #ManaProgress
 {
 	height: 100%;
-	border-radius: 0px;
-    width: 100%;
+	width: 100%;
 	background-color: none;	
+	border-radius: 0px;
 }
 
 .Reborn .UnitDead #ManaProgress
@@ -283,7 +276,7 @@
 
 .Reborn #ManaProgress .ProgressBarLeft
 {
-	border-radius: 3px;
+	//border-radius: 3px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2b4287 ), color-stop( 0.2, #4165ce ), color-stop( .5, #4a73ea), to( #2b4287 ) );
 }
 
@@ -297,16 +290,15 @@
 	text-align: center;
 	vertical-align: top;
 	font-weight: bold;
-	font-size: 15px;
-	//font-size: 14px;
+	font-size: 14px;
 	margin-left: 0px;
     width: 332px;
-	margin-top: 1px;
-    color: white;
+	 color: white;
     horizontal-align: center;
-    margin-top: 2px;
     text-shadow: 1px 1px 0px 2.0 #000000;
     overflow: noclip;
+
+    opacity: 0;
 }
 
 .Reborn .UnitDead #ManaRegenLabel,
@@ -315,45 +307,6 @@
 {
 	color: #CB1F08;
 }
-
-.Reborn .FiveAbilities #ManaLabel
-{
-
-}
-
-.Reborn .SixAbilities #ManaLabel
-{
-
-}
-
-
-.Reborn .MaxHealthLabel
-{
-	color: white;
-	font-size: 18px;
-}
-
-
-.Reborn .QueryUnit .MaxManaLabel,
-.Reborn .QueryUnit .MaxHealthLabel
-{
-	font-size: 13px;
-	font-weight: normal;
-}
-
-
-.Reborn .Dead.ValidUnit .MaxHealthLabel
-{
-	color: #C23339;
-	font-size: 18px;
-}
-
-
-.Reborn .QueryUnit .Dead.ValidUnit .MaxHealthLabel
-{
-	font-size: 11px;
-}
-
 
 .Reborn .MaxManaLabel
 {
@@ -364,11 +317,12 @@
 .Reborn #HealthRegenLabel
 {
 	color: #3ED038;
-    font-size: 14px;
+    font-size: 12px;
     text-shadow: 2px 2px 0px 1.0 #00000066;
     font-weight: bold;
-    margin-top: -1px;
     margin-right: 4px;
+
+    opacity: 0;
 }
 
 .Reborn .EnemyUnit #HealthRegenLabel
@@ -380,10 +334,12 @@
 {
 	color: #83C2FE;
     margin-top: 1px;
-    font-size: 14px;
+    font-size: 12px;
     text-shadow: 2px 2px 0px 1.0 #00000066;
     font-weight: bold;
     margin-right: 4px;
+
+    opacity: 0;
 }
 
 #BarSpacer
@@ -396,161 +352,6 @@
 	visibility: visible;
 	opacity: 0;
     width: 100%;
-}
-
-
-// ------------------------------------------------
-// Query
-
-.Reborn .QueryUnit DOTAHealthMana
-{
-	width: 100%;
-	min-width: 265px;
-	height: fit-children;
-}
-
-.Reborn .QueryUnit #HealthManaContainer
-{
-    padding-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-    width: 100%;
-    height: fit-children;
-	visibility: visible;
-}
-
-.Reborn .FiveAbilities.QueryUnit #HealthManaContainer
-{
-
-}
-
-
-.Reborn .QueryUnit #HealthContainer
-{
-    width: 100%;
-	height: 20px;
-	height: 14px;
-}
-
-.Reborn .QueryUnit.IsEnemy #HealthContainer
-{
-	hue-rotation: 245deg;
-	saturation: 2;
-}
-
-.Reborn .QueryUnit #HealthProgress
-{
-	height: 100%;
-    margin-left: 0px;
-    margin-top: 0px;
-}
-
-.Reborn .QueryUnit #HealthLabel
-{
-    width: 100%;
-    margin-top: 4px;
-    margin-left: 0px;
-    margin-right: 0px;
-    font-size: 13px;
-	font-weight: normal;
-    letter-spacing: 1px;
-	
-}
-
-.Reborn .QueryUnit.IsDead #HealthLabel
-{
-	wash-color: red;
-}
-
-.Reborn .QueryUnit.IsDead.IsEnemy #HealthLabel
-{
-	wash-color: #00ff00;
-	hue-rotation: 180deg;
-}
-
-.Reborn .QueryUnit #ManaContainer
-{
-    width: 100%;
-	height: 20px;
-	height: 14px;
-    margin-top: 2px;
-    opacity: 1.0;
-    visibility: collapse;
-}
-
-.Reborn .QueryUnit.ShowMana #ManaContainer
-{
-	visibility: visible;
-}
-
-.Reborn .QueryUnit #ManaProgress
-{
-	height: 100%;
-    margin-left: 0px;
-}
-
-.Reborn .QueryUnit #ManaLabel
-{
-	margin-left: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-top: -1px;
-    width: 100%;
-    font-size: 13px;
-	font-weight: normal;
-    letter-spacing: 1px;
-}
-
-.Reborn .FiveAbilities.QueryUnit #ManaLabel
-{
-    width: 100%;
-}
-
-.Reborn .SixAbilities.QueryUnit #ManaLabel
-{
-    width: 100%;
-}
-
-.Reborn .QueryUnit #HealthRegenLabel
-{
-	font-size: 12px;
-    font-weight: normal;
-    margin-top: 0px;
-}
-
-.Reborn .QueryUnit #ManaRegenLabel
-{
-	font-size: 12px;
-    font-weight: normal;
-    margin-top: 0px;
-}
-
-.Reborn .QueryUnit #DeathPanel
-{
-    margin-bottom: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-}
-
-.Reborn #HealthTicks
-{
-	// Ticks aren't currently used (tick colors are set to 00000000)
-    // so collapse them to turn off the render callbacks.
-	visibility: collapse;
-	margin-top: -2px;
-}
-
-.Reborn .QueryUnit #HealthTicks
-{
-	margin-top: 0px;
-}
-
-.Reborn #ManaTicks
-{
-	// Ticks aren't currently used (tick colors are set to 00000000)
-    // so collapse them to turn off the render callbacks.
-	visibility: collapse;
 }
 
 .DotaSceneContainer

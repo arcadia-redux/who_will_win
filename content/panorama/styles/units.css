@@ -38,7 +38,7 @@
 }
 
 .Death {
-	saturation: 0;
+	
 }
 
 #Dead {
@@ -74,15 +74,18 @@
 .Death #PortraitGroup,
 {
 	//blur: gaussian(1);
+	saturation: 0;
+}
+
+.Death #UnitNameLabel {
+	//wash-color: #ff2222;
 }
 
 #PortraitGroup
 {
-	width: 129px;
-	height: 120px;
+	width: 80px;
+	height: 100px;
 	vertical-align: bottom;
-
-	margin-top: 18px;
 }
 
 #PortraitContainer
@@ -92,12 +95,12 @@
 	overflow: clip;
 	z-index: 8;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #ff000000 ), color-stop( .5, #ff000000 ), to( #000000 ) );
-	opacity-mask: url("s2r://panorama/images/masks/gradient_leftright_tight_psd.vtex") 1.0;
+	//opacity-mask: url("s2r://panorama/images/masks/gradient_leftright_tight_psd.vtex") 1.0;
 }
 
 #UnitPortrait {
-	width: 129px;
-	height: 120px;
+	width: 80px;
+	height: 100px;
 }
 
 #PortraitBacker
@@ -149,11 +152,10 @@
 
 #center_bg
 {
-	width: 85px;
-	height: 120px; 
-
-	margin-left: 129px;
-
+	width: fit-children;
+	height: 95px; 
+	margin-left: 79px;
+	vertical-align: top;
 
 	transition-duration: .05s;
 	transition-property: background-image;
@@ -162,12 +164,12 @@
 	//background-color: #16203484;
 	//background-color: gradient( linear, 0% 0%, 0% 100%, from( #25282acc ), color-stop( .5, #25282acc), to( #000000dd ) );
     background-image: url("s2r://panorama/images/hud/reborn/ability_bg_psd.vtex");
-	background-size: 400% 100%;
-    vertical-align: bottom;
+	//background-size: 400% 100%;
+
 
 }
 
-.AbilityInsetShadowLeft
+/*.AbilityInsetShadowLeft
 {
     background-image: url("s2r://panorama/images/hud/reborn/ability_inset_shadow_psd.vtex");
     background-size: 100%;
@@ -191,16 +193,14 @@
     horizontal-align: right;
 	z-index: 800;
 
-}
+}*/
 
 #AbilityContainer {
-	width: 85px;
-	height: 145px; 
- 
+	flow-children: down-wrap;
+}
 
-	margin: 3px;
-
-	flow-children: right-wrap;
+#RightUnits #AbilityContainer {
+	flow-children: down-wrap;
 }
 
 

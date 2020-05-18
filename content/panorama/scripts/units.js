@@ -2,14 +2,25 @@
 
 function CreateAbilityButton(ability, parent, id) {
 	let panel = $.CreatePanel("DOTAAbilityPanel", parent, id)
-	panel.AddClass("AbilityButton")  
+	panel.AddClass("AbilityPanel")
 	panel.overrideentityindex = ability
 
 	panel.style.width = "40px"
 	panel.style.height = "40px"
-	panel.style.verticalAlign = "top"
+	//panel.style.verticalAlign = "top"
 
-	panel.FindChildTraverse("ManaCost").style.fontSize = "10px"
+	panel.FindChildTraverse("HotkeyContainer").visible = false
+	panel.FindChildTraverse("LevelUpTab").visible = false
+	panel.FindChildTraverse("LevelUpLight").visible = false
+	panel.FindChildTraverse("AbilityImage").style.margin = "1px"
+	panel.FindChildTraverse("AbilityBevel").style.margin = "1px"
+	panel.FindChildTraverse("ShineContainer").style.margin = "1px"
+	panel.FindChildTraverse("Cooldown").style.margin = "1px"
+	panel.FindChildTraverse("PassiveAbilityBorder").style.margin = "2px"
+	panel.FindChildTraverse("ManaCost").style.marginRight = "0px"
+	panel.FindChildTraverse("ManaCost").style.marginBottom = "0px"
+	panel.FindChildTraverse("ManaCostBG").style.width = "27px"
+	panel.FindChildTraverse("ManaCostBG").style.height = "15px"
 
 	return panel
 }
@@ -19,11 +30,11 @@ function CreateUnitPanel(id, parent) {
 	panel.AddClass("UnitPanel")
 	panel.BLoadLayoutSnippet("UnitInfo")
 	
-	let stats = panel.FindChildTraverse("stats")
+	/*let stats = panel.FindChildTraverse("stats")
 	stats.BLoadLayoutSnippet("Stats")
 
 	let heroStats = panel.FindChildTraverse("stragiint")
-	heroStats.BLoadLayoutSnippet("StrAgiInt")
+	heroStats.BLoadLayoutSnippet("StrAgiInt")*/
 
 	let abiCont = panel.FindChildTraverse("AbilityContainer")
 	abiCont.RemoveAndDeleteChildren()
@@ -37,6 +48,12 @@ function CreateUnitPanel(id, parent) {
 	//CreateAbilityButton(-1, abiCont, "6")
 	//CreateAbilityButton(-1, abiCont, "7")
 
+	/*panel.SetPanelEvent("onactivate", function() {
+		if (panel.unitID && Entities.IsValidEntity(panel.unitID)) {
+			GameUI.SelectUnit(panel.unitID, true)
+		}
+	})*/
+
 	return panel
 }
 
@@ -47,12 +64,13 @@ function AssignUnit(panel, unitID) {
 
 	panel.SetHasClass("Death", false)
 
-	panel.FindChildTraverse("UnitNameLabel").text = $.Localize(unitName)
+	//panel.FindChildTraverse("UnitNameLabel").text = $.Localize(unitName)
 	panel.FindChildTraverse("UnitPortrait").SetUnit(unitName, "default", true)
 
 	let abiCont = panel.FindChildTraverse("AbilityContainer")
 	for (let i = 0; i < 6; i++) {
 		const abiID = Entities.GetAbility( unitID, i )
+		abiCont.FindChild(i).visible = true
 		if (abiID != -1 && Abilities.IsDisplayedAbility(abiID))
 			abiCont.FindChild(i).overrideentityindex = abiID
 		else
@@ -75,7 +93,7 @@ function UpdatePanel(panel) {
 		return
 	}
 
-	let damage = Entities.GetDamageMax(unitID)+Entities.GetDamageMin(unitID)
+	/*let damage = Entities.GetDamageMax(unitID)+Entities.GetDamageMin(unitID)
 	damage /= 2
 	let stats = panel.FindChildTraverse("stats")
 	stats.SetDialogVariableInt("damage", damage)
@@ -127,7 +145,7 @@ function UpdatePanel(panel) {
 	}
 	else {
 		heroStats.visible = false
-	}
+	}*/
 
 
 
@@ -176,11 +194,18 @@ function Update() {
 }
 
 function NewRound(data) {
-	$.Msg("!")
-	const leftUnitsID = data.indexes["left"]
-	const rightUnitsID = data.indexes["right"]
+	const leftUnitsID = LuaTableToArray(data.indexes["left"])
+	const rightUnitsID = LuaTableToArray(data.indexes["right"])
 	let leftUnits = $("#LeftUnits")
 	let rightUnits = $("#RightUnits")
+
+	leftUnitsID.sort(function(a,b) {
+		return Entities.GetMaxHealth(b) - Entities.GetMaxHealth(a)
+	})
+
+	rightUnitsID.sort(function(a,b) {
+		return Entities.GetMaxHealth(b) - Entities.GetMaxHealth(a)
+	})
 
 	leftUnits.RemoveClass("Appear")
 	leftUnits.AddClass("Hidden")
@@ -190,7 +215,7 @@ function NewRound(data) {
 	$.Schedule(1, function() {
 
 		leftUnits.Children().forEach(panel => {
-			const id = Number(panel.id) + 1
+			const id = Number(panel.id)
 
 			if (leftUnitsID[id]) 
 				AssignUnit(panel, leftUnitsID[id])
@@ -199,7 +224,7 @@ function NewRound(data) {
 		})
 
 		rightUnits.Children().forEach(panel => {
-			const id = Number(panel.id) + 1
+			const id = Number(panel.id)
 
 			if (rightUnitsID[id]) 
 				AssignUnit(panel, rightUnitsID[id])
@@ -266,3 +291,11 @@ function StartFight() {
 
  
 })()
+
+function LuaTableToArray(nt) {
+	var result = []
+	for (var i in nt) {
+		result[i-1] = nt[i]
+	}
+	return result
+}
