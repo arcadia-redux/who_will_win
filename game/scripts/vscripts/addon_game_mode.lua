@@ -642,7 +642,7 @@ function BAW:StartGame()
 			end
 		end
 		if unit:GetHullRadius() < 45 then
-			unit:SetHullRadius(45)
+			--unit:SetHullRadius(45)
 		end
 		unit:AddNewModifier(unit, nil, "modifier_phased", {duration=0.3})
 		for i,v in ipairs(itemsAr) do

@@ -1,28 +1,110 @@
 "use strict";
 
-function CreateAbilityButton(ability, parent, id) {
-	let panel = $.CreatePanel("DOTAAbilityPanel", parent, id)
-	panel.AddClass("AbilityPanel")
-	panel.overrideentityindex = ability
+const UNIT_COUNT = 18;
 
-	panel.style.width = "40px"
-	panel.style.height = "40px"
+function CreateAbilityButton(ability, parent, id) {
+	let panel = $.CreatePanel("Panel", parent, id)
+	panel.AddClass("AbilityPanel")
+	panel.BLoadLayoutSnippet("AbilityPanel")
+	panel.abilityID = ability
+
+	panel.style.width = "41px"
+	panel.style.height = "41px"
 	//panel.style.verticalAlign = "top"
 
-	panel.FindChildTraverse("HotkeyContainer").visible = false
-	panel.FindChildTraverse("LevelUpTab").visible = false
-	panel.FindChildTraverse("LevelUpLight").visible = false
+	//panel.FindChildTraverse("HotkeyContainer").visible = false
+	//panel.FindChildTraverse("LevelUpTab").visible = false
+	//panel.FindChildTraverse("LevelUpLight").visible = false
 	panel.FindChildTraverse("AbilityImage").style.margin = "1px"
 	panel.FindChildTraverse("AbilityBevel").style.margin = "1px"
 	panel.FindChildTraverse("ShineContainer").style.margin = "1px"
 	panel.FindChildTraverse("Cooldown").style.margin = "1px"
+	panel.FindChildTraverse("CooldownTimer").style.fontSize = "24px"
 	panel.FindChildTraverse("PassiveAbilityBorder").style.margin = "2px"
 	panel.FindChildTraverse("ManaCost").style.marginRight = "0px"
 	panel.FindChildTraverse("ManaCost").style.marginBottom = "0px"
+	panel.FindChildTraverse("ManaCost").style.fontSize = "12px"
 	panel.FindChildTraverse("ManaCostBG").style.width = "27px"
 	panel.FindChildTraverse("ManaCostBG").style.height = "15px"
 
 	return panel
+}
+
+function CreateItemButton(item, parent, id) {
+	let panel = CreateAbilityButton(item, parent, id)
+	panel.SetHasClass("InventoryItem", true)
+	panel.SetHasClass("no_level", true)
+	panel.style.height = "27px"
+	return panel
+}
+
+function AssignAbility(panel, abilityID) {
+	panel.abilityID = abilityID
+
+	// Implemented only features that needed for that CG
+
+	const abilityName = Abilities.GetAbilityName(abilityID)
+
+	if (Abilities.IsItem(abilityID)) {
+		panel.FindChildTraverse("ItemImage").abilityname = abilityName
+		panel.FindChildTraverse("ItemImage").contextEntityIndex = abilityID
+	}
+	else {
+		panel.FindChildTraverse("AbilityImage").abilityname = abilityName
+		panel.FindChildTraverse("AbilityImage").contextEntityIndex = abilityID
+	}
+
+	panel.AddClass("no_gold_cost")
+	panel.AddClass("no_hotkey")
+	panel.RemoveClass("insufficient_mana")
+	panel.RemoveClass("muted")
+	panel.RemoveClass("silenced")
+
+	panel.SetHasClass("is_passive", Abilities.IsPassive(abilityID))
+
+	const manaCost = Abilities.GetManaCost(abilityID)
+	panel.SetHasClass("no_mana_cost", manaCost == 0)
+	panel.SetDialogVariableInt("mana_cost", manaCost)
+
+	panel.SetPanelEvent("onmouseover", function() {
+		//$.DispatchEvent("DOTAShowAbilityTooltipForEntityIndex", panel, abilityName, Abilities.GetCaster(abilityID))
+		$.DispatchEvent("DOTAShowAbilityTooltipForLevel", panel, abilityName, Abilities.GetLevel(abilityID))
+	})
+
+	panel.SetPanelEvent("onmouseout", function() {
+		$.DispatchEvent("DOTAHideAbilityTooltip", panel)
+	})
+
+}
+
+function UpdateAbilityButton(panel) {
+	if (!panel.visible) return
+
+	const abilityID = panel.abilityID
+
+	if (!abilityID || !Entities.IsValidEntity(abilityID)) return 
+
+	if (Abilities.IsPassive(abilityID)) return
+
+	panel.SetHasClass("muted", Abilities.IsMuted(abilityID))
+	panel.SetHasClass("insufficient_mana", !Abilities.IsOwnersManaEnough(abilityID))
+
+	const cooldownReady = Abilities.IsCooldownReady(abilityID)
+	panel.SetHasClass("cooldown_ready",	cooldownReady)
+	panel.SetHasClass("in_cooldown",   !cooldownReady)
+	panel.SetHasClass("ability_phase",	Abilities.IsInAbilityPhase(abilityID))
+
+	if (!cooldownReady) {
+		const cooldownRemaining = Abilities.GetCooldownTimeRemaining(abilityID)
+		const deg = -(cooldownRemaining/Abilities.GetCooldownLength(abilityID)*360)
+		panel.FindChildTraverse("CooldownOverlay").style.clip = `radial( 50% 50%, 0deg, ${deg}deg )` //radial( 50.0% 50.0%, 0.0deg, -261.451202deg)
+		panel.SetDialogVariableInt("cooldown_timer", cooldownRemaining)
+	}
+
+	const caster = Abilities.GetCaster(abilityID)
+	if (Entities.IsValidEntity(caster)) {
+		panel.SetHasClass("silenced", Entities.IsSilenced(caster))
+	}
 }
 
 function CreateUnitPanel(id, parent) {
@@ -45,8 +127,16 @@ function CreateUnitPanel(id, parent) {
 	CreateAbilityButton(-1, abiCont, "3")
 	CreateAbilityButton(-1, abiCont, "4")
 	CreateAbilityButton(-1, abiCont, "5")
-	//CreateAbilityButton(-1, abiCont, "6")
-	//CreateAbilityButton(-1, abiCont, "7")
+
+	let itemCont = panel.FindChildTraverse("ItemsContainer")
+	itemCont.RemoveAndDeleteChildren()
+
+	CreateItemButton(-1, itemCont, "0")
+	CreateItemButton(-1, itemCont, "1")
+	CreateItemButton(-1, itemCont, "2")
+	CreateItemButton(-1, itemCont, "3")
+	CreateItemButton(-1, itemCont, "4")
+	CreateItemButton(-1, itemCont, "5")
 
 	/*panel.SetPanelEvent("onactivate", function() {
 		if (panel.unitID && Entities.IsValidEntity(panel.unitID)) {
@@ -71,12 +161,25 @@ function AssignUnit(panel, unitID) {
 	for (let i = 0; i < 6; i++) {
 		const abiID = Entities.GetAbility( unitID, i )
 		abiCont.FindChild(i).visible = true
-		if (abiID != -1 && Abilities.IsDisplayedAbility(abiID))
-			abiCont.FindChild(i).overrideentityindex = abiID
+		if (abiID != -1 && Abilities.IsDisplayedAbility(abiID)) {
+			AssignAbility(abiCont.FindChild(i), abiID)
+		}
 		else
 			abiCont.FindChild(i).visible = false
+	}
 
-	} 
+	let itemCont = panel.FindChildTraverse("ItemsContainer")
+	for (let i = 0; i < 6; i++) {
+		const abiID = Entities.GetItemInSlot(unitID, i)
+		itemCont.FindChild(i).visible = true
+		if (abiID != -1) {
+			AssignAbility(itemCont.FindChild(i), abiID)
+		}
+		else
+			itemCont.FindChild(i).visible = false
+	}
+
+
 }
 
 function UpdatePanel(panel) {
@@ -92,6 +195,12 @@ function UpdatePanel(panel) {
 	if (panel.BHasClass("Death")) {
 		return
 	}
+
+	panel.FindChildTraverse("AbilityContainer").Children().forEach(panel => UpdateAbilityButton(panel))
+	panel.FindChildTraverse("ItemsContainer").Children().forEach(panel => UpdateAbilityButton(panel))
+
+	panel.SetHasClass("EnemyUnit", Entities.IsEnemy(unitID))
+	panel.SetHasClass("Death", !Entities.IsAlive(unitID))
 
 	/*let damage = Entities.GetDamageMax(unitID)+Entities.GetDamageMin(unitID)
 	damage /= 2
@@ -150,41 +259,36 @@ function UpdatePanel(panel) {
 
 
 	let hpmana = panel.FindChildTraverse("health_mana")
-	hpmana.FindChildTraverse("HealthLabel").text = Entities.GetHealth(unitID)+"/"+Entities.GetMaxHealth(unitID)
+	/*hpmana.FindChildTraverse("HealthLabel").text = Entities.GetHealth(unitID)+"/"+Entities.GetMaxHealth(unitID)
 	
 //$.Msg(Entities.GetHealthThinkRegen(unitID))
 	const hpRegen = Entities.GetHealthThinkRegen(unitID)
 	if (hpRegen == 0)
 		hpmana.SetDialogVariable("health_regen", "")
 	else
-		hpmana.SetDialogVariable("health_regen", "+"+hpRegen)
+		hpmana.SetDialogVariable("health_regen", "+"+hpRegen)*/
 	
 	panel.FindChildTraverse("HealthProgress").value = Entities.GetHealthPercent(unitID)/100
 
 	if (Entities.GetMaxMana(unitID) > 0) {
 		hpmana.SetHasClass("ShowMana", true)
 
-		hpmana.FindChildTraverse("ManaLabel").text = Entities.GetMana(unitID)+"/"+Entities.GetMaxMana(unitID)
+		//hpmana.FindChildTraverse("ManaLabel").text = Entities.GetMana(unitID)+"/"+Entities.GetMaxMana(unitID)
 		panel.FindChildTraverse("ManaProgress").value = Entities.GetMana(unitID)/Entities.GetMaxMana(unitID)
 
-		const manaRegen = Entities.GetManaThinkRegen(unitID).toFixed(1)
+		/*const manaRegen = Entities.GetManaThinkRegen(unitID).toFixed(1)
 		if (manaRegen == 0 )
 			hpmana.SetDialogVariable("mana_regen", "")
 		else
-			hpmana.SetDialogVariable("mana_regen", "+"+manaRegen)
+			hpmana.SetDialogVariable("mana_regen", "+"+manaRegen)*/
 	}
 	else {
 		hpmana.SetHasClass("ShowMana", false)
 	}
-
-	panel.SetHasClass("Death", !Entities.IsAlive(unitID))
-	
-
-
 }
 
 function Update() {
-	$.Schedule(0.1, Update)
+	$.Schedule(0, Update)
 
 	let leftUnits = $("#LeftUnits")
 	leftUnits.Children().forEach(panel => UpdatePanel(panel))
@@ -248,47 +352,20 @@ function StartFight() {
 
 	let leftUnits = $("#LeftUnits")
 	let rightUnits = $("#RightUnits")
+	
+	
 	leftUnits.RemoveAndDeleteChildren()
 	rightUnits.RemoveAndDeleteChildren()
-	
-	CreateUnitPanel("0", leftUnits)
-	CreateUnitPanel("1", leftUnits)
-	CreateUnitPanel("2", leftUnits)
-	CreateUnitPanel("3", leftUnits)
-	CreateUnitPanel("4", leftUnits)
-	CreateUnitPanel("5", leftUnits)
-	CreateUnitPanel("6", leftUnits)
-	CreateUnitPanel("7", leftUnits)
-	CreateUnitPanel("8", leftUnits)
-	CreateUnitPanel("9", leftUnits)
-	CreateUnitPanel("10", leftUnits)
-	CreateUnitPanel("11", leftUnits)
-	CreateUnitPanel("12", leftUnits)
-	CreateUnitPanel("13", leftUnits)
 
-	CreateUnitPanel("0", rightUnits)
-	CreateUnitPanel("1", rightUnits)
-	CreateUnitPanel("2", rightUnits)
-	CreateUnitPanel("3", rightUnits)
-	CreateUnitPanel("4", rightUnits)
-	CreateUnitPanel("5", rightUnits)
-	CreateUnitPanel("6", rightUnits)
-	CreateUnitPanel("7", rightUnits)
-	CreateUnitPanel("8", rightUnits)
-	CreateUnitPanel("9", rightUnits)
-	CreateUnitPanel("10", rightUnits)
-	CreateUnitPanel("11", rightUnits)
-	CreateUnitPanel("12", rightUnits)
-	CreateUnitPanel("13", rightUnits)
-
+	for (let i = 0; i < UNIT_COUNT; i++) {
+		CreateUnitPanel(String(i), leftUnits)
+		CreateUnitPanel(String(i), rightUnits)
+	}
 
 	GameEvents.Subscribe("new_round", NewRound);
 	GameEvents.Subscribe("start_fight", StartFight);
 
 	Update()
-
-
-
  
 })()
 

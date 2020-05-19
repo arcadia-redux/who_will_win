@@ -26,7 +26,7 @@
 }
 
 #RightUnits.Hidden {
-	transform: translatex(-450px) scalex(-1);
+	transform: translatex(450px) ;
 }
 
 #LeftUnits.Appear {
@@ -34,7 +34,7 @@
 }
 
 #RightUnits.Appear {
-	transform: translatex(0px) scalex(-1);
+	transform: translatex(0px) ;
 }
 
 .Death {
@@ -166,6 +166,8 @@
     background-image: url("s2r://panorama/images/hud/reborn/ability_bg_psd.vtex");
 	//background-size: 400% 100%;
 
+	flow-children: right;
+
 
 }
 
@@ -195,7 +197,7 @@
 
 }*/
 
-#AbilityContainer {
+#ItemsContainer, #AbilityContainer {
 	flow-children: down-wrap;
 }
 
@@ -225,14 +227,15 @@
 	flow-children: down-wrap;
 	horizontal-align: right;
 
-	transform: scalex(-1);
+	pre-transform-scale2d: -1, 1;
 }
 
 #RightUnits .UnitPanel #health_mana,
 #RightUnits .UnitPanel #UnitNameLabel,
-#RightUnits .UnitPanel #center_bg,
+#RightUnits .UnitPanel #AbilityContainer,
+#RightUnits .UnitPanel #ItemsContainer,
 #RightUnits .UnitPanel .LabelColumn,
 #RightUnits .UnitPanel #MoveSpeedLabelBase,
 #RightUnits .UnitPanel #Dead, {
-	transform: scalex(-1);
+	pre-transform-scale2d: -1, 1;
 }
