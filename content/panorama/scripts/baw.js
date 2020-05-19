@@ -89,6 +89,18 @@ function createSceneVersus(t,k,i,parent) {
 			})
 		}
 	}
+	let items = pan.FindChildTraverse("items"),itm,item 
+	for (let d = 0; d < 6; d++) {
+		item = Entities.GetItemInSlot(t.indexes[k][i],d)
+		if(item != -1){
+			itm = items.GetChild(d)
+			itm.contextEntityIndex = item
+		}
+		// let abpan = $.CreatePanel("DOTAAbilityImage", abs, "ab")
+		// abname = Abilities.GetAbilityName(ab)
+		// // abpan.abilityname = abname
+		// abpan.contextEntityIndex = ab
+	}
 }
 function FormatRegen( regen )
 {

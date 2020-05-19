@@ -26,6 +26,7 @@ end
 
 _G.UnitsKV = LoadKeyValues("scripts/npc/npc_units.txt")
 _G.HeroesKV = LoadKeyValues("scripts/npc/npc_heroes.txt")
+_G.Items = LoadKeyValues("scripts/npc/items.txt")
 _G.AbilityPowers = LoadKeyValues("scripts/kv/ability_power.txt")
 
 bannedUnits = {
@@ -86,7 +87,13 @@ bannedUnits = {
 	npc_dota_venomancer_plague_ward_2 = true,
 	npc_dota_venomancer_plague_ward_3 = true,
 	npc_dota_venomancer_plague_ward_4 = true,
+	npc_dota_hero_chen = true,
+	npc_dota_hero_lone_druid = true,
+	npc_dota_hero_invoker = true
 }
+-- bannedItems = {
+-- 	item_gem
+-- }
 function BAW:InitGameMode()
 	GameRules:SetStartingGold(322)
 	GameRules:SetGoldPerTick(0)
@@ -151,6 +158,19 @@ function BAW:InitGameMode()
     for k,v in pairs(UnitsKV) do
     	if not bannedUnits[k] and type(v) == "table" and v['AttackCapabilities'] ~= "DOTA_UNIT_CAP_NO_ATTACK" and ((v["AttackDamageMin"] or 0) ~= 0 or (v["AttackDamageMax"] or 0) ~= 0) then
     		UNIT2POINT[k] = CalculateUnitPoints(k,v)
+    	end
+    end
+    local itemsc = _G.Items
+    _G.items = {}
+    for k,v in pairs(itemsc) do
+    	if type(v) == "table" and v['ItemCost'] and (not v['ItemRecipe'] or v['ItemRecipe'] == 0) and v['ItemCost'] > 0 then
+	    	_G.items[k] = v['ItemCost']
+	    end
+    end
+    _G.AllHeroes = {}
+    for k,v in pairs(HeroesKV) do
+    	if not bannedUnits[k] then
+    		table.insert(_G.AllHeroes,k)
     	end
     end
     --[[
@@ -343,7 +363,7 @@ function BAW:StartFight()
           nil,
           10000,
           DOTA_UNIT_TARGET_TEAM_FRIENDLY,
-          DOTA_UNIT_TARGET_ALL-DOTA_UNIT_TARGET_HERO,
+          DOTA_UNIT_TARGET_ALL,
           DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES+DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD,
           FIND_ANY_ORDER,
           false),
@@ -352,12 +372,22 @@ function BAW:StartFight()
           nil,
           10000,
           DOTA_UNIT_TARGET_TEAM_FRIENDLY,
-          DOTA_UNIT_TARGET_ALL-DOTA_UNIT_TARGET_HERO,
+          DOTA_UNIT_TARGET_ALL,
           DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES+DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD,
           FIND_ANY_ORDER,
           false)}
 		for d,e in pairs(ALIVES) do
-			if #e <= 0 then
+			local count = 0
+			for i,v in ipairs(e) do
+				if not v:IsControllableByAnyPlayer() then
+					count = count + 1
+					if not v.bInitialized then
+						v.targetPoint = Vector(0,0,0)
+						v:StartAI()
+					end
+				end
+			end
+			if count <= 0 then
 				for n,p in pairs(PICKED[d]) do
 					p:SetHealth(p:GetHealth()-1)
 				end
@@ -387,20 +417,34 @@ function BAW:StartGame()
 	end
 
 	-- Convars:SetFloat("host_timescale", 5)
-	local units = FindUnitsInRadius(DOTA_TEAM_BADGUYS,
-                              Vector(0, 0, 0),
-                              nil,
-                              10000,
-                              DOTA_UNIT_TARGET_TEAM_BOTH,
-                              DOTA_UNIT_TARGET_ALL,
-                              DOTA_UNIT_TARGET_FLAG_DEAD+DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES+DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD,
-                              FIND_ANY_ORDER,
-                              false)
+	local units = FindUnitsInRadius(DOTA_TEAM_GOODGUYS,
+          Vector(0, 0, 0),
+          nil,
+          10000,
+          DOTA_UNIT_TARGET_TEAM_BOTH,
+          DOTA_UNIT_TARGET_ALL,
+          DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES+DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD,
+          FIND_ANY_ORDER,
+          false)
 	for i,v in ipairs(units) do
 		if not v:IsControllableByAnyPlayer() then
-			v:ForceKill(false)
+			v:RemoveSelf()
 		end
 	end
+	local ent = Entities:First()
+	while ent do
+		if ent and not ent:IsNull() then
+		    if ent and not ent:IsNull() and ((ent.IsItem and ent:IsItem()) or ent.bawcreep or ent:GetClassname() == "dota_item_drop" or ent:GetClassname() == "dota_temp_tree") then
+		    	ent:RemoveSelf()
+		    end
+		end
+	    ent = Entities:Next(ent)
+	end
+	-- for i,v in ipairs(units) do
+	-- 	if not v:IsControllableByAnyPlayer() then
+	-- 		v:ForceKill(false)
+	-- 	end
+	-- end
 	-- for d,e in pairs(ALIVES) do
 	-- 	for k,v in pairs(e) do
 	-- 		if v:IsAlive() then
@@ -417,45 +461,67 @@ function BAW:StartGame()
 	-- local right = table.copy(first[rightN])
 
 
-    local cachepoints
-    local cache = {}
+	local heroes = RollPercentage(25)
     local teams = {left = {},right = {}}
-    local cheapest = {POINTS,''}
-    local cacheteams
-    local check
-    local rand
-	-- cache = {}
-	-- cheapest = {POINTS,''}
-	-- teams = {left = {},right = {}}
+    local level
 	local minPoints = POINTS * 0.05
-	for k,v in pairs(UNIT2POINT) do
-		if v <= POINTS and v >= minPoints then
-			table.insert(cache, {v,k})
-			if cheapest[1] > v then
-				cheapest = {v,k}
+	if not heroes then
+	    local cachepoints
+	    local cache = {}
+	    local cheapest = {POINTS,''}
+	    local cacheteams
+	    local check
+	    local rand
+		-- cache = {}
+		-- cheapest = {POINTS,''}
+		-- teams = {left = {},right = {}}
+		for k,v in pairs(UNIT2POINT) do
+			if v <= POINTS and v >= minPoints then
+				table.insert(cache, {v,k})
+				if cheapest[1] > v then
+					cheapest = {v,k}
+				end
 			end
 		end
-	end
-	cacheteams = {left = cache,right = cache}
-	for j=1,2 do
-		if j == 1 then
-			check = 'left'
-		else
-			check = 'right'
-		end
-    	cachepoints = POINTS
-    	while cachepoints > cheapest[1] do 
-    		rand = RandomInt(1, #cacheteams[check])
-    		table.insert(teams[check],cacheteams[check][rand][2])
-    		cachepoints = cachepoints - cacheteams[check][rand][1]
-    		cache = {}
-	    	for k,v in ipairs(cacheteams[check]) do
-	    		if v[1] <= cachepoints then
-	    			table.insert(cache, v)
-	    		end
+		cacheteams = {left = cache,right = cache}
+		for j=1,2 do
+			if j == 1 then
+				check = 'left'
+			else
+				check = 'right'
+			end
+	    	cachepoints = POINTS
+	    	while cachepoints > cheapest[1] do 
+	    		rand = RandomInt(1, #cacheteams[check])
+	    		table.insert(teams[check],cacheteams[check][rand][2])
+	    		cachepoints = cachepoints - cacheteams[check][rand][1]
+	    		cache = {}
+		    	for k,v in ipairs(cacheteams[check]) do
+		    		if v[1] <= cachepoints then
+		    			table.insert(cache, v)
+		    		end
+		    	end
+		    	cacheteams[check] = cache
 	    	end
-	    	cacheteams[check] = cache
-    	end
+		end
+	else
+		local howmany = RandomInt(1, 5)
+		local lefthero = AllHeroes[RandomInt(1, #AllHeroes)]
+		local righthero = AllHeroes[RandomInt(1, #AllHeroes)]
+		level = RandomInt(1, 5)
+		if level == 1 then
+			level = 1
+		elseif level == 2 then
+			level = 6
+		elseif level == 3 then
+			level = 16
+		elseif level == 4 then
+			level = 30
+		end
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
 	end
 	-- DeepPrintTable(teams)
 	-- local sum = 0
@@ -466,21 +532,114 @@ function BAW:StartGame()
 	-- 	end
 	-- 	print(k..": "..sum)
 	-- end
-	POINTS = POINTS + 500
-	DeepPrintTable(teams)
+	-- DeepPrintTable(teams)
 	local left = teams['left']
 	local right = teams['right']
-
-
+	local itemsg = false
+	if RollPercentage(50) then
+		itemsg = true
+	end
+	local itemsAr = {}
+	if itemsg then
+		cache = {}
+		cheapest = {POINTS,''}
+		for k,v in pairs(items) do
+			if v <= POINTS and v >= minPoints then
+				table.insert(cache, {v,k})
+				if cheapest[1] > v then
+					cheapest = {v,k}
+				end
+			end
+		end
+		cachepoints = POINTS
+		cacheteams = cache
+		while cachepoints > cheapest[1] do 
+			rand = RandomInt(1, #cacheteams)
+			table.insert(itemsAr,cacheteams[rand][2])
+			cachepoints = cachepoints - cacheteams[rand][1]
+			cache = {}
+	    	for k,v in ipairs(cacheteams) do
+	    		if v[1] <= cachepoints then
+	    			table.insert(cache, v)
+	    		end
+	    	end
+	    	cacheteams = cache
+		end
+	end
+	POINTS = POINTS + 500
 	PICKED = {left = {},right = {}}
 	ALIVES = {left = {},right = {}}
 	local leftpw = 0
 	local rightpw = 0
 	for k,v in ipairs(left) do
-		leftpw = BAW:SpawnUnits(v,"left",Vector(-1280,-1088,128),Vector(1280,1088,128),leftpw)
+		leftpw,unit = BAW:SpawnUnits(v,"left",Vector(-1280,-1088,128),Vector(0,0,0),leftpw)
+		if unit and heroes and unit:IsRealHero() then
+			for i=1,level do
+				unit:HeroLevelUp(false)
+			end
+			if level == 1 then
+				unit:GetAbilityByIndex(RandomInt(0, 2)):SetLevel(1)
+			elseif level == 6 then
+				local ab = RandomInt(0, 2)
+				unit:GetAbilityByIndex(ab):SetLevel(3)
+				for i=0,2 do
+					if i ~= ab then
+						unit:GetAbilityByIndex(i):SetLevel(1)
+					end
+				end
+				unit:GetAbilityByIndex(6):SetLevel(1)
+			elseif level == 16 then
+				unit:GetAbilityByIndex(0):SetLevel(4)
+				unit:GetAbilityByIndex(1):SetLevel(4)
+				unit:GetAbilityByIndex(2):SetLevel(4)
+				unit:GetAbilityByIndex(6):SetLevel(3)
+			elseif level == 30 then
+				for i=0,15 do
+					local ab = unit:GetAbilityByIndex(i)
+					if ab then
+						ab:SetLevel(ab:GetMaxLevel())
+					end
+				end
+			end
+		end
+		for i,v in ipairs(itemsAr) do
+			unit:AddItemByName(v)
+		end
 	end
 	for k,v in ipairs(right) do
-		rightpw = BAW:SpawnUnits(v,"right",Vector(1280,1088,128),Vector(-1280,-1088,128),rightpw)
+		rightpw,unit = BAW:SpawnUnits(v,"right",Vector(1280,1088,128),Vector(0,0,0),rightpw)
+		if heroes and unit:IsRealHero() then
+			for i=1,level do
+				unit:HeroLevelUp(false)
+			end
+			if level == 1 then
+				unit:GetAbilityByIndex(RandomInt(0, 2)):SetLevel(1)
+			elseif level == 6 then
+				local ab = RandomInt(0, 2)
+				unit:GetAbilityByIndex(ab):SetLevel(3)
+				for i=0,2 do
+					if i ~= ab then
+						unit:GetAbilityByIndex(i):SetLevel(1)
+					end
+				end
+				unit:GetAbilityByIndex(6):SetLevel(1)
+			elseif level == 16 then
+				unit:GetAbilityByIndex(0):SetLevel(4)
+				unit:GetAbilityByIndex(1):SetLevel(4)
+				unit:GetAbilityByIndex(2):SetLevel(4)
+				unit:GetAbilityByIndex(6):SetLevel(3)
+			elseif level == 30 then
+				for i=0,15 do
+					local ab = unit:GetAbilityByIndex(i)
+					if ab then
+						ab:SetLevel(ab:GetMaxLevel())
+					end
+				end
+			end
+		end
+		for i,v in ipairs(itemsAr) do
+			unit:AddItemByName(v)
+		end
 	end
 	local ar = {left = {},right = {},regens = {}}
 	local index
@@ -547,6 +706,7 @@ end
 function BAW:SpawnUnits(v,team,vec,target,points)
 	local unit = CreateUnitByName( v, vec, true, nil, nil, DOTA_TEAM_GOODGUYS)
 	if unit then
+		unit.bawcreep = true
 		if not unit:HasGroundMovementCapability() and not unit:HasFlyMovementCapability() then
 			FindClearSpaceForUnit(unit, Vector(0,0)+RandomVector(RandomInt(0, 200)), true)
 		end
@@ -560,10 +720,10 @@ function BAW:SpawnUnits(v,team,vec,target,points)
 		end
 		unit.targetPoint = target
 		table.insert(ALIVES[team],unit)
-		points = points + UNIT2POINT[v]
+		points = points + (UNIT2POINT[v] or 0)
 		unit:StartAI()
 	else
 		error("UNIT NOT FOUND: "..v)
 	end
-	return points
+	return points,unit
 end

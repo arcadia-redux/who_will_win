@@ -29,7 +29,7 @@
 					<DOTAAbilityImage abilityname="lina_dragon_slave" />
 					<DOTAAbilityImage abilityname="lina_dragon_slave" /> -->
 				</Panel>
-				<Panel class="itemSlots">
+				<Panel class="itemSlots" id="items">
 					<DOTAItemImage class="item" hittest="true" itemname=""/>
 					<DOTAItemImage class="item" hittest="true" itemname=""/>
 					<DOTAItemImage class="item" hittest="true" itemname=""/>

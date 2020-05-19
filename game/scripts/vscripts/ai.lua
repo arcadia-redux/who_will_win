@@ -11,6 +11,9 @@ function CBaseEntity:StartAI()
         if self:IsControllableByAnyPlayer() then
             return -1
         end
+        if not _G.FIGHT then
+            return 1 
+        end
         -- if thisEntity:IsAttacking() then
         --     return 1
         -- end
@@ -28,12 +31,12 @@ function CBaseEntity:StartAI()
             npc.ability3 = FindAbility(npc, 3)
             npc.ability4 = FindAbility(npc, 4)
             npc.ability5 = FindAbility(npc, 5)
-            npc.item0 = FindAbility(npc, 0)
-            npc.item1 = FindAbility(npc, 1)
-            npc.item2 = FindAbility(npc, 2)
-            npc.item3 = FindAbility(npc, 3)
-            npc.item4 = FindAbility(npc, 4)
-            npc.item5 = FindAbility(npc, 5)
+            npc.item0 = FindAbility(npc, 0,1)
+            npc.item1 = FindAbility(npc, 1,1)
+            npc.item2 = FindAbility(npc, 2,1)
+            npc.item3 = FindAbility(npc, 3,1)
+            npc.item4 = FindAbility(npc, 4,1)
+            npc.item5 = FindAbility(npc, 5,1)
           
         end
 
@@ -91,7 +94,7 @@ function CBaseEntity:StartAI()
         end
 
         -- DeepPrintTable(thisEntity)
-        if _G.FIGHT and npc.targetPoint and not npc:IsAttacking() then
+        if _G.FIGHT and not npc:IsNull() and npc.targetPoint and not npc:IsAttacking() then
             npc:MoveToPositionAggressive(npc.targetPoint)
         end
 
@@ -138,8 +141,7 @@ function FindAbility(unit, index, item)
 end
 
 function TryCastAbility(ability, caster, enemy, friend)
-  
-    if not ability
+    if not ability or ability:IsNull()
     or not ability:IsFullyCastable()
     or ability.behavior == "passive" then
         return
