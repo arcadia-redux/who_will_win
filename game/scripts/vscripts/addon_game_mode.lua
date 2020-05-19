@@ -602,6 +602,10 @@ function BAW:StartGame()
 				end
 			end
 		end
+		if unit:GetHullRadius() < 45 then
+			unit:SetHullRadius(45)
+		end
+		unit:AddNewModifier(unit, nil, "modifier_phased", {duration=0.3})
 		for i,v in ipairs(itemsAr) do
 			unit:AddItemByName(v)
 		end
@@ -637,6 +641,10 @@ function BAW:StartGame()
 				end
 			end
 		end
+		if unit:GetHullRadius() < 45 then
+			unit:SetHullRadius(45)
+		end
+		unit:AddNewModifier(unit, nil, "modifier_phased", {duration=0.3})
 		for i,v in ipairs(itemsAr) do
 			unit:AddItemByName(v)
 		end
@@ -721,7 +729,6 @@ function BAW:SpawnUnits(v,team,vec,target,points)
 		unit.targetPoint = target
 		table.insert(ALIVES[team],unit)
 		points = points + (UNIT2POINT[v] or 0)
-		unit:StartAI()
 	else
 		error("UNIT NOT FOUND: "..v)
 	end
