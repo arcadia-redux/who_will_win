@@ -1,0 +1,70 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"		"npc_dota_hero_lion"
+	"Title"		"Recommended items for Lion"
+	"Items"
+	{
+		"start"
+		{
+			"item"
+			{
+				"0"		"item_tango"
+				"1"		"item_flask"
+				"2"		"item_branches"
+				"3"		"item_branches"
+				"4"		"item_wind_lace"
+			}
+		}
+		"early"
+		{
+			"item"
+			{
+				"0"		"item_magic_stick"
+				"1"		"item_boots"
+			}
+		}
+		"mid"
+		{
+			"item"
+			{
+				"0"		"item_magic_wand"
+				"1"		"item_tranquil_boots"
+				"2"		"item_wind_lace"
+			}
+		}
+		"late"
+		{
+			"item"
+			{
+				"0"		"item_blink"
+				"1"		"item_aether_lens"
+				"2"		"item_kaya"
+			}
+		}
+		"other"
+		{
+			"item"
+			{
+				"0"		"item_mekansm"
+				"1"		"item_sheepstick"
+				"2"		"item_dagon_5"
+				"3"		"item_ultimate_scepter"
+				"4"		"item_ghost"
+				"5"		"item_glimmer_cape"
+				"6"		"item_lotus_orb"
+				"7"		"item_shivas_guard"
+				"8"		"item_veil_of_discord"
+				"9"		"item_octarine_core"
+				"10"		"item_force_staff"
+				"11"		"item_ethereal_blade"
+				"12"		"item_urn_of_shadows"
+				"13"		"item_pipe"
+				"14"		"item_rod_of_atos"
+				"15"		"item_invis_sword"
+				"16"		"item_guardian_greaves"
+				"17"		"item_sphere"
+			}
+		}
+	}
+}

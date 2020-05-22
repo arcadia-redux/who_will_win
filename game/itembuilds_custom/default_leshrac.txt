@@ -1,0 +1,69 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"		"npc_dota_hero_leshrac"
+	"Title"		"Recommended Items for Leshrac"
+	"Items"
+	{
+		"start"
+		{
+			"item"
+			{
+				"0"		"item_tango"
+				"1"		"item_null_talisman"
+			}
+		}
+		"early"
+		{
+			"item"
+			{
+				"0"		"item_bottle"
+				"1"		"item_magic_stick"
+				"2"		"item_boots"
+				"3"		"item_wind_lace"
+			}
+		}
+		"mid"
+		{
+			"item"
+			{
+				"0"		"item_magic_wand"
+				"1"		"item_phase_boots"
+				"2"		"item_cyclone"
+				"3"		"item_bloodstone"
+			}
+		}
+		"late"
+		{
+			"item"
+			{
+				"0"		"item_shivas_guard"
+				"1"		"item_octarine_core"
+			}
+		}
+		"other"
+		{
+			"item"
+			{
+				"0"		"item_urn_of_shadows"
+				"1"		"item_veil_of_discord"
+				"2"		"item_black_king_bar"
+				"3"		"item_sheepstick"
+				"4"		"item_ultimate_scepter"
+				"5"		"item_rod_of_atos"
+				"6"		"item_octarine_core"
+				"7"		"item_glimmer_cape"
+				"8"		"item_guardian_greaves"
+				"9"		"item_ghost"
+				"10"		"item_aether_lens"
+				"11"		"item_ancient_janggo"
+				"12"		"item_force_staff"
+				"13"		"item_heart"
+				"14"		"item_sphere"
+				"15"		"item_lotus_orb"
+				"16"		"item_invis_sword"
+				"17"		"item_orchid"
+			}
+		}
+	}
+}

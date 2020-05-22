@@ -1,0 +1,71 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"		"npc_dota_hero_venomancer"
+	"Title"		"Recommended items for Venomancer"
+	"Items"
+	{
+		"start"
+		{
+			"item"
+			{
+				"0"		"item_tango"
+				"1"		"item_flask"
+				"2"		"item_circlet"
+				"3"		"item_courier"
+			}
+		}
+		"early"
+		{
+			"item"
+			{
+				"0"		"item_magic_stick"
+				"1"		"item_boots"
+				"2"		"item_ring_of_aquila"
+			}
+		}
+		"mid"
+		{
+			"item"
+			{
+				"0"		"item_magic_wand"
+				"1"		"item_power_treads"
+				"2"		"item_veil_of_discord"
+			}
+		}
+		"late"
+		{
+			"item"
+			{
+				"0"		"item_ultimate_scepter"
+				"1"		"item_blink"
+				"2"		"item_shivas_guard"
+				"3"		"item_octarine_core"
+			}
+		}
+		"other"
+		{
+			"item"
+			{
+				"0"		"item_cyclone"
+				"1"		"item_glimmer_cape"
+				"2"		"item_force_staff"
+				"3"		"item_invis_sword"
+				"4"		"item_butterfly"
+				"5"		"item_orchid"
+				"6"		"item_manta"
+				"7"		"item_ancient_janggo"
+				"8"		"item_guardian_greaves"
+				"9"		"item_hurricane_pike"
+				"10"		"item_aether_lens"
+				"11"		"item_sange_and_yasha"
+				"12"		"item_urn_of_shadows"
+				"13"		"item_hand_of_midas"
+				"14"		"item_sphere"
+				"15"		"item_lotus_orb"
+				"16"		"item_pipe"
+				"17"		"item_bloodthorn"
+			}
+		}
+	}
+}

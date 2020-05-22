@@ -1,0 +1,64 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"		"npc_dota_hero_snapfire"
+	"Title"		"Recommended items for Snapfire"
+	"Items"
+	{
+		"start"
+		{
+			"item"
+			{
+				"0"		"item_tango"
+				"1"		"item_flask"
+				"2"		"item_branches"
+				"3"		"item_branches"
+				"4"		"item_gauntlets"
+			}
+		}
+		"early"
+		{
+			"item"
+			{
+				"0"		"item_boots"
+				"1"		"item_bracer"
+			}
+		}
+		"mid"
+		{
+			"item"
+			{
+				"0"		"item_arcane_boots"
+				"1"		"item_cyclone"
+				"2"		"item_rod_of_atos"
+			}
+		}
+		"late"
+		{
+			"item"
+			{
+				"0"		"item_heavens_halberd"
+				"1"		"item_mjollnir"
+				"2"		"item_hurricane_pike"
+			}
+		}
+		"other"
+		{
+			"item"
+			{
+				"0"		"item_ancient_janggo"
+				"1"		"item_kaya"
+				"2"		"item_black_king_bar"
+				"3"		"item_spirit_vessel"
+				"4"		"item_glimmer_cape"
+				"5"		"item_veil_of_discord"
+				"6"		"item_lotus_orb"
+				"7"		"item_pipe"
+				"8"		"item_javelin"
+				"9"		"item_aether_lens"
+				"10"		"item_sheepstick"
+				"11"		"item_guardian_greaves"
+			}
+		}
+	}
+}

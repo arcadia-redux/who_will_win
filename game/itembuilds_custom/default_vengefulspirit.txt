@@ -1,0 +1,71 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"		"npc_dota_hero_vengefulspirit"
+	"Title"		"Recommended items for Vengeful Spirit"
+	"Items"
+	{
+		"start"
+		{
+			"item"
+			{
+				"0"		"item_tango"
+				"1"		"item_clarity"
+				"2"		"item_branches"
+				"3"		"item_branches"
+				"4"		"item_ward_observer"
+				"5"		"item_courier"
+			}
+		}
+		"early"
+		{
+			"item"
+			{
+				"0"		"item_magic_stick"
+				"1"		"item_boots"
+			}
+		}
+		"mid"
+		{
+			"item"
+			{
+				"0"		"item_magic_wand"
+				"1"		"item_power_treads"
+				"2"		"item_medallion_of_courage"
+			}
+		}
+		"late"
+		{
+			"item"
+			{
+				"0"		"item_force_staff"
+				"1"		"item_aether_lens"
+				"2"		"item_solar_crest"
+			}
+		}
+		"other"
+		{
+			"item"
+			{
+				"0"		"item_ring_of_aquila"
+				"1"		"item_ultimate_scepter"
+				"2"		"item_blink"
+				"3"		"item_desolator"
+				"4"		"item_hurricane_pike"
+				"5"		"item_butterfly"
+				"6"		"item_manta"
+				"7"		"item_heart"
+				"8"		"item_ancient_janggo"
+				"9"		"item_sange_and_yasha"
+				"10"		"item_glimmer_cape"
+				"11"		"item_lotus_orb"
+				"12"		"item_ghost"
+				"13"		"item_silver_edge"
+				"14"		"item_guardian_greaves"
+				"15"		"item_mjollnir"
+				"16"		"item_greater_crit"
+				"17"		"item_monkey_king_bar"
+			}
+		}
+	}
+}

@@ -1,0 +1,72 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"		"npc_dota_hero_jakiro"
+	"Title"		"Recommended items for Jakiro"
+	"Items"
+	{
+		"start"
+		{
+			"item"
+			{
+				"0"		"item_courier"
+				"1"		"item_ward_observer"
+				"2"		"item_tango"
+				"3"		"item_clarity"
+				"4"		"item_branches"
+			}
+		}
+		"early"
+		{
+			"item"
+			{
+				"0"		"item_wind_lace"
+				"1"		"item_boots"
+				"2"		"item_magic_stick"
+			}
+		}
+		"mid"
+		{
+			"item"
+			{
+				"0"		"item_magic_wand"
+				"1"		"item_arcane_boots"
+				"2"		"item_cyclone"
+			}
+		}
+		"late"
+		{
+			"item"
+			{
+				"0"		"item_mekansm"
+				"1"		"item_force_staff"
+				"2"		"item_veil_of_discord"
+				"3"		"item_guardian_greaves"
+			}
+		}
+		"other"
+		{
+			"item"
+			{
+				"0"		"item_soul_ring"
+				"1"		"item_aether_lens"
+				"2"		"item_glimmer_cape"
+				"3"		"item_urn_of_shadows"
+				"4"		"item_ancient_janggo"
+				"5"		"item_pipe"
+				"6"		"item_cyclone"
+				"7"		"item_rod_of_atos"
+				"8"		"item_ultimate_scepter"
+				"9"		"item_shivas_guard"
+				"10"		"item_sheepstick"
+				"11"		"item_blink"
+				"12"		"item_ghost_scepter"
+				"13"		"item_octarine_core"
+				"14"		"item_sphere"
+				"15"		"item_lotus_orb"
+				"16"		"item_hurricane_pike"
+				"17"		"item_refresher"
+			}
+		}
+	}
+}

@@ -1,0 +1,69 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"		"npc_dota_hero_night_stalker"
+	"Title"		"Recommended items for Night Stalker"
+	"Items"
+	{
+		"start"
+		{
+			"item"
+			{
+				"0"		"item_enchanted_mango"
+				"1"		"item_flask"
+				"2"		"item_tango"
+				"3"		"item_enchanted_mango"
+			}
+		}
+		"early"
+		{
+			"item"
+			{
+				"0"		"item_magic_stick"
+				"1"		"item_boots"
+				"2"		"item_urn_of_shadows"
+			}
+		}
+		"mid"
+		{
+			"item"
+			{
+				"0"		"item_magic_wand"
+				"1"		"item_phase_boots"
+				"2"		"item_ultimate_scepter"
+			}
+		}
+		"late"
+		{
+			"item"
+			{
+				"0"		"item_assault"
+				"1"		"item_abyssal_blade"
+			}
+		}
+		"other"
+		{
+			"item"
+			{
+				"0"		"item_heart"
+				"1"		"item_black_king_bar"
+				"2"		"item_armlet"
+				"3"		"item_heavens_halberd"
+				"4"		"item_satanic"
+				"5"		"item_moon_shard"
+				"6"		"item_lotus_orb"
+				"7"		"item_silver_edge"
+				"8"		"item_pipe"
+				"9"		"item_vladmir"
+				"10"		"item_echo_sabre"
+				"11"		"item_sange_and_yasha"
+				"12"		"item_blade_mail"
+				"13"		"item_desolator"
+				"14"		"item_aether_lens"
+				"15"		"item_mjollnir"
+				"16"		"item_crimson_guard"
+				"17"		"item_mask_of_madness"
+			}
+		}
+	}
+}

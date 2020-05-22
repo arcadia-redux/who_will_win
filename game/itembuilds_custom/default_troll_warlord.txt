@@ -1,0 +1,71 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"		"npc_dota_hero_troll_warlord"
+	"Title"		"Recommended Items for Troll Warlord"
+	"Items"
+	{
+		"start"
+		{
+			"item"
+			{
+				"0"		"item_tango"
+				"1"		"item_flask"
+				"2"		"item_branches"
+				"3"		"item_branches"
+				"4"		"item_enchanted_mango"
+			}
+		}
+		"early"
+		{
+			"item"
+			{
+				"0"		"item_ring_of_aquila"
+				"1"		"item_magic_stick"
+				"2"		"item_boots"
+			}
+		}
+		"mid"
+		{
+			"item"
+			{
+				"0"		"item_magic_wand"
+				"1"		"item_phase_boots"
+				"2"		"item_vladmir"
+				"3"		"item_sange_and_yasha"
+			}
+		}
+		"late"
+		{
+			"item"
+			{
+				"0"		"item_silver_edge"
+				"1"		"item_black_king_bar"
+				"2"		"item_greater_crit"
+				"3"		"item_satanic"
+			}
+		}
+		"other"
+		{
+			"item"
+			{
+				"0"		"item_power_treads"
+				"1"		"item_butterfly"
+				"2"		"item_monkey_king_bar"
+				"3"		"item_manta"
+				"4"		"item_hurricane_pike"
+				"5"		"item_echo_sabre"
+				"6"		"item_skadi"
+				"7"		"item_diffusal_blade_2"
+				"8"		"item_bloodthorn"
+				"9"		"item_desolator"
+				"10"		"item_bfury"
+				"11"		"item_helm_of_the_dominator"
+				"12"		"item_armlet"
+				"13"		"item_bfury"
+				"14"		"item_mjollnir"
+				"15"		"item_moon_shard"
+			}
+		}
+	}
+}

@@ -1,0 +1,67 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"		"npc_dota_hero_obsidian_destroyer"
+	"Title"		"Recommended Items for Outworld Destroyer"
+	"Items"
+	{
+		"start"
+		{
+			"item"
+			{
+				"0"		"item_null_talisman"
+				"1"		"item_tango"
+			}
+		}
+		"early"
+		{
+			"item"
+			{
+				"0"		"item_bottle"
+				"1"		"item_magic_stick"
+				"2"		"item_boots"
+			}
+		}
+		"mid"
+		{
+			"item"
+			{
+				"0"		"item_magic_wand"
+				"1"		"item_power_treads"
+				"2"		"item_hurricane_pike"
+			}
+		}
+		"late"
+		{
+			"item"
+			{
+				"0"		"item_rod_of_atos"
+				"1"		"item_sheepstick"
+			}
+		}
+		"other"
+		{
+			"item"
+			{
+				"0"		"item_ultimate_scepter"
+				"1"		"item_black_king_bar"
+				"2"		"item_veil_of_discord"
+				"3"		"item_sphere"
+				"4"		"item_bloodthorn"
+				"5"		"item_shivas_guard"
+				"6"		"item_refresher"
+				"7"		"item_octarine_core"
+				"8"		"item_moon_shard"
+				"9"		"item_silver_edge"
+				"10"		"item_assault"
+				"11"		"item_aether_lens"
+				"12"		"item_cyclone"
+				"13"		"item_ghost"
+				"14"		"item_skadi"
+				"15"		"item_rapier"
+				"16"		"item_lotus_orb"
+				"17"		"item_dagon_5"
+			}
+		}
+	}
+}

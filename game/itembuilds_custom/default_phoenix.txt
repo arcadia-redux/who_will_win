@@ -1,0 +1,70 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"		"npc_dota_hero_phoenix"
+	"Title"		"Recommended items for Phoenix"
+	"Items"
+	{
+		"start"
+		{
+			"item"
+			{
+				"0"		"item_tango"
+				"1"		"item_flask"
+				"2"		"item_wind_lace"
+				"3"		"item_branches"
+				"4"		"item_branches"
+			}
+		}
+		"early"
+		{
+			"item"
+			{
+				"0"		"item_magic_stick"
+				"1"		"item_tranquil_boots"
+				"2"		"item_urn_of_shadows"
+			}
+		}
+		"mid"
+		{
+			"item"
+			{
+				"0"		"item_magic_wand"
+				"1"		"item_cyclone"
+				"2"		"item_veil_of_discord"
+			}
+		}
+		"late"
+		{
+			"item"
+			{
+				"0"		"item_shivas_guard"
+				"1"		"item_ultimate_scepter"
+			}
+		}
+		"other"
+		{
+			"item"
+			{
+				"0"		"item_ghost"
+				"1"		"item_rod_of_atos"
+				"2"		"item_mekansm"
+				"3"		"item_pipe"
+				"4"		"item_heavens_halberd"
+				"5"		"item_heart"
+				"6"		"item_radiance"
+				"7"		"item_ultimate_scepter"
+				"8"		"item_aether_lens"
+				"9"		"item_force_staff"
+				"10"		"item_octarine_core"
+				"11"		"item_hand_of_midas"
+				"12"		"item_guardian_greaves"
+				"13"		"item_sheepstick"
+				"14"		"item_sphere"
+				"15"		"item_glimmer_cape"
+				"16"		"item_crimson_guard"
+				"17"		"item_lotus_orb"
+			}
+		}
+	}
+}

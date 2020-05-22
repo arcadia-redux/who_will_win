@@ -1,0 +1,71 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"		"npc_dota_hero_silencer"
+	"Title"		"Recommended items for Silencer"
+	"Items"
+	{
+		"start"
+		{
+			"item"
+			{
+				"0"		"item_tango"
+				"1"		"item_clarity"
+				"2"		"item_flask"
+				"3"		"item_circlet"
+				"4"		"item_mantle"
+			}
+		}
+		"early"
+		{
+			"item"
+			{
+				"0"		"item_boots"
+				"1"		"item_magic_stick"
+				"2"		"item_null_talisman"
+			}
+		}
+		"mid"
+		{
+			"item"
+			{
+				"0"		"item_magic_wand"
+				"1"		"item_power_treads"
+				"2"		"item_force_staff"
+			}
+		}
+		"late"
+		{
+			"item"
+			{
+				"0"		"item_hurricane_pike"
+				"1"		"item_sheepstick"
+				"2"		"item_bloodthorn"
+			}
+		}
+		"other"
+		{
+			"item"
+			{
+				"0"		"item_sheepstick"
+				"1"		"item_rod_of_atos"
+				"2"		"item_shivas_guard"
+				"3"		"item_cyclone"
+				"4"		"item_guardian_greaves"
+				"5"		"item_black_king_bar"
+				"6"		"item_invis_sword"
+				"7"		"item_assault"
+				"8"		"item_veil_of_discord"
+				"9"		"item_refresher"
+				"10"		"item_ultimate_scepter"
+				"11"		"item_moon_shard"
+				"12"		"item_hand_of_midas"
+				"13"		"item_glimmer_cape"
+				"14"		"item_ancient_janggo"
+				"15"		"item_mjollnir"
+				"16"		"item_skadi"
+				"17"		"item_octarine_core"
+			}
+		}
+	}
+}

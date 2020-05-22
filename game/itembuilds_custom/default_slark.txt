@@ -1,0 +1,73 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"		"npc_dota_hero_slark"
+	"Title"		"Recommended items for Slark"
+	"Items"
+	{
+		"start"
+		{
+			"item"
+			{
+				"0"		"item_tango"
+				"1"		"item_flask"
+				"2"		"item_branches"
+				"3"		"item_branches"
+				"4"		"item_enchanted_mango"
+			}
+		}
+		"early"
+		{
+			"item"
+			{
+				"0"		"item_magic_stick"
+				"1"		"item_boots"
+				"2"		"item_poor_mans_shield"
+				"3"		"item_orb_of_venom"
+			}
+		}
+		"mid"
+		{
+			"item"
+			{
+				"0"		"item_power_treads"
+				"1"		"item_magic_wand"
+				"2"		"item_echo_sabre"
+				"3"		"item_invis_sword"
+			}
+		}
+		"late"
+		{
+			"item"
+			{
+				"0"		"item_abyssal_blade"
+				"1"		"item_silver_edge"
+				"2"		"item_skadi"
+			}
+		}
+		"other"
+		{
+			"item"
+			{
+				"0"		"item_ultimate_scepter"
+				"1"		"item_blink"
+				"2"		"item_butterfly"
+				"3"		"item_vladmir"
+				"4"		"item_black_king_bar"
+				"5"		"item_bloodthorn"
+				"6"		"item_sange_and_yasha"
+				"7"		"item_diffusal_blade_2"
+				"8"		"item_desolator"
+				"9"		"item_heart"
+				"10"		"item_moon_shard"
+				"11"		"item_mask_of_madness"
+				"12"		"item_assault"
+				"13"		"item_ring_of_aquila"
+				"14"		"item_monkey_king_bar"
+				"15"		"item_sphere"
+				"16"		"item_sange_and_yasha"
+				"17"		"item_mjollnir"
+			}
+		}
+	}
+}

@@ -1,0 +1,73 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"		"npc_dota_hero_razor"
+	"Title"		"Recommended items for Razor"
+	"Items"
+	{
+		"start"
+		{
+			"item"
+			{
+				"0"		"item_ring_of_protection"
+				"1"		"item_tango"
+				"2"		"item_flask"
+				"3"		"item_branches"
+				"4"		"item_branches"
+				"5"		"item_faerie_fire"
+			}
+		}
+		"early"
+		{
+			"item"
+			{
+				"0"		"item_magic_stick"
+				"1"		"item_boots"
+				"2"		"item_ring_of_aquila"
+			}
+		}
+		"mid"
+		{
+			"item"
+			{
+				"0"		"item_magic_wand"
+				"1"		"item_phase_boots"
+				"2"		"item_dragon_lance"
+			}
+		}
+		"late"
+		{
+			"item"
+			{
+				"0"		"item_sange_and_yasha"
+				"1"		"item_hurricane_pike"
+				"2"		"item_black_king_bar"
+				"3"		"item_shivas_guard"
+			}
+		}
+		"other"
+		{
+			"item"
+			{
+				"0"		"item_power_treads"
+				"1"		"item_ultimate_scepter"
+				"2"		"item_desolator"
+				"3"		"item_heart"
+				"4"		"item_butterfly"
+				"5"		"item_guardian_greaves"
+				"6"		"item_monkey_king_bar"
+				"7"		"item_heavens_halberd"
+				"8"		"item_skadi"
+				"9"		"item_sphere"
+				"10"		"item_lotus_orb"
+				"11"		"item_silver_edge"
+				"12"		"item_manta"
+				"13"		"item_mjollnir"
+				"14"		"item_refresher"
+				"15"		"item_crimson_guard"
+				"16"		"item_vladmir"
+				"17"		"item_helm_of_the_dominator"
+			}
+		}
+	}
+}

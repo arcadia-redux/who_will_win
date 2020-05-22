@@ -1,0 +1,70 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"		"npc_dota_hero_ogre_magi"
+	"Title"		"Recommended items for Ogre Magi"
+	"Items"
+	{
+		"start"
+		{
+			"item"
+			{
+				"0"		"item_tango"
+				"1"		"item_ward_observer"
+				"2"		"item_clarity"
+				"3"		"item_orb_of_venom"
+				"4"		"item_branches"
+			}
+		}
+		"early"
+		{
+			"item"
+			{
+				"0"		"item_boots"
+				"1"		"item_magic_stick"
+			}
+		}
+		"mid"
+		{
+			"item"
+			{
+				"0"		"item_magic_wand"
+				"1"		"item_arcane_boots"
+				"2"		"item_force_staff"
+			}
+		}
+		"late"
+		{
+			"item"
+			{
+				"0"		"item_ultimate_scepter"
+				"1"		"item_aether_lens"
+				"2"		"item_ghost"
+			}
+		}
+		"other"
+		{
+			"item"
+			{
+				"0"		"item_soul_ring"
+				"1"		"item_urn_of_shadows"
+				"2"		"item_glimmer_cape"
+				"3"		"item_blink"
+				"4"		"item_guardian_greaves"
+				"5"		"item_sheepstick"
+				"6"		"item_shivas_guard"
+				"7"		"item_ancient_janggo"
+				"8"		"item_bloodstone"
+				"9"		"item_veil_of_discord"
+				"10"		"item_cyclone"
+				"11"		"item_force_staff"
+				"12"		"item_pipe"
+				"13"		"item_blade_mail"
+				"14"		"item_vladmir"
+				"15"		"item_octarine_core"
+				"16"		"item_helm_of_the_dominator"
+				"17"		"item_ethereal_blade"
+			}
+		}
+	}
+}

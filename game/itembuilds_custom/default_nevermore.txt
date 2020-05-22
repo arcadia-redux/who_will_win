@@ -1,0 +1,70 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"		"npc_dota_hero_nevermore"
+	"Title"		"Recommended items for Nevermore"
+	"Items"
+	{
+		"start"
+		{
+			"item"
+			{
+				"0"		"item_wraith_band"
+				"1"		"item_tango"
+			}
+		}
+		"early"
+		{
+			"item"
+			{
+				"0"		"item_bottle"
+				"1"		"item_magic_stick"
+				"2"		"item_boots"
+				"3"		"item_ring_of_aquila"
+			}
+		}
+		"mid"
+		{
+			"item"
+			{
+				"0"		"item_magic_wand"
+				"1"		"item_power_treads"
+				"2"		"item_dragon_lance"
+				"3"		"item_invis_sword"
+			}
+		}
+		"late"
+		{
+			"item"
+			{
+				"0"		"item_black_king_bar"
+				"1"		"item_silver_edge"
+				"2"		"item_desolator"
+			}
+		}
+		"other"
+		{
+			"item"
+			{
+				"0"		"item_assault"
+				"1"		"item_greater_crit"
+				"2"		"item_butterfly"
+				"3"		"item_monkey_king_bar"
+				"4"		"item_skadi"
+				"5"		"item_sange_and_yasha"
+				"6"		"item_cyclone"
+				"7"		"item_hurricane_pike"
+				"8"		"item_satanic"
+				"9"		"item_manta"
+				"10"		"item_ultimate_scepter"
+				"11"		"item_sphere"
+				"12"		"item_bloodthorn"
+				"13"		"item_mask_of_madness"
+				"14"		"item_refresher"
+				"15"		"item_rapier"
+				"16"		"item_moonshard"
+				"17"		"item_hand_of_midas"
+			}
+		}
+	}
+}

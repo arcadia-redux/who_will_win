@@ -1,0 +1,60 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"		"npc_dota_hero_lone_druid"
+	"Title"		"Recommended items for Lone Druid"
+	"Items"
+	{
+		"start"
+		{
+			"item"
+			{
+				"0"		"item_tango"
+				"1"		"item_flask"
+				"2"		"item_branches"
+				"3"		"item_branches"
+			}
+		}
+		"early"
+		{
+			"item"
+			{
+				"0"		"item_boots"
+				"1"		"item_magic_stick"
+				"2"		"item_wind_lace"
+			}
+		}
+		"mid"
+		{
+			"item"
+			{
+				"0"		"item_tranquil_boots"
+				"1"		"item_magic_wand"
+				"2"		"item_tpscroll"
+			}
+		}
+		"late"
+		{
+			"item"
+			{
+
+			}
+		}
+		"other"
+		{
+			"item"
+			{
+				"0"		"item_abyssal_blade"
+				"1"		"item_butterfly"
+				"2"		"item_pipe"
+				"3"		"item_travel_boots"
+				"4"		"item_assault"
+				"5"		"item_mjollnir"
+				"6"		"item_basher"
+				"7"		"item_monkey_king_bar"
+				"8"		"item_vladmir"
+				"9"		"item_ultimate_scepter"
+			}
+		}
+	}
+}

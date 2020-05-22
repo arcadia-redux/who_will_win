@@ -1,0 +1,69 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"		"npc_dota_hero_storm_spirit"
+	"Title"		"Recommended items for Storm Spirit"
+	"Items"
+	{
+		"start"
+		{
+			"item"
+			{
+				"0"		"item_tango"
+				"1"		"item_null_talisman"
+			}
+		}
+		"early"
+		{
+			"item"
+			{
+				"0"		"item_magic_wand"
+				"1"		"item_boots"
+				"2"		"item_bottle"
+			}
+		}
+		"mid"
+		{
+			"item"
+			{
+				"0"		"item_pers"
+				"1"		"item_power_treads"
+				"2"		"item_bloodstone"
+				"3"		"item_orchid"
+			}
+		}
+		"late"
+		{
+			"item"
+			{
+				"0"		"item_orchid"
+				"1"		"item_shivas_guard"
+				"2"		"item_sphere"
+			}
+		}
+		"other"
+		{
+			"item"
+			{
+				"0"		"item_ultimate_scepter"
+				"1"		"item_arcane_boots"
+				"2"		"item_cyclone"
+				"3"		"item_sheepstick"
+				"4"		"item_black_king_bar"
+				"5"		"item_dagon"
+				"6"		"item_bloodthorn"
+				"7"		"item_shivas_guard"
+				"8"		"item_octarine_core"
+				"9"		"item_dagon_5"
+				"10"		"item_ghost"
+				"11"		"item_blade_mail"
+				"12"		"item_veil_of_discord"
+				"13"		"item_skadi"
+				"14"		"item_moon_shard"
+				"15"		"item_rapier"
+				"16"		"item_force_staff"
+				"17"		"item_lotus_orb"
+			}
+		}
+	}
+}

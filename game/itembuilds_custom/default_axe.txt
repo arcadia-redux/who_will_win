@@ -1,0 +1,69 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"		"npc_dota_hero_axe"
+	"Title"		"Recommended items for Axe"
+	"Items"
+	{
+		"start"
+		{
+			"item"
+			{
+				"0"		"item_tango"
+				"1"		"item_tango"
+				"2"		"item_branches"
+				"3"		"item_branches"
+			}
+		}
+		"early"
+		{
+			"item"
+			{
+				"0"		"item_tranquil_boots"
+				"1"		"item_magic_stick"
+				"2"		"item_ring_of_health"
+			}
+		}
+		"mid"
+		{
+			"item"
+			{
+				"0"		"item_blink"
+				"1"		"item_vanguard"
+			}
+		}
+		"late"
+		{
+			"item"
+			{
+				"0"		"item_blade_mail"
+				"1"		"item_crimson_guard"
+				"2"		"item_heart"
+			}
+		}
+		"other"
+		{
+			"item"
+			{
+				"0"		"item_iron_talon"
+				"1"		"item_force_staff"
+				"2"		"item_cyclone"
+				"3"		"item_pipe"
+				"4"		"item_shivas_guard"
+				"5"		"item_ultimate_scepter"
+				"6"		"item_travel_boots_1"
+				"7"		"item_assault"
+				"8"		"item_heavens_halberd"
+				"9"		"item_guardian_greaves"
+				"10"		"item_lotus_orb"
+				"11"		"item_black_king_bar"
+				"12"		"item_abyssal_blade"
+				"13"		"item_sphere"
+				"14"		"item_octarine_core"
+				"15"		"item_radiance"
+				"16"		"item_mjollnir"
+				"17"		"item_ghost"
+			}
+		}
+	}
+}

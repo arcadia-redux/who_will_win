@@ -29,6 +29,8 @@ _G.HeroesKV = LoadKeyValues("scripts/npc/npc_heroes.txt")
 _G.Items = LoadKeyValues("scripts/npc/items.txt")
 _G.AbilityPowers = LoadKeyValues("scripts/kv/ability_power.txt")
 
+require('itembuild')
+
 bannedUnits = {
 	npc_dota_units_base = true,
 	npc_dota_thinker = true,
@@ -461,10 +463,12 @@ function BAW:StartGame()
 	-- local right = table.copy(first[rightN])
 
 
-	local heroes = RollPercentage(25)
+	local heroes = RollPercentage(100)
     local teams = {left = {},right = {}}
     local level
 	local minPoints = POINTS * 0.05
+	local lefthero
+	local righthero
 	if not heroes then
 	    local cachepoints
 	    local cache = {}
@@ -506,8 +510,8 @@ function BAW:StartGame()
 		end
 	else
 		local howmany = RandomInt(1, 5)
-		local lefthero = AllHeroes[RandomInt(1, #AllHeroes)]
-		local righthero = AllHeroes[RandomInt(1, #AllHeroes)]
+		lefthero = AllHeroes[RandomInt(1, #AllHeroes)]
+		righthero = AllHeroes[RandomInt(1, #AllHeroes)]
 		level = RandomInt(1, 5)
 		if level == 1 then
 			level = 1
@@ -539,32 +543,11 @@ function BAW:StartGame()
 	if RollPercentage(50) then
 		itemsg = true
 	end
-	local itemsAr = {}
+	local itemsArRight = {}
+	local itemsArLeft = {}
 	if itemsg then
-		cache = {}
-		cheapest = {POINTS,''}
-		for k,v in pairs(items) do
-			if v <= POINTS and v >= minPoints then
-				table.insert(cache, {v,k})
-				if cheapest[1] > v then
-					cheapest = {v,k}
-				end
-			end
-		end
-		cachepoints = POINTS
-		cacheteams = cache
-		while cachepoints > cheapest[1] do 
-			rand = RandomInt(1, #cacheteams)
-			table.insert(itemsAr,cacheteams[rand][2])
-			cachepoints = cachepoints - cacheteams[rand][1]
-			cache = {}
-	    	for k,v in ipairs(cacheteams) do
-	    		if v[1] <= cachepoints then
-	    			table.insert(cache, v)
-	    		end
-	    	end
-	    	cacheteams = cache
-		end
+		itemsArRight = GetHeroBuild(righthero, level)
+		itemsArLeft = GetHeroBuild(lefthero, level)
 	end
 	POINTS = POINTS + 500
 	PICKED = {left = {},right = {}}
@@ -606,7 +589,7 @@ function BAW:StartGame()
 			unit:SetHullRadius(45)
 		end
 		unit:AddNewModifier(unit, nil, "modifier_phased", {duration=0.3})
-		for i,v in ipairs(itemsAr) do
+		for i,v in ipairs(itemsArLeft) do
 			unit:AddItemByName(v)
 		end
 	end
@@ -645,7 +628,7 @@ function BAW:StartGame()
 			--unit:SetHullRadius(45)
 		end
 		unit:AddNewModifier(unit, nil, "modifier_phased", {duration=0.3})
-		for i,v in ipairs(itemsAr) do
+		for i,v in ipairs(itemsArRight) do
 			unit:AddItemByName(v)
 		end
 	end

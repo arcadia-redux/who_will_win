@@ -1,0 +1,69 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"		"npc_dota_hero_furion"
+	"Title"		"Recommended items for Nature's Prophet"
+	"Items"
+	{
+		"start"
+		{
+			"item"
+			{
+				"0"		"item_tango"
+				"1"		"item_ring_of_protection"
+				"2"		"item_clarity"
+				"3"		"item_clarity"
+			}
+		}
+		"early"
+		{
+			"item"
+			{
+				"0"		"item_magic_stick"
+				"1"		"item_boots"
+				"2"		"item_ring_of_basilius"
+			}
+		}
+		"mid"
+		{
+			"item"
+			{
+				"0"		"item_magic_wand"
+				"1"		"item_power_treads"
+				"2"		"item_maelstrom"
+			}
+		}
+		"late"
+		{
+			"item"
+			{
+				"0"		"item_silver_edge"
+				"1"		"item_sheepstick"
+				"2"		"item_bloodthorn"
+			}
+		}
+		"other"
+		{
+			"item"
+			{
+				"0"		"item_hand_of_midas"
+				"1"		"item_ultimate_scepter"
+				"2"		"item_desolator"
+				"3"		"item_necronomicon_3"
+				"4"		"item_greater_crit"
+				"5"		"item_mekansm"
+				"6"		"item_dagon_5"
+				"7"		"item_monkey_king_bar"
+				"8"		"item_sphere"
+				"9"		"item_blink"
+				"10"		"item_ancient_janggo"
+				"11"		"item_black_king_bar"
+				"12"		"item_hurricane_pike"
+				"13"		"item_refresher_orb"
+				"14"		"item_assault"
+				"15"		"item_ethereal_blade"
+				"16"		"item_octarine_core"
+			}
+		}
+	}
+}

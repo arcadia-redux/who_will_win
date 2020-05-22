@@ -1,0 +1,71 @@
+"itembuilds"
+{
+	"author"		"Valve"
+	"hero"		"npc_dota_hero_bristleback"
+	"Title"		"Recommended items for Bristleback"
+	"Items"
+	{
+		"start"
+		{
+			"item"
+			{
+				"0"		"item_tango"
+				"1"		"item_enchanted_mango"
+				"2"		"item_ring_of_protection"
+				"3"		"item_enchanted_mango"
+			}
+		}
+		"early"
+		{
+			"item"
+			{
+				"0"		"item_ring_of_health"
+				"1"		"item_boots"
+				"2"		"item_ring_of_basilius"
+				"3"		"item_magic_stick"
+			}
+		}
+		"mid"
+		{
+			"item"
+			{
+				"0"		"item_magic_wand"
+				"1"		"item_power_treads"
+				"2"		"item_vanguard"
+			}
+		}
+		"late"
+		{
+			"item"
+			{
+				"0"		"item_crimson_guard"
+				"1"		"item_pipe"
+				"2"		"item_shivas_guard"
+			}
+		}
+		"other"
+		{
+			"item"
+			{
+				"0"		"item_blade_mail"
+				"1"		"item_vladmir"
+				"2"		"item_heavens_halberd"
+				"3"		"item_assault"
+				"4"		"item_heart"
+				"5"		"item_radiance"
+				"6"		"item_abyssal_blade"
+				"7"		"item_echo_sabre"
+				"8"		"item_sange_and_yasha"
+				"9"		"item_black_king_bar"
+				"10"		"item_rod_of_atos"
+				"11"		"item_octarine_core"
+				"12"		"item_lotus_orb"
+				"13"		"item_solar_crest"
+				"14"		"item_armlet"
+				"15"		"item_moon_shard"
+				"16"		"item_ultimate_scepter"
+				"17"		"item_guardian_greaves"
+			}
+		}
+	}
+}
