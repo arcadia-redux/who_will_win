@@ -34,6 +34,10 @@ function CreateItemButton(item, parent, id) {
 	let panel = CreateAbilityButton(item, parent, id)
 	panel.SetHasClass("InventoryItem", true)
 	panel.SetHasClass("no_level", true)
+
+	panel.FindChildTraverse("ButtonSize").style.width = "41px"
+	panel.FindChildTraverse("ButtonSize").style.height = "27px"
+	panel.FindChildTraverse("CooldownTimer").style.fontSize = "20px"
 	panel.style.height = "27px"
 	return panel
 }
@@ -46,7 +50,7 @@ function AssignAbility(panel, abilityID) {
 	const abilityName = Abilities.GetAbilityName(abilityID)
 
 	if (Abilities.IsItem(abilityID)) {
-		panel.FindChildTraverse("ItemImage").abilityname = abilityName
+		panel.FindChildTraverse("ItemImage").itemname = abilityName
 		panel.FindChildTraverse("ItemImage").contextEntityIndex = abilityID
 	}
 	else {
@@ -95,8 +99,13 @@ function UpdateAbilityButton(panel) {
 	panel.SetHasClass("ability_phase",	Abilities.IsInAbilityPhase(abilityID))
 
 	if (!cooldownReady) {
+		/*$.Msg("GetCooldown "+Abilities.GetCooldown(abilityID))
+		$.Msg("GetCooldownTimeRemaining "+Abilities.GetCooldownTimeRemaining(abilityID))
+		$.Msg("GetCooldownTime "+Abilities.GetCooldownTime(abilityID))
+		$.Msg("GetCooldownLength "+Abilities.GetCooldownLength(abilityID))*/
+
 		const cooldownRemaining = Abilities.GetCooldownTimeRemaining(abilityID)
-		const deg = -(cooldownRemaining/Abilities.GetCooldownLength(abilityID)*360)
+		const deg = -(cooldownRemaining/Abilities.GetCooldown(abilityID)*360)
 		panel.FindChildTraverse("CooldownOverlay").style.clip = `radial( 50% 50%, 0deg, ${deg}deg )` //radial( 50.0% 50.0%, 0.0deg, -261.451202deg)
 		panel.SetDialogVariableInt("cooldown_timer", cooldownRemaining)
 	}
@@ -288,7 +297,7 @@ function UpdatePanel(panel) {
 }
 
 function Update() {
-	$.Schedule(0, Update)
+	$.Schedule(0.05, Update)
 
 	let leftUnits = $("#LeftUnits")
 	leftUnits.Children().forEach(panel => UpdatePanel(panel))

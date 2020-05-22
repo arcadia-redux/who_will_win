@@ -1601,23 +1601,23 @@
 	visibility: collapse;
 }
 
-.Reborn #inventory #AbilityBevel
+.Reborn #ItemsContainer #AbilityBevel
 {
 	margin: 0px;
 	background-image: url("s2r://panorama/images/hud/reborn/inventory_item_bevel_psd.vtex");	
 }
 
-.Reborn #inventory .BackpackSlot #AbilityBevel
+.Reborn #ItemsContainer .BackpackSlot #AbilityBevel
 {
 	background-image: none;	
 }
 
-.Reborn #inventory .no_level #AbilityBevel
+.Reborn #ItemsContainer .no_level #AbilityBevel
 {
 	background-image: none;
 }
 
-.Reborn #inventory .is_passive #AbilityBevel
+.Reborn #ItemsContainer .is_passive #AbilityBevel
 {
 	visibility: collapse;
 }
