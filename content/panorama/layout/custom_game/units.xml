@@ -21,6 +21,7 @@
 					<Panel id="PortraitBacker" hittest="false" />
 					<Panel id="PortraitContainer">
 						<DOTAScenePanel id="UnitPortrait" unit="npc_dota_roshan" live-mode="high_end_only" environment="default" particleonly='false'/>
+						<Label id="UnitCounter" text="x{d:unit_count}"/> 
 					</Panel> 
 				</Panel>
 

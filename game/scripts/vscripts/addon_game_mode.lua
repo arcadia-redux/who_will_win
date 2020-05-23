@@ -91,7 +91,8 @@ bannedUnits = {
 	npc_dota_venomancer_plague_ward_4 = true,
 	npc_dota_hero_chen = true,
 	npc_dota_hero_lone_druid = true,
-	npc_dota_hero_invoker = true
+	npc_dota_hero_invoker = true,
+	npc_dota_hero_target_dummy = true
 }
 -- bannedItems = {
 -- 	item_gem
@@ -171,7 +172,7 @@ function BAW:InitGameMode()
     end
     _G.AllHeroes = {}
     for k,v in pairs(HeroesKV) do
-    	if not bannedUnits[k] then
+    	if type(v) == "table" and not bannedUnits[k] then
     		table.insert(_G.AllHeroes,k)
     	end
     end
@@ -463,7 +464,7 @@ function BAW:StartGame()
 	-- local right = table.copy(first[rightN])
 
 
-	local heroes = RollPercentage(100)
+	local heroes = RollPercentage(0)
     local teams = {left = {},right = {}}
     local level
 	local minPoints = POINTS * 0.05
@@ -480,7 +481,7 @@ function BAW:StartGame()
 		-- cheapest = {POINTS,''}
 		-- teams = {left = {},right = {}}
 		for k,v in pairs(UNIT2POINT) do
-			if v <= POINTS and v >= minPoints then
+			if v <= POINTS --[[and v >= minPoints]] then
 				table.insert(cache, {v,k})
 				if cheapest[1] > v then
 					cheapest = {v,k}

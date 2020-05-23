@@ -236,6 +236,37 @@
 #RightUnits .UnitPanel #ItemsContainer,
 #RightUnits .UnitPanel .LabelColumn,
 #RightUnits .UnitPanel #MoveSpeedLabelBase,
-#RightUnits .UnitPanel #Dead, {
+#RightUnits .UnitPanel #Dead,
+#RightUnits .UnitPanel #UnitCounter {
 	pre-transform-scale2d: -1, 1;
+}
+
+.UnitGroup #center_bg {
+	visibility: collapse;
+}
+
+#UnitCounter {
+	font-size: 28px;
+	text-shadow: 0px 0px 4px 3 #000000;
+	color: white;
+
+	visibility: collapse;
+
+	horizontal-align:left;
+	vertical-align: bottom;
+
+	margin-bottom: 20px;
+	margin-left: 5px;
+}
+
+.UnitGroup #UnitCounter {
+	visibility: visible;
+}
+
+.Death #UnitCounter {
+	visibility: collapse;
+}
+
+.UnitGroup.GroupOneUnit #UnitCounter {
+	visibility: collapse;
 }

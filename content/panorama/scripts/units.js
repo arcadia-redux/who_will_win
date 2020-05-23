@@ -159,36 +159,43 @@ function CreateUnitPanel(id, parent) {
 function AssignUnit(panel, unitID) {
 	panel.unitID = unitID
 
+	if (Array.isArray(unitID)) {
+		panel.AddClass("UnitGroup")
+		unitID = unitID[0]
+	}
+	else {
+		panel.RemoveClass("UnitGroup")
+	}
+
 	const unitName = Entities.GetUnitName(unitID)
-
 	panel.SetHasClass("Death", false)
-
 	//panel.FindChildTraverse("UnitNameLabel").text = $.Localize(unitName)
 	panel.FindChildTraverse("UnitPortrait").SetUnit(unitName, "default", true)
 
-	let abiCont = panel.FindChildTraverse("AbilityContainer")
-	for (let i = 0; i < 6; i++) {
-		const abiID = Entities.GetAbility( unitID, i )
-		abiCont.FindChild(i).visible = true
-		if (abiID != -1 && Abilities.IsDisplayedAbility(abiID)) {
-			AssignAbility(abiCont.FindChild(i), abiID)
+
+	if (!panel.BHasClass("UnitGroup")) {
+		let abiCont = panel.FindChildTraverse("AbilityContainer")
+		for (let i = 0; i < 6; i++) {
+			const abiID = Entities.GetAbility( unitID, i )
+			abiCont.FindChild(i).visible = true
+			if (abiID != -1 && Abilities.IsDisplayedAbility(abiID)) {
+				AssignAbility(abiCont.FindChild(i), abiID)
+			}
+			else
+				abiCont.FindChild(i).visible = false
 		}
-		else
-			abiCont.FindChild(i).visible = false
-	}
 
-	let itemCont = panel.FindChildTraverse("ItemsContainer")
-	for (let i = 0; i < 6; i++) {
-		const abiID = Entities.GetItemInSlot(unitID, i)
-		itemCont.FindChild(i).visible = true
-		if (abiID != -1) {
-			AssignAbility(itemCont.FindChild(i), abiID)
+		let itemCont = panel.FindChildTraverse("ItemsContainer")
+		for (let i = 0; i < 6; i++) {
+			const abiID = Entities.GetItemInSlot(unitID, i)
+			itemCont.FindChild(i).visible = true
+			if (abiID != -1) {
+				AssignAbility(itemCont.FindChild(i), abiID)
+			}
+			else
+				itemCont.FindChild(i).visible = false
 		}
-		else
-			itemCont.FindChild(i).visible = false
 	}
-
-
 }
 
 function UpdatePanel(panel) {
@@ -199,14 +206,36 @@ function UpdatePanel(panel) {
 
 	panel.visible = true
 
-	const unitID = panel.unitID
+	let unitID = panel.unitID
 
 	if (panel.BHasClass("Death")) {
 		return
 	}
 
-	panel.FindChildTraverse("AbilityContainer").Children().forEach(panel => UpdateAbilityButton(panel))
-	panel.FindChildTraverse("ItemsContainer").Children().forEach(panel => UpdateAbilityButton(panel))
+	if (Array.isArray(unitID)) {
+		unitID = unitID.filter(unit => Entities.IsAlive(unit))
+
+		if (unitID.length == 0) {
+			panel.SetHasClass("Death", true)
+			return
+		}
+
+		panel.SetHasClass("GroupOneUnit", unitID.length <= 1)
+		panel.SetDialogVariableInt("unit_count", unitID.length)
+
+		unitID = unitID.reduce((acc,unit) => { //hpbar show lowest hp unit
+			if (Entities.GetHealth(unit) <= Entities.GetHealth(acc))
+				return unit
+			else
+				return acc
+		}, unitID[0])
+	}
+	else {
+		panel.FindChildTraverse("AbilityContainer").Children().forEach(panel => UpdateAbilityButton(panel))
+		panel.FindChildTraverse("ItemsContainer").Children().forEach(panel => UpdateAbilityButton(panel))
+	}
+
+
 
 	panel.SetHasClass("EnemyUnit", Entities.IsEnemy(unitID))
 	panel.SetHasClass("Death", !Entities.IsAlive(unitID))
@@ -307,8 +336,8 @@ function Update() {
 }
 
 function NewRound(data) {
-	const leftUnitsID = LuaTableToArray(data.indexes["left"])
-	const rightUnitsID = LuaTableToArray(data.indexes["right"])
+	let leftUnitsID = LuaTableToArray(data.indexes["left"])
+	let rightUnitsID = LuaTableToArray(data.indexes["right"])
 	let leftUnits = $("#LeftUnits")
 	let rightUnits = $("#RightUnits")
 
@@ -319,6 +348,9 @@ function NewRound(data) {
 	rightUnitsID.sort(function(a,b) {
 		return Entities.GetMaxHealth(b) - Entities.GetMaxHealth(a)
 	})
+
+	leftUnitsID = GroupUnits(leftUnitsID)
+	rightUnitsID = GroupUnits(rightUnitsID)
 
 	leftUnits.RemoveClass("Appear")
 	leftUnits.AddClass("Hidden")
@@ -384,4 +416,40 @@ function LuaTableToArray(nt) {
 		result[i-1] = nt[i]
 	}
 	return result
+}
+
+function GroupUnits(originalArray) {
+	let count = {}
+	let unitIDs = {}
+	originalArray.forEach(function(unitID, index) {
+		const unitName = Entities.GetUnitName(unitID)
+		count[unitName] = count[unitName] ? count[unitName] + 1 : 1 
+
+		const arr = unitIDs[unitName]
+		if (arr) {
+			arr.push(unitID)
+		}
+		else {
+			unitIDs[unitName] = [unitID]
+		}
+		
+	})
+
+	let newArray = []
+	originalArray.forEach(function(unitID) {
+		const unitName = Entities.GetUnitName(unitID)
+
+		if (count[unitName] >= 2 && !Entities.IsRealHero(unitID)) {
+			if (unitIDs[unitName]) {
+				const ids = unitIDs[unitName]
+				delete unitIDs[unitName]
+				newArray.push(ids)
+			}
+		}
+		else {
+			newArray.push(unitID)
+		}
+	})
+
+	return newArray
 }
