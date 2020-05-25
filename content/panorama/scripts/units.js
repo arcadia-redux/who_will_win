@@ -63,6 +63,7 @@ function AssignAbility(panel, abilityID) {
 	panel.RemoveClass("insufficient_mana")
 	panel.RemoveClass("muted")
 	panel.RemoveClass("silenced")
+	panel.RemoveClass("in_cooldown")
 
 	panel.SetHasClass("is_passive", Abilities.IsPassive(abilityID))
 
@@ -105,7 +106,8 @@ function UpdateAbilityButton(panel) {
 		$.Msg("GetCooldownLength "+Abilities.GetCooldownLength(abilityID))*/
 
 		const cooldownRemaining = Abilities.GetCooldownTimeRemaining(abilityID)
-		const deg = -(cooldownRemaining/Abilities.GetCooldown(abilityID)*360)
+		let deg = -(cooldownRemaining/Abilities.GetCooldown(abilityID)*360)
+		if (!Number.isFinite(deg)) deg = 360;
 		panel.FindChildTraverse("CooldownOverlay").style.clip = `radial( 50% 50%, 0deg, ${deg}deg )` //radial( 50.0% 50.0%, 0.0deg, -261.451202deg)
 		panel.SetDialogVariableInt("cooldown_timer", cooldownRemaining)
 	}
@@ -171,7 +173,6 @@ function AssignUnit(panel, unitID) {
 	panel.SetHasClass("Death", false)
 	//panel.FindChildTraverse("UnitNameLabel").text = $.Localize(unitName)
 	panel.FindChildTraverse("UnitPortrait").SetUnit(unitName, "default", true)
-
 
 	if (!panel.BHasClass("UnitGroup")) {
 		let abiCont = panel.FindChildTraverse("AbilityContainer")
@@ -406,6 +407,12 @@ function StartFight() {
 	GameEvents.Subscribe("new_round", NewRound);
 	GameEvents.Subscribe("start_fight", StartFight);
 
+	let p = $.CreatePanel("DOTATalentDisplay", $.GetContextPanel(), "")
+	p.style.width = "64px"
+	p.style.height = "64px"
+	p.style.margin = '100px'
+
+
 	Update()
  
 })()
@@ -438,8 +445,9 @@ function GroupUnits(originalArray) {
 	let newArray = []
 	originalArray.forEach(function(unitID) {
 		const unitName = Entities.GetUnitName(unitID)
+		const isHero = unitName.includes("npc_dota_hero")
 
-		if (count[unitName] >= 2 && !Entities.IsRealHero(unitID)) {
+		if (count[unitName] >= 2 && !isHero) {
 			if (unitIDs[unitName]) {
 				const ids = unitIDs[unitName]
 				delete unitIDs[unitName]

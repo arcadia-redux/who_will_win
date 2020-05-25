@@ -81,6 +81,7 @@ function createSceneVersus(t,k,i,parent) {
 		let abpan = $.CreatePanel("DOTAAbilityImage", abs, "ab")
 		abname = Abilities.GetAbilityName(ab)
 		// abpan.abilityname = abname
+		if (Abilities.IsHidden(ab)) continue;
 		abpan.contextEntityIndex = ab
 		if(ab != -1){
 			abpan.SetPanelEvent('onmouseover',ShowAbTooltip(abpan,t.indexes[k][i],abname))
