@@ -11,6 +11,10 @@ if BAW == nil then
 	ALIVES = {}
 	ROUND = 0
 	POINTS = 1000
+	NEXT_ROUND = {}
+
+	LEFT_SPAWN_POS = Vector(-1280,-1088,128)
+	RIGHT_SPAWN_POS = Vector(1280,1088,128)
 end
 
 require('timers')
@@ -18,6 +22,13 @@ require('utils')
 require('ai')
 
 function Precache( context )
+	--[[
+	for k,v in pairs(HeroesKV) do
+    	if type(v) == "table" and not bannedUnits[k] then
+    		PrecacheUnitByNameAsync(k, context)
+    	end
+    end
+    ]]
 end
 
 function Activate()
@@ -92,7 +103,9 @@ bannedUnits = {
 	npc_dota_hero_chen = true,
 	npc_dota_hero_lone_druid = true,
 	npc_dota_hero_invoker = true,
-	npc_dota_hero_target_dummy = true
+	npc_dota_hero_wisp = true,
+	npc_dota_hero_target_dummy = true,
+	npc_dota_hero_base = true
 }
 -- bannedItems = {
 -- 	item_gem
@@ -176,6 +189,7 @@ function BAW:InitGameMode()
     		table.insert(_G.AllHeroes,k)
     	end
     end
+
     --[[
     local points = 1000
     local cachepoints
@@ -230,6 +244,9 @@ function BAW:InitGameMode()
     	points = points + 500
     end
     ]]
+
+    self:NextRoundUnits() 
+
 end
 
 function CalculateUnitPoints(unitName, kv)
@@ -409,67 +426,15 @@ function BAW:StartFight()
 		return 1
 	end)
 	CustomGameEventManager:Send_ServerToAllClients('start_fight', nil)
+
+
+	
 end
 
-function BAW:StartGame()
-	PICKED_ID = {}
-	VOTED_ID = {}
-	Convars:SetFloat("host_timescale", 1)
-	for i,v in ipairs(PLAYERS_ID) do
-		PlayerResource:GetPlayer(v):SetTeam(DOTA_TEAM_GOODGUYS)
-	end
-
-	-- Convars:SetFloat("host_timescale", 5)
-	local units = FindUnitsInRadius(DOTA_TEAM_GOODGUYS,
-          Vector(0, 0, 0),
-          nil,
-          10000,
-          DOTA_UNIT_TARGET_TEAM_BOTH,
-          DOTA_UNIT_TARGET_ALL,
-          DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES+DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD,
-          FIND_ANY_ORDER,
-          false)
-	for i,v in ipairs(units) do
-		if not v:IsControllableByAnyPlayer() then
-			v:RemoveSelf()
-		end
-	end
-	local ent = Entities:First()
-	while ent do
-		if ent and not ent:IsNull() then
-		    if ent and not ent:IsNull() and ((ent.IsItem and ent:IsItem()) or ent.bawcreep or ent:GetClassname() == "dota_item_drop" or ent:GetClassname() == "dota_temp_tree") then
-		    	ent:RemoveSelf()
-		    end
-		end
-	    ent = Entities:Next(ent)
-	end
-	-- for i,v in ipairs(units) do
-	-- 	if not v:IsControllableByAnyPlayer() then
-	-- 		v:ForceKill(false)
-	-- 	end
-	-- end
-	-- for d,e in pairs(ALIVES) do
-	-- 	for k,v in pairs(e) do
-	-- 		if v:IsAlive() then
-	-- 			v:ForceKill(false)
-	-- 		end
-	-- 	end
-	-- end
-	_G.FIGHT = false
-	-- local first = table.copy(TEAMS[RandomInt(1,#TEAMS)])
-	-- local leftN = RandomInt(1,#first)
-	-- local left = table.copy(first[leftN])
-	-- table.remove(first, leftN)
-	-- local rightN = RandomInt(1,#first)
-	-- local right = table.copy(first[rightN])
-
-
-	local heroes = RollPercentage(0)
-    local teams = {left = {},right = {}}
-    local level
-	local minPoints = POINTS * 0.05
-	local lefthero
-	local righthero
+function BAW:NextRoundUnits() 
+	local heroes = RollPercentage(50)
+	local leftHero, rightHero
+	local teams = {left = {}, right = {}}
 	if not heroes then
 	    local cachepoints
 	    local cache = {}
@@ -513,6 +478,68 @@ function BAW:StartGame()
 		local howmany = RandomInt(1, 5)
 		lefthero = AllHeroes[RandomInt(1, #AllHeroes)]
 		righthero = AllHeroes[RandomInt(1, #AllHeroes)]
+
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+
+	NEXT_ROUND = {
+		teams = teams,
+		lefthero = lefthero,
+		righthero = righthero,
+		heroes = heroes,
+	}
+
+	return teams, leftHero, rightHero
+
+end
+
+function BAW:StartGame()
+	PICKED_ID = {}
+	VOTED_ID = {}
+	Convars:SetFloat("host_timescale", 1)
+	for i,v in ipairs(PLAYERS_ID) do
+		PlayerResource:GetPlayer(v):SetTeam(DOTA_TEAM_GOODGUYS)
+	end
+
+	-- Convars:SetFloat("host_timescale", 5)
+	local units = FindUnitsInRadius(DOTA_TEAM_GOODGUYS,
+          Vector(0, 0, 0),
+          nil,
+          10000,
+          DOTA_UNIT_TARGET_TEAM_BOTH,
+          DOTA_UNIT_TARGET_ALL,
+          DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES+DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD,
+          FIND_ANY_ORDER,
+          false)
+	for i,v in ipairs(units) do
+		if not v:IsControllableByAnyPlayer() then
+			v:RemoveSelf()
+		end
+	end
+	local ent = Entities:First()
+	while ent do
+		if ent and not ent:IsNull() then
+		    if ent and not ent:IsNull() and ((ent.IsItem and ent:IsItem()) or ent.bawcreep or ent:GetClassname() == "dota_item_drop" or ent:GetClassname() == "dota_temp_tree") then
+		    	ent:RemoveSelf()
+		    end
+		end
+	    ent = Entities:Next(ent)
+	end
+
+	_G.FIGHT = false
+
+	local heroes = NEXT_ROUND.heroes
+    local teams = NEXT_ROUND.teams
+    local lefthero = NEXT_ROUND.lefthero
+    local righthero = NEXT_ROUND.righthero 
+    local level
+	local minPoints = POINTS * 0.05
+
+
+	if heroes then
 		level = RandomInt(1, 5)
 		if level == 1 then
 			level = 1
@@ -523,25 +550,12 @@ function BAW:StartGame()
 		elseif level == 4 then
 			level = 30
 		end
-		for i=1,howmany do
-			table.insert(teams['left'], lefthero)
-			table.insert(teams['right'], righthero)
-		end
 	end
-	-- DeepPrintTable(teams)
-	-- local sum = 0
-	-- for k,v in pairs(teams) do
-	-- 	sum = 0
-	-- 	for i,p in ipairs(v) do
-	-- 		sum = sum + p[1]
-	-- 	end
-	-- 	print(k..": "..sum)
-	-- end
-	-- DeepPrintTable(teams)
+	
 	local left = teams['left']
 	local right = teams['right']
 	local itemsg = false
-	if RollPercentage(50) then
+	if RollPercentage(50) and heroes then
 		itemsg = true
 	end
 	local itemsArRight = {}
@@ -556,7 +570,7 @@ function BAW:StartGame()
 	local leftpw = 0
 	local rightpw = 0
 	for k,v in ipairs(left) do
-		leftpw,unit = BAW:SpawnUnits(v,"left",Vector(-1280,-1088,128),Vector(0,0,0),leftpw)
+		leftpw,unit = BAW:SpawnUnits(v,"left", LEFT_SPAWN_POS,Vector(0,0,0),leftpw)
 		if unit and heroes and unit:IsRealHero() then
 			for i=1,level do
 				unit:HeroLevelUp(false)
@@ -586,16 +600,17 @@ function BAW:StartGame()
 				end
 			end
 		end
-		if unit:GetHullRadius() < 45 then
-			unit:SetHullRadius(45)
+		if unit:GetHullRadius() < 24 then
+			unit:SetHullRadius(24)
 		end
+		ResolveNPCPositions(LEFT_SPAWN_POS, 400)
 		unit:AddNewModifier(unit, nil, "modifier_phased", {duration=0.3})
 		for i,v in ipairs(itemsArLeft) do
 			unit:AddItemByName(v)
 		end
 	end
 	for k,v in ipairs(right) do
-		rightpw,unit = BAW:SpawnUnits(v,"right",Vector(1280,1088,128),Vector(0,0,0),rightpw)
+		rightpw,unit = BAW:SpawnUnits(v,"right", RIGHT_SPAWN_POS,Vector(0,0,0),rightpw)
 		if heroes and unit:IsRealHero() then
 			for i=1,level do
 				unit:HeroLevelUp(false)
@@ -625,9 +640,10 @@ function BAW:StartGame()
 				end
 			end
 		end
-		if unit:GetHullRadius() < 45 then
-			--unit:SetHullRadius(45)
+		if unit:GetHullRadius() < 24 then
+			unit:SetHullRadius(24)
 		end
+		ResolveNPCPositions(RIGHT_SPAWN_POS, 400)
 		unit:AddNewModifier(unit, nil, "modifier_phased", {duration=0.3})
 		for i,v in ipairs(itemsArRight) do
 			unit:AddItemByName(v)
@@ -692,6 +708,14 @@ function BAW:StartGame()
 		else
 			return nil
 		end
+	end)
+
+	self:NextRoundUnits() 
+
+	Timers:CreateTimer(2, function() 
+		local unitList = vlua.clone(NEXT_ROUND.teams.left)
+		vlua.extend(unitList, NEXT_ROUND.teams.right)
+		PrecacheUnitList(unitList)
 	end)
 end
 
