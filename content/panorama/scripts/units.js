@@ -66,6 +66,7 @@ function AssignAbility(panel, abilityID) {
 	panel.RemoveClass("in_cooldown")
 
 	panel.SetHasClass("is_passive", Abilities.IsPassive(abilityID))
+	panel.SetHasClass("no_level", Abilities.GetLevel(abilityID) < 1)
 
 	const manaCost = Abilities.GetManaCost(abilityID)
 	panel.SetHasClass("no_mana_cost", manaCost == 0)
@@ -406,12 +407,6 @@ function StartFight() {
 
 	GameEvents.Subscribe("new_round", NewRound);
 	GameEvents.Subscribe("start_fight", StartFight);
-
-	let p = $.CreatePanel("DOTATalentDisplay", $.GetContextPanel(), "")
-	p.style.width = "64px"
-	p.style.height = "64px"
-	p.style.margin = '100px'
-
 
 	Update()
  

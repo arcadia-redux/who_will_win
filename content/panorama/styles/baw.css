@@ -253,6 +253,7 @@ height: 100%;
 	box-shadow: #000000f5 -3px -2.5px 5px 5px;
 	align: right bottom;
 	margin: 100px;
+	margin-right: 350px;
 	z-index: -2;
 }
 .vote:hover{
@@ -344,6 +345,11 @@ height: 100%;
 	color: white;
 }
 
+.no_level 
+{
+	saturation: 0;
+	wash-color: #666666;
+}
 
 
 
@@ -351,4 +357,73 @@ height: 100%;
 
 .right{
 	horizontal-align: right;
+}
+
+#xp {
+	margin-top: 15px;
+}
+
+
+#LevelLabel
+{
+	font-weight: normal;
+    text-shadow: 0px 0px 3px 3.7 #EC780E24;
+    color: #E7D291;
+    width: 30px;
+    text-align: center;
+    vertical-align: bottom;
+    font-size: 18px;
+	horizontal-align: center;
+    z-index: 50;
+	
+	margin-bottom: 5px;
+	margin-left: 3px;
+}
+
+#CircularXPProgress
+{
+    width: 32px;
+    height: 32px;
+    horizontal-align: left;
+	padding: 0px;
+	margin-top: 2px;
+	margin-left: 5px;
+	vertical-align: middle;
+	//opacity-mask: url("s2r://panorama/images/masks/vertical_gradient_small_psd.vtex");
+}
+
+#CircularXPProgressBlur_FG,
+#CircularXPProgress_FG
+{
+	width: 100%;
+	height: 100%;
+    border-radius: 50%;
+    border: 1.5px solid #E7D291;
+    z-index: 50;
+	transition-property: clip;
+	transition-duration: .2s;
+	transition-timing-function: ease-in-out;
+}
+
+#CircularXPProgressBlur_BG,
+#CircularXPProgress_BG
+{
+	width: 100%;
+	height: 100%;
+    border-radius: 50%;
+    border: 2px solid #393939;
+    z-index: 40;
+    background-color: #000000FF;
+    //box-shadow: #00000055 -2px -2px 4px 4px;
+}
+
+#CircularXPProgressBlur_FG
+{
+	border: 2px solid #DA6F00;
+}
+
+
+#CircularXPProgressBlur_BG
+{
+	border-color: #000000;
 }

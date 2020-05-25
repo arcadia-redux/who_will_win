@@ -433,6 +433,7 @@ end
 
 function BAW:NextRoundUnits() 
 	local heroes = RollPercentage(50)
+	local minPoints = POINTS * 0.05
 	local leftHero, rightHero
 	local teams = {left = {}, right = {}}
 	if not heroes then
@@ -496,6 +497,40 @@ function BAW:NextRoundUnits()
 
 end
 
+function BAW:CleanMap()
+	local units = FindUnitsInRadius(DOTA_TEAM_GOODGUYS,
+          Vector(0, 0, 0),
+          nil,
+          10000,
+          DOTA_UNIT_TARGET_TEAM_BOTH,
+          DOTA_UNIT_TARGET_ALL,
+          DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES+DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD,
+          FIND_UNITS_EVERYWHERE,
+          false)
+	
+	for i,v in ipairs(units) do
+		if not v:IsControllableByAnyPlayer() then
+			v:ForceKill(false)
+			v:RemoveSelf()
+		end
+	end
+	
+	local ent = Entities:First()
+	while ent do
+		if ent and not ent:IsNull() then
+		    if (ent.IsItem and ent:IsItem()) or ent.bawcreep or ent:GetClassname() == "dota_item_drop" or ent:GetClassname() == "dota_temp_tree" then
+		    	ent:RemoveSelf()
+		    end
+		end
+	    ent = Entities:Next(ent)
+	end
+
+	local thinkers = Entities:FindAllByClassname("npc_dota_thinker")
+	for _,think in ipairs(thinkers) do
+		think:ForceKill(false)
+	end
+end
+
 function BAW:StartGame()
 	PICKED_ID = {}
 	VOTED_ID = {}
@@ -504,30 +539,7 @@ function BAW:StartGame()
 		PlayerResource:GetPlayer(v):SetTeam(DOTA_TEAM_GOODGUYS)
 	end
 
-	-- Convars:SetFloat("host_timescale", 5)
-	local units = FindUnitsInRadius(DOTA_TEAM_GOODGUYS,
-          Vector(0, 0, 0),
-          nil,
-          10000,
-          DOTA_UNIT_TARGET_TEAM_BOTH,
-          DOTA_UNIT_TARGET_ALL,
-          DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES+DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD,
-          FIND_ANY_ORDER,
-          false)
-	for i,v in ipairs(units) do
-		if not v:IsControllableByAnyPlayer() then
-			v:RemoveSelf()
-		end
-	end
-	local ent = Entities:First()
-	while ent do
-		if ent and not ent:IsNull() then
-		    if ent and not ent:IsNull() and ((ent.IsItem and ent:IsItem()) or ent.bawcreep or ent:GetClassname() == "dota_item_drop" or ent:GetClassname() == "dota_temp_tree") then
-		    	ent:RemoveSelf()
-		    end
-		end
-	    ent = Entities:Next(ent)
-	end
+	BAW:CleanMap()
 
 	_G.FIGHT = false
 
@@ -536,8 +548,6 @@ function BAW:StartGame()
     local lefthero = NEXT_ROUND.lefthero
     local righthero = NEXT_ROUND.righthero 
     local level
-	local minPoints = POINTS * 0.05
-
 
 	if heroes then
 		level = RandomInt(1, 5)
@@ -585,12 +595,12 @@ function BAW:StartGame()
 						unit:GetAbilityByIndex(i):SetLevel(1)
 					end
 				end
-				unit:GetAbilityByIndex(6):SetLevel(1)
+				unit:GetAbilityByIndex(5):SetLevel(1)
 			elseif level == 16 then
 				unit:GetAbilityByIndex(0):SetLevel(4)
 				unit:GetAbilityByIndex(1):SetLevel(4)
 				unit:GetAbilityByIndex(2):SetLevel(4)
-				unit:GetAbilityByIndex(6):SetLevel(3)
+				unit:GetAbilityByIndex(5):SetLevel(3)
 			elseif level == 30 then
 				for i=0,15 do
 					local ab = unit:GetAbilityByIndex(i)
@@ -625,12 +635,12 @@ function BAW:StartGame()
 						unit:GetAbilityByIndex(i):SetLevel(1)
 					end
 				end
-				unit:GetAbilityByIndex(6):SetLevel(1)
+				unit:GetAbilityByIndex(5):SetLevel(1)
 			elseif level == 16 then
 				unit:GetAbilityByIndex(0):SetLevel(4)
 				unit:GetAbilityByIndex(1):SetLevel(4)
 				unit:GetAbilityByIndex(2):SetLevel(4)
-				unit:GetAbilityByIndex(6):SetLevel(3)
+				unit:GetAbilityByIndex(5):SetLevel(3)
 			elseif level == 30 then
 				for i=0,15 do
 					local ab = unit:GetAbilityByIndex(i)
@@ -726,12 +736,15 @@ function BAW:SpawnUnits(v,team,vec,target,points)
 		if not unit:HasGroundMovementCapability() and not unit:HasFlyMovementCapability() then
 			FindClearSpaceForUnit(unit, Vector(0,0)+RandomVector(RandomInt(0, 200)), true)
 		end
-		for i=0,5 do
-			local ab = unit:GetAbilityByIndex(i)
-			if ab then
-				ab:SetLevel(1)
-				ab:SetActivated(true)
-				ab:ToggleAutoCast()
+
+		if not unit:IsRealHero() then
+			for i=0,5 do
+				local ab = unit:GetAbilityByIndex(i)
+				if ab then
+					ab:SetLevel(1)
+					ab:SetActivated(true)
+					--ab:ToggleAutoCast()
+				end
 			end
 		end
 		unit.targetPoint = target

@@ -18,6 +18,12 @@
 		</snippet>
 		<snippet name="teamScene">
 			<Panel class="teamScenePanel">
+				<Panel id="xp" hittest="false">
+					<Panel id="LevelBackground"/>
+					<Label id="LevelLabel" class="MonoNumbersFont" text="{d:level}" hittest="false" />
+					<CircularProgressBar id="CircularXPProgress"/>
+					<CircularProgressBar id="CircularXPProgressBlur" hittest="false"/>	
+				</Panel>
 				<Panel class="unitstats" hittest="false">
 					<Label class="unitstat" id="unitdamage" text="20"></Label>
 					<Label class="unitstat" id="unitarmor" text="2.5"></Label>

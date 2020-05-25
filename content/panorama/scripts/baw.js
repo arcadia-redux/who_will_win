@@ -4,6 +4,8 @@ function new_round(t) {
 	// $("#rightTeam").text = t.right
 	$("#pwleft").text = "Power: "+t.left
 	$("#pwright").text = "Power: "+t.right
+	$("#pwleft").visible = t.left != 0
+	$("#pwright").visible = t.right != 0
 	$("#makeBetPanel").style.visibility = "visible"
 	$("#leftTeamG").RemoveAndDeleteChildren()
 	$("#rightTeamG").RemoveAndDeleteChildren()
@@ -60,6 +62,10 @@ function createSceneVersus(t,k,i,parent) {
 	let pan = $.CreatePanel("Panel", parent, "lb"),
 	name = Entities.GetUnitName(t.indexes[k][i]),
 	ab,abpan,abname
+
+	const unitID = t.indexes[k][i]
+
+
 	pan.BLoadLayoutSnippet("teamScene")
 	pan.BCreateChildren('<DOTAScenePanel id="unit" class="teamScene" light="global_light" environment="default" particleonly="false" renderwaterreflections="true" antialias="true" drawbackground="0" renderdeferred="false" unit="'+name+'"/>')
 	AddUnitTooltip(pan.FindChildTraverse("unit"),t.indexes[k][i])
@@ -72,6 +78,8 @@ function createSceneVersus(t,k,i,parent) {
 	pan.FindChildTraverse("unitatkspd").text = t.indexes['regens'][t.indexes[k][i]]["5"].toFixed(2)+"s"
 	pan.FindChildTraverse("unitatkrng").text = t.indexes['regens'][t.indexes[k][i]]["6"]
 
+	pan.SetDialogVariableInt("level", Entities.GetLevel(unitID))
+
 	// $.Msg([t.indexes[k][i],Entities.GetHealthThinkRegen(t.indexes[k][i]),Entities.GetManaThinkRegen(t.indexes[k][i])])
 	pan.FindChildTraverse("unithpplus").text = FormatRegen(t.indexes['regens'][t.indexes[k][i]]["1"])
 	pan.FindChildTraverse("unitmpplus").text = FormatRegen(t.indexes['regens'][t.indexes[k][i]]["2"])
@@ -83,6 +91,7 @@ function createSceneVersus(t,k,i,parent) {
 		// abpan.abilityname = abname
 		if (Abilities.IsHidden(ab)) continue;
 		abpan.contextEntityIndex = ab
+		abpan.SetHasClass("no_level", Abilities.GetLevel(ab) < 1)
 		if(ab != -1){
 			abpan.SetPanelEvent('onmouseover',ShowAbTooltip(abpan,t.indexes[k][i],abname))
 			abpan.SetPanelEvent('onmouseout',function() {
@@ -92,10 +101,16 @@ function createSceneVersus(t,k,i,parent) {
 	}
 	let items = pan.FindChildTraverse("items"),itm,item 
 	for (let d = 0; d < 6; d++) {
-		item = Entities.GetItemInSlot(t.indexes[k][i],d)
+		let item = Entities.GetItemInSlot(t.indexes[k][i],d)
+
 		if(item != -1){
+			const itemName = Abilities.GetAbilityName(item) 
 			itm = items.GetChild(d)
 			itm.contextEntityIndex = item
+			itm.SetPanelEvent('onmouseover',ShowAbTooltip(itm,t.indexes[k][i],itemName))
+			itm.SetPanelEvent('onmouseout',function() {
+				$.DispatchEvent('DOTAHideAbilityTooltip',itm);
+			})
 		}
 		// let abpan = $.CreatePanel("DOTAAbilityImage", abs, "ab")
 		// abname = Abilities.GetAbilityName(ab)
