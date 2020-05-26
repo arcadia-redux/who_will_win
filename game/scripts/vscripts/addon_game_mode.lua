@@ -383,7 +383,7 @@ function BAW:StartFight()
           nil,
           10000,
           DOTA_UNIT_TARGET_TEAM_FRIENDLY,
-          DOTA_UNIT_TARGET_ALL,
+          DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BUILDING,
           DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES+DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD,
           FIND_ANY_ORDER,
           false),
@@ -392,7 +392,7 @@ function BAW:StartFight()
           nil,
           10000,
           DOTA_UNIT_TARGET_TEAM_FRIENDLY,
-          DOTA_UNIT_TARGET_ALL,
+          DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BUILDING,
           DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES+DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD,
           FIND_ANY_ORDER,
           false)}
@@ -411,7 +411,11 @@ function BAW:StartFight()
 				for n,p in pairs(PICKED[d]) do
 					p:SetHealth(p:GetHealth()-1)
 				end
-				BAW:StartGame()
+
+				Timers:CreateTimer(2, function()
+					BAW:StartGame()
+				end)
+				
 				CustomGameEventManager:Send_ServerToAllClients('new_timer',{time=45})
 				return nil
 			end
@@ -581,6 +585,12 @@ function BAW:StartGame()
 	local rightpw = 0
 	for k,v in ipairs(left) do
 		leftpw,unit = BAW:SpawnUnits(v,"left", LEFT_SPAWN_POS,Vector(0,0,0),leftpw)
+
+		if unit:GetHullRadius() < 45 and not unit:IsHero() then
+			unit:SetHullRadius(45)
+		end
+		FindClearSpaceForUnit(unit, unit:GetAbsOrigin(), true)
+		
 		if unit and heroes and unit:IsRealHero() then
 			for i=1,level do
 				unit:HeroLevelUp(false)
@@ -610,17 +620,21 @@ function BAW:StartGame()
 				end
 			end
 		end
-		if unit:GetHullRadius() < 24 then
-			unit:SetHullRadius(24)
-		end
-		ResolveNPCPositions(LEFT_SPAWN_POS, 400)
-		unit:AddNewModifier(unit, nil, "modifier_phased", {duration=0.3})
+
+		--unit:AddNewModifier(unit, nil, "modifier_phased", {duration=0.3})
 		for i,v in ipairs(itemsArLeft) do
 			unit:AddItemByName(v)
 		end
 	end
+
 	for k,v in ipairs(right) do
 		rightpw,unit = BAW:SpawnUnits(v,"right", RIGHT_SPAWN_POS,Vector(0,0,0),rightpw)
+
+		if unit:GetHullRadius() < 45 and not unit:IsHero() then
+			unit:SetHullRadius(45)
+		end
+		FindClearSpaceForUnit(unit, unit:GetAbsOrigin(), true)
+
 		if heroes and unit:IsRealHero() then
 			for i=1,level do
 				unit:HeroLevelUp(false)
@@ -650,15 +664,13 @@ function BAW:StartGame()
 				end
 			end
 		end
-		if unit:GetHullRadius() < 24 then
-			unit:SetHullRadius(24)
-		end
-		ResolveNPCPositions(RIGHT_SPAWN_POS, 400)
-		unit:AddNewModifier(unit, nil, "modifier_phased", {duration=0.3})
+		
+		--unit:AddNewModifier(unit, nil, "modifier_phased", {duration=0.3})
 		for i,v in ipairs(itemsArRight) do
 			unit:AddItemByName(v)
 		end
 	end
+
 	local ar = {left = {},right = {},regens = {}}
 	local index
 	for k,v in pairs(ALIVES) do
@@ -733,9 +745,6 @@ function BAW:SpawnUnits(v,team,vec,target,points)
 	local unit = CreateUnitByName( v, vec, true, nil, nil, DOTA_TEAM_GOODGUYS)
 	if unit then
 		unit.bawcreep = true
-		if not unit:HasGroundMovementCapability() and not unit:HasFlyMovementCapability() then
-			FindClearSpaceForUnit(unit, Vector(0,0)+RandomVector(RandomInt(0, 200)), true)
-		end
 
 		if not unit:IsRealHero() then
 			for i=0,5 do

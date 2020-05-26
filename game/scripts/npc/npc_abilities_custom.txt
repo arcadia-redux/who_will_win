@@ -46,4 +46,9 @@
 			}
 		}
 	}
+
+	"visage_summon_familiars_stone_form"
+	{
+		"AbilityCooldown"				"30.0"
+	}
 }

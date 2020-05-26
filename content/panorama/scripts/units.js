@@ -210,10 +210,6 @@ function UpdatePanel(panel) {
 
 	let unitID = panel.unitID
 
-	if (panel.BHasClass("Death")) {
-		return
-	}
-
 	if (Array.isArray(unitID)) {
 		unitID = unitID.filter(unit => Entities.IsAlive(unit))
 
@@ -237,10 +233,9 @@ function UpdatePanel(panel) {
 		panel.FindChildTraverse("ItemsContainer").Children().forEach(panel => UpdateAbilityButton(panel))
 	}
 
-
-
 	panel.SetHasClass("EnemyUnit", Entities.IsEnemy(unitID))
 	panel.SetHasClass("Death", !Entities.IsAlive(unitID))
+
 
 	/*let damage = Entities.GetDamageMax(unitID)+Entities.GetDamageMin(unitID)
 	damage /= 2
