@@ -1,83 +1,117 @@
+REJECTABILITIES = {
+    lone_druid_spirit_bear_return = true,
+    item_power_treads = true,
+    mars_bulwark = true,
+    shadow_demon_shadow_poison_release = true,
+    lion_mana_drain = true,
+}
+
+
+SPECIAL_CONDITIONS = {
+    visage_summon_familiars_stone_form = {
+        CasterHealthPercentLower = 50
+    },
+    item_bottle = {
+        CasterHealthPercentLower = 50
+    },
+
+    item_magic_stick = {
+        CasterHealthPercentLower = 50
+    },
+
+    item_magic_wand = {
+        CasterHealthPercentLower = 50
+    },
+
+    abaddon_death_coil = {
+        CasterHealthPercentHigher = 70
+    },
+
+    abaddon_borrowed_time = {
+        CasterHealthPercentLower = 30
+    },
+
+    razor_plasma_field = {
+        EnemyInRadius = 600
+    },
+
+    huskar_inner_vitality = {
+        EnemyInRadius = 425
+    },
+
+    nevermore_shadowraze1 = {
+        EnemyInRadius = 300
+    },
+
+    nevermore_shadowraze2 = {
+        EnemyInRadius = 550
+    },
+
+    nevermore_shadowraze3 = {
+        EnemyInRadius = 800
+    },
+
+    rattletrap_power_cogs = {
+        EnemyInRadius = 215
+    },
+
+}
+
 function CBaseEntity:StartAI()
-    self:SetContextThink( "AutoCasterThink", function()
-        if ( not self:IsAlive() ) then
+    
+    if not self.bInitialized then
+        self.fMaxDist = self:GetAcquisitionRange()
+        self.bInitialized = true
+    end
+
+    self:SetContextThink( "AIThink", function()
+        if not self:IsAlive() then
             return -1 
         end
       
         if GameRules:IsGamePaused() or self:IsChanneling() then
             return 1 
         end
-      
+    
         if self:IsControllableByAnyPlayer() then
             return -1
         end
+
         if not _G.FIGHT then
             return 1 
         end
-        -- if thisEntity:IsAttacking() then
-        --     return 1
-        -- end
+
         local npc = self
 
-        if not npc.bInitialized then
-            npc.fMaxDist = npc:GetAcquisitionRange()
-            npc.bInitialized = true
 
-            npc.hasCastable = false
-          
-            npc.ability0 = FindAbility(npc, 0)
-            npc.ability1 = FindAbility(npc, 1)
-            npc.ability2 = FindAbility(npc, 2)
-            npc.ability3 = FindAbility(npc, 3)
-            npc.ability4 = FindAbility(npc, 4)
-            npc.ability5 = FindAbility(npc, 5)
-            npc.item0 = FindAbility(npc, 0,1)
-            npc.item1 = FindAbility(npc, 1,1)
-            npc.item2 = FindAbility(npc, 2,1)
-            npc.item3 = FindAbility(npc, 3,1)
-            npc.item4 = FindAbility(npc, 4,1)
-            npc.item5 = FindAbility(npc, 5,1)
-          
-        end
+        local search_radius = 1200
 
-        local search_radius = npc.fMaxDist
+        local enemies = FindEnemyInRadius(npc, search_radius)
+        local friends = FindFriendlyInRadius(npc, search_radius)
 
-        local enemies = FindUnitsInRadius(
-            npc:GetTeamNumber(),
-            npc:GetAbsOrigin() ,
-            nil,
-            search_radius + 50,
-            DOTA_UNIT_TARGET_TEAM_ENEMY,
-            DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 
-            DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, 
-            FIND_CLOSEST,
-            false )
+        local target = enemies[1]
+        local targetFriend = friends[1]
 
-        if npc.hasCastable then
-      
-            local enemy = enemies[1]
-
-            local friends
-            local friend
-            if npc.hasFriendlyCastAbility then
-                friends = FindFriendlyInRadius(npc, search_radius + 50)
-                friend = friends[1]
+        if target then
+            for i=0,6 do
+                local ability = npc:GetAbilityByIndex(i)
+                if ability and not ability:IsPassive() and not ability:IsHidden() and ability:IsFullyCastable() and not REJECTABILITIES[ability:GetAbilityName()] then
+                    local res = TryCastAbility(ability, npc, target, targetFriend)
+                    if res then return res end
+                end
             end
 
-          
-            TryCastAbility(npc.ability0, npc, enemy, friend)
-            TryCastAbility(npc.ability1, npc, enemy, friend)
-            TryCastAbility(npc.ability2, npc, enemy, friend)
-            TryCastAbility(npc.ability3, npc, enemy, friend)
-            TryCastAbility(npc.ability4, npc, enemy, friend)
-            TryCastAbility(npc.ability5, npc, enemy, friend)
-            
-            TryCastAbility(npc.item0, npc, enemy, friend)
-            TryCastAbility(npc.item1, npc, enemy, friend)
-            TryCastAbility(npc.item2, npc, enemy, friend)
-            TryCastAbility(npc.item3, npc, enemy, friend)
-            TryCastAbility(npc.item4, npc, enemy, friend)
-            TryCastAbility(npc.item5, npc, enemy, friend)
+            for i=0,5 do
+                local ability = npc:GetItemInSlot(i)
+                if ability and not ability:IsPassive() and ability:IsFullyCastable() and not REJECTABILITIES[ability:GetAbilityName()] then
+                    if not ability:RequiresCharges() or ability:GetCurrentCharges() > 0 then
+                        local res = TryCastAbility(ability, npc, target, targetFriend)
+                        if res then return res end
+                    end
+                end
+            end
+
+
         end
 
         table.sort(enemies, function (a, b) return (a:GetHealth() < b:GetHealth()) end)
@@ -98,83 +132,133 @@ function CBaseEntity:StartAI()
             npc:MoveToPositionAggressive(npc.targetPoint)
         end
 
-        return 1
+        return 0.5
       
-    end, 1 )
+    end, 0.5 )
 end
 
-REJECTABILITIES = {
-    lone_druid_spirit_bear_return = true
-}
-function FindAbility(unit, index, item)
-    local ability
-    if not item then
-        ability = unit:GetAbilityByIndex(index)
-    else
-        ability = unit:GetItemInSlot(index)
-    end
-    if ability and not REJECTABILITIES[ability:GetName()] then
-        local ability_behavior = ability:GetBehavior()
-        if bit.band( ability_behavior, DOTA_ABILITY_BEHAVIOR_PASSIVE ) == DOTA_ABILITY_BEHAVIOR_PASSIVE then
-            ability.behavior = "passive"
-        elseif bit.band( ability_behavior, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET ) == DOTA_ABILITY_BEHAVIOR_UNIT_TARGET then
-            unit.hasCastable = true
-            ability.behavior = "target"
-        elseif bit.band( ability_behavior, DOTA_ABILITY_BEHAVIOR_NO_TARGET ) == DOTA_ABILITY_BEHAVIOR_NO_TARGET then
-            unit.hasCastable = true
-            ability.behavior = "no_target"
-        elseif bit.band( ability_behavior, DOTA_ABILITY_BEHAVIOR_POINT ) == DOTA_ABILITY_BEHAVIOR_POINT then
-            unit.hasCastable = true
-            ability.behavior = "point"
-        end
+function TryCastAbility(ability, npc, target, targetFriend)
+   
+    local behavior = ability:GetBehavior()
+    local targetTeam = ability:GetAbilityTargetTeam()
 
-        if ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_FRIENDLY then
-            ability.friendly = true
-            unit.hasFriendlyCastAbility = true
-        end
+    if not SpecialConditions(ability) then return end
 
-        return ability
-    else
-        return nil
+    if IsFlagSet(behavior, DOTA_ABILITY_BEHAVIOR_TOGGLE) then  
+        if not ability:GetToggleState() then
+            ExecuteOrderFromTable({
+                UnitIndex = npc:entindex(),
+                OrderType = DOTA_UNIT_ORDER_CAST_TOGGLE,
+                AbilityIndex = ability:entindex(),
+             })
+            local castPoint = ability:IsNull() and 1 or ability:GetCastPoint()
+            return castPoint + RandomFloat(0.2,0.5)
+        end
     end
-  
+
+    if IsFlagSet(behavior, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) then  
+        if IsFlagSet(targetTeam, DOTA_UNIT_TARGET_TEAM_FRIENDLY) and targetFriend then
+            ExecuteOrderFromTable({
+                UnitIndex = npc:entindex(),
+                OrderType = DOTA_UNIT_ORDER_CAST_TARGET,
+                AbilityIndex = ability:entindex(),
+                TargetIndex = targetFriend:entindex()
+            })
+            local castPoint = ability:IsNull() and 1 or ability:GetCastPoint()
+            return castPoint + RandomFloat(0.2,0.5)
+        end
+        if IsFlagSet(targetTeam, DOTA_UNIT_TARGET_TEAM_ENEMY) and target then
+            ExecuteOrderFromTable({
+                UnitIndex = npc:entindex(),
+                OrderType = DOTA_UNIT_ORDER_CAST_TARGET,
+                AbilityIndex = ability:entindex(),
+                TargetIndex = target:entindex()
+            })
+            local castPoint = ability:IsNull() and 1 or ability:GetCastPoint()
+            return castPoint + RandomFloat(0.2,0.5)
+        end
+    end
+
+    if IsFlagSet(behavior, DOTA_ABILITY_BEHAVIOR_POINT) then  
+        if IsFlagSet(targetTeam, DOTA_UNIT_TARGET_TEAM_FRIENDLY) and targetFriend then
+            ExecuteOrderFromTable({
+                UnitIndex = npc:entindex(),
+                OrderType = DOTA_UNIT_ORDER_CAST_POSITION,
+                AbilityIndex = ability:entindex(),
+                Position = targetFriend:GetAbsOrigin(),
+            })
+            local castPoint = ability:IsNull() and 1 or ability:GetCastPoint()
+            return castPoint + RandomFloat(0.2,0.5)
+        end
+        if target then
+            ExecuteOrderFromTable({
+                UnitIndex = npc:entindex(),
+                OrderType = DOTA_UNIT_ORDER_CAST_POSITION,
+                AbilityIndex = ability:entindex(),
+                Position = target:GetAbsOrigin(),
+            })
+            local castPoint = ability:IsNull() and 1 or ability:GetCastPoint()
+            return castPoint + RandomFloat(0.2,0.5)
+        end
+    end
+
+    if IsFlagSet(behavior, DOTA_ABILITY_BEHAVIOR_NO_TARGET) and target then
+        ExecuteOrderFromTable({
+            UnitIndex = npc:entindex(),
+            OrderType = DOTA_UNIT_ORDER_CAST_NO_TARGET,
+            AbilityIndex = ability:entindex(),
+        })
+        local castPoint = ability:IsNull() and 1 or ability:GetCastPoint()
+        return castPoint + RandomFloat(0.2,0.5)
+    end
 end
 
-function TryCastAbility(ability, caster, enemy, friend)
-    if not ability or ability:IsNull()
-    or not ability:IsFullyCastable()
-    or ability.behavior == "passive" then
-        return
+function SpecialConditions(ability)
+    local caster = ability:GetCaster()
+    local abilityName = ability:GetAbilityName()
+
+    if SPECIAL_CONDITIONS[abilityName] then
+        for cond, value in pairs(SPECIAL_CONDITIONS[abilityName]) do
+            if cond == "CasterHealthPercentLower" then
+                if caster:GetHealthPercent() > value then
+                    return false
+                end
+            end
+
+            if cond == "CasterHealthPercentHigher" then
+                if caster:GetHealthPercent() < value then
+                    return false
+                end
+            end
+
+            if cond == "CasterManaPercentLower" then
+                if caster:GetManaPercent() > value then
+                    return false
+                end
+            end
+
+            if cond == "EnemyInRadius" then
+                local units = FindEnemyInRadius(caster, value)
+                if #units == 0 then
+                    return false
+                end
+            end
+        end
     end
 
-    local castTarget = enemy
-    if ability.friendly then
-        castTarget = friend
+    if abilityName == "templar_assassin_trap" and not CheckTraps(caster) then
+        return false
     end
 
-    if not castTarget then return end
-  
-    local order_type
-    if ability.behavior == "target" then
-        order_type = DOTA_UNIT_ORDER_CAST_TARGET
-    elseif ability.behavior == "no_target" then
-        order_type = DOTA_UNIT_ORDER_CAST_NO_TARGET
-    elseif ability.behavior == "point" then
-        order_type = DOTA_UNIT_ORDER_CAST_POSITION
-    elseif ability.behavior == "passive" then
-        return
+    return true
+end
+
+function CheckTraps(caster) 
+    for _,unit in pairs(FindAllByClassname("npc_dota_base_additive")) do
+        if unit:GetUnitName() == "npc_dota_templar_assassin_psionic_trap" and unit:GetOwnerEntity() == caster then
+            return true
+        end
     end
-
-
-    ExecuteOrderFromTable({
-        UnitIndex = caster:entindex(),
-        OrderType = order_type,
-        AbilityIndex = ability:entindex(),
-        TargetIndex = castTarget:entindex(),
-        Position = castTarget:GetOrigin(),
-        Queue = false,
-    })
-    -- caster:SetContextThink( "AutoCasterThink", AutoCasterThink, 1 )
 end
 
 function FindFriendlyInRadius(npc, radius)
@@ -187,5 +271,18 @@ function FindFriendlyInRadius(npc, radius)
         DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 
         DOTA_UNIT_TARGET_FLAG_NONE, 
         FIND_ANY_ORDER,
+        false )
+end
+
+function FindEnemyInRadius(npc, radius)
+    return FindUnitsInRadius(
+        npc:GetTeamNumber(),
+        npc:GetAbsOrigin() ,
+        nil,
+        radius,
+        DOTA_UNIT_TARGET_TEAM_ENEMY,
+        DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 
+        DOTA_UNIT_TARGET_FLAG_NONE, 
+        FIND_CLOSEST,
         false )
 end

@@ -43,3 +43,7 @@ function PrecacheUnitList(unitList, idx)
     end)
   end
 end
+
+function IsFlagSet(num, flag)
+  return bit.band(num, flag) == flag
+end

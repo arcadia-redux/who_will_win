@@ -385,7 +385,7 @@ function BAW:StartFight()
           DOTA_UNIT_TARGET_TEAM_FRIENDLY,
           DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BUILDING,
           DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES+DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD,
-          FIND_ANY_ORDER,
+          FIND_UNITS_EVERYWHERE,
           false),
 		right = FindUnitsInRadius(DOTA_TEAM_BADGUYS,
           Vector(0, 0, 0),
@@ -394,7 +394,7 @@ function BAW:StartFight()
           DOTA_UNIT_TARGET_TEAM_FRIENDLY,
           DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BUILDING,
           DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES+DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD,
-          FIND_ANY_ORDER,
+          FIND_UNITS_EVERYWHERE,
           false)}
 		for d,e in pairs(ALIVES) do
 			local count = 0
@@ -513,9 +513,11 @@ function BAW:CleanMap()
           false)
 	
 	for i,v in ipairs(units) do
-		if not v:IsControllableByAnyPlayer() then
+		if IsValidEntity(v) and not v:IsControllableByAnyPlayer() then
 			v:ForceKill(false)
-			v:RemoveSelf()
+			if IsValidEntity(v) then
+				v:RemoveSelf()
+			end
 		end
 	end
 	
@@ -533,6 +535,79 @@ function BAW:CleanMap()
 	for _,think in ipairs(thinkers) do
 		think:ForceKill(false)
 	end
+end
+
+function UpgradeHeroAbilities(unit)
+	local level = unit:GetLevel()
+
+	local abilityIndexes = {0,1,2,5}
+
+	if unit:GetUnitName() == "npc_dota_hero_nevermore" then
+		abilityIndexes = {0,3,4,5}
+	end
+
+	if level == 1 then
+		unit:GetAbilityByIndex(abilityIndexes[RandomInt(1, 3)]):SetLevel(1)
+	elseif level == 6 then
+		local ab = abilityIndexes[RandomInt(1, 3)]
+		unit:GetAbilityByIndex(ab):SetLevel(3)
+		for i=1,3 do
+			if abilityIndexes[i] ~= ab then
+				unit:GetAbilityByIndex(abilityIndexes[i]):SetLevel(1)
+			end
+		end
+		unit:GetAbilityByIndex(5):SetLevel(1)
+	elseif level == 16 then
+		unit:GetAbilityByIndex(0):SetLevel(4)
+		unit:GetAbilityByIndex(1):SetLevel(4)
+		unit:GetAbilityByIndex(2):SetLevel(4)
+		unit:GetAbilityByIndex(5):SetLevel(3)
+	elseif level == 30 then
+		for i=1,4 do
+			local ab = unit:GetAbilityByIndex(abilityIndexes[i])
+			if ab then
+				ab:SetLevel(ab:GetMaxLevel())
+			end
+		end
+	end
+
+	local abilityTalentStart = HeroesKV[unit:GetUnitName()].AbilityTalentStart or 10
+
+	if level < 30 then
+		if level >= 10 then
+			if RollPercentage(50) then
+				unit:GetAbilityByIndex(abilityTalentStart-1):SetLevel(1)
+			else
+				unit:GetAbilityByIndex(abilityTalentStart):SetLevel(1)
+			end
+		end
+
+		if level >= 15 then
+			if RollPercentage(50) then
+				unit:GetAbilityByIndex(abilityTalentStart+1):SetLevel(1)
+			else
+				unit:GetAbilityByIndex(abilityTalentStart+2):SetLevel(1)
+			end
+		end
+
+		if level >= 20 then
+			if RollPercentage(50) then
+				unit:GetAbilityByIndex(abilityTalentStart+3):SetLevel(1)
+			else
+				unit:GetAbilityByIndex(abilityTalentStart+4):SetLevel(1)
+			end
+		end
+
+		if level >= 25  then
+			if RollPercentage(50) then
+				unit:GetAbilityByIndex(abilityTalentStart+5):SetLevel(1)
+			else
+				unit:GetAbilityByIndex(abilityTalentStart+6):SetLevel(1)
+			end
+		end
+	end
+
+
 end
 
 function BAW:StartGame()
@@ -554,7 +629,7 @@ function BAW:StartGame()
     local level
 
 	if heroes then
-		level = RandomInt(1, 5)
+		level = RandomInt(1, 4)
 		if level == 1 then
 			level = 1
 		elseif level == 2 then
@@ -592,33 +667,10 @@ function BAW:StartGame()
 		FindClearSpaceForUnit(unit, unit:GetAbsOrigin(), true)
 		
 		if unit and heroes and unit:IsRealHero() then
-			for i=1,level do
+			for i=1,level-1 do
 				unit:HeroLevelUp(false)
 			end
-			if level == 1 then
-				unit:GetAbilityByIndex(RandomInt(0, 2)):SetLevel(1)
-			elseif level == 6 then
-				local ab = RandomInt(0, 2)
-				unit:GetAbilityByIndex(ab):SetLevel(3)
-				for i=0,2 do
-					if i ~= ab then
-						unit:GetAbilityByIndex(i):SetLevel(1)
-					end
-				end
-				unit:GetAbilityByIndex(5):SetLevel(1)
-			elseif level == 16 then
-				unit:GetAbilityByIndex(0):SetLevel(4)
-				unit:GetAbilityByIndex(1):SetLevel(4)
-				unit:GetAbilityByIndex(2):SetLevel(4)
-				unit:GetAbilityByIndex(5):SetLevel(3)
-			elseif level == 30 then
-				for i=0,15 do
-					local ab = unit:GetAbilityByIndex(i)
-					if ab then
-						ab:SetLevel(ab:GetMaxLevel())
-					end
-				end
-			end
+			UpgradeHeroAbilities(unit)
 		end
 
 		--unit:AddNewModifier(unit, nil, "modifier_phased", {duration=0.3})
@@ -636,33 +688,10 @@ function BAW:StartGame()
 		FindClearSpaceForUnit(unit, unit:GetAbsOrigin(), true)
 
 		if heroes and unit:IsRealHero() then
-			for i=1,level do
+			for i=1,level-1 do
 				unit:HeroLevelUp(false)
 			end
-			if level == 1 then
-				unit:GetAbilityByIndex(RandomInt(0, 2)):SetLevel(1)
-			elseif level == 6 then
-				local ab = RandomInt(0, 2)
-				unit:GetAbilityByIndex(ab):SetLevel(3)
-				for i=0,2 do
-					if i ~= ab then
-						unit:GetAbilityByIndex(i):SetLevel(1)
-					end
-				end
-				unit:GetAbilityByIndex(5):SetLevel(1)
-			elseif level == 16 then
-				unit:GetAbilityByIndex(0):SetLevel(4)
-				unit:GetAbilityByIndex(1):SetLevel(4)
-				unit:GetAbilityByIndex(2):SetLevel(4)
-				unit:GetAbilityByIndex(5):SetLevel(3)
-			elseif level == 30 then
-				for i=0,15 do
-					local ab = unit:GetAbilityByIndex(i)
-					if ab then
-						ab:SetLevel(ab:GetMaxLevel())
-					end
-				end
-			end
+			UpgradeHeroAbilities(unit)
 		end
 		
 		--unit:AddNewModifier(unit, nil, "modifier_phased", {duration=0.3})

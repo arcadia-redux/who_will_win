@@ -50,7 +50,7 @@ function AssignAbility(panel, abilityID) {
 	const abilityName = Abilities.GetAbilityName(abilityID)
 
 	if (Abilities.IsItem(abilityID)) {
-		panel.FindChildTraverse("ItemImage").itemname = abilityName
+		//panel.FindChildTraverse("ItemImage").itemname = abilityName
 		panel.FindChildTraverse("ItemImage").contextEntityIndex = abilityID
 	}
 	else {
@@ -66,7 +66,7 @@ function AssignAbility(panel, abilityID) {
 	panel.RemoveClass("in_cooldown")
 
 	panel.SetHasClass("is_passive", Abilities.IsPassive(abilityID))
-	panel.SetHasClass("no_level", Abilities.GetLevel(abilityID) < 1)
+	panel.SetHasClass("no_level", Abilities.GetLevel(abilityID) < 1 || Abilities.IsItem(abilityID))
 
 	const manaCost = Abilities.GetManaCost(abilityID)
 	panel.SetHasClass("no_mana_cost", manaCost == 0)
@@ -88,7 +88,10 @@ function UpdateAbilityButton(panel) {
 
 	const abilityID = panel.abilityID
 
-	if (!abilityID || !Entities.IsValidEntity(abilityID)) return 
+	if (!abilityID || !Entities.IsValidEntity(abilityID)) {
+		panel.visible = false
+		return
+	}
 
 	if (Abilities.IsPassive(abilityID)) return
 
@@ -117,6 +120,12 @@ function UpdateAbilityButton(panel) {
 	if (Entities.IsValidEntity(caster)) {
 		panel.SetHasClass("silenced", Entities.IsSilenced(caster))
 	}
+
+	if (Abilities.IsItem(abilityID)) {
+		panel.SetHasClass("show_item_charges", Items.ShouldDisplayCharges(abilityID))
+		panel.SetDialogVariableInt("item_charge_count", Items.GetCurrentCharges(abilityID))
+	}
+
 }
 
 function CreateUnitPanel(id, parent) {
@@ -391,20 +400,19 @@ function StartFight() {
 	let leftUnits = $("#LeftUnits")
 	let rightUnits = $("#RightUnits")
 	
-	
-	leftUnits.RemoveAndDeleteChildren()
+	/*leftUnits.RemoveAndDeleteChildren()
 	rightUnits.RemoveAndDeleteChildren()
 
 	for (let i = 0; i < UNIT_COUNT; i++) {
 		CreateUnitPanel(String(i), leftUnits)
 		CreateUnitPanel(String(i), rightUnits)
-	}
+	}*/
 
 	GameEvents.Subscribe("new_round", NewRound);
 	GameEvents.Subscribe("start_fight", StartFight);
 
 	Update()
- 
+
 })()
 
 function LuaTableToArray(nt) {
