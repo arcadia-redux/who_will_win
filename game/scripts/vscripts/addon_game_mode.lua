@@ -363,6 +363,18 @@ function BAW:OnGameRulesStateChange()
 	end
 end
 
+function IsIgnored(unit)
+	if unit:GetUnitName() == "npc_dota_thinker" then
+		return true
+	end
+
+	if unit:HasModifier("modifier_monkey_king_fur_army_soldier_hidden") then
+		return true
+	end
+
+	return false
+end
+
 function BAW:StartFight()
 	_G.FIGHT = true
 	for k,v in pairs(ALIVES) do
@@ -399,7 +411,7 @@ function BAW:StartFight()
 		for d,e in pairs(ALIVES) do
 			local count = 0
 			for i,v in ipairs(e) do
-				if not v:IsControllableByAnyPlayer() then
+				if not v:IsControllableByAnyPlayer() and not IsIgnored(v) then
 					count = count + 1
 					if not v.bInitialized then
 						v.targetPoint = Vector(0,0,0)
@@ -571,42 +583,42 @@ function UpgradeHeroAbilities(unit)
 		end
 	end
 
-	local abilityTalentStart = HeroesKV[unit:GetUnitName()].AbilityTalentStart or 10
+	local abilityTalentStart = GetHeroFirstTalentID(unit)
 
-	if level < 30 then
+
+	if abilityTalentStart ~= -1 and level < 30 then
 		if level >= 10 then
 			if RollPercentage(50) then
-				unit:GetAbilityByIndex(abilityTalentStart-1):SetLevel(1)
+				TrainTalent(unit, unit:GetAbilityByIndex(abilityTalentStart))
 			else
-				unit:GetAbilityByIndex(abilityTalentStart):SetLevel(1)
+				TrainTalent(unit, unit:GetAbilityByIndex(abilityTalentStart+1))
 			end
 		end
 
 		if level >= 15 then
 			if RollPercentage(50) then
-				unit:GetAbilityByIndex(abilityTalentStart+1):SetLevel(1)
+				TrainTalent(unit, unit:GetAbilityByIndex(abilityTalentStart+2))
 			else
-				unit:GetAbilityByIndex(abilityTalentStart+2):SetLevel(1)
+				TrainTalent(unit, unit:GetAbilityByIndex(abilityTalentStart+3))
 			end
 		end
 
 		if level >= 20 then
 			if RollPercentage(50) then
-				unit:GetAbilityByIndex(abilityTalentStart+3):SetLevel(1)
+				TrainTalent(unit, unit:GetAbilityByIndex(abilityTalentStart+4))
 			else
-				unit:GetAbilityByIndex(abilityTalentStart+4):SetLevel(1)
+				TrainTalent(unit, unit:GetAbilityByIndex(abilityTalentStart+5))
 			end
 		end
 
 		if level >= 25  then
 			if RollPercentage(50) then
-				unit:GetAbilityByIndex(abilityTalentStart+5):SetLevel(1)
+				TrainTalent(unit, unit:GetAbilityByIndex(abilityTalentStart+6))
 			else
-				unit:GetAbilityByIndex(abilityTalentStart+6):SetLevel(1)
+				TrainTalent(unit, unit:GetAbilityByIndex(abilityTalentStart+7))
 			end
 		end
 	end
-
 
 end
 

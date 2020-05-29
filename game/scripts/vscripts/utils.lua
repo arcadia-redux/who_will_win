@@ -47,3 +47,22 @@ end
 function IsFlagSet(num, flag)
   return bit.band(num, flag) == flag
 end
+
+function GetHeroFirstTalentID(hero) 
+  for i=0,23 do
+    local ability = hero:GetAbilityByIndex(i)
+    if ability and not ability:IsNull() and string.find(ability:GetAbilityName(), "special_bonus") then
+      return i
+    end
+  end
+
+  return -1
+end
+
+function TrainTalent(unit, talent)
+  ExecuteOrderFromTable({
+    UnitIndex = unit:entindex(),
+    OrderType = DOTA_UNIT_ORDER_TRAIN_ABILITY,
+    AbilityIndex = talent:entindex(),
+  })
+end

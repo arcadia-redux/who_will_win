@@ -9,7 +9,7 @@ REJECTABILITIES = {
 
 SPECIAL_CONDITIONS = {
     visage_summon_familiars_stone_form = {
-        CasterHealthPercentLower = 50
+        CasterHealthPercentLower = 30
     },
     item_bottle = {
         CasterHealthPercentLower = 50
@@ -20,6 +20,10 @@ SPECIAL_CONDITIONS = {
     },
 
     item_magic_wand = {
+        CasterHealthPercentLower = 50
+    },
+
+    item_mekansm  = {
         CasterHealthPercentLower = 50
     },
 
@@ -53,6 +57,14 @@ SPECIAL_CONDITIONS = {
 
     rattletrap_power_cogs = {
         EnemyInRadius = 215
+    },
+
+    leshrac_pulse_nova = {
+        EnemyInRadius = 400
+    },
+
+    leshrac_diabolic_edict = {
+        EnemyInRadius = 450
     },
 
 }
@@ -95,7 +107,7 @@ function CBaseEntity:StartAI()
         if target then
             for i=0,6 do
                 local ability = npc:GetAbilityByIndex(i)
-                if ability and not ability:IsPassive() and not ability:IsHidden() and ability:IsFullyCastable() and not REJECTABILITIES[ability:GetAbilityName()] then
+                if ability and not REJECTABILITIES[ability:GetAbilityName()] and not ability:IsPassive() and not ability:IsHidden() and ability:IsFullyCastable() and ability:IsCooldownReady()  then
                     local res = TryCastAbility(ability, npc, target, targetFriend)
                     if res then return res end
                 end
@@ -103,7 +115,7 @@ function CBaseEntity:StartAI()
 
             for i=0,5 do
                 local ability = npc:GetItemInSlot(i)
-                if ability and not ability:IsPassive() and ability:IsFullyCastable() and not REJECTABILITIES[ability:GetAbilityName()] then
+                if ability and not REJECTABILITIES[ability:GetAbilityName()] and not ability:IsPassive() and ability:IsFullyCastable() and ability:IsCooldownReady() then
                     if not ability:RequiresCharges() or ability:GetCurrentCharges() > 0 then
                         local res = TryCastAbility(ability, npc, target, targetFriend)
                         if res then return res end
@@ -141,8 +153,10 @@ function TryCastAbility(ability, npc, target, targetFriend)
    
     local behavior = ability:GetBehavior()
     local targetTeam = ability:GetAbilityTargetTeam()
+    local targetType = ability:GetAbilityTargetType()
+    local targetFlags = ability:GetAbilityTargetFlags()
 
-    if not SpecialConditions(ability) then return end
+    if not SpecialConditions(ability, target) then return end
 
     if IsFlagSet(behavior, DOTA_ABILITY_BEHAVIOR_TOGGLE) then  
         if not ability:GetToggleState() then
@@ -157,7 +171,7 @@ function TryCastAbility(ability, npc, target, targetFriend)
     end
 
     if IsFlagSet(behavior, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) then  
-        if IsFlagSet(targetTeam, DOTA_UNIT_TARGET_TEAM_FRIENDLY) and targetFriend then
+        if targetFriend and UnitFilter(targetFriend, targetTeam, targetType, targetFlags, ability:GetCaster():GetTeam()) == UF_SUCCESS then
             ExecuteOrderFromTable({
                 UnitIndex = npc:entindex(),
                 OrderType = DOTA_UNIT_ORDER_CAST_TARGET,
@@ -167,7 +181,7 @@ function TryCastAbility(ability, npc, target, targetFriend)
             local castPoint = ability:IsNull() and 1 or ability:GetCastPoint()
             return castPoint + RandomFloat(0.2,0.5)
         end
-        if IsFlagSet(targetTeam, DOTA_UNIT_TARGET_TEAM_ENEMY) and target then
+        if target and UnitFilter(target, targetTeam, targetType, targetFlags, ability:GetCaster():GetTeam()) == UF_SUCCESS then
             ExecuteOrderFromTable({
                 UnitIndex = npc:entindex(),
                 OrderType = DOTA_UNIT_ORDER_CAST_TARGET,
@@ -213,7 +227,7 @@ function TryCastAbility(ability, npc, target, targetFriend)
     end
 end
 
-function SpecialConditions(ability)
+function SpecialConditions(ability, target)
     local caster = ability:GetCaster()
     local abilityName = ability:GetAbilityName()
 
@@ -250,14 +264,25 @@ function SpecialConditions(ability)
         return false
     end
 
+    if abilityName == "broodmother_spin_web" and CheckWebs(caster, target) then
+        return false
+    end
+
     return true
 end
 
 function CheckTraps(caster) 
-    for _,unit in pairs(FindAllByClassname("npc_dota_base_additive")) do
+    for _,unit in pairs(Entities:FindAllByClassname("npc_dota_base_additive")) do
         if unit:GetUnitName() == "npc_dota_templar_assassin_psionic_trap" and unit:GetOwnerEntity() == caster then
             return true
         end
+    end
+end
+
+function CheckWebs(caster, target)
+    if target then
+        local webs = Entities:FindAllByClassnameWithin("npc_dota_broodmother_web", target:GetAbsOrigin(), 500)
+        return #webs > 0
     end
 end
 

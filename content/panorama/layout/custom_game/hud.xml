@@ -1,6 +1,7 @@
 <root>
 	<styles>
     	<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+    	<include src="s2r://panorama/styles/hud/hud_reborn.vcss_c"/>
     	<include src="file://{resources}/styles/baw.css" />
 	</styles>
 	<scripts>
@@ -57,6 +58,42 @@
 					</Panel>
 					<Label id="unitmptext" text="10000"></Label>
 					<Label id="unitmpplus" text="+1"></Label>
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="TalentDisplay">
+			<Panel class="TalentDisplay" >
+				<Panel id="StatBranchBG" onactivate="DOTAHUDStatBranchClicked()" />
+				<!-- 								
+				<Panel id="StatBranchBGBranchWell"/>
+				<Panel id="StatBranchBGBranchWellGlow"/> -->
+				<Panel id="StatBranchGraphics" require-composition-layer="true" always-cache-composition-layer="true">
+					<Panel id="StatBranchChannel">
+						<Panel id="StatPipContainer" class="">
+							<Panel id="StatRow25" class="StatBranchRow">
+								<Panel class="StatBranchPip LeftBranchPip"/>
+								<Panel class="StatBranchPip RightBranchPip"/>
+							</Panel>
+							<Panel id="StatRow20" class="StatBranchRow">
+								<Panel class="StatBranchPip LeftBranchPip"/>
+								<Panel class="StatBranchPip RightBranchPip"/>
+							</Panel>
+							<Panel id="StatRow15" class="StatBranchRow">
+								<Panel class="StatBranchPip LeftBranchPip"/>
+								<Panel class="StatBranchPip RightBranchPip"/>
+							</Panel>
+							<Panel id="StatRow10" class="StatBranchRow">
+								<Panel class="StatBranchPip LeftBranchPip"/>
+								<Panel class="StatBranchPip RightBranchPip"/>
+							</Panel>
+						</Panel>							
+						<Panel class="LevelProgress">
+							<ProgressBar id="StatLevelProgressBar" min="0" max="25" value="20" />
+						</Panel>
+						<Panel class="LevelProgressBlur">
+							<ProgressBar id="StatLevelProgressBarBlur" min="0" max="25" value="20" />
+						</Panel>
+					</Panel>
 				</Panel>
 			</Panel>
 		</snippet>

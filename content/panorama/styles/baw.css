@@ -361,6 +361,8 @@ height: 100%;
 
 #xp {
 	margin-top: 15px;
+
+	vertical-align: top;
 }
 
 
@@ -426,4 +428,129 @@ height: 100%;
 #CircularXPProgressBlur_BG
 {
 	border-color: #000000;
+}
+
+.AbilityContainer {
+	flow-children: down;
+}
+
+#AbilityLevelContainer
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	flow-children: right;
+	background-color: black;
+	//width: 100%;
+}
+
+.LevelPanel
+{
+	width: 4px;
+	height: 4px;
+	margin: 3px 2px 3px 2px;
+	border-radius: 1px;
+
+
+	background-image: none;
+	background-size: 100% 100%;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #111111ff ), to( #000000ff ) );
+}
+
+.AbilityMaxLevel7 .LevelPanel
+{
+	width: 5px;
+	height: 5px;
+	margin: 1.5px;
+}
+
+.active_level.LevelPanel
+{
+	background-image: none;
+	background-size: 100% 100%;
+	background-position: 50% 50%;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #E7D291 ), to( #887845 ) );
+	border-radius: 0px;
+}
+
+.Hero .bar {
+	margin-bottom: 83px;
+}
+
+.Hero .bar.mpbar {
+	margin-bottom: 68px;
+}
+
+#TalentsDisplay {
+	width: 48px;
+	height: 48px;
+	vertical-align: bottom;
+	margin-bottom: 105px;
+	margin-left: 5px;
+}
+
+.StatBranchPip
+{
+	width: 46px;
+	height: 46px;
+
+	background-image: url("s2r://panorama/images/hud/reborn/statbranch_pip_psd.vtex");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	opacity: 0;
+	//wash-color: #E7D291;
+	transition-property: opacity;
+	transition-duration: 0.0s;
+	transition-timing-function: ease-in-out;
+	z-index: 1;
+}
+
+.LevelProgressBlur,
+.LevelProgress
+{
+	border-radius: 0px;
+	width: 50px;
+	height: 4px;
+	transform: rotateZ(-90deg) translateX(-1px) translateY(34px);
+	opacity-mask: url("s2r://panorama/images/hud/reborn/statbranch_progress_mask_psd.vtex") 1.0;
+	horizontal-align: right;
+    //visibility: collapse;
+	//border: 1px solid red;
+}
+
+#StatLevelProgressBar
+{
+
+	width: 100%;
+	border: 0px solid transparent;
+	height: 4px;
+	vertical-align: middle;
+
+
+	border-radius: 1px;
+	background-color: none;
+	box-shadow: none;
+}
+
+#StatLevelProgressBarBlur
+{
+	width: 100%;
+	height: 10px;
+	background-color: none;
+	box-shadow: none;
+	border: 0px solid transparent;
+	padding: 3px;
+	vertical-align: middle;
+	border-radius: 0px;
+}
+
+.LevelProgressBlur
+{
+	height: 9px;
+	blur: gaussian( 3 );
+	z-index: -1;
+	transform: rotateZ(-90deg) translateX(-1px) translateY(31px);
+}
+
+#StatLevelProgressBar, #StatLevelProgressBarBlur {
+	visibility: visible;
 }

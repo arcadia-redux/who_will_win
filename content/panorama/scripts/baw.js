@@ -64,7 +64,7 @@ function createSceneVersus(t,k,i,parent) {
 	ab,abpan,abname
 
 	const unitID = t.indexes[k][i]
-
+	const isHero = Entities.GetUnitName(unitID).includes("npc_dota_hero")
 
 	pan.BLoadLayoutSnippet("teamScene")
 	pan.BCreateChildren('<DOTAScenePanel id="unit" class="teamScene" light="global_light" environment="default" particleonly="false" renderwaterreflections="true" antialias="true" drawbackground="0" renderdeferred="false" unit="'+name+'"/>')
@@ -85,8 +85,10 @@ function createSceneVersus(t,k,i,parent) {
 	pan.FindChildTraverse("unitmpplus").text = FormatRegen(t.indexes['regens'][t.indexes[k][i]]["2"])
 	let abs = pan.FindChildTraverse("abils")
 	for (let d = 0; d < 6; d++) {
+		const abilityContainer = $.CreatePanel("Panel", abs, "ability"+d)
+		abilityContainer.AddClass("AbilityContainer")
 		ab = Entities.GetAbility(t.indexes[k][i],d)
-		let abpan = $.CreatePanel("DOTAAbilityImage", abs, "ab")
+		const abpan = $.CreatePanel("DOTAAbilityImage", abilityContainer, "ab")
 		abname = Abilities.GetAbilityName(ab)
 		// abpan.abilityname = abname
 		if (Abilities.IsHidden(ab)) continue;
@@ -97,7 +99,30 @@ function createSceneVersus(t,k,i,parent) {
 			abpan.SetPanelEvent('onmouseout',function() {
 				$.DispatchEvent('DOTAHideAbilityTooltip',abpan);
 			})
+
+			
+			if (isHero) {
+				pan.AddClass("Hero")
+				const levelContainer = $.CreatePanel("Panel", abilityContainer, "AbilityLevelContainer")
+				const maxLevel = Abilities.GetMaxLevel(ab)
+				const currentLevel = Abilities.GetLevel(ab)
+
+				if (maxLevel > 1 || Abilities.IsOnLearnbar(ab)) {
+					for (let i=1; i<=maxLevel; i++) {
+						const levelPanel = $.CreatePanel("Panel", levelContainer, "level"+i)
+						levelPanel.AddClass("LevelPanel")
+						levelPanel.SetHasClass("active_level", i <= currentLevel)
+					}
+				}
+
+				
+
+
+
+			}
 		}
+
+
 	}
 	let items = pan.FindChildTraverse("items"),itm,item 
 	for (let d = 0; d < 6; d++) {
@@ -116,7 +141,63 @@ function createSceneVersus(t,k,i,parent) {
 		// abname = Abilities.GetAbilityName(ab)
 		// // abpan.abilityname = abname
 		// abpan.contextEntityIndex = ab
+		
 	}
+
+	if (isHero) {
+			const talentPanel = $.CreatePanel("Panel", pan, "TalentsDisplay")
+			talentPanel.BLoadLayoutSnippet("TalentDisplay")
+			const firstTalent = GetHeroFirstTalentID(unitID)
+			//$.Msg(firstTalent)
+
+			talentPanel.FindChildTraverse("StatLevelProgressBar").value = Entities.GetLevel(unitID)
+			talentPanel.FindChildTraverse("StatLevelProgressBarBlur").value = Entities.GetLevel(unitID)
+
+			if (firstTalent != -1) {
+				for (let i = 0; i < 8; i++) {
+					if (Abilities.GetLevel(Entities.GetAbility(unitID, firstTalent+i)) > 0) {
+						//$.Msg(Abilities.GetAbilityName(Entities.GetAbility(unitID, firstTalent+i)))
+						switch (i) {
+							case 0:
+								talentPanel.FindChildTraverse("StatRow10").AddClass("RightBranchSelected")
+								break
+							case 1:
+								talentPanel.FindChildTraverse("StatRow10").AddClass("LeftBranchSelected")
+								break
+							case 2:
+								talentPanel.FindChildTraverse("StatRow15").AddClass("RightBranchSelected")
+								break
+							case 3:
+								talentPanel.FindChildTraverse("StatRow15").AddClass("LeftBranchSelected")
+								break
+							case 4:
+								talentPanel.FindChildTraverse("StatRow20").AddClass("RightBranchSelected")
+								break
+							case 5:
+								talentPanel.FindChildTraverse("StatRow20").AddClass("LeftBranchSelected")
+								break
+							case 6:
+								talentPanel.FindChildTraverse("StatRow25").AddClass("RightBranchSelected")
+								break
+							case 7:
+								talentPanel.FindChildTraverse("StatRow25").AddClass("LeftBranchSelected")
+								break
+						}
+					}
+				}
+			}
+
+			talentPanel.SetPanelEvent("onmouseover", function() {
+				$.DispatchEvent("UIShowCustomLayoutParametersTooltip", talentPanel, "TalentTooltip", 
+					"file://{resources}/layout/custom_game/tooltip_talent.xml", "heroID="+unitID)
+			})   
+
+			talentPanel.SetPanelEvent("onmouseout", function() {
+				$.DispatchEvent("UIHideCustomLayoutTooltip", talentPanel, "TalentTooltip")      
+			})
+		}
+
+
 }
 function FormatRegen( regen )
 {
@@ -200,7 +281,16 @@ GameEvents.Subscribe('game_rules_state_change', GRSChange);
 
 checkHp()
 
+function GetHeroFirstTalentID(heroID) {
+	for (let i = 0; i < 24; i++) {
+		const abilityName = Abilities.GetAbilityName(Entities.GetAbility(heroID, i))
 
+		if (abilityName.includes("special_bonus"))
+			return i
+	}
+
+	return -1
+}
 
 
 

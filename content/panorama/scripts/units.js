@@ -64,6 +64,7 @@ function AssignAbility(panel, abilityID) {
 	panel.RemoveClass("muted")
 	panel.RemoveClass("silenced")
 	panel.RemoveClass("in_cooldown")
+	panel.RemoveClass("show_item_charges")
 
 	panel.SetHasClass("is_passive", Abilities.IsPassive(abilityID))
 	panel.SetHasClass("no_level", Abilities.GetLevel(abilityID) < 1 || Abilities.IsItem(abilityID))
@@ -237,7 +238,7 @@ function UpdatePanel(panel) {
 				return acc
 		}, unitID[0])
 	}
-	else {
+	else if (Entities.IsAlive(unitID)) {
 		panel.FindChildTraverse("AbilityContainer").Children().forEach(panel => UpdateAbilityButton(panel))
 		panel.FindChildTraverse("ItemsContainer").Children().forEach(panel => UpdateAbilityButton(panel))
 	}
@@ -399,19 +400,19 @@ function StartFight() {
 
 	let leftUnits = $("#LeftUnits")
 	let rightUnits = $("#RightUnits")
-	
-	/*leftUnits.RemoveAndDeleteChildren()
+
+	leftUnits.RemoveAndDeleteChildren()
 	rightUnits.RemoveAndDeleteChildren()
 
 	for (let i = 0; i < UNIT_COUNT; i++) {
 		CreateUnitPanel(String(i), leftUnits)
 		CreateUnitPanel(String(i), rightUnits)
-	}*/
-
+	}
+	
 	GameEvents.Subscribe("new_round", NewRound);
 	GameEvents.Subscribe("start_fight", StartFight);
 
-	Update()
+	Update() 
 
 })()
 

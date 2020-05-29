@@ -1,0 +1,13 @@
+<root>
+    <styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/tooltips/tooltip_stat_branch.vcss_c" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/tooltip_talents.js" /> 
+    </scripts>
+
+    <Panel class="TooltipContents" ontooltiploaded="SetupTooltip()">
+    	<DOTAUIStatBranch id="StatBranch" />
+    </Panel>
+</root>
