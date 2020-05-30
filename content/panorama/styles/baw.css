@@ -165,7 +165,7 @@ height: 100%;
 }
 .teamScenePanel{
 	height: 300px;
-	width: 200px;
+	width: 204px;
 	border: 1px solid black;
 	background-size: 100%;
 	background-image: url("s2r://panorama/images/backgrounds/dashboard_background_ingame_psd.vtex");
@@ -179,16 +179,58 @@ height: 100%;
 .sceneAbilityList{
 	width: 100%;
 	align: center bottom;
-	flow-children: right-wrap;
+	flow-children: right;
 	z-index: 10;
 	margin-bottom: 25px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #25282acc ), color-stop( .5, #25282acc), to( #000000dd ) );
 }
-.sceneAbilityList DOTAAbilityImage{
-	width: 33px;
-	height: 33px;
-	flow-children: right-wrap;
+
+.AbilityContainer {
+	flow-children: down;
+	width: fill-parent-flow(1);
 }
+
+.AbilityContainer DOTAAbilityImage{
+	width: 34px;
+	height: width-percentage(1);
+}
+
+#AbilityLevelContainer
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	flow-children: right;
+}
+
+.LevelPanel
+{
+	width: 4px;
+	height: 4px;
+	margin: 3px 2px 3px 2px;
+	//border-radius: 1px;
+
+	background-image: none;
+	background-size: 100% 100%;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #111111ff ), to( #000000ff ) );
+}
+
+.AbilityMaxLevel7 .LevelPanel
+{
+	width: 5px;
+	height: 5px;
+	margin: 1.5px;
+}
+
+.active_level.LevelPanel
+{
+	background-image: none;
+	background-size: 100% 100%;
+	background-position: 50% 50%;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #E7D291 ), to( #887845 ) );
+	border-radius: 0px;
+}
+
+
 .teamSceneLabel{
 	align: center top;
 	text-align: center;
@@ -430,47 +472,7 @@ height: 100%;
 	border-color: #000000;
 }
 
-.AbilityContainer {
-	flow-children: down;
-}
 
-#AbilityLevelContainer
-{
-	horizontal-align: center;
-	vertical-align: bottom;
-	flow-children: right;
-	background-color: black;
-	//width: 100%;
-}
-
-.LevelPanel
-{
-	width: 4px;
-	height: 4px;
-	margin: 3px 2px 3px 2px;
-	border-radius: 1px;
-
-
-	background-image: none;
-	background-size: 100% 100%;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #111111ff ), to( #000000ff ) );
-}
-
-.AbilityMaxLevel7 .LevelPanel
-{
-	width: 5px;
-	height: 5px;
-	margin: 1.5px;
-}
-
-.active_level.LevelPanel
-{
-	background-image: none;
-	background-size: 100% 100%;
-	background-position: 50% 50%;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #E7D291 ), to( #887845 ) );
-	border-radius: 0px;
-}
 
 .Hero .bar {
 	margin-bottom: 83px;

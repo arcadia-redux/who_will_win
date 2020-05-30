@@ -100,7 +100,6 @@ function createSceneVersus(t,k,i,parent) {
 				$.DispatchEvent('DOTAHideAbilityTooltip',abpan);
 			})
 
-			
 			if (isHero) {
 				pan.AddClass("Hero")
 				const levelContainer = $.CreatePanel("Panel", abilityContainer, "AbilityLevelContainer")
@@ -115,14 +114,8 @@ function createSceneVersus(t,k,i,parent) {
 					}
 				}
 
-				
-
-
-
 			}
 		}
-
-
 	}
 	let items = pan.FindChildTraverse("items"),itm,item 
 	for (let d = 0; d < 6; d++) {

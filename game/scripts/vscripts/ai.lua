@@ -4,6 +4,7 @@ REJECTABILITIES = {
     mars_bulwark = true,
     shadow_demon_shadow_poison_release = true,
     lion_mana_drain = true,
+    monkey_king_mischief = true,
 }
 
 
@@ -66,6 +67,14 @@ SPECIAL_CONDITIONS = {
     leshrac_diabolic_edict = {
         EnemyInRadius = 450
     },
+
+    mars_spear = {
+        EnemyInRadius = 850
+    },
+
+    juggernaut_blade_fury = {
+         EnemyInRadius = 250
+    }
 
 }
 

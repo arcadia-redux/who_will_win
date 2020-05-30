@@ -376,6 +376,10 @@ function IsIgnored(unit)
 		return true
 	end
 
+	if unit:IsIllusion() then
+		return true
+	end
+
 	if unit:HasModifier("modifier_monkey_king_fur_army_soldier_hidden") then
 		return true
 	end
@@ -564,6 +568,10 @@ function UpgradeHeroAbilities(unit)
 
 	if unit:GetUnitName() == "npc_dota_hero_nevermore" then
 		abilityIndexes = {0,3,4,5}
+	end
+
+	if unit:GetUnitName() == "npc_dota_hero_monkey_king" then
+		abilityIndexes = {0,1,3,5}
 	end
 
 	if level == 1 then
