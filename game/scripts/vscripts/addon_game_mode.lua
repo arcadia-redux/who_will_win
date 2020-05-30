@@ -105,7 +105,15 @@ bannedUnits = {
 	npc_dota_hero_invoker = true,
 	npc_dota_hero_wisp = true,
 	npc_dota_hero_target_dummy = true,
-	npc_dota_hero_base = true
+	npc_dota_hero_base = true,
+	npc_dota_goodguys_siege = true,
+	npc_dota_goodguys_siege_upgraded = true,
+	npc_dota_goodguys_siege_upgraded_mega = true, 
+	npc_dota_badguys_siege = true,
+	npc_dota_badguys_siege_upgraded = true,
+	npc_dota_badguys_siege_upgraded_mega = true,
+
+
 }
 -- bannedItems = {
 -- 	item_gem
