@@ -1,0 +1,633 @@
+"WearableItems"
+{
+	"11522"
+	{
+		"asset_modifier0"
+		{
+			"type"		"courier"
+			"modifier"		"models/courier/huntling/huntling.vmdl"
+			"asset"		"radiant"
+		}
+		"asset_modifier1"
+		{
+			"type"		"courier"
+			"modifier"		"models/courier/huntling/huntling.vmdl"
+			"asset"		"dire"
+		}
+		"asset_modifier2"
+		{
+			"type"		"courier_flying"
+			"modifier"		"models/courier/huntling/huntling_flying.vmdl"
+			"asset"		"radiant"
+		}
+		"asset_modifier3"
+		{
+			"type"		"courier_flying"
+			"modifier"		"models/courier/huntling/huntling_flying.vmdl"
+			"asset"		"dire"
+		}
+		"skin"		"1"
+		"asset_modifier4"
+		{
+			"type"		"particle_create"
+			"modifier"		"particles/econ/courier/courier_huntling_gold/courier_huntling_gold_ambient.vpcf"
+		}
+		"asset_modifier5"
+		{
+			"type"		"particle_create"
+			"flying_courier_only"		"1"
+			"modifier"		"particles/econ/courier/courier_huntling_gold/courier_huntling_gold_ambient_flying.vpcf"
+		}
+	}
+	"10167"
+	{
+		"asset_modifier0"
+		{
+			"type"		"courier"
+			"modifier"		"models/items/courier/captain_bamboo/captain_bamboo.vmdl"
+			"asset"		"radiant"
+			"frequency"		"1"
+		}
+		"asset_modifier1"
+		{
+			"type"		"courier"
+			"modifier"		"models/items/courier/captain_bamboo/captain_bamboo.vmdl"
+			"asset"		"dire"
+			"frequency"		"1"
+		}
+		"asset_modifier2"
+		{
+			"type"		"courier_flying"
+			"modifier"		"models/items/courier/captain_bamboo/captain_bamboo_flying.vmdl"
+			"asset"		"radiant"
+			"frequency"		"1"
+		}
+		"asset_modifier3"
+		{
+			"type"		"courier_flying"
+			"modifier"		"models/items/courier/captain_bamboo/captain_bamboo_flying.vmdl"
+			"asset"		"dire"
+			"frequency"		"1"
+		}
+		"asset_modifier5"
+		{
+			"type"		"particle_create"
+			"modifier"		"particles/econ/courier/courier_hwytty/courier_hwytty_ambient.vpcf"
+		}
+	}
+	"10314"
+	{
+		"asset_modifier60"
+		{
+			"type"		"courier"
+			"asset"		"radiant"
+			"modifier"		"models/items/courier/nexon_turtle_15_red/nexon_turtle_15_red.vmdl"
+			"frequency"		"1"
+			"style"		"15"
+		}
+		"asset_modifier61"
+		{
+			"type"		"courier"
+			"asset"		"dire"
+			"modifier"		"models/items/courier/nexon_turtle_15_red/nexon_turtle_15_red.vmdl"
+			"frequency"		"1"
+			"style"		"15"
+		}
+		"asset_modifier62"
+		{
+			"type"		"courier_flying"
+			"asset"		"radiant"
+			"modifier"		"models/items/courier/nexon_turtle_15_red/nexon_turtle_15_red_flying.vmdl"
+			"frequency"		"1"
+			"style"		"15"
+		}
+		"asset_modifier63"
+		{
+			"type"		"courier_flying"
+			"asset"		"dire"
+			"modifier"		"models/items/courier/nexon_turtle_15_red/nexon_turtle_15_red_flying.vmdl"
+			"frequency"		"1"
+			"style"		"15"
+		}
+		"asset_modifier100"
+		{
+			"type"		"particle_create"
+			"modifier"		"particles/econ/courier/courier_hyeonmu_ambient/courier_hyeonmu_ambient_red_plus.vpcf"
+			"style"		"0"
+		}
+	}
+	"10758"
+	{
+		"asset_modifier84"
+		{
+			"type"		"courier"
+			"modifier"		"models/items/courier/onibi_lvl_21/onibi_lvl_21.vmdl"
+			"asset"		"radiant"
+			"style"		"21"
+		}
+		"asset_modifier85"
+		{
+			"type"		"courier"
+			"modifier"		"models/items/courier/onibi_lvl_21/onibi_lvl_21.vmdl"
+			"asset"		"dire"
+			"style"		"21"
+		}
+		"asset_modifier86"
+		{
+			"type"		"courier_flying"
+			"modifier"		"models/items/courier/onibi_lvl_21/onibi_lvl_21_flying.vmdl"
+			"asset"		"radiant"
+			"style"		"21"
+		}
+		"asset_modifier87"
+		{
+			"type"		"courier_flying"
+			"modifier"		"models/items/courier/onibi_lvl_21/onibi_lvl_21_flying.vmdl"
+			"asset"		"dire"
+			"style"		"21"
+		}
+		"asset_modifier109"
+		{
+			"type"		"particle_create"
+			"modifier"		"particles/econ/courier/courier_onibi/courier_onibi_black_lvl21_ambient.vpcf"
+		}
+	}
+	"10374"
+	{
+		"asset_modifier2"
+		{
+			"type"		"courier"
+			"modifier"		"models/courier/baby_rosh/babyroshan.vmdl"
+			"asset"		"radiant"
+		}
+		"asset_modifier0"
+		{
+			"type"		"courier"
+			"modifier"		"models/courier/baby_rosh/babyroshan.vmdl"
+			"asset"		"dire"
+		}
+		"asset_modifier1"
+		{
+			"type"		"courier_flying"
+			"modifier"		"models/courier/baby_rosh/babyroshan_flying.vmdl"
+			"asset"		"radiant"
+		}
+		"asset_modifier3"
+		{
+			"type"		"courier_flying"
+			"modifier"		"models/courier/baby_rosh/babyroshan_flying.vmdl"
+			"asset"		"dire"
+		}
+		"skin"		"2"
+		"asset_modifier"
+		{
+			"type"		"particle_create"
+			"modifier"		"particles/econ/courier/courier_platinum_roshan/platinum_roshan_ambient.vpcf"
+		}
+	}
+	"13481"
+	{
+		"asset_modifier4"
+		{
+			"type"		"courier"
+			"modifier"		"models/courier/baby_rosh/babyroshan_ti9.vmdl"
+			"asset"		"radiant"
+		}
+		"asset_modifier5"
+		{
+			"type"		"courier"
+			"modifier"		"models/courier/baby_rosh/babyroshan_ti9.vmdl"
+			"asset"		"dire"
+		}
+		"asset_modifier0"
+		{
+			"type"		"courier_flying"
+			"modifier"		"models/courier/baby_rosh/babyroshan_ti9_flying.vmdl"
+			"asset"		"radiant"
+		}
+		"asset_modifier2"
+		{
+			"type"		"courier_flying"
+			"modifier"		"models/courier/baby_rosh/babyroshan_ti9_flying.vmdl"
+			"asset"		"dire"
+		}
+		"skip_model_combine"		"0"
+		"asset_modifier"
+		{
+			"type"		"particle_create"
+			"modifier"		"particles/econ/courier/courier_babyroshan_ti9/courier_babyroshan_ti9_ambient.vpcf"
+			"style"		"0"
+		}
+		"skin"		"6"
+	}
+	"12147"
+	{
+		"asset_modifier0"
+		{
+			"type"		"courier"
+			"modifier"		"models/courier/donkey_ti7/donkey_ti7.vmdl"
+			"asset"		"radiant"
+			"frequency"		"1"
+		}
+		"asset_modifier1"
+		{
+			"type"		"courier"
+			"modifier"		"models/courier/donkey_ti7/donkey_ti7.vmdl"
+			"asset"		"dire"
+			"frequency"		"1"
+		}
+		"asset_modifier2"
+		{
+			"type"		"courier_flying"
+			"modifier"		"models/courier/donkey_ti7/donkey_ti7_flying.vmdl"
+			"asset"		"radiant"
+		}
+		"asset_modifier3"
+		{
+			"type"		"courier_flying"
+			"modifier"		"models/courier/donkey_ti7/donkey_ti7_flying.vmdl"
+			"asset"		"dire"
+		}
+		"asset_modifier4"
+		{
+			"type"		"entity_scale"
+			"asset"		"npc_dota_furion_treant"
+			"scale_size"		"0.850000"
+		}
+		"asset_modifier5"
+		{
+			"type"		"particle_create"
+			"modifier"		"particles/econ/courier/courier_donkey_ti7/courier_donkey_ti7_ambient.vpcf"
+			"style"		"0"
+		}
+	}
+	"11140"
+	{
+		"asset_modifier0"
+		{
+			"type"		"courier"
+			"modifier"		"models/items/courier/nian_courier/nian_courier.vmdl"
+			"asset"		"radiant"
+		}
+		"asset_modifier1"
+		{
+			"type"		"courier"
+			"modifier"		"models/items/courier/nian_courier/nian_courier.vmdl"
+			"asset"		"dire"
+		}
+		"asset_modifier2"
+		{
+			"type"		"courier_flying"
+			"modifier"		"models/items/courier/nian_courier/nian_courier_flying.vmdl"
+			"asset"		"radiant"
+		}
+		"asset_modifier3"
+		{
+			"type"		"courier_flying"
+			"modifier"		"models/items/courier/nian_courier/nian_courier_flying.vmdl"
+			"asset"		"dire"
+		}
+		"asset_modifier"
+		{
+			"type"		"particle_create"
+			"modifier"		"particles/econ/courier/courier_nian/courier_nian_ambient.vpcf"
+		}
+	}
+	"10837"
+	{
+		"asset_modifier0"
+		{
+			"type"		"courier"
+			"asset"		"radiant"
+			"modifier"		"models/items/courier/courier_mvp_redkita/courier_mvp_redkita.vmdl"
+			"frequency"		"1"
+		}
+		"asset_modifier1"
+		{
+			"type"		"courier"
+			"asset"		"dire"
+			"modifier"		"models/items/courier/courier_mvp_redkita/courier_mvp_redkita.vmdl"
+			"frequency"		"1"
+		}
+		"asset_modifier2"
+		{
+			"type"		"courier_flying"
+			"asset"		"radiant"
+			"modifier"		"models/items/courier/courier_mvp_redkita/courier_mvp_redkita_flying.vmdl"
+			"frequency"		"1"
+		}
+		"asset_modifier3"
+		{
+			"type"		"courier_flying"
+			"asset"		"dire"
+			"modifier"		"models/items/courier/courier_mvp_redkita/courier_mvp_redkita_flying.vmdl"
+			"frequency"		"1"
+		}
+		"asset_modifier4"
+		{
+			"type"		"particle_create"
+			"modifier"		"particles/econ/courier/courier_roshan_darkmoon/courier_roshan_darkmoon_steam.vpcf"
+		}
+	}
+	"10833"
+	{
+		"asset_modifier0"
+		{
+			"type"		"courier"
+			"asset"		"radiant"
+			"modifier"		"models/items/courier/duskie/duskie.vmdl"
+			"frequency"		"1"
+		}
+		"asset_modifier1"
+		{
+			"type"		"courier"
+			"asset"		"dire"
+			"modifier"		"models/items/courier/duskie/duskie.vmdl"
+			"frequency"		"1"
+		}
+		"asset_modifier2"
+		{
+			"type"		"courier_flying"
+			"asset"		"radiant"
+			"modifier"		"models/items/courier/duskie/duskie_flying.vmdl"
+			"frequency"		"1"
+		}
+		"asset_modifier3"
+		{
+			"type"		"courier_flying"
+			"asset"		"dire"
+			"modifier"		"models/items/courier/duskie/duskie_flying.vmdl"
+			"frequency"		"1"
+		}
+		"asset_modifier4"
+		{
+			"type"		"particle_create"
+			"modifier"		"particles/econ/courier/courier_shagbark/courier_shagbark_ambient.vpcf"
+		}
+	}
+	"11368"
+	{
+		"asset_modifier0"
+		{
+			"type"		"courier"
+			"modifier"		"models/items/courier/shibe_dog_cat/shibe_dog_cat.vmdl"
+			"asset"		"radiant"
+		}
+		"asset_modifier1"
+		{
+			"type"		"courier"
+			"modifier"		"models/items/courier/shibe_dog_cat/shibe_dog_cat.vmdl"
+			"asset"		"dire"
+		}
+		"asset_modifier2"
+		{
+			"type"		"courier_flying"
+			"modifier"		"models/items/courier/shibe_dog_cat/shibe_dog_cat_flying.vmdl"
+			"asset"		"radiant"
+		}
+		"asset_modifier3"
+		{
+			"type"		"courier_flying"
+			"modifier"		"models/items/courier/shibe_dog_cat/shibe_dog_cat_flying.vmdl"
+			"asset"		"dire"
+		}
+		"asset_modifier4"
+		{
+			"type"		"particle_create"
+			"modifier"		"particles/econ/courier/courier_shibe/courier_shibe_ambient.vpcf"
+		}
+		"asset_modifier5"
+		{
+			"type"		"particle_create"
+			"flying_courier_only"		"1"
+			"modifier"		"particles/econ/courier/courier_shibe/courier_shibe_ambient_flying.vpcf"
+		}
+	}
+	"10347"
+	{
+		"asset_modifier0"
+		{
+			"type"		"courier"
+			"modifier"		"models/items/courier/baekho/baekho.vmdl"
+			"asset"		"radiant"
+			"frequency"		"1"
+		}
+		"asset_modifier1"
+		{
+			"type"		"courier"
+			"modifier"		"models/items/courier/baekho/baekho.vmdl"
+			"asset"		"dire"
+			"frequency"		"1"
+		}
+		"asset_modifier2"
+		{
+			"type"		"courier_flying"
+			"modifier"		"models/items/courier/baekho/baekho_flying.vmdl"
+			"asset"		"radiant"
+			"frequency"		"1"
+		}
+		"asset_modifier3"
+		{
+			"type"		"courier_flying"
+			"modifier"		"models/items/courier/baekho/baekho_flying.vmdl"
+			"asset"		"dire"
+			"frequency"		"1"
+		}
+		"asset_modifier5"
+		{
+			"type"		"particle_create"
+			"modifier"		"particles/econ/courier/courier_baekho/courier_baekho_ambient.vpcf"
+		}
+	}
+	"13680"
+	{
+		"asset_modifier0"
+		{
+			"type"		"courier"
+			"modifier"		"models/heroes/dark_willow/dark_willow.vmdl"
+			"asset"		"radiant"
+		}
+		"asset_modifier1"
+		{
+			"type"		"courier_flying"
+			"modifier"		"models/heroes/dark_willow/dark_willow.vmdl"
+			"asset"		"radiant"
+		}
+		"asset_modifier2"
+		{
+			"type"		"particle_create"
+			"modifier"		"particles/units/heroes/hero_dark_willow/dark_willow_lantern_ambient.vpcf"
+		}
+	}
+	"11997"
+	{
+		"asset_modifier0"
+		{
+			"type"		"courier"
+			"modifier"		"models/items/courier/hermit_crab/hermit_crab_aegis.vmdl"
+			"asset"		"radiant"
+			"style"		"5"
+		}
+		"asset_modifier1"
+		{
+			"type"		"courier"
+			"modifier"		"models/items/courier/hermit_crab/hermit_crab_aegis.vmdl"
+			"asset"		"dire"
+			"style"		"5"
+		}
+		"asset_modifier2"
+		{
+			"type"		"courier_flying"
+			"asset"		"radiant"
+			"modifier"		"models/items/courier/hermit_crab/hermit_crab_aegis_flying.vmdl"
+			"style"		"5"
+		}
+		"asset_modifier3"
+		{
+			"type"		"courier_flying"
+			"asset"		"dire"
+			"modifier"		"models/items/courier/hermit_crab/hermit_crab_aegis_flying.vmdl"
+			"style"		"5"
+		}
+		"asset_modifier4"
+		{
+			"type"		"particle_create"
+			"modifier"		"particles/econ/courier/courier_hermit_crab/hermit_crab_aegis_ambient.vpcf"
+			"style"		"5"
+		}
+	}
+	"12451"
+	{
+		"asset_modifier0"
+		{
+			"type"		"courier"
+			"modifier"		"models/items/rubick/rubick_arcana/rubick_arcana_base.vmdl"
+			"asset"		"radiant"
+		}
+		"asset_modifier1"
+		{
+			"type"		"courier_flying"
+			"modifier"		"models/items/rubick/rubick_arcana/rubick_arcana_base.vmdl"
+			"asset"		"radiant"
+		}
+		"asset_modifier2"
+		{
+			"type"		"particle_create"
+			"modifier"		"particles/econ/items/rubick/rubick_arcana/rubick_arc_ambient_default.vpcf"
+			
+		}
+		"asset_modifier3"
+		{
+			"type"		"particle_create"
+			"modifier"		"particles/econ/items/rubick/rubick_arcana/rubick_arc_shoulders_ambient.vpcf"
+		}
+	}
+	"11461"
+	{
+		"asset_modifier20"
+		{
+			"type"		"courier"
+			"modifier"		"models/items/courier/onibi_lvl_05/onibi_lvl_05.vmdl"
+			"asset"		"radiant"
+			"style"		"5"
+		}
+		"asset_modifier21"
+		{
+			"type"		"courier"
+			"modifier"		"models/items/courier/onibi_lvl_05/onibi_lvl_05.vmdl"
+			"asset"		"dire"
+			"style"		"5"
+		}
+		"asset_modifier22"
+		{
+			"type"		"courier_flying"
+			"modifier"		"models/items/courier/onibi_lvl_05/onibi_lvl_05_flying.vmdl"
+			"asset"		"radiant"
+			"style"		"5"
+		}
+		"asset_modifier23"
+		{
+			"type"		"courier_flying"
+			"modifier"		"models/items/courier/onibi_lvl_05/onibi_lvl_05_flying.vmdl"
+			"asset"		"dire"
+			"style"		"5"
+		}
+		"asset_modifier97"
+		{
+			"type"		"particle_create"
+			"modifier"		"particles/econ/courier/courier_onibi/courier_onibi_blue_lvl5_ambient.vpcf"
+			"style"		"5"
+		}
+	}
+	"12007"
+	{
+		"asset_modifier4"
+		{
+			"type"		"courier"
+			"modifier"		"models/courier/baby_rosh/babyroshan.vmdl"
+			"asset"		"radiant"
+		}
+		"asset_modifier5"
+		{
+			"type"		"courier"
+			"modifier"		"models/courier/baby_rosh/babyroshan.vmdl"
+			"asset"		"dire"
+		}
+		"asset_modifier0"
+		{
+			"type"		"courier_flying"
+			"modifier"		"models/courier/baby_rosh/babyroshan_flying.vmdl"
+			"asset"		"radiant"
+		}
+		"asset_modifier2"
+		{
+			"type"		"courier_flying"
+			"modifier"		"models/courier/baby_rosh/babyroshan_flying.vmdl"
+			"asset"		"dire"
+		}
+		"skip_model_combine"		"0"
+		"skin"		"4"
+		"asset_modifier6"
+		{
+			"type"		"particle_create"
+			"modifier"		"particles/econ/courier/courier_roshan_desert_sands/baby_roshan_desert_sands_ambient.vpcf"
+			"style"		"0"
+			"ground_courier_only"		"1"
+			"spawn_in_loadout_only"		"2"
+		}
+		"asset_modifier7"
+		{
+			"type"		"particle_create"
+			"modifier"		"particles/econ/courier/courier_roshan_desert_sands/baby_roshan_desert_sands_ambient_flying.vpcf"
+			"flying_courier_only"		"1"
+			"style"		"0"
+			"spawn_in_loadout_only"		"2"
+		}
+	}
+	"7385"
+	{
+		"asset_modifier0"
+		{
+			"type"		"courier"
+			"modifier"		"models/heroes/crystal_maiden/crystal_maiden_arcana.vmdl"
+			"asset"		"radiant"
+		}
+		"asset_modifier1"
+		{
+			"type"		"courier_flying"
+			"modifier"		"models/heroes/crystal_maiden/crystal_maiden_arcana.vmdl"
+			"asset"		"radiant"
+		}
+		"asset_modifier2"
+		{
+			"type"		"particle_create"
+			"modifier"		"particles/econ/items/crystal_maiden/crystal_maiden_maiden_of_icewrack/maiden_arcana_body_ambient.vpcf"
+		}
+		"asset_modifier3"
+		{
+			"type"		"particle_create"
+			"modifier"		"particles/econ/items/crystal_maiden/ti7_immortal_shoulder/cm_ti7_immortal_ambient.vpcf"
+			"style"		"0"
+		}
+	}
+}

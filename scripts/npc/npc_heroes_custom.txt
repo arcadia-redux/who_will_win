@@ -1,0 +1,760 @@
+"DOTAHeroes"
+{
+	"Version"		"1"
+
+	"npc_dota_hero_elf"
+	{
+		"BaseClass"	"npc_dota_hero"
+		"IsCustom"      "1"
+		"DisableWearables"          	"1"
+		"HeroID"		"250"
+		"CMDisabled"					"1"
+		"HeroDisabled"					"1"
+		"Model"		"models/items/courier/onibi_lvl_05/onibi_lvl_05.vmdl"
+		"SoundSet"		"Hero_Wisp"
+		"IdleSoundLoop"		"Hero_Wisp.IdleLoop"
+		"Enabled"		"1"
+		"Role"			"Support,Escape,Nuker"
+		"Rolelevels"	"3,2,1"
+		"Complexity"	"3"
+		"Team"		"Good"
+		"ModelScale"		"1.35"
+		"VersusScale"		"1.0"
+		"workshop_guide_name"		"Io"
+		"PickSound"		"wisp_move03"
+		"BanSound"		"wisp_shitty_crummy_wizard"
+		"CMEnabled"		"1"
+		"NameAliases"		"wisp"
+		"NoCombine"		"1"
+		"Legs"	"0"
+		"LastHitChallengeRival"		"npc_dota_hero_zuus"
+		"AbilityDraftDisabled"		"0"
+		"HeroSelectSoundEffect"		"Hero_Wisp.Pick"
+		"GibType"		"ethereal"
+		"GibTintColor"	"171 230 255 255"
+		"Ability1"    "ability_hero_move"
+        "Ability2"    "ability_item_retrieve"
+        "Ability3"    "ability_hero_sell"
+        "Ability4"    "ability_hero_roll"
+        "Ability5"    "ability_level_up"
+        "Ability6"    "ability_hero_ability_refresh"
+        "Ability10"    "special_bonus_elf_10_2"
+        "Ability11"    "special_bonus_elf_10_1"
+        "Ability12"    "special_bonus_elf_15_2"
+        "Ability13"    "special_bonus_elf_15_1"
+        "Ability14"    "special_bonus_elf_20_2"
+        "Ability15"    "special_bonus_elf_20_1"
+        "Ability16"    "special_bonus_elf_25_2"
+        "Ability17"    "special_bonus_elf_25_1"
+		"AbilityDraftIgnoreCount" "8"
+		"ArmorPhysical"		"0"
+        "AttackCapabilities"    "DOTA_UNIT_CAP_NO_ATTACK"
+        "StatusHealth"    "100"
+        "StatusHealthRegen"    "0"
+        "StatusMana"    "100"
+        "StatusManaRegen"    "0"
+        "StatusStartingMana"    "0"
+		"AttackDamageMin"		"0"
+		"AttackDamageMax"		"0"
+        "AttackDamageMin"    "0"
+        "AttackDamageMax"    "0"
+        "AttackRate"		"0"
+        "AttributePrimary"    "DOTA_ATTRIBUTE_INTELLECT"
+        "AttributeBaseStrength"    "0"
+        "AttributeBaseAgility"    "0"
+        "AttributeStrengthGain"    "0"
+        "AttributeAgilityGain"    "0"
+        "AttributeBaseIntelligence"    "0"
+        "AttributeIntelligenceGain"    "0"
+        "MagicalResistance"    "0"
+		"MovementSpeed"		"650"
+		"MovementTurnRate"		"0.700000"
+        "IsAncient"    "1"
+        "UnitRelationShipClass"    "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
+        "IsNeutralUnitType"    "0"
+	}
+
+	"npc_dota_hero_wisp"
+	{
+		"AttackRange"		"700"
+        "Ability15"     "special_bonus_hp_700"
+        "Ability16"     "special_bonus_unique_wisp_6"
+		"Ability17"		"special_bonus_unique_wisp_5"
+		"GameSoundsFile"		"game_sounds_vo_wisp.vsndevts"
+	}
+
+	"npc_dota_hero_lich"
+	{
+		"Ability11"		"special_bonus_mp_300"
+		"Ability17"		"special_bonus_unique_lich_2"
+	}
+
+	"npc_dota_hero_bane"
+	{
+		"AttackRange"	"800"
+        "Ability14"     "special_bonus_spell_lifesteal_15"
+		"Ability15"		"special_bonus_hp_400"
+	}
+
+	"npc_dota_hero_pudge"
+	{
+		"Ability10"		"special_bonus_magic_resistance_10"
+		"Ability13"		"special_bonus_armor_10"
+		"Ability15"		"special_bonus_hp_regen_25"
+	}
+
+	"npc_dota_hero_zuus"
+	{
+		"AttackRange"		"800"
+		"Ability10"		"special_bonus_spell_amplify_10"
+		"Ability11"		"special_bonus_hp_200"
+		"Ability12"		"special_bonus_mp_350"
+	}
+
+	"npc_dota_hero_shadow_shaman"
+	{
+		"AttackRange"		"600"
+		"Ability11"		"special_bonus_mp_300"
+	}
+
+	"npc_dota_hero_tidehunter"
+	{
+		"Ability10"		"special_bonus_hp_200"
+		"Ability12"		"special_bonus_magic_resistance_15"
+	}
+
+	"npc_dota_hero_warlock"
+	{
+		"Ability12"		"special_bonus_hp_300"
+	}
+
+	"npc_dota_hero_beastmaster"
+	{
+		"Ability10"		"special_bonus_attack_speed_15"
+        "Ability11"     "special_bonus_unique_beastmaster_3"
+        "Ability13"     "special_bonus_magic_resistance_15"
+		"Ability17"		"special_bonus_attack_damage_150"
+	}
+
+	"npc_dota_hero_omniknight"
+	{
+        "Ability11"     "special_bonus_magic_resistance_15"
+		"Ability15"		"special_bonus_strength_25"
+	}
+
+	"npc_dota_hero_bounty_hunter"
+	{
+		"Ability10"		"special_bonus_magic_resistance_10"
+		"Ability11"		"special_bonus_attack_damage_30"
+	}
+
+	"npc_dota_hero_weaver"
+	{
+		"AttackRange"	"550"
+		"Ability11"		"special_bonus_hp_200"
+		"Ability14"		"special_bonus_attack_damage_100"
+		"Ability15"		"special_bonus_attack_range_150"
+		"Ability16"		"special_bonus_lifesteal_35"
+	}
+
+	"npc_dota_hero_jakiro"
+	{
+		"Ability12"		"special_bonus_hp_300"
+	}
+
+	"npc_dota_hero_chen"
+	{
+		"Ability10"		"special_bonus_hp_200"
+		"Ability14"		"special_bonus_unique_chen_1"
+		"Ability16"		"special_bonus_unique_chen_7"
+	}
+
+	"npc_dota_hero_shadow_demon"
+	{
+		"AttackRange"		"650"
+		"Ability11"		"special_bonus_hp_200"
+		"Ability12"		"special_bonus_magic_resistance_15"
+	}
+
+	"npc_dota_hero_keeper_of_the_light"
+	{
+		"Ability10"		"special_bonus_hp_200"
+		"Ability11"		"special_bonus_attack_range_150"
+		"Ability15"		"special_bonus_spell_lifesteal_30"
+	}
+
+	"npc_dota_hero_visage"
+	{
+		"Ability12"		"special_bonus_magic_resistance_15"
+	}
+
+	"npc_dota_hero_tusk"
+	{
+		"Ability10"		"special_bonus_magic_resistance_10"
+	}
+
+	"npc_dota_hero_abaddon"
+	{
+		"Ability10"		"special_bonus_magic_resistance_10"
+		"Ability11"		"special_bonus_hp_200"
+	}
+
+	"npc_dota_hero_legion_commander"
+	{
+		"Ability11"		"special_bonus_magic_resistance_10"
+        "Ability12"     "special_bonus_hp_350"
+        "Ability14"     "special_bonus_attack_speed_80"
+	}
+
+	"npc_dota_hero_oracle"
+	{
+		"Ability10"		"special_bonus_intelligence_15"
+		"Ability11"		"special_bonus_hp_200"
+		"Ability14"		"special_bonus_evasion_25"
+	}
+
+	"npc_dota_hero_techies"
+	{
+		"Ability10"		"special_bonus_mp_200"
+		"Ability13"		"special_bonus_mp_regen_10"
+		"Ability14"		"special_bonus_evasion_25"
+	}
+
+	"npc_dota_hero_axe"
+	{
+		"Ability10"		"special_bonus_hp_200"
+		"Ability11"		"special_bonus_mp_200"
+		"Ability12"		"special_bonus_spell_lifesteal_20"
+		"Ability13"		"special_bonus_unique_axe_4"
+		"Ability14"		"special_bonus_hp_regen_30"
+	}
+
+	"npc_dota_hero_drow_ranger"
+	{
+		"BaseAttackSpeed"		"135"
+		"Ability6"		"ddw_drow_ranger_marksmanship"
+		"Ability10"		"special_bonus_hp_200"
+        "Ability13"     "special_bonus_unique_drow_ranger_5"
+		"Ability14"		"special_bonus_attack_range_100"
+		"Ability16"		"special_bonus_drow_ranger_marksmanship_upgrade"
+	}
+
+	"npc_dota_hero_earthshaker"
+	{
+		"Ability12"		"special_bonus_hp_300"
+		"Ability13"		"special_bonus_armor_15"
+	}
+
+	"npc_dota_hero_juggernaut"
+	{
+		"Ability11"		"special_bonus_attack_damage_30"
+		"Ability13"		"special_bonus_attack_speed_70"
+	}
+
+	"npc_dota_hero_nevermore"
+	{
+		"Ability12"		"special_bonus_attack_damage_50"
+		"Ability13"		"special_bonus_hp_300"
+	}
+
+	"npc_dota_hero_ursa"
+	{
+        "Ability13"     "special_bonus_movement_speed_40"
+	}
+
+	"npc_dota_hero_sven"
+	{
+		"Ability10"		"special_bonus_attack_speed_30"
+		"Ability11"		"special_bonus_armor_8"
+        "Ability14"     "special_bonus_all_stats_20"
+	}
+
+	"npc_dota_hero_tiny"
+	{
+		"Ability10"		"special_bonus_magic_resistance_10"
+	}
+
+	"npc_dota_hero_enigma"
+	{
+		"Ability10"		"special_bonus_movement_speed_25"
+		"Ability15"		"special_bonus_attack_range_100"
+		"Ability17"		"special_bonus_spell_lifesteal_20"
+	}
+
+	"npc_dota_hero_templar_assassin"
+	{
+		"AttackRange"		"350"
+        "Ability11"     "special_bonus_hp_200"
+	}
+
+	"npc_dota_hero_luna"
+	{
+		"AttackRange"		"500"
+		"Ability13"		"special_bonus_attack_range_100"
+		"Ability14"		"special_bonus_all_stats_20"
+	}
+
+	"npc_dota_hero_dragon_knight"
+	{
+		"Ability10"		"special_bonus_magic_resistance_10"
+	}
+
+	"npc_dota_hero_dazzle"
+	{
+		"Ability11"		"special_bonus_mp_300"
+		"Ability14"		"special_bonus_hp_400"
+	}
+
+	"npc_dota_hero_rattletrap"
+	{
+		"Ability11"		"special_bonus_hp_200"
+	}
+
+	"npc_dota_hero_leshrac"
+	{
+		"Ability13"		"special_bonus_movement_speed_30"
+		"Ability15"		"special_bonus_unique_leshrac_1"
+		"Ability16"		"special_bonus_spell_lifesteal_30"
+		"Ability17"		"special_bonus_unique_leshrac_3"
+	}
+
+	"npc_dota_hero_furion"
+	{
+		"Ability10"		"special_bonus_spell_amplify_20"
+		"Ability11"		"special_bonus_hp_200"
+		"Ability14"		"special_bonus_attack_speed_120"
+		"Ability16"		"special_bonus_attack_range_175"
+	}
+
+	"npc_dota_hero_life_stealer"
+	{
+		"Ability11"		"special_bonus_magic_resistance_10"
+	}
+
+	"npc_dota_hero_enchantress"
+	{
+		"AttackRange"	"650"
+		"ProjectileSpeed"		"1400"
+		"AttributeStrengthGain"		"2.500000"
+		"Ability11"		"special_bonus_hp_300"
+		"Ability15"		"special_bonus_spell_lifesteal_20"
+		"Ability17"		"special_bonus_attack_range_175"
+	}
+
+	"npc_dota_hero_night_stalker"
+	{
+		"Ability14"		"special_bonus_armor_20"
+		"Ability17"		"special_bonus_evasion_50"
+	}
+
+	"npc_dota_hero_batrider"
+	{
+		"AttackRange"		"600"
+		"Ability15"		"special_bonus_magic_resistance_25"
+		"Ability16"		"special_bonus_cast_range_250"
+		"Ability17"		"special_bonus_movement_speed_100"
+	}
+
+	"npc_dota_hero_gyrocopter"
+	{
+		"Ability10"		"special_bonus_lifesteal_10"
+		"Ability14"		"special_bonus_attack_range_150"
+		"Ability17"		"special_bonus_attack_damage_75"
+	}
+
+	"npc_dota_hero_obsidian_destroyer"
+	{
+		"AttackRange"		"600"
+		"Ability12"		"special_bonus_magic_resistance_15"
+		"Ability16"		"special_bonus_intelligence_35"
+		"Ability17"		"special_bonus_spell_lifesteal_15"
+	}
+
+	"npc_dota_hero_chaos_knight"
+	{
+		"Ability6"		"ddw_chaos_knight_phantasm"
+		"Ability12"		"special_bonus_strength_25"
+		"Ability14"		"special_bonus_armor_15"
+	}
+
+	"npc_dota_hero_ogre_magi"
+	{
+		"Ability16"		"special_bonus_magic_resistance_25"
+	}
+
+	"npc_dota_hero_nyx_assassin"
+	{
+		"Ability13"		"special_bonus_magic_resistance_25"
+		"Ability17"		"special_bonus_mp_regen_10"
+	}
+
+	"npc_dota_hero_naga_siren"
+	{
+		"Ability10"		"special_bonus_hp_200"
+	}
+
+	"npc_dota_hero_centaur"
+	{
+		"Ability11"		"special_bonus_magic_resistance_15"
+		"Ability12"		"special_bonus_spell_lifesteal_20"
+	}
+
+	"npc_dota_hero_bristleback"
+	{
+		"Ability10"		"special_bonus_magic_resistance_10"
+		"Ability11"		"special_bonus_attack_speed_30"
+	}
+
+	"npc_dota_hero_skywrath_mage"
+	{
+		"AttackRange"		"800"
+		"Ability10"		"special_bonus_cast_range_150"
+		"Ability11"		"special_bonus_spell_amplify_10"
+	}
+
+	"npc_dota_hero_elder_titan"
+	{
+		"Ability10"		"special_bonus_cast_range_100"
+	}
+
+	"npc_dota_hero_terrorblade"
+	{
+		"Ability10"		"special_bonus_magic_resistance_10"
+		"Ability14"		"special_bonus_all_stats_20"
+		"Ability15"		"special_bonus_attack_damage_60"
+	}
+
+	"npc_dota_hero_abyssal_underlord"
+	{
+		"Ability11"		"special_bonus_magic_resistance_10"
+		"Ability13"		"special_bonus_unique_underlord"
+		"Ability16"		"special_bonus_unique_underlord_3"
+		"Ability17"		"special_bonus_cleave_100"
+	}
+
+	"npc_dota_hero_dark_willow"
+	{
+		"AttackRange"		"650"
+		"Ability13"		"special_bonus_hp_300"
+        "Ability14"     "special_bonus_spell_lifesteal_20"
+		"Ability15"		"special_bonus_unique_dark_willow_1"
+	}
+
+	"npc_dota_hero_grimstroke"
+	{
+		"AttackRange"				"650"
+		"Ability10"		"special_bonus_hp_200"
+	}
+
+	"npc_dota_hero_mars"
+	{
+        "Ability12"     "special_bonus_magic_resistance_10"
+	}
+
+	"npc_dota_hero_troll_warlord"
+	{
+		"Ability13"		"special_bonus_lifesteal_15"
+		"Ability15"		"special_bonus_attack_damage_120"
+		"Ability16"		"special_bonus_magic_resistance_50"
+	}
+
+	"npc_dota_hero_ancient_apparition"
+	{
+		"AttackAcquisitionRange"		"1600"
+		"AttackRange"		"800"
+	}
+
+	"npc_dota_hero_invoker"
+	{
+		"AttackRange"		"800"
+	}
+
+	"npc_dota_hero_viper"
+	{
+		"Ability11"		"special_bonus_hp_200"
+		"Ability17"		"special_bonus_spell_lifesteal_30"
+	}
+
+	"npc_dota_hero_doom_bringer"
+	{
+		"Ability4"		""
+		"Ability5"		""
+		"Ability13"		"special_bonus_magic_resistance_25"
+		"Ability15"		"special_bonus_attack_speed_50"
+	}
+
+	"npc_dota_hero_puck"
+	{
+		"AttackRange"		"800"
+	}
+
+	"npc_dota_hero_rubick"
+	{
+		"AttackRange"		"800"
+	}
+
+	"npc_dota_hero_pugna"
+	{
+		"Ability10"		"special_bonus_cast_range_150"
+		"Ability15"		"special_bonus_spell_amplify_15"
+		"AttackRange"		"800"
+	}
+
+	"npc_dota_hero_tinker"
+	{
+		"AttackRange"		"800"
+	}
+
+	"npc_dota_hero_necrolyte"
+	{
+		"Ability12"		"special_bonus_spell_amplify_15"
+	}
+
+	"npc_dota_hero_morphling"
+	{
+		"Ability17"		"special_bonus_hp_350"
+		"Ability19"		"special_bonus_attack_range_125"
+	}
+
+	"npc_dota_hero_monkey_king"
+	{
+		"Ability6"		""
+		"Ability10"		"special_bonus_magic_resistance_15"
+		"Ability11"		"special_bonus_armor_10"
+		"Ability16"		"special_bonus_cleave_60"
+		"Ability17"		"special_bonus_cooldown_reduction_20"
+	}
+
+	"npc_dota_hero_vengefulspirit"
+	{
+		"AttackRange"		"600"
+		"Ability14"		"special_bonus_hp_500"
+	}
+
+	"npc_dota_hero_venomancer"
+	{
+		"AttackRange"		"600"
+	}
+
+	"npc_dota_hero_slark"
+	{
+		"AttributeAgilityGain"		"4.500000"
+		"Ability11"		"special_bonus_magic_resistance_15"
+		"Ability17"		"special_bonus_agility_100"
+	}
+
+	"npc_dota_hero_spirit_breaker"
+	{
+		"Ability10"		"special_bonus_strength_15"
+		"Ability11"		"special_bonus_armor_10"
+		"Ability15"		"special_bonus_lifesteal_30"
+	}
+
+	"npc_dota_hero_antimage"
+	{
+		"AttributeStrengthGain"		"2.500000"
+		"Ability10"		"special_bonus_strength_10"
+	}
+
+	"npc_dota_hero_earth_spirit"
+	{
+		"Ability16"		"special_bonus_spell_lifesteal_30"
+	}
+
+	"npc_dota_hero_death_prophet"
+	{
+		"Ability16"		"special_bonus_spell_lifesteal_30"
+	}
+
+	"npc_dota_hero_windrunner"
+	{
+		"Ability10"		"special_bonus_intelligence_15"
+		"Ability15"		"special_bonus_attack_speed_160"
+		"Ability17"		"special_bonus_attack_damage_120"
+	}
+
+	"npc_dota_hero_shredder"
+	{
+		"Ability11"		"special_bonus_magic_resistance_10"
+	}
+
+	"npc_dota_hero_slardar"
+	{
+		"Ability15"		"special_bonus_cleave_60"
+	}
+
+	"npc_dota_hero_winter_wyvern"
+	{
+		"Ability13"		"special_bonus_spell_lifesteal_15"
+	}
+
+	"npc_dota_hero_huskar"
+	{
+		"AttackRange"		"500"
+		"Ability13"		"special_bonus_spell_lifesteal_20"
+		"Ability15"		"special_bonus_armor_15"
+	}
+
+	"npc_dota_hero_dark_seer"
+	{
+		"Ability6"		"ddw_dark_seer_wall_of_replica"
+		"Ability12"		"special_bonus_hp_regen_20"
+		"Ability14"		"special_bonus_armor_20"
+		"Ability16"		"special_bonus_dark_seer_wall_of_replica_upgrade"
+		"Ability17"		"special_bonus_cast_range_200"
+	}
+
+	"npc_dota_hero_razor"
+	{
+		"Ability13"		"special_bonus_hp_regen_20"
+	}
+
+	"npc_dota_hero_lycan"
+	{
+		"Ability16"		"special_bonus_hp_800"
+	}
+
+	"npc_dota_hero_phantom_lancer"
+	{
+		"Ability15"		"special_bonus_30_crit_2"
+		"Ability17"		"special_bonus_spell_block_20"
+	}
+
+	"npc_dota_hero_spectre"
+	{
+		"Ability16"		"special_bonus_magic_resistance_50"
+	}
+
+	"npc_dota_hero_faceless_void"
+	{
+		"Ability14"		"special_bonus_attack_speed_45"
+		"Ability15"		"special_bonus_truestrike"
+	}
+
+	"npc_dota_hero_alchemist"
+	{
+		"Ability10"		"special_bonus_magic_resistance_15"
+		"Ability11"		"special_bonus_armor_10"
+		"Ability16"		"special_bonus_unique_alchemist_3"
+	}
+
+	"npc_dota_hero_mirana"
+	{
+		"Ability10"		"special_bonus_spell_amplify_10"
+		"Ability15"		"special_bonus_mana_break_40"
+		"Ability14"		"special_bonus_attack_damage_100"
+		"Ability17"		"special_bonus_attack_speed_140"
+	}
+
+	"npc_dota_hero_skeleton_king"
+	{
+		"Ability13"		"special_bonus_cooldown_reduction_25"
+		"Ability15"		"special_bonus_cleave_40"
+	}
+
+	"npc_dota_hero_arc_warden"
+	{
+		"AttributeAgilityGain"		"4.500000"
+	}
+
+	"npc_dota_hero_ember_spirit"
+	{
+		"Ability14"		"special_bonus_unique_ember_spirit_6"
+		"Ability15"		"special_bonus_truestrike"
+	}
+
+	"npc_dota_hero_pangolier"
+	{
+		"Ability10"			"special_bonus_magic_resistance_10"
+	}
+
+	"npc_dota_hero_storm_spirit"
+	{
+		"Ability11"		"special_bonus_intelligence_15"
+		"Ability15"		"special_bonus_unique_storm_spirit_3"
+		"Ability16"		"special_bonus_spell_block_15"
+	}
+
+	"npc_dota_hero_kunkka"
+	{
+		"Ability12"		"special_bonus_cooldown_reduction_20"
+	}
+
+	"npc_dota_hero_clinkz"
+	{
+		"Ability12"		"special_bonus_lifesteal_15"
+	}
+
+	"npc_dota_hero_sniper"
+	{
+		"Ability11"		"special_bonus_hp_200"
+		"Ability17"		"special_bonus_attack_damage_100"
+	}
+
+	"npc_dota_hero_brewmaster"
+	{
+		"Ability16"		"special_bonus_reincarnation_250"
+		"Ability17"		"special_bonus_unique_brewmaster_4"
+	}
+
+	"npc_dota_hero_bloodseeker"
+	{
+		"Ability17"		"special_bonus_20_bash_2"
+	}
+
+	"npc_dota_hero_treant"
+	{
+		"Ability11"		"special_bonus_unique_treant_8"
+		"Ability12"		"special_bonus_unique_treant_9"
+		"Ability13"		"special_bonus_cooldown_reduction_15"
+		"Ability14"		"special_bonus_unique_treant_2"
+		"Ability15"		"special_bonus_unique_treant_11"
+		"Ability16"		"special_bonus_unique_treant_4"
+		"Ability17"		"special_bonus_unique_treant_7"
+	}
+
+	"npc_dota_hero_broodmother"
+	{
+		"Ability14"		"special_bonus_armor_20"
+		"Ability15"		"special_bonus_attack_speed_100"
+	}
+
+	"npc_dota_hero_void_spirit"
+	{
+		"Ability10"					"special_bonus_mp_250"
+	}
+
+	"npc_dota_hero_lina"
+	{
+		"Ability14"		"special_bonus_spell_amplify_25"
+		"Ability16"		"special_bonus_spell_lifesteal_60"
+	}
+
+	"npc_dota_hero_meepo"
+	{
+		"AttributeStrengthGain"		"2.800000"
+		"AttributeAgilityGain"		"2.800000"
+		"Ability6"		"meepo_item_duplication"
+		"Ability10"		"special_bonus_armor_10"
+		"Ability11"		"special_bonus_magic_resistance_15"
+		"Ability14"		"special_bonus_spell_lifesteal_20"
+		"Ability15"		"special_bonus_lifesteal_25"
+		"Ability16"		"special_bonus_meepo_earthbind_upgrade"
+	}
+
+	"npc_dota_hero_lone_druid"
+	{
+		"Ability11"		"special_bonus_attack_damage_65"
+	}
+
+	"npc_dota_hero_undying"
+	{
+		"Ability16"		"special_bonus_reincarnation_250"
+	}
+
+	"npc_dota_hero_phantom_assassin"
+	{
+		"Ability12"		"special_bonus_unique_phantom_assassin"
+		"Ability17"		"special_bonus_unique_phantom_assassin_2"
+	}
+}

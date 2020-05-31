@@ -1,0 +1,380 @@
+"DOTAUnits"
+{
+	"Version"		"1"
+
+	"npc_dummy_unit"
+	{
+		"BaseClass"					"npc_dota_creep_neutral"
+		"Model"						"models/development/invisiblebox.vmdl"
+		"SoundSet"					"Creep_Good_Range"
+		"Level"						"0"
+		"UnitLabel"					"healing_ward"
+		"Ability1"					"ability_dummy_unit"
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+		"Ability5"					""
+		"Ability6"					""
+		"Ability7"					""
+		"Ability8"					""
+		"ArmorPhysical"				"0"
+		"MagicalResistance"			"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"
+		"AttackDamageMax"			"0"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1"
+		"AttackAnimationPoint"		"0.5"
+		"AttackAcquisitionRange"	"800"
+		"AttackRange"				"500"
+		"ProjectileModel"			""
+		"ProjectileSpeed"			"900"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"0"
+		"AttributeStrengthGain"		"0"
+		"AttributeBaseIntelligence"	"0"
+		"AttributeIntelligenceGain"	"0"
+		"AttributeBaseAgility"		"0"
+		"AttributeAgilityGain"		"0"
+		"BountyXP"					"0"
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"450"
+		"MovementTurnRate"			"1.0"
+		"FollowRange"				"250"
+		"StatusHealth"				"1"
+		"StatusHealthRegen"			"0"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+		"VisionDaytimeRange"		"0"
+		"VisionNighttimeRange"		"0"
+		"AttackDesire"				"1.5"
+	}
+
+	"npc_dota_lone_druid_bear1"
+	{
+		"AttackDamageMin"			"25"
+		"AttackDamageMax"			"25"
+		"StatusHealth"				"2000"		// Base health.
+	}
+
+	"npc_dota_lone_druid_bear2"
+	{
+		"AttackDamageMin"			"50"
+		"AttackDamageMax"			"50"
+		"StatusHealth"				"2500"		// Base health.
+	}	
+
+	"npc_dota_lone_druid_bear3"
+	{
+		"AttackDamageMin"			"75"
+		"AttackDamageMax"			"75"
+		"StatusHealth"				"3000"		// Base health.
+	}	
+	
+	"npc_dota_lone_druid_bear4"
+	{
+		"AttackDamageMin"			"100"
+		"AttackDamageMax"			"100"
+		"StatusHealth"				"3500"		// Base health.
+	}	
+
+	"npc_dota_unit_undying_zombie"
+	{
+		"AttackDamageMin"			"100"
+		"AttackDamageMax"			"150"
+		"AttackRate"				"1.0"
+		"StatusHealth"				"5"
+	}
+
+	"npc_dota_unit_undying_zombie_torso"
+	{
+		"AttackDamageMin"			"100"
+		"AttackDamageMax"			"150"
+		"AttackRate"				"1.0"
+		"StatusHealth"				"5"
+	}
+
+	"npc_dota_beastmaster_hawk"
+	{										
+		"StatusHealth"				"500"
+	}	
+
+	"npc_dota_beastmaster_hawk_1"
+	{										
+		"StatusHealth"				"500"
+	}	
+
+	"npc_dota_beastmaster_hawk_2"
+	{									
+		"StatusHealth"				"1000"
+	}	
+
+	"npc_dota_beastmaster_hawk_3"
+	{										
+		"StatusHealth"				"1500"
+	}	
+
+	"npc_dota_beastmaster_hawk_4"
+	{										
+		"StatusHealth"				"2000"
+	}	
+
+	"npc_dota_visage_familiar1"
+	{
+		"AttackDamageMin"			"80"
+		"AttackDamageMax"			"80"
+		"StatusHealth"				"800"
+	}
+
+	"npc_dota_visage_familiar2"
+	{
+		"AttackDamageMin"			"100"
+		"AttackDamageMax"			"100"
+		"StatusHealth"				"1000"
+	}
+
+	"npc_dota_visage_familiar3"
+	{
+		"AttackDamageMin"			"120"
+		"AttackDamageMax"			"120"
+		"StatusHealth"				"1200"
+	}	
+
+	"npc_dota_brewmaster_earth_1"
+	{										
+		"StatusHealth"				"3000"
+		"AttackDamageMin"			"50"
+		"AttackDamageMax"			"50"
+	}	
+
+	"npc_dota_brewmaster_earth_2"
+	{										
+		"StatusHealth"				"4400"
+		"AttackDamageMin"			"100"
+		"AttackDamageMax"			"100"
+	}	
+
+	"npc_dota_brewmaster_earth_3"
+	{										
+		"StatusHealth"				"6000"
+		"AttackDamageMin"			"150"
+		"AttackDamageMax"			"150"
+	}	
+
+	"npc_dota_brewmaster_storm_1"
+	{										
+		"StatusHealth"				"2000"
+		"AttackDamageMin"			"50"
+		"AttackDamageMax"			"50"
+	}	
+
+	"npc_dota_brewmaster_storm_2"
+	{										
+		"StatusHealth"				"3000"
+		"AttackDamageMin"			"100"
+		"AttackDamageMax"			"100"
+	}	
+
+	"npc_dota_brewmaster_storm_3"
+	{										
+		"StatusHealth"				"3800"
+		"AttackDamageMin"			"150"
+		"AttackDamageMax"			"150"
+	}	
+
+	"npc_dota_brewmaster_fire_1"
+	{										
+		"StatusHealth"				"2600"
+		"AttackDamageMin"			"50"
+		"AttackDamageMax"			"50"
+	}	
+
+	"npc_dota_brewmaster_fire_2"
+	{										
+		"StatusHealth"				"3000"
+		"AttackDamageMin"			"100"
+		"AttackDamageMax"			"100"
+	}	
+
+	"npc_dota_brewmaster_fire_3"
+	{										
+		"StatusHealth"				"4000"
+		"AttackDamageMin"			"150"
+		"AttackDamageMax"			"150"
+	}	
+
+	"npc_dota_furion_treant_1"
+	{
+		"StatusHealth"				"1200"
+	}
+
+	"npc_dota_furion_treant_2"
+	{
+		"StatusHealth"				"1200"
+	}
+
+	"npc_dota_furion_treant_3"
+	{
+		"StatusHealth"				"1200"
+	}
+
+	"npc_dota_furion_treant_4"
+	{
+		"StatusHealth"				"1200"
+	}
+
+	"npc_dota_furion_treant_large"
+	{
+		"ArmorPhysical"				"20"
+		"MagicalResistance"			"40"
+	}
+
+	"npc_dota_beastmaster_boar_1"
+	{	
+		"AttackDamageMin"			"50"
+		"AttackDamageMax"			"50"									
+		"StatusHealth"				"1000"
+	}
+
+	"npc_dota_beastmaster_boar_2"
+	{		
+		"AttackDamageMin"			"100"
+		"AttackDamageMax"			"100"								
+		"StatusHealth"				"2000"
+	}
+
+	"npc_dota_beastmaster_boar_3"
+	{			
+		"AttackDamageMin"			"150"
+		"AttackDamageMax"			"150"							
+		"StatusHealth"				"3000"
+	}
+
+	"npc_dota_beastmaster_boar_4"
+	{									
+		"AttackDamageMin"			"200"
+		"AttackDamageMax"			"200"	
+		"StatusHealth"				"4000"
+	}
+
+    "npc_dota_necronomicon_warrior_1"
+    {
+    	"AttackDamageMin"			"120"
+		"AttackDamageMax"			"130"
+        "StatusHealth"              "1000"
+		"BountyGoldMin"				"50"
+		"BountyGoldMax"				"50"
+    }    
+
+    "npc_dota_necronomicon_warrior_2"
+    {
+    	"AttackDamageMin"			"140"
+		"AttackDamageMax"			"160"
+        "StatusHealth"              "2000"
+		"BountyGoldMin"				"75"
+		"BountyGoldMax"				"75"
+    }    
+
+    "npc_dota_necronomicon_warrior_3"
+    {
+    	"AttackDamageMin"			"165"
+		"AttackDamageMax"			"185"
+        "StatusHealth"              "3000"
+		"BountyGoldMin"				"100"
+		"BountyGoldMax"				"100"
+    }    
+
+    "npc_dota_necronomicon_archer_1"
+    {
+    	"AttackDamageMin"			"105"
+		"AttackDamageMax"			"115"
+        "StatusHealth"              "1000"
+		"BountyGoldMin"				"50"
+		"BountyGoldMax"				"50"
+    }    
+
+    "npc_dota_necronomicon_archer_2"
+    {   
+    	"AttackDamageMin"			"135"
+		"AttackDamageMax"			"145"
+        "StatusHealth"              "2000"
+		"BountyGoldMin"				"75"
+		"BountyGoldMax"				"75"
+    }    
+
+    "npc_dota_necronomicon_archer_3"
+    {
+    	"AttackDamageMin"			"165"
+		"AttackDamageMax"			"175"
+        "StatusHealth"              "3000"
+		"BountyGoldMin"				"100"
+		"BountyGoldMax"				"100"
+    }
+
+	"npc_dota_lycan_wolf1"
+	{										
+		"AttackDamageMin"			"52"
+		"AttackDamageMax"			"52"	
+		"StatusHealth"				"1000"
+	}	
+
+	"npc_dota_lycan_wolf2"
+	{										
+		"AttackDamageMin"			"68"
+		"AttackDamageMax"			"68"	
+		"StatusHealth"				"1500"
+	}	
+
+	"npc_dota_lycan_wolf3"
+	{										
+		"AttackDamageMin"			"84"
+		"AttackDamageMax"			"84"	
+		"StatusHealth"				"2000"
+	}	
+
+	"npc_dota_lycan_wolf4"
+	{										
+		"AttackDamageMin"			"100"
+		"AttackDamageMax"			"100"	
+		"StatusHealth"				"2500"
+	}	
+
+	"npc_dota_broodmother_spiderling"
+	{
+		"StatusHealth"				"1000"
+		"ArmorPhysical"				"15"	
+	}
+
+	"npc_dota_broodmother_spiderite"
+	{
+		"StatusHealth"				"800"
+		"ArmorPhysical"				"15"	
+	}
+
+	"npc_dota_templar_assassin_psionic_trap"
+	{										
+		"StatusHealth"				"500"
+	}	
+
+	"npc_dota_shadow_shaman_ward_1"
+	{
+		"StatusHealth"				"1"
+	}
+
+	"npc_dota_shadow_shaman_ward_2"
+	{
+		"StatusHealth"				"1"
+	}
+
+	"npc_dota_shadow_shaman_ward_3"
+	{
+		"StatusHealth"				"1"
+	}
+}

@@ -1,0 +1,777 @@
+"control_points"
+{
+	"particles/econ/courier/courier_huntling_gold/courier_huntling_gold_ambient.vpcf"
+	{
+		"attach_type"		"absorigin_follow"
+		"attach_entity"		"parent"
+		"control_points"
+		{
+			"0"
+			{
+				"control_point_index"		"1"
+				"attach_type"		"point_follow"
+				"attachment"		"attach_hitloc"
+			}
+			"1"
+			{
+				"control_point_index"		"0"
+				"attach_type"		"PATTACH_ABSORIGIN_FOLLOW"
+				"attach_entity"		"parent"
+			}
+		}
+	}
+	"particles/econ/courier/courier_huntling_gold/courier_huntling_gold_ambient_flying.vpcf"
+	{
+		"attach_type"		"customorigin"
+		"attach_entity"		"parent"
+		"flying_courier_effect"		"1"
+		"control_points"
+		{
+			"0"
+			{
+				"control_point_index"		"0"
+				"attach_type"		"point_follow"
+				"attachment"		"attach_shuriken"
+			}
+		}
+	}
+	"particles/econ/courier/courier_hwytty/courier_hwytty_ambient.vpcf"
+	{
+		"attach_type"		"customorigin"
+		"attach_entity"		"parent"
+		"control_points"
+		{
+			"0"
+			{
+				"control_point_index"		"0"
+				"attach_type"		"point_follow"
+				"attachment"		"attach_backpack"
+			}
+			"1"
+			{
+				"control_point_index"		"1"
+				"attach_type"		"point_follow"
+				"attachment"		"attach_bag"
+			}
+		}
+	}
+	"particles/econ/courier/courier_hyeonmu_ambient/courier_hyeonmu_ambient_red_plus.vpcf"
+	{
+		"attach_type"		"absorigin_follow"
+		"attach_entity"		"parent"
+		"control_points"
+		{
+			"0"
+			{
+				"control_point_index"		"0"
+				"attach_type"		"point_follow"
+				"attachment"		"attach_hitloc"
+			}
+		}
+	}
+	"particles/econ/courier/courier_onibi/courier_onibi_black_lvl21_ambient.vpcf"
+	{
+		"attach_type"		"absorigin_follow"
+		"attach_entity"		"parent"
+		"control_points"
+		{
+			"0"
+			{
+				"control_point_index"		"0"
+				"attach_type"		"point_follow"
+				"attachment"		"attach_eye_l"
+			}
+			"1"
+			{
+				"control_point_index"		"1"
+				"attach_type"		"point_follow"
+				"attachment"		"attach_eye_r"
+			}
+			"2"
+			{
+				"control_point_index"		"2"
+				"attach_type"		"point_follow"
+				"attachment"		"attach_hitloc"
+			}
+		}
+	}
+	"particles/econ/courier/courier_platinum_roshan/platinum_roshan_ambient.vpcf"
+	{
+		"resource"		"particles/econ/courier/courier_platinum_roshan"
+		"attach_type"		"absorigin_follow"
+		"attach_entity"		"parent"
+		"control_points"
+		{
+			"0"
+			{
+				"control_point_index"		"0"
+				"attach_type"		"point_follow"
+				"attachment"		"attach_eye_l"
+			}
+			"1"
+			{
+				"control_point_index"		"1"
+				"attach_type"		"point_follow"
+				"attachment"		"attach_eye_m"
+			}
+			"2"
+			{
+				"control_point_index"		"2"
+				"attach_type"		"point_follow"
+				"attachment"		"attach_eye_r"
+			}
+		}
+		"default_color"
+		{
+			"r"		"213"
+			"g"		"227"
+			"b"		"245"
+		}
+	}
+	
+	"particles/econ/courier/courier_donkey_ti7/courier_donkey_ti7_ambient.vpcf"
+	{
+		"control_points"
+		{
+			"0"
+			{
+				"control_point_index"		"0"
+				"attach_type"		"PATTACH_ABSORIGIN"
+				"attach_entity"		"parent"
+			}
+			"1"
+			{
+				"control_point_index"		"1"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_hitloc"
+				"attach_entity"		"parent"
+			}
+			"2"
+			{
+				"control_point_index"		"2"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"self"
+			}
+			"3"
+			{
+				"control_point_index"		"3"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"self"
+			}
+			"4"
+			{
+				"control_point_index"		"6"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"self"
+			}
+			"5"
+			{
+				"control_point_index"		"15"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"self"
+			}
+			"6"
+			{
+				"control_point_index"		"16"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"self"
+			}
+			"7"
+			{
+				"control_point_index"		"4"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_omni_head"
+				"attach_entity"		"parent"
+			}
+		}
+	}
+	"particles/econ/courier/courier_babyroshan_ti9/courier_babyroshan_ti9_ambient.vpcf"
+	{
+		"control_points"
+		{
+			"0"
+			{
+				"control_point_index"		"0"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_hitloc"
+				"attach_entity"		"parent"
+			}
+			"1"
+			{
+				"control_point_index"		"1"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_eye_m"
+				"attach_entity"		"parent"
+			}
+			"2"
+			{
+				"control_point_index"		"2"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_eye_l"
+				"attach_entity"		"parent"
+			}
+			"3"
+			{
+				"control_point_index"		"3"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_eye_r"
+				"attach_entity"		"parent"
+			}
+			"4"
+			{
+				"control_point_index"		"10"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"self"
+			}
+			"5"
+			{
+				"control_point_index"		"5"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_eye_r"
+				"attach_entity"		"parent"
+			}
+			"6"
+			{
+				"control_point_index"		"4"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_hive"
+				"attach_entity"		"parent"
+			}
+			"7"
+			{
+				"control_point_index"		"7"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"self"
+			}
+		}
+	}
+	"particles/econ/courier/courier_nian/courier_nian_ambient.vpcf"
+	{
+		"control_points"
+		{
+			"0"
+			{
+				"control_point_index"		"0"
+				"attach_type"		"PATTACH_ABSORIGIN_FOLLOW"
+				"attach_entity"		"parent"
+			}
+			"1"
+			{
+				"control_point_index"		"1"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_bag"
+				"attach_entity"		"parent"
+			}
+		}
+	}
+	"particles/econ/courier/courier_shagbark/courier_shagbark_ambient.vpcf"
+	{
+		"resource"		"particles/econ/courier/courier_shagbark"
+		"attach_type"		"absorigin_follow"
+		"attach_entity"		"parent"
+		"control_points"
+		{
+			"0"
+			{
+				"control_point_index"		"0"
+				"attach_type"		"point_follow"
+				"attachment"		"attach_hitloc"
+			}
+			"1"
+			{
+				"control_point_index"		"1"
+				"attach_type"		"absorigin_follow"
+			}
+		}
+		"default_color"
+		{
+			"r"		"255"
+			"g"		"193"
+			"b"		"220"
+		}
+	}
+	"particles/econ/courier/courier_shibe/courier_shibe_ambient.vpcf"
+	{
+		"attach_type"		"absorigin_follow"
+		"attach_entity"		"parent"
+		"control_points"
+		{
+			"0"
+			{
+				"control_point_index"		"1"
+				"attach_type"		"point_follow"
+				"attachment"		"attach_hitloc"
+			}
+			"1"
+			{
+				"control_point_index"		"2"
+				"attach_type"		"point_follow"
+				"attachment"		"attach_potion"
+			}
+			"2"
+			{
+				"control_point_index"		"0"
+				"attach_type"		"PATTACH_ABSORIGIN_FOLLOW"
+				"attach_entity"		"parent"
+			}
+		}
+	}
+	"particles/econ/courier/courier_shibe/courier_shibe_ambient_flying.vpcf"
+	{
+		"attach_type"		"absorigin_follow"
+		"attach_entity"		"parent"
+		"flying_courier_effect"		"1"
+		"control_points"
+		{
+			"0"
+			{
+				"control_point_index"		"1"
+				"attach_type"		"point_follow"
+				"attachment"		"attach_hitloc"
+			}
+			"1"
+			{
+				"control_point_index"		"2"
+				"attach_type"		"point_follow"
+				"attachment"		"attach_potion"
+			}
+			"2"
+			{
+				"control_point_index"		"3"
+				"attach_type"		"point_follow"
+				"attachment"		"attach_halo"
+			}
+			"3"
+			{
+				"control_point_index"		"0"
+				"attach_type"		"PATTACH_ABSORIGIN_FOLLOW"
+				"attach_entity"		"parent"
+			}
+		}
+	}
+	"particles/econ/courier/courier_baekho/courier_baekho_ambient.vpcf"
+	{
+		"attach_type"		"rootbone_follow"
+		"attach_entity"		"parent"
+	}
+	"particles/econ/courier/courier_roshan_darkmoon/courier_roshan_darkmoon_steam.vpcf"
+	{
+		"resource"		"particles/econ/courier/courier_roshan_darkmoon"
+		"attach_type"		"absorigin_follow"
+		"attach_entity"		"parent"
+	}
+	"particles/units/heroes/hero_dark_willow/dark_willow_lantern_ambient.vpcf"
+	{
+		"control_points"
+		{
+			"0"
+			{
+				"control_point_index"		"0"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_lantern"
+				"attach_entity"		"parent"
+			}
+			"1"
+			{
+				"control_point_index"		"1"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"self"
+			}
+			"2"
+			{
+				"control_point_index"		"3"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"parent"
+			}
+			"3"
+			{
+				"control_point_index"		"4"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"parent"
+			}
+		}
+	}
+	"particles/econ/courier/courier_hermit_crab/hermit_crab_aegis_ambient.vpcf"
+	{
+		"control_points"
+		{
+			"0"
+			{
+				"control_point_index"		"0"
+				"attach_type"		"PATTACH_ABSORIGIN_FOLLOW"
+				"attach_entity"		"parent"
+			}
+			"1"
+			{
+				"control_point_index"		"1"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_aegis"
+				"attach_entity"		"parent"
+			}
+			"2"
+			{
+				"control_point_index"		"5"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"self"
+			}
+			"3"
+			{
+				"control_point_index"		"10"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"self"
+			}
+		}
+	}
+	"particles/econ/items/rubick/rubick_arcana/rubick_arc_ambient_default.vpcf"
+	{
+		"control_points"
+		{
+			"0"
+			{
+				"control_point_index"		"0"
+				"attach_type"		"PATTACH_ABSORIGIN_FOLLOW"
+				"attach_entity"		"self"
+			}
+			"1"
+			{
+				"control_point_index"		"60"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"self"
+			}
+			"2"
+			{
+				"control_point_index"		"61"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"self"
+			}
+			"3"
+			{
+				"control_point_index"		"62"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"self"
+			}
+			"4"
+			{
+				"control_point_index"		"3"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"self"
+			}
+			"5"
+			{
+				"control_point_index"		"4"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"self"
+			}
+			"6"
+			{
+				"control_point_index"		"10"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"self"
+			}
+		}
+	}
+	"particles/econ/items/rubick/rubick_arcana/rubick_arc_shoulders_ambient.vpcf"
+	{
+		"control_points"
+		{
+			"0"
+			{
+				"control_point_index"		"0"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"self"
+			}
+			"1"
+			{
+				"control_point_index"		"1"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_necktie_base"
+				"attach_entity"		"self"
+			}
+			"2"
+			{
+				"control_point_index"		"60"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"self"
+			}
+			"3"
+			{
+				"control_point_index"		"61"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"self"
+			}
+			"4"
+			{
+				"control_point_index"		"62"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"self"
+			}
+		}
+	}
+	"particles/econ/courier/courier_onibi/courier_onibi_blue_lvl5_ambient.vpcf"
+	{
+		"attach_type"		"absorigin_follow"
+		"attach_entity"		"parent"
+		"control_points"
+		{
+			"0"
+			{
+				"control_point_index"		"0"
+				"attach_type"		"point_follow"
+				"attachment"		"attach_eye_l"
+			}
+			"1"
+			{
+				"control_point_index"		"1"
+				"attach_type"		"point_follow"
+				"attachment"		"attach_eye_r"
+			}
+			"2"
+			{
+				"control_point_index"		"2"
+				"attach_type"		"point_follow"
+				"attachment"		"attach_hitloc"
+			}
+		}
+	}
+	"particles/econ/courier/courier_roshan_desert_sands/baby_roshan_desert_sands_ambient.vpcf"
+	{
+		"control_points"
+		{
+			"0"
+			{
+				"control_point_index"		"0"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_eye_l"
+				"attach_entity"		"parent"
+			}
+			"1"
+			{
+				"control_point_index"		"1"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_eye_m"
+				"attach_entity"		"parent"
+			}
+			"2"
+			{
+				"control_point_index"		"2"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_eye_r"
+				"attach_entity"		"parent"
+			}
+			"3"
+			{
+				"control_point_index"		"3"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_hitloc"
+				"attach_entity"		"parent"
+			}
+			"4"
+			{
+				"control_point_index"		"4"
+				"attach_type"		"PATTACH_ABSORIGIN_FOLLOW"
+				"attach_entity"		"parent"
+			}
+			"5"
+			{
+				"control_point_index"		"5"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_wing_l"
+				"attach_entity"		"parent"
+			}
+			"6"
+			{
+				"control_point_index"		"6"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_wing_r"
+				"attach_entity"		"parent"
+			}
+		}
+	}
+	"particles/econ/courier/courier_roshan_desert_sands/baby_roshan_desert_sands_ambient_flying.vpcf"
+	{
+		"control_points"
+		{
+			"0"
+			{
+				"control_point_index"		"0"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_eye_l"
+				"attach_entity"		"parent"
+			}
+			"1"
+			{
+				"control_point_index"		"1"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_eye_m"
+				"attach_entity"		"parent"
+			}
+			"2"
+			{
+				"control_point_index"		"2"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_eye_r"
+				"attach_entity"		"parent"
+			}
+			"3"
+			{
+				"control_point_index"		"3"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_hitloc"
+				"attach_entity"		"parent"
+			}
+			"4"
+			{
+				"control_point_index"		"4"
+				"attach_type"		"PATTACH_ABSORIGIN_FOLLOW"
+				"attach_entity"		"parent"
+			}
+			"5"
+			{
+				"control_point_index"		"5"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_wing_l"
+				"attach_entity"		"parent"
+			}
+			"6"
+			{
+				"control_point_index"		"6"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_wing_r"
+				"attach_entity"		"parent"
+			}
+		}
+	}
+	"particles/econ/items/crystal_maiden/crystal_maiden_maiden_of_icewrack/maiden_arcana_body_ambient.vpcf"
+	{
+		"attach_type"		"absorigin_follow"
+		"attach_entity"		"parent"
+		"control_points"
+		{
+			"0"
+			{
+				"control_point_index"		"0"
+				"attach_type"		"PATTACH_ABSORIGIN_FOLLOW"
+				"attach_entity"		"parent"
+			}
+		}
+	}
+	"particles/econ/items/crystal_maiden/ti9_immortal_staff/cm_ti9_golden_staff_ambient.vpcf"
+	{
+		"control_points"
+		{
+			"0"
+			{
+				"control_point_index"		"0"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_staff_ball"
+				"attach_entity"		"self_with_wearables"
+			}
+			"1"
+			{
+				"control_point_index"		"1"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"self"
+			}
+			"2"
+			{
+				"control_point_index"		"2"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_staff_small_ball_1"
+				"attach_entity"		"self_with_wearables"
+			}
+			"3"
+			{
+				"control_point_index"		"3"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_staff_small_ball_2"
+				"attach_entity"		"self_with_wearables"
+			}
+			"4"
+			{
+				"control_point_index"		"5"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"self"
+			}
+			"5"
+			{
+				"control_point_index"		"11"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"self"
+			}
+			"6"
+			{
+				"control_point_index"		"4"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_staff_pommel"
+				"attach_entity"		"self_with_wearables"
+			}
+		}
+	}
+	"particles/econ/items/crystal_maiden/ti7_immortal_shoulder/cm_ti7_immortal_ambient.vpcf"
+	{
+		"control_points"
+		{
+			"0"
+			{
+				"control_point_index"		"0"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_ball"
+				"attach_entity"		"self_with_wearables"
+			}
+			"1"
+			{
+				"control_point_index"		"3"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"self"
+			}
+			"2"
+			{
+				"control_point_index"		"4"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_ball"
+				"attach_entity"		"self_with_wearables"
+			}
+			"3"
+			{
+				"control_point_index"		"6"
+				"attach_type"		"PATTACH_WORLDORIGIN"
+				"attach_entity"		"self"
+			}
+			"4"
+			{
+				"control_point_index"		"8"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_shard_1"
+				"attach_entity"		"self_with_wearables"
+			}
+			"5"
+			{
+				"control_point_index"		"9"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_shard_2"
+				"attach_entity"		"self_with_wearables"
+			}
+			"6"
+			{
+				"control_point_index"		"10"
+				"attach_type"		"PATTACH_POINT_FOLLOW"
+				"attachment"		"attach_shard_3"
+				"attach_entity"		"self_with_wearables"
+			}
+		}
+	}
+	"particles/econ/items/crystal_maiden/crystal_maiden_cowl_of_ice/crystal_maiden_cowl_ambient.vpcf"
+	{
+		"attach_type"		"customorigin"
+		"attach_entity"		"self"
+		"control_points"
+		{
+			"0"
+			{
+				"control_point_index"		"0"
+				"attach_type"		"point_follow"
+				"attachment"		"attach_head"
+			}
+		}
+	}
+}

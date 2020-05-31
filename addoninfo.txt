@@ -1,0 +1,40 @@
+"AddonInfo"
+{
+    "maps"          "dawn_war dawn_war_coop"
+    "IsPlayable"    "1"
+    "dawn_war"
+    {
+        "MaxPlayers"    "8"
+    }
+    "dawn_war_coop"
+    {
+        "MaxPlayers"    "8"
+    }
+    "Default_Keys"
+    {
+        "01"
+        {
+            "Key"       "SPACE"
+            "Command"   "CMD_SPACE"
+            "Name"      "CMD_SPACE"
+        }
+        "02"
+        {
+            "Key"       "1"
+            "Command"   "CMD_1"
+            "Name"      "CMD_1"
+        }
+        "03"
+        {
+            "Key"       "TAB"
+            "Command"   "CMD_TAB"
+            "Name"      "CMD_TAB"
+        }
+        "04"
+        {
+            "Key"       "F1"
+            "Command"   "CMD_F1"
+            "Name"      "CMD_F1"
+        }
+    }
+}

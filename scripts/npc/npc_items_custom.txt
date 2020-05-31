@@ -1,0 +1,403 @@
+"DOTAAbilities"
+{
+	"Version"		"1"
+
+	"item_ai_delay"
+	{
+		"ID"							"3001"
+		"BaseClass"						"item_datadriven"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"delay"
+		"ItemAliases"					"delay"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityTextureName"			"custom/delay"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"AllowedInBackpack"				"1"
+		"IsTempestDoubleClonable"		"0"
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemPurchasable"				"1"
+		"ItemKillable"					"1"
+		"ItemPermanent"					"1"
+		"ItemStackable"					"0"
+	}
+
+	"item_recipe_diffusal_blade_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"3002"
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.mdl"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_diffusal_blade_2"
+		"ItemRequirements"
+		{
+			"01"						"item_diffusal_blade;item_recipe_diffusal_blade"
+		}
+	}
+
+	"item_diffusal_blade_2"
+	{
+		"ID"							"3003"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"custom_items/item_diffusal_blade_2.lua"
+		"AbilityTextureName" 			"custom/diffusal_blade_2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"		
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"850"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"12"
+		"AbilitySharedCooldown"			"diffusal"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		"ItemCost"						"4500"
+		"ItemShopTags"					"agi;int;unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"diffusal blade 2;purgeblade"
+
+		"ItemPermanent"					"1"
+		"MaxUpgradeLevel"				"2"
+		"ItemBaseLevel"					"2"
+
+		"UpgradesItems"					"item_diffusal_blade;item_diffusal_blade_2"
+		"UpgradeRecipe"					"item_recipe_diffusal_blade"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"15"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"feedback_mana_burn"	"50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"feedback_mana_burn_illusion_melee"	"16"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"feedback_mana_burn_illusion_ranged"	"8"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"purge_rate"			"5"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"purge_root_duration"	"3.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"purge_slow_duration"	"4.0"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_per_burn"		"0.8"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_tooltip"		"600"
+			}
+		}
+	}
+
+	"item_phase_teleporter"
+	{
+		"ID"							"3004"
+		"BaseClass"						"item_datadriven"
+		"ItemCost"						"2000"
+		"ItemShopTags"					"teleport"
+		"ItemAliases"					"phase teleporter"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityTextureName"			"custom/teleporter"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"AllowedInBackpack"				"1"
+		"IsTempestDoubleClonable"		"0"
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemPurchasable"				"1"
+		"ItemKillable"					"1"
+		"ItemPermanent"					"1"
+		"ItemStackable"					"0"
+	}
+
+	"item_tome_of_upgrade"
+	{
+		"ID"							"3005"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"custom_items/item_tome_of_upgrade.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityTextureName"			"custom/upgrade"
+		"FightRecapLevel"				"1"
+		"ItemCost"						"1500"
+		"ItemPurchasable"				"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"tome of upgrade"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemSupport"					"1"	
+		"IsTempestDoubleClonable"		"0"
+	}
+
+	"item_recipe_desolator_2"
+	{
+		"ID"							"3006"
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName" 			"item_recipe_desolator_2"
+		"ItemCost"						"3000"	
+		"ItemShopTags"					"desolator"
+		"ItemStockTime"					"1"
+		"ItemStockInitial"				"0"
+		"ItemStockMax"					"1"
+		"ItemInitialStockTime"			"1800.0"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_desolator_2"
+		"ItemRequirements"
+		{
+			"01"						"item_desolator;item_desolator;"
+		}
+	}
+
+	"item_recipe_pirate_hat_new"
+	{
+		"ID"							"3007"
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName" 			"item_recipe_pirate_hat"
+		"ItemCost"						"1000"	
+		"ItemShopTags"					"pirate"
+		"ItemStockTime"					"1"
+		"ItemStockInitial"				"0"
+		"ItemStockMax"					"1"
+		"ItemInitialStockTime"			"1800.0"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_pirate_hat_new"
+		"ItemRequirements"
+		{
+			"01"						"item_moon_shard;item_moon_shard;item_hand_of_midas;"
+		}
+	}
+
+	//"item_recipe_ballista"
+	//{
+	//	"ID"							"3008"
+    //	"BaseClass"						"item_datadriven"
+	//	"Model"							"models/props_gameplay/recipe.vmdl"
+	//	"ItemCost"						"3000"	
+	//	"ItemShopTags"					"ballista"
+	//	"ItemStockTime"					"1"
+	//	"ItemStockInitial"				"0"
+	//	"ItemStockMax"					"1"
+	//	"ItemInitialStockTime"			"1.0"
+	//	"ItemRecipe"					"1"
+	//	"ItemResult"					"item_ballista"
+	//	"ItemRequirements"
+	//	{
+	//		"01"						"item_hurricane_pike;item_basher;"
+	//	}
+	//}
+
+	"item_recipe_apex"
+	{
+		"ID"							"3009"
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName" 			"item_recipe_apex"
+		"ItemCost"						"500"	
+		"ItemShopTags"					"apex"
+		"ItemStockTime"					"1"
+		"ItemStockInitial"				"0"
+		"ItemStockMax"					"1"
+		"ItemInitialStockTime"			"1800.0"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_apex"
+		"ItemRequirements"
+		{
+			"01"						"item_reaver;item_eagle;item_mystic_staff;"
+		}
+	}
+
+	"item_pirate_hat_new"
+	{
+		"ID"							"3010"
+		"BaseClass"						"item_lua"
+		"AbilityTextureName" 			"item_pirate_hat"
+		"ScriptFile"					"custom_items/item_pirate_hat_new.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemSellable"					"1"
+		"ItemPurchasable"				"1"
+		"ItemIsNeutralDrop"				"0"
+		"ItemStockTime"					"1"
+		"ItemStockInitial"				"0"
+		"ItemStockMax"					"1"
+		"ItemInitialStockTime"			"1800.0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"			"250"
+			}
+		}
+	}
+
+	"item_no_attack"
+	{
+		"ID"							"3011"
+		"BaseClass"						"item_datadriven"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"no_attack"
+		"ItemAliases"					"peace"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityTextureName"			"custom/no_attack"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"AllowedInBackpack"				"1"
+		"IsTempestDoubleClonable"		"0"
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemPurchasable"				"1"
+		"ItemKillable"					"1"
+		"ItemPermanent"					"1"
+		"ItemStackable"					"0"
+	}
+
+	"item_assassin_medal"
+	{
+		"ID"							"3012"
+		"BaseClass"						"item_datadriven"
+		"ItemCost"						"1000"
+		"ItemShopTags"					"assassin_medal"
+		"ItemAliases"					"assassin"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityTextureName"			"custom/assassin_medal"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"AllowedInBackpack"				"1"
+		"IsTempestDoubleClonable"		"0"
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemPurchasable"				"1"
+		"ItemKillable"					"1"
+		"ItemPermanent"					"1"
+		"ItemStackable"					"0"
+	}
+
+	"item_seer_stone_new"
+	{
+		"ID"							"3013"
+		"BaseClass"						"item_lua"
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName" 			"item_seer_stone"
+		"ScriptFile"					"custom_items/item_seer_stone_new.lua"
+		"ItemCost"						"0"
+		"ItemIsNeutralDrop"				"1"
+		"ItemPurchasable"				"0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_bonus"			"300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_spell_amp"		"30"
+			}
+		}
+	}
+
+	"item_scroll_of_time"
+	{
+		"ID"							"3014"
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityCastPoint"				"0.2"
+		"AbilityTextureName"			"custom/scroll_of_time"
+		"FightRecapLevel"				"1"
+		"ItemCost"						"1000"
+		"ItemPurchasable"				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"scroll of time"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemSupport"					"1"	
+		"IsTempestDoubleClonable"		"0"
+		"ItemInitialStockTime"			"1800.0"
+		"ItemStockTime"					"120"
+		"ItemStockInitial"				"0"
+		"ItemStockMax"					"1"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"	"CASTER"
+				"ScriptFile"	"custom_items/item_scroll_of_time.lua"
+				"Function"	"OnAddRoundTime"
+			}
+		}
+	}
+}

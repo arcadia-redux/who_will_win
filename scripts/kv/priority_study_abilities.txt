@@ -1,0 +1,8 @@
+"FreeCastAbility"
+{
+    "1"   	"lone_druid_spirit_bear"
+    "2" 	"weaver_geminate_attack"
+    "3"		"riki_permanent_invisibility"
+    "4"		"vengefulspirit_command_aura"
+    "5"		"slardar_bash"
+}

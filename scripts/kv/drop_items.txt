@@ -1,0 +1,167 @@
+"DropItems"
+{
+	"1"
+	{
+		"1"		"item_blades_of_attack"		// 攻击之爪 430 
+		"2"		"item_boots_of_elves"		// 精灵布带 450
+		"3"		"item_crown"				// 王冠 450
+		"4"		"item_belt_of_strength"		// 力量腰带 450 
+		"5"		"item_robe"					// 法师长袍 450
+		"6"		"item_boots"				// 速度之靴 500 
+		"7"		"item_gloves"				// 加速手套 500
+		"8"		"item_ring_of_basilius"		// 王者之戒 500
+		"9"		"item_wraith_band"			// 怨灵系带 515
+		"10"	"item_bracer"				// 护腕 515
+		"11"	"item_null_talisman"		// 空灵挂件 515
+		"12"	"item_headdress"			// 恢复头巾 525
+		"13"	"item_cloak"				// 抗魔斗篷 550
+		"14"	"item_chainmail"			// 锁子甲 550
+		"15"	"item_urn_of_shadows"		// 影之灵龛 650
+		"16"	"item_ring_of_tarrasque"	// 恐鳌之戒 700
+		"17"	"item_soul_ring"			// 灵魂之戒 770
+		"18"	"item_buckler"				// 玄冥盾牌 800
+		"19"	"item_ring_of_health"		// 治疗指环 850
+		"20"	"item_void_stone"			// 虚无宝石 850
+		"21"	"item_quarterstaff"			// 短棍 875
+		"22"	"item_lifesteal"			// 吸血面具 900
+		"23"	"item_helm_of_iron_will"	// 铁意头盔 900
+		"24"	"item_energy_booster"		// 能量之球 900
+	}
+	"2"
+	{
+		"1"		"item_ogre_axe"				// 食人魔之斧 1000
+		"2"		"item_blade_of_alacrity"	// 欢欣之刃 1000
+		"3"		"item_staff_of_wizardry"	// 魔力法杖 1000
+		"4"		"item_vitality_booster"		// 活力之球 1100
+		"5"		"item_javelin"				// 标枪 1100
+		"6"		"item_medallion_of_courage"	// 勇气勋章 1175
+		"7"		"item_point_booster"		// 精气之球 1200
+		"8"		"item_broadsword"			// 阔剑 1200
+		"9"		"item_arcane_boots"  		// 奥术鞋 1400
+		"10"	"item_platemail"			// 板甲 1400
+		"11"	"item_talisman_of_evasion"	// 闪避护符 1400
+		"12"	"item_claymore"				// 大剑 1400
+		"13"	"item_power_treads"			// 动力鞋 1450
+		"14"	"item_phase_boots"			// 相位鞋 1480
+		"15"	"item_mithril_hammer"		// 秘银锤 1600
+		"16"	"item_ancient_janggo"  		// 韧鼓 1625
+		"17"	"item_oblivion_staff"	    // 空明杖 1650
+		"18"	"item_pers"					// 坚韧球 1700
+		"19"	"item_mask_of_madness"		// 疯狂面具 1775
+		"20"	"item_hood_of_defiance"		// 挑战头巾 1700
+		"21"	"item_vladmir"				// 弗拉迪米尔的祭品 1925
+		"22"	"item_glimmer_cape"			// 微光披风 1950
+	}
+	"3"
+	{
+		"1"		"item_hyperstone"			// 振奋宝石 2000
+		"2"		"item_sange"				// 散华 2050
+		"3"		"item_yasha" 				// 夜叉 2050
+		"4"		"item_kaya"					// 慧光 2050
+		"5"		"item_veil_of_discord"		// 纷争面纱 2050
+		"6"		"item_lesser_crit"			// 水晶剑 2130
+		"7"		"item_vanguard"				// 先锋盾 2150
+		"8"		"item_ultimate_orb"			// 极限法球 2150
+		"9"		"item_hand_of_midas"		// 迈达斯之手 2150
+		"10"	"item_helm_of_the_dominator"// 支配头盔 2175
+		"11"	"item_demon_edge"			// 恶魔刀锋 2200
+		"12"	"item_blade_mail"			// 刃甲 2200
+		"13"	"item_force_staff"			// 原力法杖 2250
+		"14"	"item_blink"				// 闪烁匕首 2250
+		"15"	"item_mekansm"				// 梅肯斯姆 2275
+		"16"	"item_aether_lens"  		// 以太透镜 2350
+		"17"	"item_armlet"				// 莫尔迪基安的臂章 2380
+        "18"    "item_travel_boots"         // 远行鞋 2500
+		"19"	"item_echo_sabre"			// 回音战刃 2650
+		"20"	"item_meteor_hammer"		// 陨星锤 2625
+		"21"	"item_mystic_staff"			// 神秘法杖 2700
+		"22"	"item_maelstrom"			// 漩涡 2700
+		"23"	"item_holy_locket"			// 圣洁吊坠 2700
+		"24"	"item_cyclone"				// Eul的神圣法杖 2750
+		"25"	"item_rod_of_atos"			// 阿托斯之棍 2750
+		"26"	"item_spirit_vessel"		// 魂之灵瓮 2750
+		"27"	"item_invis_sword"			// 影刃 2800
+		"28"	"item_basher"				// 碎颅锤 2950
+	}
+	"4"
+	{
+		"1" 	"item_reaver"				// 掠夺者之斧 3000
+		"2"		"item_pipe"					// 洞察烟斗 3025
+		"3"		"item_aeon_disk"			// 永恒之盘 3100
+		"4"		"item_diffusal_blade_2"		// 净魂之刃2 3850	
+		"5" 	"item_eagle" 				// 鹰歌弓 3200
+		"6"		"item_soul_booster"			// 镇魂石 3200
+		"7"		"item_heavens_halberd"		// 天堂之戟 3450
+		"8"		"item_desolator"			// 黯灭 3500
+		"9"		"item_crimson_guard"		// 赤红甲 3700
+		"10"	"item_relic"				// 圣者遗物 3800
+		"11"	"item_solar_crest"			// 炎阳纹章 3875
+		"12"	"item_moon_shard"			// 银月之晶 4000
+		"13"	"item_lotus_orb"			// 清莲宝珠 4000
+		"14" 	"item_black_king_bar"		// 黑皇杖 4050
+		"15"  	"item_orchid"				// 紫怨 4075
+		"16"	"item_kaya_and_sange"		// 散慧对剑 4100
+		"17"	"item_yasha_and_kaya"		// 慧夜对剑 4100
+		"18"	"item_sange_and_yasha"		// 散夜对剑 4100
+		"19"	"item_monkey_king_bar"		// 金箍棒 4175
+		"20"	"item_ultimate_scepter"		// 阿哈利姆神杖 4200
+		"21"	"item_bfury"				// 狂战斧 4400
+        "22"    "item_travel_boots_2"       // 远行鞋2 4500
+	}
+	"5"
+	{
+		"1"		"item_hurricane_pike"		// 飓风长戟 4600
+		"2"		"item_nullifier"			// 否决坠饰 4700
+		"3"		"item_manta"				// 幻影斧 4700
+		"4"		"item_ethereal_blade"		// 虚灵之刃 4700
+		"5"		"item_shivas_guard"  		// 希瓦的守护 4750
+		"6"		"item_bloodstone"			// 血精石 4900
+		"7"		"item_necronomicon_3"		// 死灵书3 5000
+		"8"		"item_sphere"				// 林肯法球 5050
+		"9"		"item_refresher"			// 刷新球 5100
+		"10"	"item_radiance"				// 辉耀 5150
+		"11"	"item_heart"				// 恐鳌之心 5200
+		"12"	"item_assault"  			// 强袭胸甲 5250
+		"13"	"item_satanic"				// 撒旦之邪力 5300
+		"14"	"item_greater_crit"			// 代达罗斯之殇 5330
+		"15"	"item_butterfly"			// 蝴蝶 5475
+		"16"	"item_guardian_greaves"		// 卫士胫甲 5475
+		"17"	"item_skadi"				// 斯嘉蒂之眼 5500
+		"18"	"item_silver_edge"			// 白银之锋 5550
+		"19"	"item_mjollnir"				// 雷神之锤 5600
+		"20"	"item_sheepstick"			// 邪恶镰刀 5700
+		"21"	"item_octarine_core"		// 玲珑心 5900
+		"22"	"item_abyssal_blade"  		// 深渊之刃 6650
+		"23"	"item_bloodthorn"			// 血棘 7205
+		"24"	"item_dagon_5"				// 达贡之神力_5 7700
+		"25"	"item_aegis"				// 不朽之守护 5000
+	}
+	"6"
+	{
+		"1"		"item_witless_shako"		// 无知小帽
+		"2"		"item_timeless_relic"		// 永恒遗物
+		"3"		"item_spell_prism"			// 法术棱境
+		"4"		"item_princes_knife"		// 亲王短刀
+		"5"		"item_panic_button"		    // 魔力明灯
+		"6"		"item_ex_machina"			// 机械之心
+		"7"		"item_mirror_shield"		// 神境盾
+		"8"		"item_helm_of_the_undying"	// 不朽尸王的头盔
+		"9"		"item_mind_breaker"			// 智灭
+		"10"	"item_broom_handle"			// 扫帚柄
+		"11"	"item_vampire_fangs"		// 吸血鬼獠牙
+		"12"	"item_imp_claw"				// 魔童之爪
+		"13"	"item_pupils_gift"			// 学徒之礼
+		"14"	"item_grove_bow"			// 林野长弓
+		"15"	"item_dragon_scale"			// 炎龙之鳞
+		"16"	"item_nether_shawl"			// 幽冥披巾
+		"17"	"item_ocean_heart"			// 海洋之心
+		"18"	"item_illusionsts_cape"		// 幻术师披风
+		"19"	"item_havoc_hammer"			// 浩劫巨锤
+		"20"	"item_minotaur_horn"		// 恶牛角
+		"21"	"item_paladin_sword"		// 骑士剑
+		"22"	"item_orb_of_destruction"	// 毁灭灵球
+		"23"	"item_titan_sliver"			// 巨神残铁
+		"24"	"item_horizon"				// 视界
+		"25"	"item_ballista"				// 弩炮
+	}
+}

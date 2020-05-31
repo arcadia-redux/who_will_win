@@ -1,0 +1,5 @@
+require 'custom_items/item_diffusal_blade_2'
+require 'custom_items/item_tome_of_upgrade'
+require 'custom_items/item_pirate_hat_new'
+require 'custom_items/item_seer_stone_new'
+require 'custom_items/item_scroll_of_time'

@@ -1,0 +1,8 @@
+dawn_war_coop
+{
+	material materials/overviews/dawn_war_coop.vmat
+	pos_x -6144
+	pos_y 6144
+	scale 12.000
+}
+
