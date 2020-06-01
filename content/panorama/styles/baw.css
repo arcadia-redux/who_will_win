@@ -6,7 +6,7 @@
 	align: center top;
 	height: 60px;
 	width: 500px;
-	margin-top: 50px;
+	margin-top: 70px;
 	overflow: noclip noclip;
 }
 .betsBg Label{
@@ -127,15 +127,29 @@ Label{
 #round{
 	align: center top;
 }
-.topbar{
+
+.topbar {
 	align: center top;
-	height: 50px;
-flow-children: right;
+	height: 70px;
+	flow-children: right;
 }
-.playertb{
-width: 65px;
-height: 100%;
+
+.playertb {
+	width: 65px;
+	height: 100%;
+
+	transition-property: position;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in-out;
 }
+
+#gold {
+	color: gold;
+	margin-top: 50px;
+
+	horizontal-align: center;
+}
+
 .hpbg{
 	align: right center;
 	width: 15px;
@@ -150,7 +164,7 @@ height: 100%;
 }
 .avatarimage
 {
-	align: left center;
+	align: center top;
 	width: 50px;
 	height: 50px;
 	box-shadow: #000000aa 0px 0px 5px 0px;
@@ -488,6 +502,9 @@ height: 100%;
 	vertical-align: bottom;
 	margin-bottom: 105px;
 	margin-left: 5px;
+
+	tooltip-position: top;
+	tooltip-body-position: 50% 100%;
 }
 
 .StatBranchPip
@@ -556,3 +573,161 @@ height: 100%;
 #StatLevelProgressBar, #StatLevelProgressBarBlur {
 	visibility: visible;
 }
+
+#BetContainer {
+	width: 70%;
+	vertical-align: bottom;
+	horizontal-align: center;
+
+	background-color: #00000044;
+	box-shadow: #00000080 0px 0px 8px 0px;
+
+	margin-bottom: 50px;
+
+	padding: 10px;
+}
+
+#BetSlider {
+	width: 60%;
+	height: 50px;
+	horizontal-align: center;
+}
+
+#BetSlider #SliderTrackProgress {
+	opacity: 0;
+}
+
+#BetSlider #SliderTrack {
+	height: 12px;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #1A2328ff ), color-stop( 0.5, #2D3C43ff ), to( #1A2328ff ) );
+}
+
+#BetSlider #SliderThumb {
+	width: 25px;
+	height: 50px;
+}
+
+#LeftInfo, #RightInfo {
+	flow-children: down;
+}
+
+#LeftInfo {
+	margin-left: 50px;
+}
+
+#RightInfo {
+	margin-right: 50px;
+	horizontal-align: right;
+}
+
+#LeftBet, #RightBet {
+	flow-children: right;
+
+	width: 150px;
+	height: 50px;
+
+	background-color: #00000077;
+}
+
+#LeftBet {
+
+}
+
+.BetGoldLabel {
+	width: 100px;
+	color: #A5A5A5;
+
+	text-align: right;
+
+	font-size: 30px;
+
+	horizontal-align: right;
+	vertical-align: center;
+}
+
+#RightBet .BetGoldLabel {
+	text-align: left;
+}
+
+.BetGold {
+	width: 50px;
+	height: 50px;
+	
+	//saturation: 0;
+	//wash-color: #A5A5A5;
+
+	horizontal-align: right;
+	vertical-align: center;
+
+	padding: 5px;
+}
+
+.Button {
+	background-color: #00000077;
+
+	transition-property: brightness;
+	transition-duration: 0.15s;
+	transition-timing-function: ease-in-out;
+}
+
+.Button Label {
+	margin-left: 5px;
+	color: #A5A5A5;
+	horizontal-align: center;
+}
+
+.Button:hover{
+	brightness: 2;
+}
+
+#MaxLeft, #MaxRight {
+	horizontal-align: center;
+	color: #A5A5A5;
+	margin: 5px;
+	width: 50px;
+	
+
+}
+
+#MaxLeft:hover, #MaxRight:hover {
+	brightness: 2;
+}
+
+#Reset {
+	horizontal-align: center;
+	vertical-align: bottom;
+}
+
+#MinimalBetCont {
+	vertical-align: bottom;
+	horizontal-align: center;
+
+	flow-children: right;
+
+		margin-bottom: 10px;
+}
+
+#MinimalBet {
+	horizontal-align: center;
+
+	font-size: 24px;
+}
+
+#ReadyToRound {
+	vertical-align: bottom;
+	horizontal-align: right;
+
+	margin-bottom: 160px;
+	margin-right: 280px;
+}
+
+#HelpIcon
+{
+	width: 24px;
+	height: 24px;
+	background-image:url("s2r://panorama/images/status_icons/information_psd.vtex");
+	background-size: contain;
+
+	vertical-align: center;
+}
+

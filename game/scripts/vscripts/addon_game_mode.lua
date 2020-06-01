@@ -9,9 +9,11 @@ if BAW == nil then
 	PLAYERS = 0
 	PICKED = {}
 	ALIVES = {}
-	ROUND = 0
+	_G.ROUND = 0
 	POINTS = 1000
 	NEXT_ROUND = {}
+
+	PLAYER_READY = {}
 
 	LEFT_SPAWN_POS = Vector(-1280,-1088,128)
 	RIGHT_SPAWN_POS = Vector(1280,1088,128)
@@ -19,6 +21,7 @@ end
 
 require('timers')
 require('utils')
+require('bet')
 require('ai')
 
 function Precache( context )
@@ -165,8 +168,9 @@ function BAW:InitGameMode()
 
     ListenToGameEvent("dota_player_pick_hero",Dynamic_Wrap(self,"OnHeroPicked"),self)
 	ListenToGameEvent("game_rules_state_change",Dynamic_Wrap(self,'OnGameRulesStateChange'),self)
-    CustomGameEventManager:RegisterListener("Pick", Dynamic_Wrap(self, 'Pick'))
+    --CustomGameEventManager:RegisterListener("Pick", Dynamic_Wrap(self, 'Pick'))
     CustomGameEventManager:RegisterListener("speedup", Dynamic_Wrap(self, 'speedup'))
+    CustomGameEventManager:RegisterListener("player_ready_to_round", Dynamic_Wrap(self, 'PlayerReady'))
     -- print('"DOTAUnits"')
     -- print("{")
    --  for k,v in pairs(HeroesKV) do
@@ -297,29 +301,27 @@ function BAW:speedup(t)
 	end
 end
 
-function BAW:Pick(t)
-	local pid = t.PlayerID
-	local pick = t.v
-	local ply = PlayerResource:GetPlayer(pid)
-	if not _G.FIGHT and not table.contains(PICKED_ID,pid) then
-		local hero = ply:GetAssignedHero()
-		if pick == "right" then
-			ply:SetTeam(DOTA_TEAM_BADGUYS)
-			hero:SetTeam(DOTA_TEAM_BADGUYS)
-		else
-			ply:SetTeam(DOTA_TEAM_GOODGUYS)
-			hero:SetTeam(DOTA_TEAM_GOODGUYS)
-		end
-		table.insert(PICKED[pick], hero)
-		table.insert(PICKED_ID, pid)
-		CustomGameEventManager:Send_ServerToAllClients('change_top',{
-			left=#PICKED["left"],
-			right=#PICKED["right"],
-		})
-		if #PICKED_ID >= PLAYERS then
-			BAW:StartFight()
+function BAW:PlayerReady(event) 
+	local playerID = event.PlayerID
+
+	if _G.FIGHT then return end
+	if Gambling:GetGold(playerID) <= 0 then return end
+
+	PLAYER_READY[playerID] = event.isReady == 1
+
+	local bAllReady = true
+	for pID=0,23 do
+		if PlayerResource:IsValidTeamPlayerID(pID) and Gambling:GetGold(pID) > 0 and PlayerResource:GetConnectionState(pID) == DOTA_CONNECTION_STATE_CONNECTED then
+			if not PLAYER_READY[pID] then
+				bAllReady = false
+			end
 		end
 	end
+
+	if bAllReady then
+		BAW:StartFight()
+	end
+
 end
 
 function BAW:OnHeroPicked(t)
@@ -366,7 +368,8 @@ function BAW:OnGameRulesStateChange()
 	elseif nNewState == DOTA_GAMERULES_STATE_HERO_SELECTION then
 	elseif nNewState == DOTA_GAMERULES_STATE_PRE_GAME then
 	elseif nNewState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 10)
+		GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 10)
+		Gambling:Init()
 		self:StartGame()
 	end
 end
@@ -389,6 +392,9 @@ end
 
 function BAW:StartFight()
 	_G.FIGHT = true
+	PLAYER_READY = {}
+	Gambling:RoundStart()
+
 	for k,v in pairs(ALIVES) do
 		for e,u in pairs(v) do
 			if k == "left" then
@@ -398,6 +404,7 @@ function BAW:StartFight()
 			end
 		end
 	end
+
 	CustomGameEventManager:Send_ServerToAllClients('hide_versus',{})
 	local time = 120
 	CustomGameEventManager:Send_ServerToAllClients('new_timer',{time=time})
@@ -432,9 +439,7 @@ function BAW:StartFight()
 				end
 			end
 			if count <= 0 then
-				for n,p in pairs(PICKED[d]) do
-					p:SetHealth(p:GetHealth()-1)
-				end
+				Gambling:RoundEnd(d)
 
 				Timers:CreateTimer(2, function()
 					BAW:StartGame()
@@ -650,6 +655,8 @@ function BAW:StartGame()
 
 	_G.FIGHT = false
 
+	Gambling:NewRound()
+
 	local heroes = NEXT_ROUND.heroes
     local teams = NEXT_ROUND.teams
     local lefthero = NEXT_ROUND.lefthero
@@ -749,37 +756,15 @@ function BAW:StartGame()
 	})
 	local timer = 15
 	Timers:CreateTimer(function()
+		
 		if timer <= 0 then
-			for k,pid in pairs(PLAYERS_ID) do
-				if not table.contains(PICKED_ID,pid) then
-					local pick = RollPercentage(50)
-					if pick then
-						pick = "right"
-					else
-						pick = "left"
-					end
-					local ply = PlayerResource:GetPlayer(pid)
-					local hero = ply:GetAssignedHero()
-					if pick == "right" then
-						ply:SetTeam(DOTA_TEAM_BADGUYS)
-						hero:SetTeam(DOTA_TEAM_BADGUYS)
-					else
-						ply:SetTeam(DOTA_TEAM_GOODGUYS)
-						hero:SetTeam(DOTA_TEAM_GOODGUYS)
-					end
-					table.insert(PICKED[pick], hero)
-					table.insert(PICKED_ID, pid)
-					CustomGameEventManager:Send_ServerToAllClients('change_top',{
-						left=#PICKED["left"],
-						right=#PICKED["right"],
-					})
-					if #PICKED_ID >= PLAYERS then
-						BAW:StartFight()
-					end
-				end
+			if not _G.FIGHT then
+				BAW:StartFight()
 			end
+	
 			return nil
 		end
+
 		if not _G.FIGHT then
 			timer = timer - 1
 			CustomGameEventManager:Send_ServerToAllClients('new_timer',{time=timer})

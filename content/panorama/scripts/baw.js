@@ -28,19 +28,16 @@ function new_round(t) {
 	$("#leftBar").style.width = "50%"
 	$("#rightBar").style.width = "50%"
 	$("#round").text = ++round
-	$.Schedule(1,function() {
-		let ids = Game.GetAllPlayerIDs()
-		ids.forEach(function(id,_) {
-			let hero = Players.GetSelectedEntities(id)[0],
-				panel = $("#player_"+id)
-			if(panel){
-				panel.FindChildTraverse("hp").style.height = Math.round(Entities.GetHealth(hero)/5*100)+"%"
-				panel.FindChildTraverse("hpt").text = Entities.GetHealth(hero)
-			}
-		})
-	})
+
+	BetReset()
+	$("#BetSlider").SetValueNoEvents(0.5)
+	$("#ReadyToRound").checked = false
+	$("#ReadyToRound").visible = Players.GetGamblingGold(Game.GetLocalPlayerID()) > 0
+	$("#BetContainer").visible = Players.GetGamblingGold(Game.GetLocalPlayerID()) > 0
 }
 function checkHp() {
+	$.Schedule(0.1, checkHp)
+
 	if(Object.keys(cur_units).length){
 		let hps = {"left":0,"right":0,"leftmax":0,"rightmax":0}
 		for(let k in cur_units){
@@ -56,7 +53,21 @@ function checkHp() {
 		$("#lefthp").style.width = Math.round(hps.left/hps.leftmax*100)+"%"
 		$("#righthp").style.width = Math.round(hps.right/hps.rightmax*100)+"%"
 	}
-	$.Schedule(0.33, checkHp)
+
+	const topBar = $("#topbar")
+	topBar.Children().forEach(panel => {
+		var childID = topBar.GetChildIndex(panel)
+
+		panel.FindChild("gold").text = Players.GetGamblingGold(panel.playerID)
+
+		if (childID > 0) {
+			var upperPanel = topBar.GetChild(childID-1)
+			
+			if (upperPanel && Players.GetGamblingGold(upperPanel.playerID) < Players.GetGamblingGold(panel.playerID) ) {
+				topBar.MoveChildAfter(upperPanel, panel)
+			}
+		}
+	})	
 }
 function createSceneVersus(t,k,i,parent) {
 	let pan = $.CreatePanel("Panel", parent, "lb"),
@@ -220,10 +231,7 @@ function change(t) {
 	$("#rightPct").text = `${right}%`
 	$("#rightBar").style.width = `${right}%`
 }
-function Pick(v) {
-	GameEvents.SendCustomGameEventToServer("Pick",{v:v})
-	$("#makeBetPanel").style.visibility = "collapse"
-}
+
 function hide_versus() {
 	$("#makeBetPanel").style.visibility = "collapse"
 }
@@ -236,8 +244,8 @@ function Start() {
 			panel = $.CreatePanel("Panel", $("#topbar"), "player_"+id)
 		panel.BLoadLayoutSnippet("topBarPlayer")
 		panel.FindChildTraverse("image").steamid = plysteamid
-		panel.FindChildTraverse("hp").style.height = Math.round(Entities.GetHealth(hero)/5*100)+"%"
-		panel.FindChildTraverse("hpt").text = Entities.GetHealth(hero)
+		panel.FindChild("gold").text = Players.GetGamblingGold(id)
+		panel.playerID = id
 	})
 }
 const timerEl = $("#time")
@@ -261,12 +269,52 @@ function UpdateSelectedUnit() {
 function vote() {
 	GameEvents.SendCustomGameEventToServer("speedup",{})
 }
+
+function ReadyToRound() {
+	GameEvents.SendCustomGameEventToServer("player_ready_to_round", { isReady: $("#ReadyToRound").checked })
+}
+
 function GRSChange() {
 	if(Game.GetState() == DOTA_GameState.DOTA_GAMERULES_STATE_GAME_IN_PROGRESS){
 		Start()
 	}
 }
 GRSChange()
+
+function UpdateBets(data) {
+	let leftGold = 0
+	let rightGold = 0
+
+	for (bet in data) {
+		if (data[bet].team == "left") {
+			leftGold += +data[bet].gold
+		}
+		else if (data[bet].team == "right") {
+			rightGold += +data[bet].gold
+		}
+	}
+
+	const summ = rightGold + leftGold
+	const left = Math.round(leftGold/summ * 100)
+	const right = Math.round(rightGold/summ * 100)
+
+	$("#leftPct").text = `(${left}%) ${leftGold}`
+	$("#leftBar").style.width = `${left}%`
+	$("#rightPct").text = `${rightGold} (${right}%)`
+	$("#rightBar").style.width = `${right}%`
+}
+
+function OnBetsChanged(table_name, key, data) {
+	if (key == "minimalBet") {
+		$("#MinimalBet").SetDialogVariableInt("minimal_bet", data.minimalBet || 0)
+	}
+	else if (key == "bets") {
+		UpdateBets(data)
+	}
+}
+
+CustomNetTables.SubscribeNetTableListener("bets", OnBetsChanged)
+
 GameEvents.Subscribe("dota_player_update_query_unit",UpdateSelectedUnit)
 GameEvents.Subscribe('dota_player_update_hero_selection', UpdateSelectedUnit);
 GameEvents.Subscribe('dota_player_update_selected_unit', UpdateSelectedUnit);
