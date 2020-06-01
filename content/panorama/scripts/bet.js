@@ -17,7 +17,9 @@ function BetChanged() {
 	const value = (slider.value - 0.5) * 2 
 	const playerGold = GetGold(Game.GetLocalPlayerID())
 	let gold =  Math.abs(value * playerGold)
-	const minBet = 50
+
+	const table = CustomNetTables.GetTableValue("bets", "minimalBet") 
+	const minBet = table ? (table.minimalBet || 50) : 50
 	
 
 	if (gold < minBet) {
