@@ -1,7 +1,0 @@
-"addon"
-{
-	"minimal_bet"						"Minimal Bet: {d:minimal_bet}"
-	"baw_ready_to_round"				"Ready"
-	"bet_help"							""
-}
-
