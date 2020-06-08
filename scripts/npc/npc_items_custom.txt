@@ -1,0 +1,981 @@
+
+"DOTAAbilities"
+{   
+
+	"item_recipe_kaya_2_datadriven"
+	{
+
+		"ID"                            "1005"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName" 		    "item_recipe"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"600"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_kaya_2_datadriven"
+		"ItemRequirements"
+		{
+			"01"						"item_kaya;item_mystic_staff;"
+		}
+	}
+	
+
+	"item_kaya_2_datadriven"
+	{
+		"ID"							"1010"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 		    "item_kaya_2_lua"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"5350"
+		"ItemShopTags"					"int;mana"
+		"ItemQuality"					"epic"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+		"ShouldBeSuggested"				"1"
+        
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_int"	    	    "46"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"manacost_reduction"	"14"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"spell_amplify"			"1.1"
+			}
+		}
+		"Modifiers"
+		{
+		   "modifier_kaya_2_datadriven"
+			{
+				"Passive"                  	"1"
+				"IsHidden"			       	"1"
+				"Attributes" 				"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"item_ability/kaya_datadriven.lua"
+						"Function"			"ToggleKaya"
+					}
+				}
+			   	"OnDestroy"
+			    {
+					"RunScript"
+					{
+						"ScriptFile"		"item_ability/kaya_datadriven.lua"
+						"Function"			"ToggleKaya"
+					}
+				}
+		       	"Properties"
+			   	{
+			      	"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%bonus_int"
+			      	"MODIFIER_PROPERTY_MANACOST_PERCENTAGE"   "%manacost_reduction"
+			   	}
+			}
+	   	}
+	}
+
+	"item_recipe_kaya_3_datadriven"
+	{
+
+		"ID"                            "1015"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName" 		    "item_recipe"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1200"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_kaya_3_datadriven"
+		"ItemRequirements"
+		{
+			"01"						"item_kaya_2_datadriven;item_kaya_2_datadriven;"
+		}
+	}
+	
+
+	"item_kaya_3_datadriven"
+	{
+		"ID"							"1020"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 		    "item_kaya_3_lua"
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"11900"
+		"ItemShopTags"					"int;mana"
+		"ItemQuality"					"epic"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+		"ShouldBeSuggested"				"1"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_int"	    	    "92"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"manacost_reduction"	"16"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"spell_amplify"			"1.4"
+			}
+		}
+		"Modifiers"
+		{
+		   "modifier_kaya_3_datadriven"
+			{
+				"Passive"                  	"1"
+				"IsHidden"			       	"1"
+				"Attributes" 				"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"item_ability/kaya_datadriven.lua"
+						"Function"			"ToggleKaya"
+					}
+				}
+			   	"OnDestroy"
+			    {
+					"RunScript"
+					{
+						"ScriptFile"		"item_ability/kaya_datadriven.lua"
+						"Function"			"ToggleKaya"
+					}
+				}
+		       	"Properties"
+			   	{
+			      	"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%bonus_int"
+			      	"MODIFIER_PROPERTY_MANACOST_PERCENTAGE"   "%manacost_reduction"
+			   	}
+			}
+	   	}
+	}
+
+	// 力量之书
+	"item_book_of_strength"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"500"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPurchasable"				"1"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemDisplayCharges"			"1"
+	    "IsTempestDoubleClonable"		"0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_stat"			"3"
+			}
+		}
+	}
+
+	// 敏捷之书
+	"item_book_of_agility"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"500"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPurchasable"				"1"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemDisplayCharges"			"1"
+	    "IsTempestDoubleClonable"		"0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_stat"			"3"
+			}
+		}
+	}
+
+	// 智力之书
+	"item_book_of_intelligence"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"500"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPurchasable"				"1"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemDisplayCharges"			"1"
+	    "IsTempestDoubleClonable"		"0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_stat"			"3"
+			}
+		}
+	}
+
+	// 空技能书
+	"item_spell_book_empty_lua"
+	{
+		"ID"							"1025"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"       
+        "BaseClass"						"item_lua"
+        "AbilityTextureName" 		    "item_spell_book_empty_lua"
+		"ScriptFile"					"item_ability/item_spell_book_empty_lua"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"300"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPurchasable"				"1"
+		"ItemSellable"	    			"1"
+		"ItemStackable"					"1"
+		"ItemInitialCharges"			"1"
+		"ItemDisplayCharges"			"1"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemPermanent"					"0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+
+		}
+	}
+	// 技能书
+	"item_spell_book_lua"
+	{
+		"ID"							"1030"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"       
+        "BaseClass"						"item_lua"
+        "AbilityTextureName" 		    "item_spell_book_lua"
+		"ScriptFile"					"item_ability/item_spell_book_lua"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"600"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPurchasable"				"0"
+		"ItemSellable"		    		"0"
+
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemPermanent"					"0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+
+		}
+	}
+
+     //重修之书
+	"item_relearn_book_lua"
+	{
+		"ID"							"1035"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"       
+        "BaseClass"						"item_lua"
+        "AbilityTextureName" 		    "item_relearn_book_lua"
+		"ScriptFile"					"item_ability/item_relearn_book_lua"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPurchasable"				"1"
+		"ItemSellable"		    		"0"
+
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemPermanent"					"0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+
+		}
+	}
+
+	//重修之书残页
+	"item_relearn_torn_page_lua"
+	{
+		"ID"							"1040"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"       
+        "BaseClass"						"item_lua"
+        "AbilityTextureName" 		    "item_relearn_torn_page_lua"
+		"ScriptFile"					"item_ability/item_relearn_torn_page_lua"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1200"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPurchasable"				"1"
+		"ItemSellable"		    		"1"
+
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemPermanent"					"0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+
+		}
+	}
+
+
+	"item_recipe_summoner_crown_1"
+	{
+
+		"ID"                            "1045"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName" 		    "item_recipe"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"200"	
+		"ItemShopTags"					""
+	    "ItemPurchasable"				"1"
+		"ItemSellable"	    			"1"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_summoner_crown_1"
+		"ItemRequirements"
+		{
+			"01"						"item_helm_of_the_dominator;item_crown;item_crown;"
+		}
+	}
+	
+    //2125+450+450+200
+	"item_summoner_crown_1"
+	{
+		"ID"							"1050"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"AbilityTextureName" 		    "item_summoner_crown_1"
+		"ScriptFile"					"item_ability/item_summoner_crown"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3225"
+		"ItemShopTags"					"agi;int;str"
+		"ItemQuality"					"epic"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"1"
+		"ItemSellable"	    			"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"	    "15"
+			}
+			"02"
+			{
+				"var_type"			    "FIELD_FLOAT"
+				"hp_bonus_per_str"		"1.6"
+			}
+			"03"
+			{
+				"var_type"			    	"FIELD_FLOAT"
+				"damage_bonus_per_int"		"1.4"
+			}
+			"04"
+			{
+				"var_type"			    	"FIELD_FLOAT"
+				"speed_bonus_per_agi"   	"0.6"
+			}
+			"05"
+			{
+				"var_type"			    	"FIELD_FLOAT"
+				"armor_bonus_per_agi"   	"0.06"
+			}
+			"06"
+			{
+				"var_type"			    	"FIELD_FLOAT"
+				"model_scale"               	"20"
+			}
+		}
+	}
+
+
+	"item_recipe_summoner_crown_2"
+	{
+
+		"ID"                            "1055"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName" 		    "item_recipe"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"300"	
+		"ItemShopTags"					""
+		"ItemPurchasable"				"1"
+		"ItemSellable"	    			"1"
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_summoner_crown_2"
+		"ItemRequirements"
+		{
+			"01"						"item_summoner_crown_1;item_ultimate_orb;item_ultimate_orb;"
+		}
+	}
+	
+    //3225+2150+2150+300
+	"item_summoner_crown_2"
+	{
+		"ID"							"1060"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"AbilityTextureName" 		    "item_summoner_crown_2"
+		"ScriptFile"					"item_ability/item_summoner_crown"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"7825"
+		"ItemShopTags"					"agi;int;str"
+		"ItemQuality"					"epic"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"1"
+		"ItemSellable"	    			"1"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"	    "36"
+			}
+			"02"
+			{
+				"var_type"			    		"FIELD_FLOAT"
+				"hp_bonus_per_str"				"2.6"
+			}
+			"03"
+			{
+				"var_type"			    		"FIELD_FLOAT"
+				"damage_bonus_per_int"			"2.0"
+			}
+			"04"
+			{
+				"var_type"			    		"FIELD_FLOAT"
+				"speed_bonus_per_agi"   		"0.8"
+			}
+			"05"
+			{
+				"var_type"			    	   "FIELD_FLOAT"
+				"armor_bonus_per_agi"   	   "0.11"
+			}
+			"06"
+			{
+				"var_type"			    	    "FIELD_FLOAT"
+				"model_scale"               	    "40"
+			}
+		}
+	}
+
+
+	"item_recipe_summoner_crown_3"
+	{
+
+		"ID"                            "1065"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName" 		    "item_recipe"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"600"	
+		"ItemShopTags"					""
+		"ItemPurchasable"				"1"
+		"ItemSellable"	    			"1"
+
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_summoner_crown_3"
+		"ItemRequirements"
+		{
+			"01"						"item_summoner_crown_2;item_summoner_crown_2;"
+		}
+	}
+	
+    //7825*2+600
+	"item_summoner_crown_3"
+	{
+		"ID"							"1070"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"AbilityTextureName" 		    "item_summoner_crown_3"
+		"ScriptFile"					"item_ability/item_summoner_crown"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"16250"
+		"ItemShopTags"					"agi;int;str"
+		"ItemQuality"					"epic"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"1"
+		"ItemSellable"	    			"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			        	"FIELD_INTEGER"
+				"bonus_all_stats"	            "74"
+			}
+			"02"
+			{
+				"var_type"			    		"FIELD_FLOAT"
+				"hp_bonus_per_str"				"3.6"
+			}
+			"03"
+			{
+				"var_type"			    		"FIELD_FLOAT"
+				"damage_bonus_per_int"			"2.6"
+			}
+			"04"
+			{
+				"var_type"			    		"FIELD_FLOAT"
+				"speed_bonus_per_agi"   		"1.0"
+			}
+			"05"
+			{
+				"var_type"			    	   "FIELD_FLOAT"
+				"armor_bonus_per_agi"   	   "0.16"
+			}
+			"06"
+			{
+				"var_type"			    	    "FIELD_FLOAT"
+				"model_scale"               	    "60"
+			}
+		}
+	}
+
+	//召唤之书
+	"item_summon_book_lua"
+	{
+		"ID"							"1075"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"       
+        "BaseClass"						"item_lua"
+        "AbilityTextureName" 		    "item_summon_book_lua"
+		"ScriptFile"					"item_ability/item_summon_book_lua"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2650"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPurchasable"				"1"
+		"ItemSellable"		    		"1"
+
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemPermanent"					"0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+
+		}
+	}
+
+	//不朽之守护
+	"item_aegis_lua"
+	{
+		"ID"							"1080"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"       
+        "BaseClass"						"item_lua"
+        "AbilityTextureName" 		    "item_aegis"
+		"ScriptFile"					"item_ability/item_aegis_lua"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"7500"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPurchasable"				"1"
+		"ItemSellable"		    		"1"
+		"ItemStockTime"					"360"
+		"ItemStockMax"					"1"
+
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemPermanent"					"0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+
+		}
+	}
+
+	"item_recipe_ranged_cleave"
+	{
+
+		"ID"							"1085"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+
+		"ItemCost"						"400"
+		"ItemShopTags"					""
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ranged_cleave"
+
+		"ItemRequirements"
+		{
+			"01"						"item_dragon_lance;item_demon_edge"
+		}
+	}
+
+	"item_ranged_cleave"
+	{
+		"ID"							"1090"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"item_ability/item_ranged_cleave"
+		"AbilityTextureName"			"item_ranged_cleave"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		"ItemCost"						"4500"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"cleave;bfury;rackatee;replica;shotgun"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_str"				"15"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agi"				"15"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_dmg"				"55"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_range"			"140"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"		     	"300"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_target"			"5"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"split_shot_damage"		"45"
+			}
+		}
+	}
+
+	"item_recipe_saw_wheel"
+	{
+
+		"ID"							"1095"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+
+		"ItemCost"						"300"
+		"ItemShopTags"					""
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_saw_wheel"
+
+		"ItemRequirements"
+		{
+			"01"						"item_quelling_blade;item_broadsword"
+		}
+	}
+
+	"item_saw_wheel"
+	{
+		"ID"							"1100"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"item_ability/item_saw_wheel"
+		"AbilityTextureName"			"item_saw_wheel"
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
+
+		"ItemCost"						"1450"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"saw"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+
+		"AbilityCooldown"				"6.0"
+		"AbilityManaCost"				"75"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_dmg"				"21"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"whirling_radius"		"300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"			    "70"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_with_tree"		"200"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_with_tree"		"1.5"
+			}
+		}
+	}
+
+	"item_paragon_book"
+	{
+		"ID"							"1105"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"       
+        "BaseClass"						"item_lua"
+        "AbilityTextureName" 		    "item_paragon_book"
+		"ScriptFile"					"item_ability/item_paragon_book"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"12000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPurchasable"				"1"
+		"ItemSellable"		    		"1"
+
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemPermanent"					"0"
+	}
+
+	"item_recipe_demonicon"
+	{
+		"ID"							"1110"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"                     "item_datadriven"
+		"AbilityTextureName" 		    "item_recipe_demonicon"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4600"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_demonicon"
+		"ItemRequirements"
+		{
+			"01"						"item_necronomicon_3;item_necronomicon_3;"
+		}
+	}
+
+	"item_swap_essence"
+	{
+		"ID"							"1115"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"       
+        "BaseClass"						"item_lua"
+        "AbilityTextureName" 		    "item_swap_essence"
+		"ScriptFile"					"item_ability/item_swap_essence"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1.0"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"3500"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPurchasable"				"1"
+		"ItemSellable"		    		"1"
+
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemPermanent"					"0"
+	}
+}

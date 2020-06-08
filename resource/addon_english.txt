@@ -1,0 +1,1422 @@
+"lang"
+{
+	"Language"		"English"
+	"Tokens"
+	{		
+
+		//UI
+    "DOTA_GoodGuys"	"Teal Tiger"
+		"DOTA_BadGuys"	"Yellow Monkey"
+		"DOTA_Custom1"	"Pink Dragon"
+		"DOTA_Custom2"	"Orange Dog"
+		"DOTA_Custom3"	"Blue Rooster"
+		"DOTA_Custom4"	"Green Ram"
+		"DOTA_Custom5"	"Brown Rat"
+		"DOTA_Custom6"	"Cyan Boar"
+		"DOTA_Custom7"	"Olive Snake"
+		"DOTA_Custom8"	"Purple Horse"
+
+		  "Close"                                  "Close"
+      "DrawMutate"                             "Draw ("
+      "ExchangeKey"                            "Exchange Code"
+	    "Equip"                                  "Equip"
+	    "Remove"                                  "Remove"
+	    "InvalideTaobaoCode"                      "Invalide Taobao Code"
+	    "TaobaoCodeOccupied"                      "Taobao Code is Occupied"
+	    "TaobaoCodeSuccess"                       "Congratulation, Joker coin + "
+	    "ClickPlusForCode"                        "Click Plus-Icon in left to buy code"
+
+	    "rarity_normal"                           "Normal"
+	    "rarity_rare"                             "Rare"
+	    "rarity_mythical"                         "Mythical"
+	    "rarity_immortal"                         "Immortal"
+      "rarity_limited"                          "Limited"
+
+	    "CongratulationNewItem"                   "You earn a new item"
+	    "RefundItem"                              "Duplicate item, auto decomposite for Token"
+
+	    "Confirm"                                 "Confirm"
+	    "Cooldown"                                "Cooldown:"
+	    "ChatWheelClose"                          "Close(F6)"
+	    "TauntClose"                              "Close(F7)"
+
+	    "Particle"                                "Particle"
+	    "KillEffect"                              "Kill Effect (Taunt)"
+	    "KillSound"                               "Kill Sound (Voice Wheel)"
+		  "Barrage"                                 "Barrage Effect"
+
+      "WorldRank"                               "World Rank"
+      "CurrentSeason"                           "{s:year}Year{d:month}Season"
+
+	    "PveMode"                                 "PVE Mode"
+	    "SoloMode"                                "FFA Mode"
+      "LimitedMode"                             "Limited Activity"
+
+      "Inventory"                            "Inventory"
+      "addon_game_name"                      "Custom Hero Chaos - No Bots"
+      "CardSelection_Close"                  "Discard"
+	    "CardSelection_Close_Description"	       "Fight with current hero."
+	    "AbilitySelection_Close"                 "Discard"
+	    "AbilitySelection_Close_Description"     "Learn a total random ability."
+	    "AbilitySelectorTitle_1"                  "Please choose No. "
+      "AbilitySelectorTitle_2"                  " ability"
+
+      "LoadingTip_1"                 "You can check Equipment from Inventory(Top-Left Menu)."
+      "LoadingTip_2"                 "End Game will reward player who vanquish 30 round in Single-Player Mode or top-5 in Multiplayer-Mode.(30 max per joker coin one day)"
+      "LoadingTip_3"                 "Ranks will be settled on the last day of month, top-200 player will be granted joker coins."
+      "LoadingTip_4"                 "You can locate camera on hero by duoble click any hero icon."
+      "LoadingTip_5"                 "When round time expired, player with higher HP percentage will win."
+      "LoadingTip_6"                 "If one player win a Duel, but no other bet on him, he will win Jackpot."
+      "LoadingTip_7"                 "Some creature will get true sight from Round 15"
+      "LoadingTip_8"                 "Kaya can be upgraded to Sky Staff."
+      "LoadingTip_9"                 "You can buy attribute book from shop, if you have too much gold to spend."
+      "LoadingTip_10"                "If you want to hide some ability from other player, you can record it in Spell Book."
+      "LoadingTip_11"                "At rounds 10,20,30 the bottom 3 networth players are given Retraining items."
+      "LoadingTip_12"                "You can sell itmes in neutral item slot."
+      "LoadingTip_13"                "When the round timer expires neutrals will rapidly gain damage, status resistance, and move/attack speed, while also stripping your armour."
+      "LoadingTip_14"                "You can mark a player as actor(who throw a dual), by Alt+Click hero Icon."
+      "LoadingTip_15"                "You can use Setting Page(F9) to reorder abilities."
+      "LoadingTip_16"                "If abilities miss hotkey, buy an Empty Spell Book to fix."
+      "LoadingTip_17"                "In Single-Team Game(PVE), you can use code -suicide to end game."
+      "LoadingTip_18"                "In Single-Team Game(PVE), PASS member can freely choose hero."
+
+
+     "MaxRound"                                        "Max Round"
+	   "TimeCost"                                        "Time Cost"
+	   "Score"                                           "Rank Score"
+
+	   "money_tip_message"                               "You can earn maximum 30 token everyday. (First +30, Second+24 ....)"
+     "taunt_cooldown_note"                             "Each taunt item can reduce 1s max cooldown."
+     "chat_wheel_cooldown_note"                        "Each wheel item can reduce 1s max cooldown."
+     "chat_wheel_empty_note"                           "Fristly draw chat item from Inventory."
+     "taunt_empty_note"                                "Fristly draw taunt item from Inventory."
+
+
+     "econ_unknow"                              "Unkonw"
+
+     "econ_douyu_1"                            "Douyu 1"
+     "econ_douyu_2"                            "Douyu 2"
+     "econ_douyu_3"                            "Douyu 3"
+
+	   "econ_green"                              "Green Ambient"
+	   "econ_lava_trail"                         "Lava Trail"
+	   "econ_paltinum_baby_roshan"               "Paltinum"
+	   "econ_legion_wings"                       "Legion Wings"
+	   "econ_legion_wings_vip"                   "Legion Wings·Golden"
+	   "econ_legion_wings_pink"                  "Legion Pink"
+	   "econ_darkmoon"                           "Dark Moon"
+	   "econ_sf_wings"                           "Fiend Wings"
+	   "econ_sakura_trail"                       "Sakura Trail"
+	   "econ_huaji"                              "Joke"
+       "econ_jibururen_mark"                     "Ji Bu Ru Ren"
+       "econ_question_mark"                      "Question Mark"
+       "econ_bai_tuo_shei_qu"                                "Bai Tuo Shei Qu"
+	   "econ_duiyou_ne"                                      "Dui You Ne"
+	   "econ_ni_qi_bu_qi"                                    "Ni Qi Bu Qi"
+	   "econ_liu_liu_liu"                                    "Zhe Bo Bu kui"
+	   "econ_ta_daaaa"                                       "Lakad Matataaaag"
+	   "econ_zou_hao_bu_song"                                "Zou Hao Bu Song"
+	   "econ_zai_jian_le_bao_bei"                            "Zai Jian Le Bao Bei"
+	   "econ_gan_ma_ne_xiong_di"                             "Gan Ma Ne Xiong Di"
+	   "econ_lian_dou_xiu_wai_la"                            "Lian Dou Xiu Wai"
+	   "econ_piao_liang"                                     "Piao Liang"
+       "econ_oyoy"                                           "Oyoy oy oy"
+       "econ_next_level_play"                                "Next level play"
+       "econ_ceb"                                            "Ceeeb"
+       "econ_ding_ding_ding"                                 "Ding Ding Ding"
+
+
+	    "chat_wheel_full_bai_tuo_shei_qu"                "拜托谁去杀了他吧"
+        "chat_wheel_full_duiyou_ne"                      "啊，队友呢？队友呢？队友呢？！ 队友呢？！？！"
+        "chat_wheel_full_ni_qi_bu_qi"                    "你气不气?"
+        "chat_wheel_full_liu_liu_liu"                    "这波不亏, 666"
+        "chat_wheel_full_ta_daaaa"                       "Lakad Matataaaag! Normalin Normalin."
+        "chat_wheel_full_zou_hao_bu_song"                "走好，不送"
+        "chat_wheel_full_zai_jian_le_bao_bei"            "再见了宝贝儿！"
+        "chat_wheel_full_gan_ma_ne_xiong_di"             "干嘛呢兄弟"
+        "chat_wheel_full_lian_dou_xiu_wai_la"            "脸都秀歪啦"
+        "chat_wheel_full_wan_bu_liao_la"                 "玩不了啦！"
+        "chat_wheel_full_gao_fu_shuai"                   "这就是高富帅啊"
+        "chat_wheel_full_piao_liang"                     "漂~ 亮！"
+        "chat_wheel_full_oyoy"                           "Oyoy oy oy, oy, oy, oy, oy, oy!"
+        "chat_wheel_full_next_level_play"                "The next level play!"
+        "chat_wheel_full_ceb"                            "Ceeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeb!!!"
+        "chat_wheel_full_ding_ding_ding"                 "Ding Ding Ding Mother******"
+
+	   "econ_ethereal_flame_white"                           "White Ethereal Flame"
+	   "econ_ethereal_flame_golden"                          "Golden Ethereal Flame"
+	   "econ_ethereal_flame_pink"                            "Pink Ethereal Flame"
+	   "econ_golden_ti7"                                     "TI7 Golden"
+	   "econ_rich"                                           "Wu Ke Di Guo"
+	   "econ_wan_bu_liao_la"                                 "Wan Bu Liao La"
+       "econ_gao_fu_shuai"                                 "Gao Fu Shuai"
+       "econ_water_curtain"                                "Necro Curtain"
+       "econ_rainbow_tail"                                 "Glory"
+       "econ_sand"                                         "Sand Dust"
+       "econ_frost"                                        "Frost Breath"
+       "econ_orbit"                                        "Orbit"
+       "econ_spark_ti6"                                    "TI6 Spark"
+       "econ_golden_lotus"                                 "Golden Lotus"
+       "econ_rainbow"                                      "Fish Fly"
+
+        "econ_diretide"                                  "Barrage·Dire Tide"
+        "econ_new_bloom"                                 "Barrage·New Bloom"
+        "econ_planet_fall"                               "Barrage·Planet Fall"
+        "econ_flockheart_gamble"                         "Barrage·Flockheart's Gamble"
+        "econ_rain_bow_barrage"                          "Barrage·Rainbow"
+        "econ_neon"                                      "Barrage·Neon"
+        "econ_rubick_key"                                "Barrage·Rubick"
+        "econ_frostivus_2019"                            "Barrage·2019 Frostivus"
+        "econ_wudizhansha"                               "Juggernaut"
+        "econ_miedi"                                     "Mega Kill"
+
+       //Creature
+       "npc_dota_fountain_health"                      "Fountain of Heal"
+       "npc_dota_fountain_mana"                        "Fountain of Mana"
+	   "npc_dota_creep_goodguys"                       "Melee Creep"
+       "npc_dota_creep_goodguys_upgraded"              "Melee Creep"
+       "npc_dota_creep_badguys"                        "Melee Creep"
+       "npc_dota_creep_badguys_upgraded"               "Melee Creep"
+
+       "round_prepare"                "Prepare for Round {s:value} {s:value_2}"
+       "round_progress"               "Round Progress "
+       "round_time_limit"             "Round {s:value}  Time Remaining "
+       "round_time_expire"            "Time Expired "
+
+       "player_finish"                "Finish Round"
+
+       "hero_level"                   "Level"
+       "you"                          "(You)"
+
+       "input_gold_value"             "Input bet gold..."
+       "bet_max_gold"                 "Must smaller than 50% gold"
+       "bet_must_positive_integer"    "Must Input positive integer"
+       "confirm"                      "Confirm"
+       "total"                        "Total"
+       "is_bet"                       "is bet on"
+       "bet_bonus"                    "win bet and earn:"
+       "pvp_earn_bonus"               "win duel and get reward:"
+       "bet_jackpot"                  "win Jackpot!!!!"
+
+       "bet_rank"                     "Total Pool:"
+       "team_lose"                    "lose game"
+       "you_lose"                     "You Lose the Game..."
+       "your_rank"                    "Your Rank"
+       "safe_leave"                   "You can leave the game or stay to watch. Rank Score will calculate when game is over."
+
+
+       "TopMenuIcon_Rank_message"                "World Rank"
+       "TopMenuIcon_Inventory_message"           "Inventory"
+       "TopMenuIcon_Chatwheel_message"           "Voice Wheel(F6)"
+       "TopMenuIcon_Tuant_message"               "Tuant(F7)"
+       "TopMenuIcon_Setting_message"               "Setting(F8)"
+
+       "custom_end_screen_legend_ratings"                "Rating"
+       "custom_end_screen_legend_round_number"           "Round Number"
+       "custom_end_screen_legend_time_cost"              "Time Cost"
+       "custom_end_screen_legend_pvp_win"                "Duel Win"
+       "custom_end_screen_legend_pvp_lose"               "Duel Lose"
+       "custom_end_screen_money"                         "Joker Coin"
+       "custom_end_screen_total_gold"                    "Total Economy"
+
+       "congrates_first_place"                           "Winner Winner Chicken Dinner"
+       "encourage_runner_ups"                            "Never abandon,never give up."
+
+       //Ability
+	   "DOTA_Tooltip_ability_drow_ranger_marksmanship_custom"									"Marksmanship"
+	   "DOTA_Tooltip_ability_drow_ranger_marksmanship_custom_Description"						"Drow's experiences in battle improve her accuracy and effectiveness in combat, providing a passive bonus to Agility. Grants no bonus if there are enemy heroes within 400 range.\n\nUpgradable by Aghanim's Scepter."
+	   "DOTA_Tooltip_ability_drow_ranger_marksmanship_custom_aghanim_description"				"Causes Drow Ranger's attacks to splinter on the target, hitting nearby units with normal attacks that deal reduced damage."
+	   "DOTA_Tooltip_ability_drow_ranger_marksmanship_custom_split_count_scepter"				"SPLIT COUNT:"
+	   "DOTA_Tooltip_ability_drow_ranger_marksmanship_custom_scepter_range"					"SEARCH RANGE:"
+	   "DOTA_Tooltip_ability_drow_ranger_marksmanship_custom_damage_reduction_scepter"		    "%DAMAGE REDUCTION:"
+	   "DOTA_Tooltip_ability_drow_ranger_marksmanship_custom_Lore"							    "The Drow Ranger is the epitome of archery prowess."
+	   "DOTA_Tooltip_ability_drow_ranger_marksmanship_custom_marksmanship_agility_bonus"		"BONUS AGILITY:"
+
+	   "DOTA_Tooltip_ability_juggernaut_blade_dance_datadriven"					          "Blade Dance"
+	   "DOTA_Tooltip_ability_juggernaut_blade_dance_datadriven_Description"					  "Gives Juggernaut a chance to deal double damage on each attack."
+	   "DOTA_Tooltip_ability_juggernaut_blade_dance_datadriven_crit_damage"					  "%CRITICAL DAMAGE: " 
+	   "DOTA_Tooltip_ability_juggernaut_blade_dance_datadriven_crit_chance"					  "CRITICAL CHANCE: "
+
+	   "DOTA_Tooltip_ability_mirana_starfall_datadriven"                                            "Starstorm"
+	   "DOTA_Tooltip_ability_mirana_starfall_datadriven_Description"                                "Calls down a wave of meteors to damage nearby enemy units. The closest enemy unit to Mirana in a %starfall_secondary_radius% radius will be struck a second time for 75%% of the damage.\n\nUpgradable by Aghanim's Scepter."
+	   "DOTA_Tooltip_ability_mirana_starfall_datadriven_Lore"                                       "The Goddess breaks the strata to empower her Princess in the time of need."
+	   "DOTA_Tooltip_ability_mirana_starfall_datadriven_Note0"                                      "Starstorm is not blocked by Linken's Sphere."
+	   "DOTA_Tooltip_ability_mirana_starfall_datadriven_Note1"                                      "Starstorm cannot hit invisible units."
+	   "DOTA_Tooltip_ability_mirana_starfall_datadriven_Note2"                                      "Starstorm will choose a new target for the second star if the first died before impact."
+	   "DOTA_Tooltip_ability_mirana_starfall_datadriven_starfall_radius"                            "RADIUS:"
+	   "DOTA_Tooltip_ability_mirana_starfall_datadriven_scepter_interval"                           "SCEPTER INTERVAL:"
+	   "DOTA_Tooltip_ability_mirana_starfall_datadriven_aghanim_description"                        "Passively triggers Starstorm every 8 seconds. Does not trigger if the enemy doesn't see Mirana."
+
+
+	   "DOTA_Tooltip_ability_frostivus2018_windrunner_shackleshot"					"Shackleshot(Frosthaven)"
+	   "DOTA_Tooltip_ability_frostivus2018_windrunner_shackleshot_Description"		"Shackles the target to an enemy unit or tree in a line directly behind it, <font color='#70EA72'>and can chain to affect additional targets in the line</font>. If no unit or tree is present, the stun duration is reduced to %fail_stun_duration%."
+	   "DOTA_Tooltip_ability_frostivus2018_windrunner_shackleshot_Lore"			"Windranger's variety of bow skills includes an arrow with thick ropes attached to encumber any escaping target."
+	   "DOTA_Tooltip_ability_frostivus2018_windrunner_shackleshot_Note0"			"This spell can shackle two enemies together, stunning them both."
+	   "DOTA_Tooltip_ability_frostivus2018_windrunner_shackleshot_Note1"			"Shackleshot can be disjointed."
+	   "DOTA_Tooltip_ability_frostivus2018_windrunner_shackleshot_stun_duration"	"SHACKLE DURATION:"
+	   "DOTA_Tooltip_ability_frostivus2018_windrunner_shackleshot_shackle_count"	"SHACKLE COUNT:"
+
+	   "DOTA_Tooltip_ability_zuus_thundergods_vengeance"									"Thundergod's Vengeance"
+	   "DOTA_Tooltip_ability_zuus_thundergods_vengeance_Description"						"Strikes %num_targets% enemy units with a bolt of lightning, within a large range around Zeus, prioritized based upon current health.  Thundergod's Vengeance also provides True Sight around each unit struck.  If an enemy unit is invisible, it takes no damage, but the True Sight is still created at that unit's location.\n\nUpgradable by Aghanim's Scepter."
+	   "DOTA_Tooltip_ability_zuus_thundergods_vengeance_Lore"								"The Lord of Heaven smites all who oppose him, near or far."
+	   "DOTA_Tooltip_ability_zuus_thundergods_vengeance_damage"							"DAMAGE:"
+	   "DOTA_Tooltip_ability_zuus_thundergods_vengeance_damage_scepter"					"SCEPTER DAMAGE:"
+	   "DOTA_Tooltip_ability_zuus_thundergods_vengeance_true_sight_radius"					"TRUE SIGHT RADIUS:"
+	   "DOTA_Tooltip_ability_zuus_thundergods_vengeance_sight_duration"					"DURATION:"
+	   "DOTA_Tooltip_ability_zuus_thundergods_vengeance_aghanim_description"				"Increases damage."
+        
+       "DOTA_Tooltip_ability_lina_fiery_soul_datadriven"											"Fiery Soul"
+	   "DOTA_Tooltip_ability_lina_fiery_soul_datadriven_Description"								"Grants bonus attack and movement speed each time Lina casts a spell. Stacks with itself. Lasts %duration_tooltip% seconds."
+	   "DOTA_Tooltip_ability_lina_fiery_soul_datadriven_Lore"										"Dancing flames embody Lina's playful nature, bringing out her true blazing self."
+	   "DOTA_Tooltip_ability_lina_fiery_soul_datadriven_Note0"									    "Duration refreshes each time a new spell is cast."
+	   "DOTA_Tooltip_ability_lina_fiery_soul_datadriven_Note1"								     	"Using items does not trigger Fiery Soul."
+	   "DOTA_Tooltip_ability_lina_fiery_soul_datadriven_fiery_soul_attack_speed_bonus"			    "ATTACK SPEED BONUS:"
+	   "DOTA_Tooltip_ability_lina_fiery_soul_datadriven_fiery_soul_move_speed_bonus"				"%MOVE SPEED BONUS:"
+	   "DOTA_Tooltip_ability_lina_fiery_soul_datadriven_fiery_soul_max_stacks"					    "MAX STACKS:"
+	   "DOTA_Tooltip_ability_lina_fiery_soul_datadriven_duration_tooltip"					        "DURATION:"
+
+	   "DOTA_Tooltip_ability_frostivus2018_omniknight_purification"								"Purification(Frosthaven)"
+	   "DOTA_Tooltip_ability_frostivus2018_omniknight_purification_Description"					"Instantly heals <font color='#70EA72'>all friendly units in an area </font> and damages all enemy units near them."
+	   "DOTA_Tooltip_ability_frostivus2018_omniknight_purification_Lore"							"Priests of the Omniscience are adept at removing impurities from fellow warriors."
+	   "DOTA_Tooltip_ability_frostivus2018_omniknight_purification_heal"							"HEAL/DAMAGE:"
+	   "DOTA_Tooltip_ability_frostivus2018_omniknight_purification_radius"							"DAMAGE RADIUS:"
+	   "DOTA_Tooltip_ability_frostivus2018_omniknight_purification_cast_radius"					"HEAL RADIUS:"
+
+	   "DOTA_Tooltip_ability_frostivus2018_omniknight_degen_aura"									"Regen Aura"
+	   "DOTA_Tooltip_ability_frostivus2018_omniknight_degen_aura_Description"						"Greatly increases the movement, attack and regeneration capabilities of allied units close to Omniknight."
+	   "DOTA_Tooltip_ability_frostivus2018_omniknight_degen_aura_Note0"						        "Does not affect Spell Immune units."
+	   "DOTA_Tooltip_ability_frostivus2018_omniknight_degen_aura_Lore"								"The holy embodiment of Purist Thunderwrath is enough to strengthen those of lesser faith."
+	   "DOTA_Tooltip_ability_frostivus2018_omniknight_degen_aura_radius"						    "RADIUS:"
+	   "DOTA_Tooltip_ability_frostivus2018_omniknight_degen_aura_speed_bonus"						"%MOVEMENT BONUS:"
+	   "DOTA_Tooltip_ability_frostivus2018_omniknight_degen_aura_attack_bonus_tooltip"				"ATTACK BONUS:"
+	   "DOTA_Tooltip_ability_frostivus2018_omniknight_degen_aura_bonus_health_regen"				"REGEN BONUS:"
+	   "DOTA_Tooltip_modifier_frostivus2018_omniknight_degen_aura_effect"						    "Regen Aura"
+
+	   "DOTA_Tooltip_ability_frostivus2018_huskar_burning_spear"										"Burning Spear"
+	   "DOTA_Tooltip_ability_frostivus2018_huskar_burning_spear_Description"							"Huskar sets <font color='#70EA72'>his target and surrounding enemies</font> aflame, dealing damage over time with his regular attack. Multiple attacks will stack additional damage. Each attack drains some of Huskar's health. Lasts 6 seconds. <font color='#70EA72'>Burn damage is applied immediately after the first spear is hit.</font>"
+	   "DOTA_Tooltip_ability_frostivus2018_huskar_burning_spear_Lore"								"The Sacred Warrior ignites his weaponry after marking it with his own blood - causing far greater pain than he himself feels."
+	   "DOTA_Tooltip_ability_frostivus2018_huskar_burning_spear_Note0"								"Burning Spear stacks additively when used multiple times on one target.  There is no cap."
+	   "DOTA_Tooltip_ability_frostivus2018_huskar_burning_spear_Note1"								"Huskar cannot kill himself with this skill."
+	   "DOTA_Tooltip_ability_frostivus2018_huskar_burning_spear_health_cost"							"HEALTH COST:"
+	   "DOTA_Tooltip_ability_frostivus2018_huskar_burning_spear_burn_damage"							"BURN DAMAGE:"
+	   "DOTA_Tooltip_ability_frostivus2018_huskar_burning_spear_spear_aoe"								"<font color='#70EA72'>BURN RADIUS:</font>"
+
+	   "DOTA_Tooltip_ability_tinker_rearm_datadriven"							                  "Rearm"
+	   "DOTA_Tooltip_ability_tinker_rearm_datadriven_Description"					          "CHANNELED - Resets the cooldown on most of Tinker's items and abilities.<br><br>Global Ultimates can't refresh<br><br>Summonner's Ultimates can't refresh<br><br>Some strong life saving skills's can't refresh"
+	   "DOTA_Tooltip_ability_tinker_rearm_datadriven_channel_tooltip"					      "REARM TIME："
+	   "DOTA_Tooltip_ability_tinker_rearm_datadriven_Note0"					                "Do not affect some particular abilities."
+
+	   "DOTA_Tooltip_ability_axe_counter_helix_lua"								    	"Counter Helix"
+	   "DOTA_Tooltip_ability_axe_counter_helix_lua_Description"						    "When attacked, Axe performs a helix counter attack, dealing pure damage to all nearby enemies."
+	   "DOTA_Tooltip_ability_axe_counter_helix_lua_Lore"								"Axe is the only reinforcement this army needs."
+	   "DOTA_Tooltip_ability_axe_counter_helix_lua_damage"								"DAMAGE:"
+	   "DOTA_Tooltip_ability_axe_counter_helix_lua_radius"								"RADIUS:"
+	   "DOTA_Tooltip_ability_axe_counter_helix_lua_trigger_chance"						"%CHANCE TO HELIX:"
+	   "DOTA_Tooltip_modifier_axe_counter_helix_lua"									"Counter Helix"
+	   "DOTA_Tooltip_ability_axe_counter_helix_lua_Note0"								"Counter Helix triggers when the attack hits."
+
+
+	   "DOTA_Tooltip_ability_phantom_assassin_stifling_dagger_nb2017"							"Stifling Dagger"
+	   "DOTA_Tooltip_ability_phantom_assassin_stifling_dagger_nb2017_Description"				"Throws a flurry of daggers at the area around the target point, each one hitting the first unit in its path. The daggers slow enemy movement speed, and deal %base_damage%+%attack_factor_tooltip%%% of Phantom Assassin's attack damage as physical damage and applying attack effects from items and abilities."
+	   "DOTA_Tooltip_ability_phantom_assassin_stifling_dagger_nb2017_Note0"				    	"If an attack effect is chance-based, the chance of its application will be the same as its chance to occur."
+	   "DOTA_Tooltip_ability_phantom_assassin_stifling_dagger_nb2017_Lore"						"The first skill learned by the Sisters of the Veil often signals an incoming hit."
+	   "DOTA_Tooltip_ability_phantom_assassin_stifling_dagger_nb2017_move_slow"			    	"%MOVE SLOW:"
+	   "DOTA_Tooltip_ability_phantom_assassin_stifling_dagger_nb2017_duration"					"SLOW DURATION:"
+	   "DOTA_Tooltip_ability_phantom_assassin_stifling_dagger_nb2017_base_damage"				"BASE DAMAGE:"
+	   "DOTA_Tooltip_ability_phantom_assassin_stifling_dagger_nb2017_attack_factor_tooltip"  	"%ATTACK DAMAGE:"
+	   "DOTA_Tooltip_ability_phantom_assassin_stifling_dagger_nb2017_dagger_count"				"DAGGER COUNT:"
+	   "DOTA_Tooltip_ability_phantom_assassin_stifling_dagger_nb2017_dagger_range"				"DAGGER RANGE:"
+
+	   "DOTA_Tooltip_ability_necrolyte_reapers_scythe_datadriven"									"Reaper's Scythe"
+	   "DOTA_Tooltip_ability_necrolyte_reapers_scythe_datadriven_Description"						"Stuns the target enemy , then deals damage based on how much life it is missing. Heroes killed by Reaper's Scythe will have %respawn_constant% seconds added to their respawn timer. Any kill under this effect is credited to Necrophos.\n\nUpgradable by Aghanim's Scepter."
+	   "DOTA_Tooltip_ability_necrolyte_reapers_scythe_datadriven_Lore"							    "The amount of death and suffering in the air increases the power of Necrophos's plague magic."
+	   "DOTA_Tooltip_ability_necrolyte_reapers_scythe_datadriven_Note0"							"Damage is dealt at the end of the stun."
+	   "DOTA_Tooltip_ability_necrolyte_reapers_scythe_datadriven_Note1"							"The stun goes through spell immunity, but not the damage."
+	   "DOTA_Tooltip_ability_necrolyte_reapers_scythe_datadriven_damage_per_health"				"DAMAGE PER MISSING HP:"
+	   "DOTA_Tooltip_ability_necrolyte_reapers_scythe_datadriven_stun_duration"					"STUN DURATION:"		
+	   "DOTA_Tooltip_ability_necrolyte_reapers_scythe_datadriven_mana_cost_scepter"				"SCEPTER MANA COST:"
+	   "DOTA_Tooltip_ability_necrolyte_reapers_scythe_datadriven_cooldown_scepter"			     	"SCEPTER COOLDOWN:"
+	   "DOTA_Tooltip_ability_necrolyte_reapers_scythe_datadriven_damage_per_health_scepter"		"SCEPTER DAMAGE PER MISSING HP:"
+	   "DOTA_Tooltip_ability_necrolyte_reapers_scythe_datadriven_aghanim_description"				"Increases damage per HP missing, decreases mana cost for Level 1, and decreases cooldown for levels 1 and 2.  Units killed by Reaper's Scythe cannot buyback."
+
+
+	   	"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows"							"Searing Arrows(Frosthaven)"
+	    "DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_Description"				"Imbues Clinkz's arrows with fire for extra damage <font color='#70EA72'>and applies spill damage to enemies behind the target</font>."
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_Lore"						"Clinkz simply lights his arrows from his flaming essence for quite the destructive effect."
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_Note0"					"Searing Arrows deal damage to structures."
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_Note1"					"The damage is directly added to Clinkz' attack damage, as physical damage."
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_damage_bonus"				"BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_attack_spill_range"		"SPILL ATTACK RANGE:"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_attack_spill_width"		"SPILL ATTACK WIDTH:"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_spill_damage_multiplier"	"SPILL DAMAGE MULTIPLIER:"
+
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk"						"Skeleton Walk(Frosthaven)"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_Description"			"Clinkz moves invisibly through units until the moment he attacks or uses an ability. <font color='#70EA72'>When he moves through a unit, he temporarily steals a portion of its attack damage.</font>"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_Lore"					"With a burst of fire and puff of smoke, the Bone Fletcher was nowhere to be seen."
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_Note0"					"Will not break most channeling of spells or items upon activation."
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_Note1"					"Has a fadetime of 0.6 seconds."
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_duration"				     "DURATION:"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_move_speed_bonus_pct"	     "%BONUS MOVEMENT SPEED:"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_attack_steal_duration"	    "ATTACK STEAL DURATION:"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_bonus_base_dmg_per_stack"	"ATTACK DMG PER STACK:"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_max_stacks"			    "MAX STACKS:"
+
+		"DOTA_Tooltip_ability_death_pact_datadriven"										"Death Pact"
+		"DOTA_Tooltip_ability_death_pact_datadriven_Description"							"Clinkz consumes the target friendly or enemy creep, gaining a percent of its hitpoints as max health and damage. \n<font color='#FF7800'>Based on normal mode monster HP.</font> \n<font color='#FF7800'>Every round reduce 5% current power.</font>"
+		"DOTA_Tooltip_ability_death_pact_datadriven_Lore"									"Sutherex' bond of life and death has become a part of Clinkz, and his old bones are refreshed with repetition of the pact on lesser beings."
+		"DOTA_Tooltip_ability_death_pact_datadriven_Note0"									"If the target is an enemy, Clinkz will gain the correct experience and gold."
+		"DOTA_Tooltip_ability_death_pact_datadriven_Note1"									"Increases Clinkz' current and max HP."
+		"DOTA_Tooltip_ability_death_pact_datadriven_Note2"									"When the duration ends, max HP returns to normal, but current HP stays the same."
+		"DOTA_Tooltip_ability_death_pact_datadriven_duration"								"DURATION:"
+		"DOTA_Tooltip_ability_death_pact_datadriven_health_gain_pct"						"%HEALTH GAIN:"
+		"DOTA_Tooltip_ability_death_pact_datadriven_damage_gain_pct"						"%DAMAGE GAIN:"
+
+		"DOTA_Tooltip_ability_pugna_ward_winter_2018"	                                    "Saprophytic Ward(Frosthaven)"
+		"DOTA_Tooltip_ability_pugna_ward_winter_2018_Description"	                        "Pugna places a Saprophytic Ward at the target location. Heals allies whenever they spend mana."
+		"DOTA_Tooltip_ability_pugna_ward_winter_2018_aura_radius"	                        "AURA RADIUS:"
+		"DOTA_Tooltip_ability_pugna_ward_winter_2018_mana_multiplier"                        "HEAL PER MANA:"
+		"DOTA_Tooltip_ability_pugna_ward_winter_2018_aura_mana_regen"	                    "AURA MANA REGEN:"
+		"DOTA_Tooltip_ability_pugna_ward_winter_2018_attacks_to_destroy_tooltip"	            "ATTACKS TO DESTROY:"
+		"DOTA_Tooltip_ability_pugna_ward_winter_2018_ward_duration"	                        "WARD DURATION:"
+    "npc_dota_pugna_ward_winter_2018"                     "Saprophytic Ward"
+    "DOTA_Tooltip_modifier_pugna_ward_winter_2018_effect"                       "Saprophytic Ward"
+
+		"DOTA_Tooltip_ability_dark_seer_wall_of_replica_nb2017"								    "Wall of Replica(Dark Moon)"
+		"DOTA_Tooltip_ability_dark_seer_wall_of_replica_nb2017_Description"					    "Raises a wall of warping light that slows and creates replicas of any <font color='#70EA72'>enemy unit</font> who crosses it. Enemy replicas serve at the Dark Seer's will. <font color='#70EA72'>Dark Seer may only have one copy an individual enemy unit at a time.</font> Replicas last until they are destroyed, or until the wall's duration ends.\n\nUpgradable by Aghanim's Scepter."
+		"DOTA_Tooltip_ability_dark_seer_wall_of_replica_Lore"						        	"The Dark Seer, while unable to return to his natural realm, can channel part of the prismatic wall with powerful strength of mind, sowing confusion amongst enemy ranks."
+		"DOTA_Tooltip_ability_dark_seer_wall_of_replica_nb2017_Note0"							"Doesn't create illusions from other illusions, or Meepo clones."
+		"DOTA_Tooltip_ability_dark_seer_wall_of_replica_nb2017_Note1"							"Creates a wall 1000 units long, perpendicular to the line between Dark Seer and the target point."
+		"DOTA_Tooltip_ability_dark_seer_wall_of_replica_nb2017_duration"						"WALL DURATION:"
+		"DOTA_Tooltip_ability_dark_seer_wall_of_replica_nb2017_tooltip_outgoing"				"%REPLICA DAMAGE:"
+		"DOTA_Tooltip_ability_dark_seer_wall_of_replica_nb2017_tooltip_replica_total_damage_incoming"		"%REPLICA DAMAGE TAKEN:"
+		"DOTA_Tooltip_ability_dark_seer_wall_of_replica_nb2017_range_tooltip"					"CAST RANGE:"
+		"DOTA_Tooltip_ability_dark_seer_wall_of_replica_nb2017_tooltip_outgoing_scepter"		"%SCEPTER REPLICA DAMAGE:"
+		"DOTA_Tooltip_ability_dark_seer_wall_of_replica_nb2017_movement_slow"		            "%MOVEMENT SLOW:"
+		"DOTA_Tooltip_ability_dark_seer_wall_of_replica_nb2017_slow_duration"		            "SLOW DURATION:"
+
+		"DOTA_Tooltip_ability_terrorblade_sunder_datadriven"							          "Sunder"
+		"DOTA_Tooltip_ability_terrorblade_sunder_datadriven_Description"					      "Severs the life from both Terrorblade and a target hero, exchanging a percentage of both units' current health. Some health points must remain."
+		"DOTA_Tooltip_ability_terrorblade_sunder_datadriven_hit_point_minimum_pct"				  "MINIMUM HP SWAP:"  
+        
+
+    "DOTA_Tooltip_ability_invoker_cold_snap_lua" "Cold Snap"
+		"DOTA_Tooltip_ability_invoker_cold_snap_lua_Description""Invoker draws the heat from an enemy, chilling them to their very core for a duration. The enemy will take damage and be briefly frozen. Further damage taken in this state will freeze the enemy again, dealing bonus damage. The enemy can only be frozen so often, but the freeze cooldown decreases."
+		"DOTA_Tooltip_ability_invoker_cold_snap_lua_Lore" "Sadron's Protracted Frisson."
+		"DOTA_Tooltip_ability_invoker_cold_snap_lua_Note0" "The freeze stun only triggers on damage greater than 10 after reductions."
+		"DOTA_Tooltip_ability_invoker_cold_snap_lua_duration" "COLD SNAP DURATION:"
+		"DOTA_Tooltip_ability_invoker_cold_snap_lua_freeze_duration" "FREEZE DURATION:"
+		"DOTA_Tooltip_ability_invoker_cold_snap_lua_freeze_damage" "FREEZE DAMAGE:"
+		"DOTA_Tooltip_ability_invoker_cold_snap_lua_freeze_cooldown" "FREEZE COOLDOWN:"
+		
+		"DOTA_Tooltip_ability_invoker_ghost_walk_lua"								     "Ghost Walk"
+		"DOTA_Tooltip_ability_invoker_ghost_walk_lua_Description"				 "Invoker manipulates the ice and electrical energies around him, rendering his body invisible. The elemental imbalance created as a consequence slows nearby enemies."
+		"DOTA_Tooltip_ability_invoker_ghost_walk_lua_self_slow"					 "%SELF SPEED:"
+		"DOTA_Tooltip_ability_invoker_ghost_walk_lua_duration"					 "DURATION:"
+		"DOTA_Tooltip_ability_invoker_ghost_walk_lua_area_of_effect"		 "RADIUS:"
+		"DOTA_Tooltip_ability_invoker_ghost_walk_lua_enemy_slow"				 "%ENEMY SLOW:"
+		"DOTA_Tooltip_modifier_invoker_ghost_walk_lua_self"							 "Ghost Walk"
+		"DOTA_Tooltip_modifier_invoker_ghost_walk_lua_self_Description"	 "Invisible, movement speed changed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, and slowing nearby enemies."
+		"DOTA_Tooltip_modifier_invoker_ghost_walk_lua_enemy"						 "Ghost Walk"
+		"DOTA_Tooltip_modifier_invoker_ghost_walk_lua_enemy_Description" "Near a ghost! Slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+		"DOTA_Tooltip_ability_invoker_ghost_walk_lua_Lore"							 "Myrault's Hinder-Gast."
+		"DOTA_Tooltip_ability_invoker_ghost_walk_lua_Note0"							 "The slow effect does not work on Spell Immune enemies."
+
+		"DOTA_Tooltip_ability_invoker_tornado_lua" "Tornado"
+		"DOTA_Tooltip_ability_invoker_tornado_lua_Description""Unleashes a fast moving tornado that picks up enemy units in its path, suspending them helplessly in the air shortly before allowing them to plummet to their doom. Travels further. Holds enemies in the air for a duration. Deals damage."
+		"DOTA_Tooltip_ability_invoker_tornado_lua_Lore" "Claws of Tornarus."
+		"DOTA_Tooltip_ability_invoker_tornado_lua_Note0" "Units are invulnerable while affected by Tornado, and the damage is dealt when landing."
+		"DOTA_Tooltip_ability_invoker_tornado_lua_travel_distance" "TRAVEL DISTANCE:"
+		"DOTA_Tooltip_ability_invoker_tornado_lua_area_of_effect" "RADIUS:"
+		"DOTA_Tooltip_ability_invoker_tornado_lua_lift_duration" "LIFT TIME:"
+		"DOTA_Tooltip_ability_invoker_tornado_lua_base_damage" "DAMAGE:"
+
+		"DOTA_Tooltip_ability_invoker_emp_lua"                     "EMP"
+		"DOTA_Tooltip_ability_invoker_emp_lua_Description"         "Invoker builds up a charge of electromagnetic energy at a targeted location which automatically detonates after %delay% seconds. The detonation covers an area, draining mana. Deals damage for each point of mana drained.  If EMP drains mana from an enemy hero, Invoker gains 50%% of the mana drained."
+		"DOTA_Tooltip_ability_invoker_emp_lua_Lore"                "Endoleon's Malevolent Perturbation."
+		"DOTA_Tooltip_ability_invoker_emp_lua_Note0"               "Will not affect cycloned units (Tornado or Eul's Scepter of Divinity)."
+		"DOTA_Tooltip_ability_invoker_emp_lua_delay"               "CHARGE TIME:"
+		"DOTA_Tooltip_ability_invoker_emp_lua_area_of_effect"      "RADIUS:"
+		"DOTA_Tooltip_ability_invoker_emp_lua_mana_burned"         "MAX MANA BURNED:\n"
+		"DOTA_Tooltip_ability_invoker_emp_lua_damage_per_mana_pct" "%BURN DAMAGE:"
+
+		"DOTA_Tooltip_ability_invoker_alacrity_lua" "Alacrity"
+		"DOTA_Tooltip_ability_invoker_alacrity_lua_Description" "Invoker infuses an ally with an immense surge of energy, increasing their attack speed and their damage."
+		"DOTA_Tooltip_ability_invoker_alacrity_lua_Lore" "Gaster's Mandate of Impetuous Strife."
+		"DOTA_Tooltip_ability_invoker_alacrity_lua_bonus_attack_speed" "BONUS ATTACK SPEED:\n"
+		"DOTA_Tooltip_ability_invoker_alacrity_lua_bonus_damage" "BONUS DAMAGE:\n"
+		"DOTA_Tooltip_ability_invoker_alacrity_lua_duration" "DURATION:"
+
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_lua" "Chaos Meteor"
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_lua_Description""Invoker pulls a flaming meteor from space onto the targeted location. Upon landing, the meteor rolls forward, constantly dealing damage, and rolling further. Units hit by the meteor will also be set on fire for a short time, receiving additional damage."
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_lua_Lore" "Tarak's Descent of Fire."
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_lua_Note0" "Deals main damage to enemy units under meteor every 0.5 seconds and burns enemies for smaller damage over 3 seconds."
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_lua_Note1" "The meteor moves at a speed of 300."
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_lua_land_time" "IMPACT DELAY:"
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_lua_area_of_effect" "RADIUS:"
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_lua_travel_distance" "TRAVEL DISTANCE:\n"
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_lua_main_damage" "CONTACT DAMAGE:\n"
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_lua_damage_interval" "CONTACT DAMAGE TICK:"
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_lua_burn_duration" "BURN DURATION:"
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_lua_burn_dps" "BURN DAMAGE PER SECOND:\n"
+
+		"DOTA_Tooltip_ability_invoker_forge_spirit_lua" "Forge Spirit"
+		"DOTA_Tooltip_ability_invoker_forge_spirit_lua_Description" "Invoker forges a spirit embodying the strength of fire and fortitude of ice. Damage, health, and armor are while attack range, mana, and duration are. The elemental's scorching attack is capable of melting the armor of enemy heroes."
+		"DOTA_Tooltip_ability_invoker_forge_spirit_lua_lod_Lore" "Culween's Most Cunning Fabrications."
+		"DOTA_Tooltip_ability_invoker_forge_spirit_lua_Note0" "Casting this abiliy will replace currently summoned Forged Spirits."
+		"DOTA_Tooltip_ability_invoker_forge_spirit_lua_spirit_damage" "DAMAGE:"
+		"DOTA_Tooltip_ability_invoker_forge_spirit_lua_spirit_hp" "HEALTH:"
+		"DOTA_Tooltip_ability_invoker_forge_spirit_lua_spirit_armor" "ARMOR:"
+		"DOTA_Tooltip_ability_invoker_forge_spirit_lua_spirit_attack_range" "ATTACK RANGE:"
+		"DOTA_Tooltip_ability_invoker_forge_spirit_lua_spirit_duration" "DURATION:"
+
+		"DOTA_Tooltip_ability_invoker_ice_wall_lod" "Ice Wall"
+		"DOTA_Tooltip_ability_invoker_ice_wall_lod_Description""Generates a wall of solid ice directly in front of Invoker for a duration. The bitter cold emanating from it greatly slows nearby enemies and deals damage each second.<br><br><font color=\"#FF4949\">Warning:</font> Aghanim's Scepter will lock this ability to its level 1 version.<br>"
+		"DOTA_Tooltip_ability_invoker_ice_wall_lod_Lore" "Killing Wall of Koryx."
+		"DOTA_Tooltip_ability_invoker_ice_wall_lod_lod_lod_Note0" "The slow will still affect magic immune enemies if their magic immunity was created after being affected by Ice Wall."
+		"DOTA_Tooltip_ability_invoker_ice_wall_lod_lod_duration" "WALL DURATION:\n"
+		"DOTA_Tooltip_ability_invoker_ice_wall_lod_slow" "%MOVEMENT SLOW:\n"
+		"DOTA_Tooltip_ability_invoker_ice_wall_lod_slow_duration" "SLOW DURATION:"
+		"DOTA_Tooltip_ability_invoker_ice_wall_lod_damage_per_second" "DAMAGE PER SECOND:\n"
+
+		"DOTA_Tooltip_modifier_imba_essence_aura_buff"								            "Essence Aura"
+		"DOTA_Tooltip_modifier_imba_essence_aura_buff_Description"						        "Casting a spell will recover part of your total mana"
+		"DOTA_Tooltip_ability_obsidian_destroyer_essence_aura_datadriven"					    "Essence Aura"
+		"DOTA_Tooltip_ability_obsidian_destroyer_essence_aura_datadriven_Description"			"Whenever Outworld Devourer or his nearby allies casts a spell, it restores a percentage of its mana pool. <font color='#FF7800'>Several skills with no cooldown and toggled spells cannot trigger Essence Aura.</font>"
+		"DOTA_Tooltip_ability_obsidian_destroyer_essence_aura_datadriven_Lore"					"The crystals of the Outworld produce arcane power, and the Harbinger channels it into the world of mortals."
+		"DOTA_Tooltip_ability_obsidian_destroyer_essence_aura_datadriven_restore_amount"		"%RESTORE MANA:"
+		"DOTA_Tooltip_ability_obsidian_destroyer_essence_aura_datadriven_bonus_mana"			"EXTRA MANA:"
+		"DOTA_Tooltip_ability_obsidian_destroyer_essence_aura_datadriven_radius"				"AURA RADIUS:"
+		"DOTA_Tooltip_ability_obsidian_destroyer_essence_aura_datadriven_restore_chance"		"%RESTORE CHANCE:"
+	
+    "DOTA_Tooltip_ability_frostivus2018_dark_willow_bedlam"	                                            "Bedlam(Frosthaven)"
+		"DOTA_Tooltip_ability_frostivus2018_dark_willow_bedlam_Description"	                                "Dark Willow's pet wisp roams around her for the duration, rapidly attacking nearby enemies. <font color='#70EA72'>Every attack bounces to additional targets around the targeted enemy.</font> Bedlam cannot be used while Terrorize is active."
+		"DOTA_Tooltip_ability_frostivus2018_dark_willow_bedlam_Lore"                                   	    "You'll have to excuse my friend Jex. He's really into murder."
+		"DOTA_Tooltip_ability_frostivus2018_dark_willow_bedlam_attack_damage"	                            "ATTACK DAMAGE:"
+		"DOTA_Tooltip_ability_frostivus2018_dark_willow_bedlam_attack_interval"	                            "ATTACK INTERVAL:"
+		"DOTA_Tooltip_ability_frostivus2018_dark_willow_bedlam_attack_radius"	                            "ATTACK RADIUS:"
+		"DOTA_Tooltip_ability_frostivus2018_dark_willow_bedlam_attack_targets"	                            "ATTACK TARGETS:"
+		"DOTA_Tooltip_ability_frostivus2018_dark_willow_bedlam_roaming_radius"	                            "ROAMING RADIUS:"
+		"DOTA_Tooltip_ability_frostivus2018_dark_willow_bedlam_roaming_duration"	                        "ROAMING DURATION:"
+		"DOTA_Tooltip_ability_frostivus2018_dark_willow_bedlam_secondary_targets"	                        "SECONDARY TARGETS:"
+
+		"DOTA_Tooltip_modifier_hero_refreshing"                                     "Fountain Aura"
+		"DOTA_Tooltip_modifier_hero_refreshing_Description"                         "Invulnerable. Increase health and mana regen speed. Increase ability cooldown speed by 100%%."
+	
+    "DOTA_Tooltip_modifier_creature_berserk"                                    "Berserk"
+	  "DOTA_Tooltip_modifier_creature_berserk_Description"                        "Round time expired. Creature grant bounus speed and damage. Attack will tear enemy armor."
+	
+    "DOTA_Tooltip_ability_item_recipe_kaya_2_datadriven"			        "Sky Staff Recipe"
+    "DOTA_Tooltip_ability_item_kaya_2_datadriven"				              "Sky Staff"
+    "DOTA_Tooltip_ability_item_kaya_2_datadriven_Description"				  "Not Effect on percent damage type spell<br><br>Spell Amplification do not stack<br><br>Only have half effect on passive ability<br><br>Only have 20%% effect on other hero"
+		"DOTA_Tooltip_ability_item_kaya_2_datadriven_bonus_int"	      	  "+$int"
+		"DOTA_Tooltip_ability_item_kaya_2_datadriven_spell_amplify"			  "%+Spell Amplification Every Intelligence"
+		"DOTA_Tooltip_ability_item_kaya_2_datadriven_manacost_reduction"	"%+Manacost and Manaloss Reduction"
+    
+    "DOTA_Tooltip_ability_item_recipe_kaya_3_datadriven"			          "Force of Star Recipe"
+		"DOTA_Tooltip_ability_item_kaya_3_datadriven"				            	  "Force of Star"
+		"DOTA_Tooltip_ability_item_kaya_3_datadriven_Description"				    "Not Effect on percent damage spell<br><br>Spell Amplification do not stack<br><br>Only have half effect on passive ability<br><br>Only have 20%% effect on other hero"
+		"DOTA_Tooltip_ability_item_kaya_3_datadriven_bonus_int"				      "+$int"
+		"DOTA_Tooltip_ability_item_kaya_3_datadriven_spell_amplify"		    	"%+Spell Amplification Every Intelligence"
+		"DOTA_Tooltip_ability_item_kaya_3_datadriven_manacost_reduction"		"%+Manacost and Manaloss Reduction"
+       
+    "npc_dota_kobold"						"Kobold"
+		"npc_dota_kobold_tunneler"				"Kobold Soldier"
+		"npc_dota_kobold_taskmaster"			"Kobold Foreman"
+		
+		"npc_dota_centaur_outrunner"			"Centaur Courser"
+		"npc_dota_centaur_khan"					"Centaur Conqueror"
+		
+		"npc_dota_fel_beast"					"Fell Spirit"
+
+		"npc_dota_polar_furbolg_champion"		"Hellbear"
+		"npc_dota_polar_furbolg_ursa_warrior"	"Hellbear Smasher"
+		"npc_dota_mud_golem"					"Mud Golem"
+		"npc_dota_mud_golem_split"				"Shard Golem"
+		"npc_dota_mud_golem_split_doom"			"Doom Shard"
+		
+		"npc_dota_ogre_mauler"					"Ogre Bruiser"
+		"npc_dota_ogre_magi"					"Ogre Frostmage"
+		
+		"npc_dota_giant_wolf"					"Giant Wolf"
+		"npc_dota_alpha_wolf"					"Alpha Wolf"
+
+		"npc_dota_wildkin"						"Wildwing"
+		"npc_dota_enraged_wildkin"				"Wildwing Ripper"
+
+		"npc_dota_satyr_soulstealer"			"Satyr Mindstealer"
+		"npc_dota_satyr_hellcaller"				"Satyr Tormenter"
+		"npc_dota_satyr_trickster"				"Satyr Banisher"
+
+		"npc_dota_jungle_stalker"				"Ancient Stalker"
+		"npc_dota_elder_jungle_stalker"			"Ancient Primal Stalker"
+		"npc_dota_prowler_acolyte"				"Ancient Prowler Acolyte"
+		"npc_dota_prowler_shaman"				"Ancient Prowler Shaman"
+		"npc_dota_rock_golem"					"Ancient Rock Golem"
+		"npc_dota_granite_golem"				"Ancient Granite Golem"
+		"npc_dota_big_thunder_lizard"			"Ancient Thunderhide"
+		"npc_dota_small_thunder_lizard"			"Ancient Rumblehide"
+		"npc_dota_black_drake"					"Ancient Black Drake"
+		"npc_dota_black_dragon"					"Ancient Black Dragon"
+		
+
+		"npc_dota_gnoll_assassin"				"Vhoul Assassin"
+
+		"npc_dota_ghost"						"Ghost"
+	
+		"npc_dota_dark_troll"					"Hill Troll"
+		"npc_dota_dark_troll_warlord"			"Dark Troll Summoner"
+		"npc_dota_forest_troll_berserker"		"Hill Troll Berserker"
+		"npc_dota_forest_troll_high_priest"		"Hill Troll Priest"
+		"npc_dota_harpy_scout"					"Harpy Scout"
+		"npc_dota_harpy_storm"					"Harpy Stormcrafter"
+
+		"npc_dota_skeleton"                     "Skeleton"
+		"npc_dota_crocodilian"                  "Crocodilian"
+		"npc_dota_crocodilian_ranged"           "Crocodilian Mage"
+		"npc_dota_chameleon"                    "Chameleon"
+		"npc_dota_chameleon_ranged"             "Chameleon Mage"
+		"npc_dota_greevil"                      "Greevil"
+		"npc_dota_roshan"                       "Roshan"
+
+		"DOTA_Tooltip_ability_frostbitten_icicle"                                            "Frostbitten Icicle"
+	    "DOTA_Tooltip_ability_frostbitten_icicle_Description"                              "Blasts the target enemy unit with damaging frost, dealing area damage and freeze movement."
+	    "DOTA_Tooltip_ability_frostbitten_icicle_radius"                                   "Radius:"
+	    "DOTA_Tooltip_ability_frostbitten_icicle_freeze_duration"                          "Frozen Duration"
+	    
+	    "npc_dota_frostbitten_gaint"            "Frostbitten Gaint"
+	    "npc_dota_frostbitten_mage"             "Frostbitten Mage"
+	    "npc_dota_ogre_warlord"                 "Ogre Warlord"
+
+	    "DOTA_Tooltip_ability_creature_ogre_jump_smash"                                      "Jump Smash"
+	    "DOTA_Tooltip_ability_creature_ogre_jump_smash_Description"                          "Jump and smash stun and damage enemies."
+	    "DOTA_Tooltip_ability_creature_ogre_jump_smash_impact_radius"                        "Radius:"
+	    "DOTA_Tooltip_ability_creature_ogre_jump_smash_stun_duration"                        "Duration:"
+
+	    "npc_dota_ogreseal_big"                 "Large Ogre Seal"
+        "npc_dota_ogreseal"                     "Ogre Seal"
+
+        "DOTA_Tooltip_ability_creature_ogreseal_flop"                                        "Ogreseal Flop"
+        "DOTA_Tooltip_ability_creature_ogreseal_flop_Description"                            "Flop forward, doing damage and stunning for %stun_duration% second on each bounce."
+        
+        "DOTA_Tooltip_ability_item_book_of_strength"						"Book of Strength"
+		"DOTA_Tooltip_ability_item_book_of_strength_Description"			"Consume to gain 3 Strength permanently."
+		"DOTA_Tooltip_ability_item_book_of_agility"							"Book of Agility"
+		"DOTA_Tooltip_ability_item_book_of_agility_Description"				"Consume to gain 3 Agility permanently."
+		"DOTA_Tooltip_ability_item_book_of_intelligence"					"Book of Intelligence"
+		"DOTA_Tooltip_ability_item_book_of_intelligence_Description"		"Consume to gain 3 Intelligence permanently."
+
+    "DOTA_Tooltip_modifier_book_of_strength"							  "Book of Strength"
+		"DOTA_Tooltip_modifier_book_of_strength_Description"				"Strength gained from consumed Books."
+		"DOTA_Tooltip_modifier_book_of_agility"								      "Book of Agility"
+		"DOTA_Tooltip_modifier_book_of_agility_Description"					"Agility gained from consumed Books."
+		"DOTA_Tooltip_modifier_book_of_intelligence"					     	"Book of Intelligence"
+		"DOTA_Tooltip_modifier_book_of_intelligence_Description"		"Intelligence gained from consumed Books."
+    
+
+    "DOTA_Tooltip_modifier_creature_berserk_debuff"                                    "Tear Armor"
+    "DOTA_Tooltip_modifier_creature_berserk_debuff_Description"                        "Each layer reduce 1 point of armor."
+    
+    "cheat_no_record"                                       "Cheat mode will not recored world rank."
+	
+    "DOTA_Tooltip_ability_necrolyte_heartstopper_aura_lua"                    "Heartstopper Aura"
+    "DOTA_Tooltip_ability_necrolyte_heartstopper_aura_lua_Description"              "Necrophos stills the hearts of his opponents, causing nearby enemy units to lose a percentage of their max health over time. Passively provides regen for %regen_duration% seconds for each unit Necrophos kills."
+    "DOTA_Tooltip_ability_necrolyte_heartstopper_aura_lua_aura_radius"              "RADIUS:"
+    "DOTA_Tooltip_ability_necrolyte_heartstopper_aura_lua_aura_damage"              "%HEALTH DECAY:"
+    "DOTA_Tooltip_modifier_necrolyte_heartstopper_aura_lua_effect"                "Heartstopper Aura"
+    "DOTA_Tooltip_modifier_necrolyte_heartstopper_aura_lua_effect_Description"          "Losing a percentage of health every second while near Necrophos."
+    "DOTA_Tooltip_ability_necrolyte_heartstopper_aura_lua_Lore"                 "Those who come within a short distance of Necrophos can feel pestilence and plague in the air."
+    "DOTA_Tooltip_ability_necrolyte_heartstopper_aura_lua_Note0"                "Damage won't disable items like Blink Dagger."
+    "DOTA_Tooltip_ability_necrolyte_heartstopper_aura_lua_Note1"                "Does not affect ancient creeps."
+    "DOTA_Tooltip_modifier_necrolyte_heartstopper_aura_lua"                   "Heartstopper Aura"
+    "DOTA_Tooltip_ability_necrolyte_heartstopper_aura_lua_health_regen"             "HEALTH REGEN PER KILL:"
+    "DOTA_Tooltip_ability_necrolyte_heartstopper_aura_lua_mana_regen"             "MANA REGEN PER KILL:"
+    "DOTA_Tooltip_ability_necrolyte_heartstopper_aura_lua_regen_duration"           "REGEN DURATION:"
+    "DOTA_Tooltip_ability_necrolyte_heartstopper_aura_lua_hero_multiplier"            "HERO KILL REGEN MULTIPLIER:"
+    "DOTA_Tooltip_modifier_necrolyte_heartstopper_aura_lua_counter"               "Heartstopper Regen"
+    "DOTA_Tooltip_modifier_necrolyte_heartstopper_aura_lua_counter_Description"         "Temporarily gaining %fMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% health regen and %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT% mana regen per second."
+    
+    "record_ability"                                                            "Please Select Ability"
+    "AbilitySpellSelection_Close_Label"                                         "Maybe Later.."
+    "AbilitySpellSelection_Close_Description"                                   "Get an empty spell book back."
+
+    "DOTA_Tooltip_ability_item_spell_book_empty_lua"                        "Empty Spell Scroll"
+    "DOTA_Tooltip_ability_item_spell_book_empty_lua_Description"            "<h1>Consume:Record</h1>Record one spell in to it, it will save level and cooldown information."
+    "DOTA_Tooltip_ability_item_spell_book_lua"                              "Spell Scroll"
+    "DOTA_Tooltip_ability_item_spell_book_lua_Description"                  "<h1>Consume:Fetch</h1>Read it the Scroll, learn the spell in it."
+    "save_spell_book"                                                       "Save into a spell Scroll(150 gold)"
+    
+    "DOTA_Tooltip_ability_creature_tear_armor"                              "Tear Armor"
+    "DOTA_Tooltip_ability_creature_tear_armor_Description"                  "Creature attack will tear apart hero's armor."
+    "DOTA_Tooltip_ability_creature_tear_armor_armor_reduce"                 "Reduce Armor Per Attack"
+    
+    
+    "DOTA_Tooltip_modifier_loser_curse"                                     "Loser Curse"
+    "DOTA_Tooltip_modifier_loser_curse_Description"                         "Duel loser will stack curse, each stack increases 10%% incoming damage, reduce 10%% deal damage, reduce 10%% base attributes.(Not work in Duel Battle)"
+    
+    "lose_aegis"                                                            "is defeated in duel, lose Aegis."
+    "stack_curse"                                                           "is defeated in duel, get a stack of Curse."
+    
+    "npc_dota_clinkz_skeleton_archer_frostivus2018"                         "Burning Army"
+
+    "DOTA_Tooltip_ability_faceless_void_backtrack"                          "Backtrack"
+    "DOTA_Tooltip_ability_faceless_void_backtrack_Description"              "Faceless Void dodges damage by jumping backward in time, eluding both physical and magical attacks."
+    "DOTA_Tooltip_ability_faceless_void_backtrack_Lore"                     "Darkterror sees what has yet to be seen."
+    "DOTA_Tooltip_ability_faceless_void_backtrack_dodge_chance_pct"         "%PROC CHANCE:"
+    
+    "AbilityRelearnCloseSelection_Label"                                    "Abandon"
+    "AbilityRelearnSelection_Description"                                   "Abandon and get book back"
+
+    "DOTA_Tooltip_ability_item_relearn_book_lua"                            "Book of Retraining"
+    "DOTA_Tooltip_ability_item_relearn_book_lua_Description"                "<h1>Consume:Retraining</h1>Choose a ability to unlearns and draw a new one."
+   
+    "unlearn_ability"                                                       "Select Ability To Unlearn"
+
+    "round"                                                                 "Round "
+    "finish"                                                                " Finish "
+    "compensate_relearn_book"                                               " Get Book of Retraining"
+
+    "DOTA_Tooltip_ability_shredder_chakram"                                 "Chakram(Unremovable)"
+    
+    "DOTA_Tooltip_ability_invoker_sun_strike_lua"                      "Sun Strike"
+    "DOTA_Tooltip_ability_invoker_sun_strike_lua_Description"          "Sends a catastrophic ray of fierce energy from the sun at any targeted location, incinerating all enemies standing beneath it once it reaches the earth. However this damage is spread evenly over all enemies hit."
+    "DOTA_Tooltip_ability_invoker_sun_strike_lua_area_of_effect"       "RADIUS:"
+    "DOTA_Tooltip_ability_invoker_sun_strike_lua_delay"                "DELAY:"
+    "DOTA_Tooltip_ability_invoker_sun_strike_lua_damage"               "DAMAGE:"
+    "DOTA_Tooltip_ability_invoker_sun_strike_lua_Lore"                 "Harlek's Incantation of Incineration."
+    "DOTA_Tooltip_ability_invoker_sun_strike_lua_Note0"                "Gives vision of the target area before the strike."
+    "DOTA_Tooltip_ability_invoker_sun_strike_lua_Note1"                "Only half damage when casting cataclysm."
+    
+    "DOTA_Tooltip_ability_invoker_deafening_blast_lua"                     "Deafening Blast"
+    "DOTA_Tooltip_ability_invoker_deafening_blast_lua_Description"         "Invoker unleashes a mighty sonic wave in front of him, dealing damage to any enemy unit it collides with based on the level of <font color='#cabe68'>Exort</font>. The sheer impact from the blast is enough to knock those enemy units back for a duration based on the level of <font color='#7998b5'>Quas</font>, then disarm their attacks for a duration based on the level of <font color='#d671a9'>Wex</font>."
+    "DOTA_Tooltip_ability_invoker_deafening_blast_lua_damage"              "DAMAGE:"
+    "DOTA_Tooltip_ability_invoker_deafening_blast_lua_knockback_duration"  "KNOCKBACK DURATION:"
+    "DOTA_Tooltip_ability_invoker_deafening_blast_lua_disarm_duration"     "DISARM DURATION:"
+    "DOTA_Tooltip_modifier_invoker_deafening_blast_lua_knockback"          "Deafening Blast Knockback"
+    "DOTA_Tooltip_modifier_invoker_deafening_blast_lua_knockback_Description" "Reeling back from the deafening blast."
+    "DOTA_Tooltip_modifier_invoker_deafening_blast_lua_disarm"          "Deafening Blast Disarm"
+    "DOTA_Tooltip_modifier_invoker_deafening_blast_lua_disarm_Description"    "Cannot attack."
+    "DOTA_Tooltip_ability_invoker_deafening_blast_lua_Lore"           "Buluphont's Aureal Incapacitator."
+    "DOTA_Tooltip_ability_invoker_deafening_blast_lua_travel_distance"      "TRAVEL DISTANCE:"
+
+    "DOTA_Tooltip_ability_monkey_king_wukongs_command"                  "Wukongs Command(Unremovable)"
+
+    "DOTA_Tooltip_modifier_drow_ranger_trueshot_lua_aura_effect"           "Precision Aura"
+    "DOTA_Tooltip_modifier_drow_ranger_trueshot_lua_aura_effect_Description"    "Attack increased by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%"
+
+    "DOTA_Tooltip_ability_drow_ranger_trueshot_lua"                 "Precision Aura"
+    "DOTA_Tooltip_ability_drow_ranger_trueshot_lua_Description"           "Adds bonus damage to the physical attack of allied, <font color='#FF7800'>ranged</font> Hero units based on a percentage of Drow's agility.  Affects creeps for 30 seconds when cast."
+    "DOTA_Tooltip_ability_drow_ranger_trueshot_lua_Lore"              "Traxex' time spent alone in the forests of her Drow home has allowed her to teach other archers how to improve their bow skills."
+    "DOTA_Tooltip_ability_drow_ranger_trueshot_lua_trueshot_ranged_damage"      "%RANGE DAMAGE BONUS:"
+    "DOTA_Tooltip_ability_drow_ranger_trueshot_lua_radius"              "RADIUS:"
+
+    "next_ability_round_3"                                              "Next ability selection will be in round 3"
+    "next_ability_round_6"                                              "Next ability selection will be in round 6"
+    "next_ability_round_9"                                              "Next ability selection will be in round 9"
+    
+    "DOTA_Tooltip_ability_zuus_static_field_datadriven"                     "Static Field(Old Version)"
+    "DOTA_Tooltip_ability_zuus_static_field_datadriven_Description"         "Zeus shocks all nearby enemy units whenever he casts a spell, causing damage proportional to their current health.<br><br><font color='#FF7800'>Skills with no cooldown or no mana can't trigger.</font>"
+    "DOTA_Tooltip_ability_zuus_static_field_datadriven_Lore"                "The air crackles with static when the Thundergod walks the world."
+    "DOTA_Tooltip_ability_zuus_static_field_datadriven_Note0"               "The damage from Static Field is dealt before the damage from the used spell."
+    "DOTA_Tooltip_ability_zuus_static_field_datadriven_Note1"               "Using items trigger Static Field."
+    "DOTA_Tooltip_ability_zuus_static_field_datadriven_Note2"               "Does not require unit visibility to take effect."
+    "DOTA_Tooltip_ability_zuus_static_field_datadriven_damage_health_pct"   "%HEALTH REDUCTION:"
+    "DOTA_Tooltip_ability_zuus_static_field_datadriven_radius"              "RANGE:"
+    
+    "AbilityOrder_Close"                                                    "Close"
+    "AbilityOrderTitle"                                                     "Reorder Abilities"
+    "suicide_note"                                                          "In Single-Player Mode, you can use code -suicide to end game.In Single-Player Mode, PASS member can freely choose hero."
+    
+
+    "Round_Skeleton"                                                            "Skeleton"
+    "Round_Kobold"                                                              "Kobold"
+    "Round_Troll"                                                               "Troll"
+    "Round_Troll_And_Kobold"                                                    "Kobold Master"
+    "Round_Gnoll_Assassin"                                                      "Gnoll Assassin"
+    "Round_Ghost"                                                               "Ghost"
+    "Round_Harpy"                                                               "Harpy"
+    "Round_Crocodilian"                                                         "Crocodilian"
+    "Round_Chameleon"                                                           "Chameleon"
+    "Round_Greevil"                                                             "Greevil"
+    "Round_Centaur"                                                             "Centaur"
+    "Round_Wolf"                                                                "Gaint Wolf"
+    "Round_Satyr"                                                               "Satyr Mindstealer"
+    "Round_Ogre"                                                                "Ogre"
+    "Round_Golem"                                                               "Mud Golem"
+    "Round_Centaur_Big"                                                         "Centaur Conqueror"
+    "Round_Satyr_Big"                                                           "Satyr Banisher"
+    "Round_Hellbear"                                                            "Hellbear"
+    "Round_Wild"                                                                "Wildwing"
+    "Round_Dark_Troll"                                                          "Dark Troll"
+    "Round_Ogreseal"                                                            "Ogreseal"
+    "Round_Ogre_Warlord"                                                        "Ogre Warlord"
+    "Round_Dragon"                                                              "Dragon"
+    "Round_Large_Golem"                                                         "Large Golem"
+    "Round_Thunder_Lizard"                                                      "Thunder Lizard"
+    "Round_Prowler"                                                             "Ancient Prowler"
+    "Round_Frostbitten"                                                         "Frostbitten"
+    "Round_Roshan"                                                              "Roshan"
+     
+    "DOTA_InventoryMenu_TeleportToNeutralStash"                                 "Sell"
+    "DOTA_InventoryMenu_DropAtFountain"                                         "Sell"
+    "DOTA_Tooltip_modifier_aegis"                                               "Aegis of the Immortal"
+    "DOTA_Tooltip_modifier_aegis_Description"                                   "Reincarnation: Consumes a charge to brings you to life with full health and mana 5 seconds after you die. Meanwhile grant you Power of Reincarnation buff.<br>It will not trigger in PVP battle."
+    
+    "DOTA_Tooltip_modifier_aegis_buff"                                          "Aegis Protection"
+    "DOTA_Tooltip_modifier_aegis_buff_Description"                              "Reduce 65%% incoming damage, and increase 100%% outcoming damage."
+    
+    "DOTA_Tooltip_ability_wisp_spirits"                                         "Spirits(Scepter Not Work)"
+    
+    "GetPayPalLink"                                                             "Get PayPal Payment Link"
+    "CodeToolTip"                                                               "After payment, click EXCHANGE CODE:"
+    "PayPalWait"                                                                "Please wait a while..."
+    "TaobaoCodePayPalNotFinished"                                               "Payment not finished, code is invalide"
+    "TaobaoCodeTimeOut"                                                         "Time out, please try agian"
+    
+    "DOTA_Tooltip_ability_spider_nethertoxin_lua"                               "Nethertoxin"
+    "DOTA_Tooltip_ability_spider_nethertoxin_lua_Description"                   "Releases a Nethertoxin at the targeted area. Units in that area take damage over time. Disables passives of affected units."
+    "DOTA_Tooltip_ability_spider_nethertoxin_lua_duration"                      "Duration:"
+    "DOTA_Tooltip_ability_spider_nethertoxin_lua_radius"                        "Radius:"
+
+    "npc_dota_spider_melee"                                                     "Blood Thirst Spider"
+    "npc_dota_spider_range"                                                     "Toxin Spider"
+    "DOTA_Tooltip_modifier_spider_nethertoxin_lua"                              "Nethertoxin"
+    "DOTA_Tooltip_modifier_spider_nethertoxin_lua_Description"                  "Passive abilities disabled, and taking damage over time."
+    
+
+    "DOTA_Tooltip_ability_spider_explode_lua"                                   "Toxin Pustule"
+    "DOTA_Tooltip_ability_spider_explode_lua_Description"                       "Trigger a toxin explode when killed. Units in area take damage over time. Disables passives of affected units."
+     
+    "npc_dota_explode_spider"                                                   "Baneling"
+    "Round_Explode_Spider"                                                      "Baneling"
+    "Round_Spider"                                                              "Toxin Spider"
+
+    "player_name"                                                               "Player Name"
+    "score"                                                                     "Rank Score"
+    "play_time"                                                                 "Match No."
+    "early_leave"                                                               "Early Leave"
+    "actor"                                                                     "Actor"
+
+    "mark_as_actor"                                                             "Are you sure to report this player as actor?({d:time} tims left)"
+    "cancle"                                                                    "Cancle"
+    "marked_as_actor"                                                           "are marked as actor"
+    "marked_actor_note"                                                         "You can mark a player as actor(who throw a dual), by Alt+Click hero Icon."
+  
+    "npc_dota_creature_invoker_forged_spirit"                                   "Forged Spirit"
+
+    "DOTA_Tooltip_modifier_invoker_alacrity_lua"                                "Alacrity"
+    "DOTA_Tooltip_modifier_invoker_cold_snap_lua"                               "Cold Snap"
+    "DOTA_Tooltip_modifier_invoker_ghost_walk_lua"                              "Ghost Walk"
+
+    "DOTA_Tooltip_ability_luna_eclipse_lua"                         "Eclipse"
+    "DOTA_Tooltip_ability_luna_eclipse_lua_Lore"                    "In times of great need, Selemene herself descends into the world, blocking out the light and hope of the opposed."
+    "DOTA_Tooltip_ability_luna_eclipse_lua_Description"             "Showers random nearby enemies with strikes of Lucent Beam. These beams do not stun their targets, and there is a maximum number of times that a single target can be struck. Also turns day into night for %night_duration% seconds."
+    "DOTA_Tooltip_ability_luna_eclipse_lua_Note0"                   "Eclipse work if without Lucent Beam."
+    "DOTA_Tooltip_ability_luna_eclipse_lua_Note1"                   "Beams will stop if Luna is killed."
+    "DOTA_Tooltip_ability_luna_eclipse_lua_Note2"                   "Will not hit invisible units."
+    "DOTA_Tooltip_ability_luna_eclipse_lua_Note3"                   "There is a %beam_interval% seconds gap between beams, %beam_interval_scepter% seconds with scepter."
+    "DOTA_Tooltip_ability_luna_eclipse_lua_beams"                   "TOTAL BEAMS:"
+    "DOTA_Tooltip_ability_luna_eclipse_lua_damage"                   "DAMAGE:"
+    "DOTA_Tooltip_ability_luna_eclipse_lua_hit_count"                 "MAX BEAMS PER UNIT:"
+    "DOTA_Tooltip_ability_luna_eclipse_lua_radius"                    "RADIUS:"
+    "DOTA_Tooltip_ability_luna_eclipse_lua_abilityduration"               "ECLIPSE DURATION:"
+    "DOTA_Tooltip_ability_luna_eclipse_lua_beams_scepter"               "SCEPTER TOTAL BEAMS:"
+    "DOTA_Tooltip_ability_luna_eclipse_lua_duration_tooltip_scepter"          "SCEPTER DURATION:"
+    "DOTA_Tooltip_ability_luna_eclipse_lua_cast_range_tooltip_scepter"          "SCEPTER CAST RANGE:"   
+    "DOTA_Tooltip_ability_luna_eclipse_lua_aghanim_description"             "Allows Luna to cast Eclipse on an allied unit or herself and have its effects follow them, or cast it on an area. Also increases total beams and duration, removes the limit on beams per unit, and makes the beams appear twice as fast."
+    
+    "DOTA_Tooltip_ability_monkey_king_jingu_mastery_lua"                  "Jingu Mastery"
+    "DOTA_Tooltip_ability_monkey_king_jingu_mastery_lua_Description"      "Monkey King's attacks awaken the Jingu Bang's power. Upon the fourth hit on the same enemy hero, Monkey King earns four charged attacks that have bonus damage and lifesteal."
+    "DOTA_Tooltip_ability_monkey_king_jingu_mastery_lua_Lore"             "Always sensitive to the moods of its master, the Jingu Bang radiates power when Sun Wukong's combat fervor is on full display."
+    "DOTA_Tooltip_ability_monkey_king_jingu_mastery_lua_Note0"            "Hitting an enemy with Boundless Strike adds to the hit counter."
+    "DOTA_Tooltip_ability_monkey_king_jingu_mastery_lua_Note1"            "Repeatedly hitting an enemy refreshes the Jingu Mastery debuff duration."
+    "DOTA_Tooltip_ability_monkey_king_jingu_mastery_lua_Note2"            "Hit charges on enemies cannot be dispelled."
+    "DOTA_Tooltip_ability_monkey_king_jingu_mastery_lua_required_hits"    "REQUIRED HITS:"
+    "DOTA_Tooltip_ability_monkey_king_jingu_mastery_lua_counter_duration" "COUNTER DURATION:"
+    "DOTA_Tooltip_ability_monkey_king_jingu_mastery_lua_charges"          "CHARGES:"
+    "DOTA_Tooltip_ability_monkey_king_jingu_mastery_lua_bonus_damage"     "BONUS DAMAGE:"
+    "DOTA_Tooltip_ability_monkey_king_jingu_mastery_lua_lifesteal"        "%BONUS LIFESTEAL:"
+
+    "DOTA_Tooltip_modifier_monkey_king_jingu_mastery_lua_buff"                    "Jingu Mastery"
+    "DOTA_Tooltip_modifier_modifier_monkey_king_jingu_mastery_lua_count_debuff"   "Jingu Mastery"
+
+    "DOTA_Tooltip_ability_jakiro_liquid_fire_lua"                 "Liquid Fire"
+    "DOTA_Tooltip_ability_jakiro_liquid_fire_lua_Description"     "Jakiro burns his enemies in an area of effect with fire added to his attack, while slowing their attacks."
+    "DOTA_Tooltip_ability_jakiro_liquid_fire_lua_Lore"            "The left maw of Jakiro opens, laying waste to any in its path."
+    "DOTA_Tooltip_ability_jakiro_liquid_fire_lua_Note0"           "Works on both units and buildings."
+    "DOTA_Tooltip_ability_jakiro_liquid_fire_lua_slow_attack_speed_pct"     "ATTACK SLOW:"
+    "DOTA_Tooltip_ability_jakiro_liquid_fire_lua_damage"          "BURN DAMAGE:"
+    "DOTA_Tooltip_ability_jakiro_liquid_fire_lua_duration"        "DURATION:"
+    "DOTA_Tooltip_ability_jakiro_liquid_fire_lua_radius"          "RADIUS:"
+
+    "DOTA_Tooltip_ability_item_relearn_torn_page_lua"                            "Torn Page of Retraining Book"
+    "DOTA_Tooltip_ability_item_relearn_torn_page_lua_Description"                "<h1>Consume:Retraining</h1>Unlearns a <font color='#FF7800'>random</font> ability and draw a new one."
+    
+    "DOTA_Tooltip_ability_ogre_magi_multicast_lua"                        "Multicast"
+    "DOTA_Tooltip_ability_ogre_magi_multicast_lua_Description"            "Enables Ogre Magi to cast his spells multiple times with each use.<br><br>Ultimate Ability and Global Ability have less chance."
+    "DOTA_Tooltip_ability_ogre_magi_multicast_lua_multicast_2_times"      "%2X CAST CHANCE:"
+    "DOTA_Tooltip_ability_ogre_magi_multicast_lua_multicast_3_times"      "%3X CAST CHANCE:"
+    "DOTA_Tooltip_ability_ogre_magi_multicast_lua_multicast_4_times"      "%4X CAST CHANCE:"
+    "DOTA_Tooltip_modifier_multicast_lua"                                 "Multicast"
+
+    "DOTA_Tooltip_ability_item_summoner_crown_1"                           "Mask of Dominator"
+    "DOTA_Tooltip_ability_item_summoner_crown_1_Description"               "<h1>Passive:Dominator</h1>Increase summoned creeps damage, health, attack speed and armor.Based on hero attributes.<br><br>Serpent Ward, Death Ward, Rain of Chaos have less effect.<br><br>Spirit Bear's will refresh attributes after death."
+    "DOTA_Tooltip_ability_item_summoner_crown_1_bonus_all_stats"           "+$all"
+    "DOTA_Tooltip_ability_item_summoner_crown_1_hp_bonus_per_str"          "%Increase summoned HP per strength:"
+    "DOTA_Tooltip_ability_item_summoner_crown_1_damage_bonus_per_int"      "%Increase summoned damage per Intelligence:"
+    "DOTA_Tooltip_ability_item_summoner_crown_1_speed_bonus_per_agi"       "%Reduce summoned attack time per agility:"
+    "DOTA_Tooltip_ability_item_summoner_crown_1_armor_bonus_per_agi"       "Increase summoned armor per agility:"
+
+    "DOTA_Tooltip_ability_item_summoner_crown_2"                           "Hood of Dominator"
+    "DOTA_Tooltip_ability_item_summoner_crown_2_Description"               "<h1>Passive:Dominator</h1>Increase summoned creeps damage, health, attack speed and armor.Based on hero attributes.<br><br>Serpent Ward, Death Ward, Rain of Chaos have less effect.<br><br>Spirit Bear's will refresh attributes after death."
+    "DOTA_Tooltip_ability_item_summoner_crown_2_bonus_all_stats"           "+$all"
+    "DOTA_Tooltip_ability_item_summoner_crown_2_hp_bonus_per_str"          "%Increase summoned HP per strength:"
+    "DOTA_Tooltip_ability_item_summoner_crown_2_damage_bonus_per_int"      "%Increase summoned damage per Intelligence:"
+    "DOTA_Tooltip_ability_item_summoner_crown_2_speed_bonus_per_agi"       "%Reduce summoned attack time per agility:"
+    "DOTA_Tooltip_ability_item_summoner_crown_2_armor_bonus_per_agi"       "Increase summoned armor per agility:"
+    
+    "DOTA_Tooltip_ability_item_summoner_crown_3"                           "Crown of Dominator"
+    "DOTA_Tooltip_ability_item_summoner_crown_3_Description"               "<h1>Passive:Dominator</h1>Increase summoned creeps damage, health, attack speed and armor.Based on hero attributes.<br><br>Serpent Ward, Death Ward, Rain of Chaos have less effect.<br><br>Spirit Bear's will refresh attributes after death."
+    "DOTA_Tooltip_ability_item_summoner_crown_3_bonus_all_stats"           "+$all"
+    "DOTA_Tooltip_ability_item_summoner_crown_3_hp_bonus_per_str"          "%Increase summoned HP per strength:"
+    "DOTA_Tooltip_ability_item_summoner_crown_3_damage_bonus_per_int"      "%Increase summoned damage per Intelligence:"
+    "DOTA_Tooltip_ability_item_summoner_crown_3_speed_bonus_per_agi"       "%Reduce summoned attack time per agility:"
+    "DOTA_Tooltip_ability_item_summoner_crown_3_armor_bonus_per_agi"       "Increase summoned armor per agility:"
+    
+    "DOTA_Tooltip_ability_item_summon_book_lua"                              "Book of Summoner"
+    "DOTA_Tooltip_ability_item_summon_book_lua_Description"                  "<h1>Consume:Conjuration</h1>Unlearns a random ability and get a summon ability."
+    
+    "DOTA_Tooltip_ability_void_spirit_aether_remnant"                        "Aether Remnant(Unremovable)"
+
+    "DOTA_Tooltip_ability_undying_tombstone_lua"                              "Tombstone"
+    "DOTA_Tooltip_ability_undying_tombstone_lua_Description"                  "Summons a tombstone at the target point. Zombies will frequently spawn next to every enemy unit in the area around the Tombstone, and attack them. Zombies have the Deathlust ability, which causes their attacks to slow the target, and if the target reaches below a certain amount of health, increases the attack and movement speed of the zombie."
+    "DOTA_Tooltip_ability_undying_tombstone_lua_radius"                       "Zombie Spawn Radius:"
+    "DOTA_Tooltip_ability_undying_tombstone_lua_zombie_interval"              "Zombie Spawn Interval:"
+    "DOTA_Tooltip_ability_undying_tombstone_lua_zombie_health"                "Zombie Health:"
+    "DOTA_Tooltip_ability_undying_tombstone_lua_zombie_damage"                "Zombie Damage:"
+
+    "econ_season_2020_3"                                                      "2020 March Limited"
+    "econ_legend_three_star_chess"                                            "Legend Three Star Chess"
+    "econ_epic_three_star_chess"                                              "Epic Three Star Chess"
+    "econ_rare_three_star_chess"                                              "Rare Three Star Chess"
+    "econ_nightmare"                                                          "Nightmare"
+    "econ_blood_dance"                                                        "Blood Dance"
+    "econ_radiance"                                                           "Glow of Aegis"
+    "econ_music"                                                              "Music"
+    "econ_league_dog_wing"                                                    "Wing of League"
+    "econ_league_dog_ring"                                                    "Heart of League"
+
+    "compensate_relearn_and_torn_book"                                       " Get Book of Retraining And Torn Page"
+    "compensate_torn_book"                                                   " Get Torn Page of Retraining Book"
+
+    "Round_Timber_Spider"                                                     "Timber Spider"
+    "DOTA_Tooltip_ability_timber_spider_death_whirling"                       "Whirling Death"
+    "npc_dota_timber_spider"                                                  "Timber Spider"
+    "DOTA_Tooltip_ability_timber_spider_death_whirling_Description"           "Timber Spider whirls extremely sharp edges, damaging enemies and destroying trees. Whirling Death will deal double damage and stun when tree destroyed."
+    
+    "econ_purple_fireworks"                                                    "Purple Fireworks"
+    "econ_star_fire"                                                           "Star Fire"
+    "econ_purple_cloud"                                                        "Mythical Cloud"
+    "econ_jade"                                                                "Fel Jade"
+    "econ_butterfly"                                                           "Butterfly"
+    "econ_firefly"                                                             "Firefly"
+    "econ_shadow_word"                                                         "Shadow Word"
+    "econ_last_word"                                                           "Last Word"
+    "econ_repel_buff"                                                          "Omni Protection"
+    "econ_out_world"                                                           "Outworld"
+    "econ_galaxy_core"                                                         "Galaxy Core"
+    
+    "npc_dota_creature_tombstone_zombie"                                       "Zombie"
+    "npc_dota_creature_tombstone_zombie_torso"                                 "Zombie Torso"
+    "npc_dota_creature_tombstone"                                              "Tombstone"
+
+    "max_bet"                                                                  "Max"
+
+    "auto_duel_vision"                                                         "Auto-Spectate Duel"
+    "auto_duel_vision_hint"                                                    "When you finish round, your camera will move to duel arena so you can watch the battle"
+    "auto_creeps_camera"                                                       "Auto-Spectate Creep Fight"
+    "auto_creeps_camera_hint"                                                  "When you finish round, your camera will move to random creep-fighting team"
+    
+    "one_team_in_multi_map_no_record"                                          "One team in Multiplayer-Mode is casual game, will not recored world rank."
+    "DuosMode"                                                                 "Dous Mode"
+    "LoadingTip_12"                                                            "Helm of Dominator can be upgraded to Mask of Dominator, which can increase summoned creeps health and damage."
+    "LoadingTip_13"                                                            "Hero who join duel will get free bet on self. Duel winner will get extra dividends."
+    "BarrageSettingTitle"                                                      "Barrage Setting"
+    "SetBarrageOpacity"                                                        "Barrage Opacity"
+    "CameraSettingTitle"                                                       "Camera Setting"
+    "block_player_say"                                                         "Block Chat"
+
+    "DOTA_Tooltip_ability_item_aegis_lua"                                      "Aegis of Immortal"
+    "DOTA_Tooltip_ability_item_aegis_lua_Description"                          "<h1>Consume:Immortal</h1>Get a stack of Aegis of Immortal Buff"
+
+    "DOTA_Tooltip_ability_item_ranged_cleave"                                  "Replica Rackatee"
+    "DOTA_Tooltip_ability_item_ranged_cleave_Description"                      "<h1>Passive: Scatterblast</h1>RANGED ONLY:Shot splits %max_target% times. Split shot deal %split_shot_damage%% normal damage. Grants %bonus_range% bonus attack range.<br><br>Fly unit will not have effect."
+    "DOTA_Tooltip_ability_item_ranged_cleave_bonus_str"                        "+$str"
+    "DOTA_Tooltip_ability_item_ranged_cleave_bonus_agi"                        "+$agi"
+    "DOTA_Tooltip_ability_item_ranged_cleave_lore"                             "A triple-barreled, wide-bore shotgun, made after the design of one Beatrix Snapfire. Not as devastating as the original, but packs quite a punch."
+
+    
+    "DOTA_Tooltip_ability_item_saw_wheel"                                      "Timber Saw Wheel"
+    "DOTA_Tooltip_ability_item_saw_wheel_bonus_dmg"                            "+$damage"
+    "DOTA_Tooltip_ability_item_saw_wheel_Description"                          "<h1>Active: Saw Whirling</h1>Whirls extremely sharp edges, damaging enemies in an area.\n<h1>Passive：Timber Saw</h1>Melee Only-Whirling will deal extra damage and stun when tree destroyed.<br><br>Flying hero will not work."
+    "DOTA_Tooltip_ability_item_saw_wheel_damage"                               "DAMAGE:"
+    "DOTA_Tooltip_ability_item_saw_wheel_damage_with_tree"                     "DAMAGE WITH TREE:"
+    "DOTA_Tooltip_ability_item_saw_wheel_stun_with_tree"                       "STUN WITH TREE:"
+
+    "custom_end_screen_bet_reward_gold"                                        "Bet Reward"
+    "MatchKeyTitle"                                                            "PASSWORD MATCH"
+    "MatchWebTip"                                                              "Exchange for LOBBY PASSWORD："
+    "YourKey"                                                                  "Your Key:"
+    "password_lobby_note"                                                      "This game using LOBBY PASSWORD, you will get extra Rank Score and Joker Coin when game end."
+    "str"                                                                      "Strength"
+    "agi"                                                                      "Agility"
+    "int"                                                                      "Intelligence"
+    "ban_abilities"                                                            "BAN ABILITY"
+    "pass_only"                                                                "PASS MEMBER ONLY"
+    "subscribe_pass"                                                           "SUBSCRIBE PASS"
+    "pass_title"                                                               "BECOME PASS MEMBER"
+    "pass_text"                                                                "Owning a CUSTOM HERO CHAOS PASS will unlock：\n●Ban ability in game prepare phase.\n●More chance to mark actor.\n●Demo cosmetics.\n●Show more information in bet page.\n●In Single-Player Mode, choose hero freely."
+    "subscribe_by_400_coins"                                                   "400 JOKER COIN for 30 days"
+    "subscribe_by_taobao"                                                      "TAOBAO CODE for 30 days"
+    "pass_until"                                                               "PASS UNTIL: "
+    "ban"                                                                      "BAN: "
+    "waiting_for_pass"                                                         "Waiting Player Connecting..."
+    "time_left"                                                                "{d:times} Times Left"
+
+    "econ_douyu_new_1"                                                         "斗鱼双雄赛冠军"
+    "econ_douyu_new_2"                                                         "斗鱼双雄赛亚军"
+    "econ_douyu_new_3"                                                         "斗鱼双雄赛季军"
+
+    "PassTaobaoCodeSuccess"                                                    "PASS Actived"
+    "demo"                                                                     "DEMO"
+    "banned_in_game"                                                           "are banned in this game"
+    
+    "DOTA_Tooltip_ability_item_paragon_book"                                   "Book of Paragon"
+    "DOTA_Tooltip_ability_item_paragon_book_Description"                       "<h1>Consume: Improvement</h1>Ability number + 1, learn a new ability.<br><br>Max 1 use."
+    "DOTA_Tooltip_ability_item_paragon_book_lore"                              "A secret tome containing a fragment of the Lord of Darkness' soul. Any who gaze upon its pages unlock their true potential."
+  
+    "ToggleAbilities"                                                          "Abilities"
+    "ToggleItems"                                                              "Items"
+    "ToggleAbilitiesDisplay"                                                   "Display Players abilities"
+    "ToggleItemsDisplay"                                                       "Display Players items"
+
+    "Player"                                                                   "Player"
+    "TeamScore"                                                                "Economy"
+    "Items"                                                                    "Items"
+    "Abilities"                                                                "Abilities"
+    "DamageCount"                                                              "Damage Count"
+
+    "Kills"                                                                    "K"
+    "Deaths"                                                                   "D"
+    "Assists"                                                                  "A"
+
+    "econ_season_2020_4"                                                      "2020 April Limited"
+    "Ready"                                                                   "Ready"
+
+    "DOTA_Tooltip_ability_item_poor_mans_shield_Lore"     "<font color='#ffd700'>Selling price: <b>250</b></font>"
+    "DOTA_Tooltip_ability_item_keen_optic_Lore"           "<font color='#ffd700'>Selling price: <b>250</b></font>"
+    "DOTA_Tooltip_ability_item_royal_jelly_Lore"          "<font color='#ffd700'>Selling price: <b>250</b></font>"
+    "DOTA_Tooltip_ability_item_ocean_heart_Lore"          "<font color='#ffd700'>Selling price: <b>250</b></font>"
+    "DOTA_Tooltip_ability_item_mango_tree_Lore"           "<font color='#ffd700'>Selling price: <b>250</b></font>"
+    "DOTA_Tooltip_ability_item_arcane_ring_Lore"          "<font color='#ffd700'>Selling price: <b>250</b></font>"
+    "DOTA_Tooltip_ability_item_elixer_Lore"               "<font color='#ffd700'>Selling price: <b>250</b></font>"
+    "DOTA_Tooltip_ability_item_broom_handle_Lore"         "<font color='#ffd700'>Selling price: <b>250</b></font>"
+    "DOTA_Tooltip_ability_item_ironwood_tree_Lore"        "<font color='#ffd700'>Selling price: <b>250</b></font>"
+    "DOTA_Tooltip_ability_item_trusty_shovel_Lore"        "<font color='#ffd700'>Selling price: <b>250</b></font>"
+    "DOTA_Tooltip_ability_item_faded_broach_Lore"         "<font color='#ffd700'>Selling price: <b>250</b></font>"
+
+    "DOTA_Tooltip_ability_item_grove_bow_Lore"            "<font color='#ffd700'>Selling price: <b>500</b></font>"
+    "DOTA_Tooltip_ability_item_vampire_fangs_Lore"        "<font color='#ffd700'>Selling price: <b>500</b></font>"
+    "DOTA_Tooltip_ability_item_ring_of_aquila_Lore"       "<font color='#ffd700'>Selling price: <b>500</b></font>"
+    "DOTA_Tooltip_ability_item_pupils_gift_Lore"          "<font color='#ffd700'>Selling price: <b>500</b></font>"
+    "DOTA_Tooltip_ability_item_imp_claw_Lore"             "<font color='#ffd700'>Selling price: <b>500</b></font>"
+    "DOTA_Tooltip_ability_item_philosophers_stone_Lore"   "<font color='#ffd700'>Selling price: <b>500</b></font>"
+    "DOTA_Tooltip_ability_item_dragon_scale_Lore"         "<font color='#ffd700'>Selling price: <b>500</b></font>"
+    "DOTA_Tooltip_ability_item_essence_ring_Lore"         "<font color='#ffd700'>Selling price: <b>500</b></font>"
+    "DOTA_Tooltip_ability_item_nether_shawl_Lore"         "<font color='#ffd700'>Selling price: <b>500</b></font>"
+    "DOTA_Tooltip_ability_item_helm_of_the_undying_Lore"  "<font color='#ffd700'>Selling price: <b>500</b></font>"
+
+    "DOTA_Tooltip_ability_item_vambrace_Lore"             "<font color='#ffd700'>Selling price: <b>750</b></font>"
+    "DOTA_Tooltip_ability_item_clumsy_net_Lore"           "<font color='#ffd700'>Selling price: <b>750</b></font>"
+    "DOTA_Tooltip_ability_item_tome_of_aghanim_Lore"      "<font color='#ffd700'>Selling price: <b>750</b></font>"
+    "DOTA_Tooltip_ability_item_repair_kit_Lore"           "<font color='#ffd700'>Selling price: <b>750</b></font>"
+    "DOTA_Tooltip_ability_item_craggy_coat_Lore"          "<font color='#ffd700'>Selling price: <b>750</b></font>"
+    "DOTA_Tooltip_ability_item_greater_faerie_fire_Lore"  "<font color='#ffd700'>Selling price: <b>750</b></font>"
+    "DOTA_Tooltip_ability_item_quickening_charm_Lore"     "<font color='#ffd700'>Selling price: <b>750</b></font>"
+    "DOTA_Tooltip_ability_item_mind_breaker_Lore"         "<font color='#ffd700'>Selling price: <b>750</b></font>"
+    "DOTA_Tooltip_ability_item_third_eye_Lore"            "<font color='#ffd700'>Selling price: <b>750</b></font>"
+    "DOTA_Tooltip_ability_item_spider_legs_Lore"          "<font color='#ffd700'>Selling price: <b>750</b></font>"
+    "DOTA_Tooltip_ability_item_enchanted_quiver_Lore"     "<font color='#ffd700'>Selling price: <b>750</b></font>"
+    "DOTA_Tooltip_ability_item_paladin_sword_Lore"        "<font color='#ffd700'>Selling price: <b>750</b></font>"
+    "DOTA_Tooltip_ability_item_orb_of_destruction_Lore"   "<font color='#ffd700'>Selling price: <b>750</b></font>"
+    "DOTA_Tooltip_ability_item_titan_sliver_Lore"         "<font color='#ffd700'>Selling price: <b>750</b></font>"
+    "DOTA_Tooltip_ability_item_spy_gadget_Lore"           "<font color='#ffd700'>Selling price: <b>750</b></font>"
+
+    "DOTA_Tooltip_ability_item_witless_shako_Lore"        "<font color='#ffd700'>Selling price: <b>1000</b></font>"
+    "DOTA_Tooltip_ability_item_timeless_relic_Lore"       "<font color='#ffd700'>Selling price: <b>1000</b></font>"
+    "DOTA_Tooltip_ability_item_spell_prism_Lore"          "<font color='#ffd700'>Selling price: <b>1000</b></font>"
+    "DOTA_Tooltip_ability_item_princes_knife_Lore"        "<font color='#ffd700'>Selling price: <b>1000</b></font>"
+    "DOTA_Tooltip_ability_item_flicker_Lore"              "<font color='#ffd700'>Selling price: <b>1000</b></font>"
+    "DOTA_Tooltip_ability_item_ninja_gear_Lore"           "<font color='#ffd700'>Selling price: <b>1000</b></font>"
+    "DOTA_Tooltip_ability_item_illusionsts_cape_Lore"     "<font color='#ffd700'>Selling price: <b>1000</b></font>"
+    "DOTA_Tooltip_ability_item_havoc_hammer_Lore"         "<font color='#ffd700'>Selling price: <b>1000</b></font>"
+    "DOTA_Tooltip_ability_item_panic_button_Lore"         "<font color='#ffd700'>Selling price: <b>1000</b></font>"
+    "DOTA_Tooltip_ability_item_the_leveller_Lore"         "<font color='#ffd700'>Selling price: <b>1000</b></font>"
+    "DOTA_Tooltip_ability_item_minotaur_horn_Lore"        "<font color='#ffd700'>Selling price: <b>1000</b></font>"
+
+    "DOTA_Tooltip_ability_item_force_boots_Lore"          "<font color='#ffd700'>Selling price: <b>2000</b></font>"
+    "DOTA_Tooltip_ability_item_seer_stone_Lore"           "<font color='#ffd700'>Selling price: <b>2000</b></font>"
+    "DOTA_Tooltip_ability_item_mirror_shield_Lore"        "<font color='#ffd700'>Selling price: <b>2000</b></font>"
+    "DOTA_Tooltip_ability_item_fallen_sky_Lore"           "<font color='#ffd700'>Selling price: <b>2000</b></font>"
+    "DOTA_Tooltip_ability_item_apex_Lore"                 "<font color='#ffd700'>Selling price: <b>2000</b></font>"
+    "DOTA_Tooltip_ability_item_ballista_Lore"             "<font color='#ffd700'>Selling price: <b>2000</b></font>"
+    "DOTA_Tooltip_ability_item_woodland_striders_Lore"    "<font color='#ffd700'>Selling price: <b>2000</b></font>"
+    "DOTA_Tooltip_ability_item_trident_Lore"              "<font color='#ffd700'>Selling price: <b>2000</b></font>"
+    "DOTA_Tooltip_ability_item_recipe_trident_Lore"       "<font color='#ffd700'>Selling price: <b>2000</b></font>"
+    "DOTA_Tooltip_ability_item_demonicon_Lore"            "<font color='#ffd700'>Selling price: <b>2000</b></font>"
+    "DOTA_Tooltip_ability_item_pirate_hat_Lore"           "<font color='#ffd700'>Selling price: <b>2000</b></font>"
+    "DOTA_Tooltip_ability_item_ex_machina_Lore"           "<font color='#ffd700'>Selling price: <b>2000</b></font>"
+    "DOTA_Tooltip_ability_item_desolator_2_Lore"          "<font color='#ffd700'>Selling price: <b>2000</b></font>"
+    "DOTA_Tooltip_ability_item_fusion_rune_Lore"          "<font color='#ffd700'>Selling price: <b>2000</b></font>"
+    "DOTA_Tooltip_ability_item_phoenix_ash_Lore"          "<font color='#ffd700'>Selling price: <b>2000</b></font>"
+
+    "Swap_Button"                                         "Swap"
+
+    "swap_locked"                                          "This ability is already proposed to swap"
+    "swap_cooldown"                                        "Swap for this ability is on cooldown"
+
+    "swap_proposed"                                        "Swap Proposal from"
+    "approve_swap"                                         "Accept"
+    "decline_swap"                                         "Decline"
+
+    "already_have_this_ability"                            "You already have this ability"
+    "player_has_this_ability"                              "This player already has this ability"
+    "swap_declined"                                        "Your Teammate decline swap proposal"
+
+    "DOTA_Tooltip_ability_item_swap_essence"                "Primal Essence"
+    "DOTA_Tooltip_ability_item_swap_essence_Description"    "<h1>Consume：Primal Swap</h1>Only for 2x6 Map<br>Swap an ability with your teammate."
+    
+    "only_multi_player_map"                                "Only for 2x6 map"
+    "only_use_one_time"                                    "Can only use one time"
+    "conflict_ability"                                     "This ability is in conflict with your other ability, can't swap."
+    "conflict_hero"                                        "This ability is in conflict with your hero, can't swap."
+    "5v5_no_record"                                        "For now, 5V5 will not record in MMR."
+
+    "DOTA_Tooltip_ability_test_zuus_thundergods_wrath"               "Ultimate Thundergods Wrath"
+    "DOTA_Tooltip_ability_test_zuus_thundergods_wrath_Description"   "Kill all enemies heroes."
+
+    "DOTA_Tooltip_ability_test_kill_all_neutral"                      "Mega Reaper"
+    "DOTA_Tooltip_ability_test_kill_all_neutral_Description"          "Kill all neutral creature in map."
+
+    "DOTA_Tooltip_ability_test_zuus_lightning_bolt"                   "Mega Bolt"
+    "DOTA_Tooltip_ability_test_zuus_lightning_bolt_Description"       "Kill any enemy in map."
+
+    "BanAbilityTitle"                                                 "BANED ABILITIES"
+
+    "drag_description"                                                "Drag Abilities to Reorder"
+    "reorder_interrupted"                                             "Reorder Interrupted"
+    "AbilityOrderSubTitle"                                            "Or Press F8 And Drag Abilities to Reorder"
+    
+    //Abaddon
+    "DOTA_Tooltip_ability_abaddon_borrowed_time_ability_note"       "Cannot be <font color='#B694FF'>Rearmed</font>"
+
+    //Alchemist
+    "DOTA_Tooltip_ability_alchemist_unstable_concoction_ability_note"   "Can be used on <font color='#B694FF'>creeps</font>.<br>Cannot be <font color='#B694FF'>Multicast</font>"
+
+    //Ancient Apparition
+
+    //Anti-Mage
+
+    //Arc Warden
+    "DOTA_Tooltip_ability_arc_warden_tempest_double_ability_note"     "Cannot be <font color='#B694FF'>Rearmed</font>"
+
+    //Axe
+
+    //Bane
+    "DOTA_Tooltip_ability_bane_enfeeble_ability_note"             "Is only applied by <font color='#B694FF'>Unit Target</font> abilities (There are some exceptions)"
+
+    //Batrider
+
+    //Beastmaster
+    "DOTA_Tooltip_ability_beastmaster_wild_axes_ability_note"     "If stuck in 0 cooldown, use EMPTY SCROLL to re-active."
+
+    //Bloodseeker
+
+    //Bounty Hunter
+
+    //Brewmaster
+
+    //Bristleback
+
+    //Broodmother
+
+    //Centaur Warrunner
+
+    //Chaos Knight
+
+    //Chen
+
+    //Clinkz
+    "DOTA_Tooltip_ability_clinkz_wind_walk_ability_note"        "<font color='#B694FF'>Aghanim's Scepter</font> effect requires <font color='#B694FF'>Burning Army</font>"
+    "DOTA_Tooltip_ability_clinkz_burning_army_ability_note"     "<font color='#B694FF'>Burning Army</font> also attacks <font color='#B694FF'>creeps.</font>"
+
+    //Clockwerk
+    "DOTA_Tooltip_ability_rattletrap_overclocking_ability_note"     "Cannot be <font color='#B694FF'>Rearmed</font>"
+
+    //Crystal Maiden
+
+
+    //Dark Seer
+
+
+    //Dark Willow
+    "DOTA_Tooltip_ability_dark_willow_shadow_realm_ability_note"      "<font color='#B694FF'>Bad Juju</font> cannot be found if you have <font color='#B694FF'>Shadow Realm</font><br>Can be choosen by <font color='#B694FF'>Nevermore</font> nor <font color='#B694FF'>Drow Ranger</font>"
+
+    //Dazzle
+    "DOTA_Tooltip_ability_dazzle_bad_juju_ability_note"           "<font color='#B694FF'>Phase Shift</font>, <font color='#B694FF'>Shadow Realm</font> and <font color='#B694FF'>Walrus Punch</font> cannot be found if you have <font color='#B694FF'>Bad Juju</font>"
+    "DOTA_Tooltip_ability_dazzle_shallow_grave_ability_note"      "Cannot be <font color='#B694FF'>Rearmed</font>"
+
+    //Death Prophet
+
+    //Disruptor
+
+    //Doom
+
+    //Dragon Knight
+
+    //Drow Ranger
+    "DOTA_Tooltip_ability_drow_ranger_marksmanship_ability_note"      "<font color='#B694FF'>Time Lock</font> cannot be found if you have <font color='#B694FF'>Marksmanship</font>"
+
+    //Earth Spirit
+
+    //Earthshaker
+
+    //Elder Titan
+    "DOTA_Tooltip_ability_elder_titan_ancestral_spirit_ability_note"    "Cannot be <font color='#B694FF'>retrained</font> or <font color='#B694FF'>swapped</font>"
+    "DOTA_Tooltip_ability_elder_titan_natural_order_note"               "Does not affect <font color='#B694FF'>Roshan</font><br>The base magic resistance reduction won't work unless you have <font color='#B694FF'>Ancestral Spirit</font> or are <font color='#B694FF'>Elder Titan</font>"
+    "DOTA_Tooltip_ability_elder_titan_earth_splitter_note"              "Does not affect <font color='#B694FF'>Roshan</font>"
+
+    //Ember Spirit
+    "DOTA_Tooltip_ability_ember_spirit_sleight_of_fist_ability_note"    "Cannot be <font color='#B694FF'>Multicast</font>"
+
+    //Enchantress
+
+    //Enigma
+
+    //Faceless Void
+    "DOTA_Tooltip_ability_faceless_void_time_lock_ability_note"     "<font color='#B694FF'>Marksmanship</font> cannot be found if you have <font color='#B694FF'>Time Lock</font>"
+
+    //Grimstroke
+
+    //Gyrocopter
+    "DOTA_Tooltip_ability_gyrocopter_flak_cannon_ability_note"       "<font color='#B694FF'>Aghanim's Sceptre</font> effect only works on <font color='#B694FF'>Gyrocopter</font>"
+
+    //Huskar
+    "DOTA_Tooltip_ability_frostivus2018_huskar_burning_spear_ability_note"     "Is affected by <font color='#B694FF'>talents</font>"
+
+    //Io
+    "DOTA_Tooltip_ability_wisp_spirits_ability_note"            "You must either be <font color='#B694FF'>IO</font> or buy<font color='#B694FF'>Aghanim's Scepter</font> before <font color='#B694FF'>Spirits</font> is levelled to level 4 for <font color='#B694FF'>Spirits Aghanim's</font> effect to work"
+
+    //Jakiro
+
+    //Juggernaut
+
+    //Keeper of the Light
+
+    //Kunkka
+
+    //Legion Commander
+
+    //Leshrac
+
+    //Lich
+
+    //Lifestealer
+
+    //Lina
+
+    //Lion
+
+    //Lone Druid
+    "DOTA_Tooltip_ability_lone_druid_spirit_bear_ability_note"      "For <font color='#B694FF'>Spirit Bear</font> to have its stats increased by <font color='#B694FF'>Crown of the Dominator</font> it must either die and be summoned agian or leveled up.<br>Cannot find <font color='#B694FF'>True Form.</font> if you have <font color='#B694FF'>Spirit Bear.</font>"
+    "DOTA_Tooltip_ability_lone_druid_true_form_ability_note"        "<font color='#B694FF'>Spirit Bear</font> cannot be found if you have <font color='#B694FF'>True Form</font>"
+
+    //Luna
+
+    //Lycan
+
+    //Magnus
+    "DOTA_Tooltip_ability_magnataur_skewer_ability_note"        "Can be used on <font color='#B694FF'>creeps</font>."   
+
+    //Mars
+
+    //Medusa
+
+    //Meepo
+
+    //Mirana
+
+    //Monkey King
+    "DOTA_Tooltip_ability_monkey_king_wukongs_command_ability_note"    "Can't be choosen by Razor nor Silencer"   
+
+    //Morphling
+
+    //Naga Siren
+
+    //Nature's Prophet
+    "DOTA_Tooltip_ability_furion_wrath_of_nature_ability_note"      "Cannot be <font color='#B694FF'>Rearmed</font>"
+
+    //Necrophos
+
+    //Night Stalker
+
+    //Nyx Assassin
+
+    //Ogre Magi
+
+    //Omniknight
+
+    //Oracle
+    "DOTA_Tooltip_ability_oracle_false_promise_ability_note"      "Cannot be <font color='#B694FF'>Rearmed</font>"
+
+    //Outworld Devourer
+
+
+    //Pangolier
+    "DOTA_Tooltip_ability_pangolier_shield_crash_ability_note"        "<font color='#B694FF'>Aghanim's Scepter</font> effect requires <font color='#B694FF'>Swashbuckle</font>"
+
+    //Phantom Assassin
+    "DOTA_Tooltip_ability_phantom_assassin_stifling_dagger_nb2017_ability_note"       "Not affected by the <font color='#B694FF'>Triple Strike Stifling Dagger talent</font>"
+
+    //Phantom Lancer
+
+    //Phoenix
+    "DOTA_Tooltip_ability_phoenix_supernova_ability_note"       "Cannot be <font color='#B694FF'>Rearmed</font>"
+
+    //Puck
+    "DOTA_Tooltip_ability_puck_phase_shift_ability_note"      "<font color='#B694FF'>Bad Juju</font> cannot be found if you have <font color='#B694FF'>Phase Shift</font><br>Can be choosen by <font color='#B694FF'>Nevermore</font> nor <font color='#B694FF'>Drow Ranger</font>"
+    "DOTA_Tooltip_ability_puck_dream_coil_ability_note"       "Can be used on <font color='#B694FF'>creeps</font>."
+
+    //Pudge
+    "DOTA_Tooltip_ability_pudge_flesh_heap_ability_note"      "<font color='#B694FF'>Flesh Heap</font> strength bonus is lost if <font color='#B694FF'>Flesh Heap</font> is retrained"
+
+    //Pugna
+
+    //Queen of Pain
+
+    //Razor
+    "DOTA_Tooltip_ability_razor_static_link_ability_note"        "Can be used on <font color='#B694FF'>creeps</font>."
+
+    //Riki
+
+    //Rubick
+
+    //Sand King
+
+
+    //Shadow Demon
+    "DOTA_Tooltip_ability_shadow_demon_disruption_ability_note"   "Can be used on <font color='#B694FF'>creeps</font>, but will not create illusions from them."
+
+    //Shadow Fiend
+    "DOTA_Tooltip_ability_nevermore_requiem_ability_note"         "Requires <font color='#B694FF'>Necromastery</font> to have an effect"
+
+    //Shadow Shaman
+    "DOTA_Tooltip_ability_shadow_shaman_mass_serpent_ward_ability_note"   "Cannot be <font color='#B694FF'>Rearmed</font>"
+
+    //Silencer
+    "DOTA_Tooltip_ability_silencer_glaives_of_wisdom_ability_note"      "<font color='#B694FF'>Glaives of Wisdom</font> permanent intelligence is lost if <font color='#B694FF'>Glaives of Wisdom</font> is retrained"
+
+
+    //Skywrath Mage
+
+    //Slardar
+    "DOTA_Tooltip_ability_slardar_bash_ability_note"                   "Get Level one for free."
+
+    //Slark
+    "DOTA_Tooltip_ability_slark_shadow_dance_ability_note"      "Cannot be <font color='#B694FF'>Rearmed</font>"
+    "DOTA_Tooltip_ability_slark_essence_shift_ability_note"     "<font color='#B694FF'>Essence Shift</font> permanent agility is lost if <font color='#B694FF'>Essence Shift</font> is retrained"
+
+    //Snapfire
+
+    //Sniper
+    "DOTA_Tooltip_ability_sniper_take_aim_ability_note"            "Only works for ranged heroes"
+
+    //Spectre
+    "DOTA_Tooltip_ability_spectre_haunt_ability_note"               "Cannot be <font color='#B694FF'>Rearmed</font>"
+
+    //Spirit Breaker
+    "DOTA_Tooltip_ability_spirit_breaker_nether_strike_ability_note"   "Requires <font color='#B694FF'>Greater Bash</font> in order to bash the target"
+
+    //Storm Spirit
+
+    //Sven
+    "DOTA_Tooltip_ability_sven_great_cleave_ability_note"   "Works on both <font color='#B694FF'>ranged</font> and <font color='#B694FF'>melee</font> heroes<br><font color='#B694FF'>Cleave</font> is applied from the hero's location"
+
+    //Techies
+
+    //Templar Assassin
+
+    //Terrorblade
+    
+    //Tidehunter
+
+    //Timbersaw
+    "DOTA_Tooltip_ability_shredder_chakram_ability_note"          "Cannot be <font color='#B694FF'>Multicast</font><br>Cannot be <font color='#B694FF'>unlearned</font> or <font color='#B694FF'>swapped</font>"
+    "DOTA_Tooltip_ability_shredder_chakram_2_ability_note"        "Cannot be <font color='#B694FF'>Multicast</font>"
+
+    //Tinker
+    "DOTA_Tooltip_ability_tinker_rearm_datadriven_ability_note"         "Is available to be levelled at levels 6, 21 & 36<br>Does not affect some abilities"
+    "DOTA_Tooltip_ability_tinker_heat_seeking_missile_ability_note"     "Affects <font color='#B694FF'>creeps</font>."
+
+    //Tiny
+
+    //Treant Protector
+
+    //Troll Warlord
+
+    //Tusk
+    "DOTA_Tooltip_ability_tusk_walrus_punch_ability_note"                   "<font color='#B694FF'>Bad Juju</font> cannot be found if you have <font color='#B694FF'>Walrus Punch</font>"
+
+    //Underlord
+    "DOTA_Tooltip_ability_abyssal_underlord_atrophy_aura_ability_note"      "<font color='#B694FF'>Atrophy Aura</font> permanent damage is lost if <font color='#B694FF'>Atrophy Aura</font> is retrained"
+
+    //Undying
+    "DOTA_Tooltip_ability_undying_tombstone_ability_note"     "Cannot be <font color='#B694FF'>Rearmed</font>"
+    "DOTA_Tooltip_ability_undying_decay_ability_note"         "Can be used on <font color='#B694FF'>creeps</font>. Deals damage, but does not steal strength from them."
+
+    //Ursa
+
+    //Vengeful Spirit
+
+    //Venomancer
+
+    //Viper
+
+    //Visage
+
+    //Void Spirit
+    "DOTA_Tooltip_ability_void_spirit_aether_remnant_ability_note"    "Cannot be <font color='#B694FF'>unlearned</font> or <font color='#B694FF'>swapped</font>"
+
+    //Warlock
+    "DOTA_Tooltip_ability_warlock_fatal_bonds_ability_note"         "Cannot be <font color='#B694FF'>Multicast</font><br>Cannot be <font color='#B694FF'>Rearmed</font>"
+    "DOTA_Tooltip_ability_warlock_rain_of_chaos_ability_note"       "Cannot be <font color='#B694FF'>Rearmed</font>"
+
+    //Weaver
+
+    //Windranger
+
+    //Winter Wyvern
+
+    //Witch Doctor
+    "DOTA_Tooltip_ability_witch_doctor_maledict_ability_note"     "Can be used on <font color='#B694FF'>creeps</font>."
+
+    //Wraith King
+    "DOTA_Tooltip_ability_skeleton_king_reincarnation_ability_note"     "Cannot be <font color='#B694FF'>Rearmed</font><br><font color='#B694FF'>Aghanim's Scepter</font> effect has been removed"
+
+    //Zeus
+    "DOTA_Tooltip_ability_zuus_thundergods_wrath_ability_note"      "Cannot be <font color='#B694FF'>Rearmed</font>"
+    "DOTA_Tooltip_ability_zuus_static_field_ability_note"           "Only gets applied by regular <font color='#B694FF'>Zeus</font> spells"
+    
+    "econ_season_2020_5"                                            "2020 May Limited"
+  }
+
+}

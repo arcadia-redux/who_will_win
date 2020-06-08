@@ -1,0 +1,804 @@
+
+// Dota Abilities Override File
+"DOTAAbilities"
+{
+	"Version"		"1"	
+
+	"winter_wyvern_arctic_burn"
+	{
+		"AbilitySpecial"
+		{			
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"percent_damage"		"2 2.75 3.5 4.25"
+			}
+		}
+	}
+
+	"doom_bringer_infernal_blade"
+	{
+		"AbilitySpecial"
+		{			
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"burn_damage_pct"		"0.6 1.2 1.8 2.4"
+				"LinkedSpecialBonus"	"special_bonus_unique_doom_1"
+			}
+		}
+	}
+
+	"death_prophet_spirit_siphon"
+	{
+		"AbilitySpecial"
+		{			
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"damage_pct"					"0.75 1.5 2.25 3"
+				"LinkedSpecialBonus"	        "special_bonus_unique_death_prophet_3"
+			}
+		}
+	}
+
+
+	"abyssal_underlord_firestorm"
+	{
+
+		"AbilitySpecial"
+		{
+			"06"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"burn_damage"					"0.4 0.8 1.2 1.6"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+		}
+	}
+
+	"elder_titan_earth_splitter"
+	{
+		"AbilitySpecial"
+		{
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_pct"				"22.5 30 37.5"
+			}
+		}
+	}
+
+	"enigma_midnight_pulse"
+	{
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_percent"			"1.425 1.65 1.875 2.1"
+			}
+		}
+	}
+    
+	"phoenix_sun_ray"
+	{
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"			    "FIELD_FLOAT"
+				"hp_perc_damage"		"0.8 1.6 2.4 3.2"
+				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_5"
+			}
+			"08"
+			{
+				"var_type"			    "FIELD_FLOAT"
+				"forward_move_speed"	"100"
+			}
+		}
+	}
+	
+    "phantom_assassin_blur"
+    {
+    	"AbilitySpecial"
+		{
+	    	"02"
+			{
+					"var_type"			"FIELD_FLOAT"
+					"duration"			"3"
+			}
+		}
+    }
+
+    "item_ward_observer"
+	{
+        "ItemPurchasable"				"0"
+	}
+
+    "ember_spirit_fire_remnant"
+    {
+        "AbilityCastRange"				"1300"
+    	"AbilitySpecial"
+		{
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"scepter_range_multiplier"	"1"
+				"RequiresScepter"	        "1"
+			}
+		}
+    }
+    
+    "skeleton_king_reincarnation"
+    {
+    	"AbilitySpecial"
+		{
+    	    "07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"scepter_duration"		  "0"
+				"RequiresScepter"		  "1"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"	        "0"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius_tooltip_scepter"	"0"
+				"RequiresScepter"			    "1"
+			}
+		}
+    }
+
+    "item_ninja_gear"
+	{	
+		"AbilitySpecial"
+		{
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"8.0"
+			}
+		}
+	}
+
+    "item_hand_of_midas"
+	{
+		"AbilityCooldown"				"120"
+	}
+
+	"item_heart"
+	{
+		"AbilitySpecial"
+		{
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"health_regen_rate"		"2"
+			}
+		}
+	}
+
+	"item_helm_of_the_dominator"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
+    "witch_doctor_death_ward"
+	{	
+	       "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+	       "AbilityUnitTargetFlags"		    "DOTA_UNIT_TARGET_FLAG_NONE"
+	}
+	"harpy_storm_chain_lightning"
+	{
+		"AbilityCooldown"				"15.0"
+		"MaxLevel"                      "3"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"initial_damage"		"50 90 130"
+			}
+		}
+	}
+    
+    "item_tpscroll"
+	{
+		"ItemPurchasable"				"0"
+	}
+
+	"item_travel_boots"
+	{
+		 "ItemPurchasable"				"0"
+	}
+
+	"item_travel_boots_2"
+	{
+		 "ItemPurchasable"				"0"
+	}
+
+	//7.23新物品 修改可以售卖 设置一个价格
+    "item_horizon"
+    {
+       "ItemCost"					"500"
+	   "ItemSellable"				"1"
+    }
+    "item_poor_mans_shield"
+	{
+		"ItemCost"					"500"
+		"ItemSellable"				"1"
+	}
+	"item_keen_optic"
+	{
+		"ItemCost"					"500"
+		"ItemSellable"				"1"
+	}
+
+	"item_royal_jelly"
+	{
+		"ItemCost"					"500"
+		"ItemSellable"				"1"
+	}
+
+	"item_ocean_heart"
+	{
+		"ItemCost"					"500"
+		"ItemSellable"				"1"
+	}
+
+	"item_iron_talon"
+	{
+
+		"ItemCost"						"500"
+		"ItemSellable"				    "1"
+	}
+
+	"item_mango_tree"
+	{
+		"ItemCost"						"500"
+		"ItemSellable"			    	"1"
+	}
+
+    "item_arcane_ring"
+	{
+		"ItemCost"						"500"
+		"ItemSellable"			    	"1"
+	}
+
+	"item_elixer"
+	{
+      "ItemCost"						"500"
+	  "ItemSellable"			    	"1"
+    }
+
+    "item_broom_handle"
+	{
+	  "ItemCost"						"500"
+	  "ItemSellable"			    	"1"
+	}
+
+	"item_ironwood_tree"
+	{
+	  "ItemCost"						"500"
+	  "ItemSellable"			    	"1"
+	}
+
+    "item_trusty_shovel"
+	{
+	  "ItemCost"						"500"
+	  "ItemSellable"			    	"1"
+	}
+	"item_faded_broach"
+	{
+	   "ItemCost"						"500"
+	   "ItemSellable"			    	"1"
+	}
+
+	"item_grove_bow"
+	{
+	   "ItemCost"						"1000"
+	   "ItemSellable"			    	"1"
+	}
+
+	"item_vampire_fangs"
+	{
+	   "ItemCost"						"1000"
+	   "ItemSellable"			    	"1"
+	}
+
+	"item_ring_of_aquila"
+	{
+       "ItemCost"						"1000"
+	   "ItemSellable"			    	"1"
+	}
+
+	"item_pupils_gift"
+	{
+		"ItemCost"						"1000"
+	    "ItemSellable"			    	"1"	
+	}
+
+	"item_imp_claw"
+	{
+		"ItemCost"						"1000"
+	    "ItemSellable"			    	"1"	
+	}
+
+	"item_philosophers_stone"
+	{
+		"ItemCost"						"1000"
+	    "ItemSellable"			    	"1"
+	}
+	
+	"item_dragon_scale"
+	{
+		"ItemCost"						"1000"
+	    "ItemSellable"			    	"1"
+	}
+
+	"item_essence_ring"
+	{
+		"ItemCost"						"1000"
+	    "ItemSellable"			    	"1"
+	}
+
+	"item_nether_shawl"
+	{
+		"ItemCost"						"1000"
+	    "ItemSellable"			    	"1"
+	}
+    
+    "item_vambrace"
+	{
+		"ItemCost"						"1500"
+		"ItemSellable"			    	"1"
+		"ItemPurchasable"               "0"
+	}
+
+	"item_clumsy_net"
+	{
+		"ItemCost"						"1500"
+		"ItemSellable"			    	"1"
+	}
+
+	"item_helm_of_the_undying"
+	{
+		"ItemCost"						"1000"
+	    "ItemSellable"			    	"1"
+	}
+
+
+	"item_tome_of_aghanim"
+	{
+		"ItemCost"						"1500"
+	    "ItemSellable"			    	"1"
+	}
+
+	"item_repair_kit"
+	{
+	   "ItemCost"						"1500"
+	   "ItemSellable"			    	"1"	
+	}
+
+	"item_craggy_coat"
+	{
+		"ItemCost"						"1500"
+	    "ItemSellable"			    	"1"
+	}
+
+	"item_greater_faerie_fire"
+	{
+		"ItemCost"						"1500"
+	    "ItemSellable"			    	"1"
+	}
+
+    "item_quickening_charm"
+	{
+		"ItemCost"						"1500"
+	    "ItemSellable"			    	"1"
+	}
+	"item_mind_breaker"
+	{
+		"ItemCost"						"1500"
+	    "ItemSellable"			    	"1"
+	}
+
+	"item_third_eye"
+	{
+        "ItemCost"						"1500"
+	    "ItemSellable"			    	"1"
+	}
+
+	"item_spider_legs"
+	{
+		"ItemCost"						"1500"
+	    "ItemSellable"			    	"1"
+	}
+
+	"item_enchanted_quiver"
+	{
+		"ItemCost"						"1500"	
+		"ItemSellable"				    "1"
+	}
+
+	"item_paladin_sword"
+	{
+	   "ItemCost"						"1500"	
+	   "ItemSellable"			    	"1"
+	}
+
+	"item_orb_of_destruction"
+	{
+		"ItemCost"						"1500"	
+	    "ItemSellable"		    		"1"
+	}
+
+	"item_titan_sliver"
+	{
+		"ItemCost"						"1500"	
+	    "ItemSellable"			    	"1"
+	}
+
+    "item_spy_gadget"
+	{
+		"ItemCost"						"1500"	
+	    "ItemSellable"		    		"1"
+	}
+
+
+	"item_witless_shako"
+	{
+		"ItemCost"						"2000"	
+	    "ItemSellable"		    		"1"
+	}
+    "item_timeless_relic"
+	{
+		"ItemCost"						"2000"	
+	    "ItemSellable"			    	"1"
+	}
+
+	"item_spell_prism"
+	{
+		"ItemCost"						"2000"	
+	    "ItemSellable"		    		"1"
+	}
+
+	"item_princes_knife"
+	{
+		"ItemCost"						"2000"	
+	    "ItemSellable"		    		"1"
+	}
+	"item_flicker"
+	{
+		"ItemCost"						"2000"	
+	    "ItemSellable"		    		"1"
+	}
+
+	"item_ninja_gear"
+	{
+		"ItemCost"						"2000"	
+	    "ItemSellable"		    		"1"
+	}
+
+	"item_illusionsts_cape"
+	{
+        "ItemCost"						"2000"	
+	    "ItemSellable"		    		"1"
+	}
+
+	"item_havoc_hammer"
+	{
+        "ItemCost"						"2000"	
+	    "ItemSellable"		    		"1"
+	}
+
+	"item_panic_button"
+	{
+		"ItemCost"						"2000"	
+	    "ItemSellable"		    		"1"
+	}
+
+	"item_the_leveller"
+	{
+		"ItemCost"						"2000"
+	    "ItemSellable"		    		"1"
+	}
+
+	"item_minotaur_horn"
+	{
+		"ItemCost"						"2000"	
+	    "ItemSellable"		    		"1"
+	}
+
+	"item_force_boots"
+	{
+		"ItemCost"						"4000"	
+	    "ItemSellable"		    		"1"
+	}
+
+	"item_seer_stone"
+	{
+		"ItemCost"						"4000"	
+	    "ItemSellable"		    		"1"
+	}
+
+	"item_mirror_shield"
+	{
+		"ItemCost"						"4000"	
+	    "ItemSellable"		    		"1"
+	}
+
+	"item_fallen_sky"
+	{
+		"ItemCost"						"4000"	
+		"ItemSellable"			    	"1"
+		"AbilityCastRange"				"1300"
+	}
+
+	"item_apex"
+	{
+		"ItemCost"						"4000"	
+	    "ItemSellable"		    		"1"
+	}
+	"item_ballista"
+	{
+		"ItemCost"						"4000"	
+	    "ItemSellable"		    		"1"
+	}
+    
+    "item_woodland_striders"
+	{
+		"ItemCost"						"4000"	
+	    "ItemSellable"		    		"1"
+	}
+
+	"item_trident"
+	{
+		"ItemCost"						"10150"
+		"ItemSellable"		    		"1"
+	}
+
+	"item_recipe_trident"
+	{
+		"ItemCost"						"4000"
+		"ItemSellable"		    		"1"
+		"ItemRecipe"					"1"
+	}
+
+
+    "item_demonicon"
+	{
+		"ItemCost"						"4000"
+		"ItemSellable"		    		"1"
+	}
+
+	"item_pirate_hat"
+	{
+		"ItemCost"						"4000"
+		"ItemSellable"		    		"1"
+	}
+
+    "item_ex_machina"
+	{
+		"ItemCost"						"4000"
+		"ItemSellable"		    		"1"
+	}
+
+	"item_desolator_2"
+	{
+		"ItemCost"						"4000"
+		"ItemSellable"		    		"1"
+	}
+	"item_fusion_rune"
+	{
+		"ItemCost"						"4000"
+		"ItemSellable"		    		"1"
+	}
+	"item_phoenix_ash"
+	{
+		"ItemCost"						"4000"
+		"ItemSellable"		    		"1"
+	}
+	"leshrac_lightning_storm"
+	{
+		"AbilitySpecial"
+		{
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius_scepter"	    "0"
+				"RequiresScepter"		"1"
+			}	
+		}
+	}
+    
+    //会飞到其他玩家场地
+	"puck_illusory_orb"
+	{
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"					    "FIELD_INTEGER"
+				"max_distance"				    "1400"
+				"LinkedSpecialBonus"		    "special_bonus_unique_puck"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_PERCENTAGE_ADD"
+			}
+		}
+	}
+
+	"special_bonus_unique_puck"
+	{
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"0"
+			}
+		}
+	}
+
+	"sandking_burrowstrike"
+	{
+		"AbilitySpecial"
+		{
+			"05"
+			{
+				"var_type"			        "FIELD_INTEGER"
+				"cast_range_scepter"		"800 900 1000 1100"
+				"RequiresScepter"			"1"
+			}
+		}
+	}
+
+	"earth_spirit_rolling_boulder"
+	{
+		"AbilitySpecial"
+		{
+			"05"
+			{
+				"var_type"				    "FIELD_FLOAT"
+				"rock_distance"			    "1200.0"
+				"LinkedSpecialBonus"	    "special_bonus_unique_earth_spirit_4"
+				"LinkedSpecialBonusField"	"value2"
+			}
+		}
+	}
+
+	"special_bonus_unique_earth_spirit_4"
+	{
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				       "300"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value2"				   "100"
+			}
+		}
+	}
+
+    "special_bonus_unique_magnus_3"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				        "50"
+			}
+		}
+	}
+    
+    //为召唤流调整反噬伤害
+	"lone_druid_spirit_bear"
+	{
+		"AbilitySpecial"
+		{
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"backlash_damage"			"5.0"
+			}
+		}
+	}
+    
+    //凤凰冲击距离
+	"special_bonus_unique_phoenix_4"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				        "50"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value2"			    	"1"
+			}
+		}
+	}
+
+	"item_horizon"
+	{
+		"AbilityCastRange"				"800"
+	}
+
+	"snapfire_spit_creep"
+	{
+		"AbilityCastRange"				"1300"
+	}
+    
+    "dazzle_weave"
+    {
+    	"AbilityTextureName"            "dazzle_weave_custom"
+    }
+	
+	"special_bonus_cast_range_350"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				   "FIELD_INTEGER"
+				"value"				       "200"
+			}
+		}
+	}
+
+
+	"razor_static_link"
+	{
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	}
+
+	"alchemist_unstable_concoction_throw"
+	{
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	}
+
+	"puck_dream_coil"
+	{
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	}
+
+	"witch_doctor_maledict"
+	{
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	}
+
+	"magnataur_skewer"
+	{
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	}
+
+	"tinker_heat_seeking_missile"
+	{
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
+	}
+
+	"undying_decay"
+	{
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	}
+}

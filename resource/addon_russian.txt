@@ -1,0 +1,972 @@
+"lang"
+{
+	"Language"		"russian"
+	"Tokens"
+		{
+		"Close"                                  "Закрыть"
+		"DrawMutate"                             "Draw ("
+		"ExchangeKey"                            "Активировать код"
+		"Equip"                                  "Экипировать"
+		"Remove"                                  "Удалить"
+		"InvalideTaobaoCode"                      "Невалидный Taobao Code"
+		"TaobaoCodeOccupied"                      "Taobao Code уже активирован"
+		"TaobaoCodeSuccess"                       "Поздравляем, Joker coin + "
+		"ClickPlusForCode"                        "Пожалуйсте введите Taobao Code"
+
+		"rarity_normal"                           "Обычный"
+		"rarity_rare"                             "Редкий"
+		"rarity_mythical"                         "Мистический"
+		"rarity_immortal"                         "Легендарный"
+		"rarity_limited"                          "Limited"
+
+		"CongratulationNewItem"                   "Вы получили новый предмет"
+		"RefundItem"                              "Duplicate item, refund Joker Coins"
+
+		"Confirm"                                 "Подтвердить"
+		"Cooldown"                                "Перезарядка:"
+		"ChatWheelClose"                          "Закрыть (F6)"
+		"TauntClose"                              "Закрыть (F7)"
+
+		"Particle"                                "Частицы"
+		"KillEffect"                              "Эффект убийства (Насмешка)"
+		"KillSound"                               "Звук убийства (Колесо Насмешек)"
+		"Barrage"                                 "Эффект бегущей строки"
+
+		"WorldRank"                               "Мировой Рейтинг"
+		"CurrentSeason"                           "{s:year}Год{d:month}Сезон"
+
+		"PveMode"                                 "PvE Режим"
+		"SoloMode"                                "PvP Режим"
+
+		"Inventory"                            "Инвентарь"
+		"addon_game_name"                      "Custom Hero Chaos"
+		"CardSelection_Close"                  "Закрыть"
+		"CardSelection_Close_Description"	       "Сражаться за текущего героя"
+		"AbilitySelection_Close"                 "Закрыть"
+		"AbilitySelection_Close_Description"     "Выбрать умение наугад"
+		"AbilitySelectorTitle_1"                  "Выберите "
+		"AbilitySelectorTitle_2"                  " умение"
+
+		"LoadingTip_1" 					"Вы можете проверить снаряжение в инвентаре (верхнее левое меню)."
+		"LoadingTip_2" 					"В конце игры будет вознагражден игрок, который победит 30 раундов в режиме одиночной игры (PvE) или топ-5 в режиме многопользовательской игры (PvP) (максимум 30 Joker Coins в день)"
+		"LoadingTip_3" 					"Рейтинги будут рассчитаны в последний день месяца, игроку топ-200 будут предоставлены дополнительные Joker Coins."
+		"LoadingTip_4" 					"Вы можете переместить камеру на героя, дважды нажав на иконку героя сверху экрана."
+		"LoadingTip_5" 					"Когда время раунда истекло, победит игрок с более высоким здоровьем."
+		"LoadingTip_6" 					"Если один игрок выиграет дуэль, но ни один из игроков не сделал на него ставку, он выиграет джекпот"
+		"LoadingTip_7" 					"Одно из вражеских существ с 10 раунда получит истинное зрение"
+		"LoadingTip_8" 					"Kaya может быть улучшена до Sky Force."
+		"LoadingTip_9" 					"Вы можете купить книгу атрибутов в магазине, если у вас много золота"
+		"LoadingTip_10"					"Если вы хотите спрятать какую-то способность от другого игрока, вы можете записать ее в книгу заклинаний"
+		"LoadingTip_11"					"Если вы видите, что модель другого игрока пуста, выйдите из игры и восстановите соединение."
+
+		"MaxRound"                                        "Макс. Раунд"
+		"TimeCost"                                        "Всего Времени"
+		"Score"                                           "Рейтинг"
+
+		//Creature
+		"npc_dota_fountain_health"                      "Фонтан Здоровья"
+		"npc_dota_fountain_mana"                        "Фонтан Маны"
+
+		"round_prepare"                "Prepare for Round {s:value} {s:value_2}"
+		"round_progress"               "Прогресс раунда "
+		"round_time_limit"             "Остаток времени "
+		"round_time_expire"            "Время истекло "
+
+		"player_finish"                "Завершили раунд"
+		"player_finish_solo"           "Завершил раунд"
+
+		"hero_level"                   "Уровень"
+		"you"                          "(Вы)"
+		"confirn"                      "Подтвердить"
+		"input_gold_value"             "Сделайте вашу ставку"
+		"bet_max_gold"                 "Не больше 50% Вашего золота"
+		"bet_must_positive_integer"    "Поставьте 1 или больше золота"
+		"confirm"                      "Подтвердить"
+		"total"                        "Всего"
+		"is_bet"                       "поставлено на"
+		"bet_bonus"                    "выиграл ставку и получил:"
+		"pvp_earn_bonus"               "выиграли дуэль и получили дивиденды:"
+		"pvp_earn_bonus_solo"          "выиграл дуэль и получил дивиденды:"
+		"bet_jackpot"                  "Джекпот!!"
+
+		"bet_rank"                     "Total Pool:"
+		"team_lose"                    " потерпели поражение"
+		"you_lose"                     "Вы потерплеи поражение..."
+		"your_rank"                    "Ваш Рейтинг"
+		"safe_leave"                   "Вы можете покинуть игру или остаться и наблюдать. Рейтинг будет подсчитан после завершения игры."
+
+
+		"TopMenuIcon_Rank_message"                "Мировой Рейтинг"
+		"TopMenuIcon_Inventory_message"           "Инвентарь"
+		"TopMenuIcon_Chatwheel_message"           "Голосовое Колесо(F6)"
+		"TopMenuIcon_Tuant_message"               "Насмешки(F7)"
+		"TopMenuIcon_Setting_message"             "Setting"
+		
+		"custom_end_screen_legend_ratings"                "Рейтинг"
+		"custom_end_screen_legend_round_number"           "Раунд"
+		"custom_end_screen_legend_time_cost"              "Всего времени"
+		"custom_end_screen_legend_pvp_win"                "Duels Win"
+		"custom_end_screen_legend_pvp_lose"               "Duels Lose"
+		"custom_end_screen_total_gold"                    "Золото"
+
+		"DOTA_InventoryMenu_TeleportToNeutralStash"                                 "Продать"
+	    "DOTA_InventoryMenu_DropAtFountain"                                         "Продать"
+	    "DOTA_Tooltip_modifier_aegis"                                               "Aegis of the Immortal"
+	    "DOTA_Tooltip_modifier_aegis_Description"                                   "Перерождение: при смерти потребляет заряд умения и перерождает вас через 5 секунд с полным запасом здоровья и маны. Накладывает на вас положительный эффект Power of Reincarnation.<br> Не расхудет заряды при смерти во время дуэли."
+
+	    "DOTA_Tooltip_ability_wisp_spirits"                                         "Spirits(Scepter Not Work)"
+
+	    "DOTA_Tooltip_modifier_aegis_buff"                                          "Aegis Protection"
+    	"DOTA_Tooltip_modifier_aegis_buff_Description"                              "Снижает входящий урон на 60%% и увеличивает исходщий урона на 100%%"
+
+
+		"DOTA_Tooltip_modifier_item_custom_aegis_buff"	             "Power of Reincarnation"
+		"DOTA_Tooltip_modifier_item_custom_aegis_buff_Description"	 "Снижает входящий урон на 50%% и увеличивает исходщий урона на 100%%"
+
+		//Ability
+		"DOTA_Tooltip_ability_drow_ranger_marksmanship_custom"									"Marksmanship"
+		"DOTA_Tooltip_ability_drow_ranger_marksmanship_custom_Description"						"Боевой опыт героя увеличивает его эффективность в битве, наделяя дополнительной ловкостью. Бонус пропадает, если в радиусе 400 единиц есть вражеские герои.\n\nУлучшается с Aghanim's Scepter."
+		"DOTA_Tooltip_ability_drow_ranger_marksmanship_custom_aghanim_description"				"Стрелы героя разделяются при попадании, нанося урон случайным существам вокруг цели. Каждая такая стрела считается обычной атакой, но наносит уменьшенный урон."
+		"DOTA_Tooltip_ability_drow_ranger_marksmanship_custom_split_count_scepter"				"ДОП. СТРЕЛ СО СКИПЕТРОМ:"
+		"DOTA_Tooltip_ability_drow_ranger_marksmanship_custom_scepter_range"					"РАДИУС ДЕЙСТВИЯ:"
+		"DOTA_Tooltip_ability_drow_ranger_marksmanship_custom_damage_reduction_scepter"		    "%СНИЖЕНИЕ УРОНА СО СКИПЕТРОМ:"
+		"DOTA_Tooltip_ability_drow_ranger_marksmanship_custom_Lore"							    "Траксекс — воплощение мастерства стрельбы из лука."
+		"DOTA_Tooltip_ability_drow_ranger_marksmanship_custom_marksmanship_agility_bonus"		"ДОП. ЛОВКОСТЬ:"
+
+		"DOTA_Tooltip_ability_holdout_omnislash"									"Secret Blade"
+		"DOTA_Tooltip_ability_holdout_omnislash_Description"						"Герой посылает копию в указаную точку. Когда копия достигает места назначения - герой совершает к ней рывок, атакуя всех вражеских сущвств по пути."
+		"DOTA_Tooltip_ability_holdout_omnislash_image_radius"						"РАДИУС:"
+		"DOTA_Tooltip_ability_holdout_omnislash_range"								"ДАЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_holdout_omnislash_bonus_damage"						"БОНУСНЫЙ УРОН:"
+
+		"DOTA_Tooltip_ability_juggernaut_blade_dance_datadriven"					          "Blade Dance"
+		"DOTA_Tooltip_ability_juggernaut_blade_dance_datadriven_Description"					  "Даёт герою шанс нанести атакой критический урон."
+		"DOTA_Tooltip_ability_juggernaut_blade_dance_datadriven_crit_damage"					  "КРИТ. УРОН: "
+		"DOTA_Tooltip_ability_juggernaut_blade_dance_datadriven_crit_chance"					  "КРИТ. УРОН: "
+
+		"DOTA_Tooltip_ability_mirana_starfall_datadriven"                                            "Starstorm"
+		"DOTA_Tooltip_ability_mirana_starfall_datadriven_Description"                                "Призывает звёздный дождь, наносящий урон противникам, стоящим неподалеку. Ближайший враг в радиусе %starfall_secondary_radius% получит второй удар, наносящий 75%% от обычного урона.\n\nУлучшается с Aghanim's Scepter."
+		"DOTA_Tooltip_ability_mirana_starfall_datadriven_Lore"                                       "Богиня разверзает небеса, чтобы в час нужды помочь своей принцессе."
+		"DOTA_Tooltip_ability_mirana_starfall_datadriven_Note0"                                      "Не блокируется предметом Linken's Sphere."
+		"DOTA_Tooltip_ability_mirana_starfall_datadriven_Note1"                                      "Не наносит урона невидимым врагам."
+		"DOTA_Tooltip_ability_mirana_starfall_datadriven_Note2"                                      "Если цель второго удара умрёт до него, будет выбрана новая."
+		"DOTA_Tooltip_ability_mirana_starfall_datadriven_starfall_radius"                            "РАДИУС:"
+		"DOTA_Tooltip_ability_mirana_starfall_datadriven_scepter_interval"                           "ЧАСТОТА ПРИМЕНЕНИЯ СО СКИПЕТРОМ:"
+		"DOTA_Tooltip_ability_mirana_starfall_datadriven_aghanim_description"                        "Автоматически применяет копию способности каждые 8 сек., но только если герой находится в поле зрения врагов."
+
+
+		"DOTA_Tooltip_ability_frostivus2018_windrunner_shackleshot"					"Shackleshot(Frosthaven)"
+		"DOTA_Tooltip_ability_frostivus2018_windrunner_shackleshot_Description"		"Связывает цель с находящимся позади неё врагом или дерево. <font color='#70EA72'>Может связывать несколько юнитов в линию.</font>. Если цель не будет с чем-то связана, длительность оглушения сократится до %fail_stun_duration%."
+		"DOTA_Tooltip_ability_frostivus2018_windrunner_shackleshot_Lore"			"Мастерство владения луком позволяет Лиралей выпустить стрелу с толстой верёвкой, которая не даст жертве вырваться."
+		"DOTA_Tooltip_ability_frostivus2018_windrunner_shackleshot_Note0"			"Может связать двух противников, оглушая обоих."
+		"DOTA_Tooltip_ability_frostivus2018_windrunner_shackleshot_Note1"			"Снаряд этой способности можно сбить с цели."
+		"DOTA_Tooltip_ability_frostivus2018_windrunner_shackleshot_stun_duration"	"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_frostivus2018_windrunner_shackleshot_shackle_count"	"КОЛ-ВО СВЯЗОК:"
+
+		"DOTA_Tooltip_ability_zuus_thundergods_vengeance"									"Thundergod's Vengeance"
+		"DOTA_Tooltip_ability_zuus_thundergods_vengeance_Description"						"Поражает всех вражеских героев молнией вне зависимости от их местоположения. Способность также раскрывает невидимость вражеских существ вокруг каждого ударенного противника. Если герой врага невидим, то он не получит урона, но невидимость всё равно раскроется.\n\nУлучшается с Aghanim's Scepter."
+		"DOTA_Tooltip_ability_zuus_thundergods_vengeance_Lore"								"Повелитель небес сокрушает всех, кто противостоит ему, независимо от того, близко или далеко они находятся."
+		"DOTA_Tooltip_ability_zuus_thundergods_vengeance_damage"							"УРОН:"
+		"DOTA_Tooltip_ability_zuus_thundergods_vengeance_damage_scepter"					"УРОН (АГАНИМ):"
+		"DOTA_Tooltip_ability_zuus_thundergods_vengeance_true_sight_radius"					"РАДИУС РАСКРЫТИЯ НЕВИДИМОСТИ:"
+		"DOTA_Tooltip_ability_zuus_thundergods_vengeance_sight_duration"					"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_zuus_thundergods_vengeance_aghanim_description"				"Увеличивает Урон."
+
+		"DOTA_Tooltip_ability_lina_fiery_soul_datadriven"											"Fiery Soul"
+		"DOTA_Tooltip_ability_lina_fiery_soul_datadriven_Description"								"Увеличивает скорость атаки и передвижения всякий раз, когда герой применяет способность. Эффекты способности складываются друг с другом. Действует %duration_tooltip% сек."
+		"DOTA_Tooltip_ability_lina_fiery_soul_datadriven_Lore"										"Пляшущие языки огня воплощают игривую натуру волшебницы, высвобождая её внутреннее пламя."
+		"DOTA_Tooltip_ability_lina_fiery_soul_datadriven_Note0"									    "Применение любой другой способности обновляет время действия этой."
+		"DOTA_Tooltip_ability_lina_fiery_soul_datadriven_Note1"								     	"Не срабатывает от использования предметов."
+		"DOTA_Tooltip_ability_lina_fiery_soul_datadriven_fiery_soul_attack_speed_bonus"			    "ДОП. СКОРОСТЬ АТАКИ:"
+		"DOTA_Tooltip_ability_lina_fiery_soul_datadriven_fiery_soul_move_speed_bonus"				"%ДОП. СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:"
+		"DOTA_Tooltip_ability_lina_fiery_soul_datadriven_fiery_soul_max_stacks"					    "МАКС. ЭФФЕКТОВ:"
+		"DOTA_Tooltip_ability_lina_fiery_soul_datadriven_duration_tooltip"					        "ДЛИТЕЛЬНОСТЬ:"
+
+		"DOTA_Tooltip_ability_frostivus2018_omniknight_purification"								"Purification(Frosthaven)"
+		"DOTA_Tooltip_ability_frostivus2018_omniknight_purification_Description"					"Моментально излечивает <font color='#70EA72'>всех дружественных существ в области </font> и наносит урон врагам вокруг них."
+		"DOTA_Tooltip_ability_frostivus2018_omniknight_purification_Lore"							"Жрецы Всезнания искусно избавляют братьев по оружию от скверны."
+		"DOTA_Tooltip_ability_frostivus2018_omniknight_purification_heal"							"ЛЕЧЕНИЕ/УРОН:"
+		"DOTA_Tooltip_ability_frostivus2018_omniknight_purification_radius"							"РАДИУС УРОНА:"
+		"DOTA_Tooltip_ability_frostivus2018_omniknight_purification_cast_radius"					"РАДИУС ЛЕЧЕНИЯ:"
+
+		"DOTA_Tooltip_ability_frostivus2018_omniknight_degen_aura"									"Regen Aura"
+		"DOTA_Tooltip_ability_frostivus2018_omniknight_degen_aura_Description"						"Значительно увеличивает скорость переддвижения и атаки, восстановление здоровья и урон союзных существ вокруг."
+		"DOTA_Tooltip_ability_frostivus2018_omniknight_degen_aura_Note0"						    "Не проходит через невосприимчивость к магии."
+		"DOTA_Tooltip_ability_frostivus2018_omniknight_degen_aura_Lore"								"Одного священного вида Громобоя достаточно, чтобы неверующие ослабли."
+		"DOTA_Tooltip_ability_frostivus2018_omniknight_degen_aura_radius"						    "РАДИУС:"
+		"DOTA_Tooltip_ability_frostivus2018_omniknight_degen_aura_speed_bonus"						"%УСКОРЕНИЕ ПЕРЕДВИЖЕНИЯ:"
+		"DOTA_Tooltip_ability_frostivus2018_omniknight_degen_aura_attack_bonus_tooltip"				"БОНУСНЫЙ УРОН:"
+		"DOTA_Tooltip_ability_frostivus2018_omniknight_degen_aura_bonus_health_regen"				"ВОССТАНОВЛЕНИЕ ЗДОРОВЬЯ:"
+		"DOTA_Tooltip_modifier_frostivus2018_omniknight_degen_aura_effect"						    "Regen Aura"
+
+		"DOTA_Tooltip_ability_frostivus2018_huskar_burning_spear"									"Burning Spear"
+		"DOTA_Tooltip_ability_frostivus2018_huskar_burning_spear_Description"						"Герой поджигает цель <font color='#70EA72'>и врагов вокруг цели</font> , нанося дополнительный периодический урон с каждой атакой. Периодический урон от нескольких атак складывается. Каждая атака отнимает часть здоровья героя. Поджог длится 6 секунд. <font color='#70EA72'>Урон от поджога наносится сразу после попадания первого копья.</font>"
+		"DOTA_Tooltip_ability_frostivus2018_huskar_burning_spear_Lore"								"Священный воин орошает оружие собственной кровью и поджигает его, чтобы боль врагов затмила его собственную."
+		"DOTA_Tooltip_ability_frostivus2018_huskar_burning_spear_Note0"								"Эффекты этой способности складываются, их число не ограничено."
+		"DOTA_Tooltip_ability_frostivus2018_huskar_burning_spear_Note1"								"Этой способностью нельзя совершить самоубийство."
+		"DOTA_Tooltip_ability_frostivus2018_huskar_burning_spear_health_cost"						"ЗДОРОВЬЯ ЗА АТАКУ:"
+		"DOTA_Tooltip_ability_frostivus2018_huskar_burning_spear_burn_damage"						"ПЕРИОДИЧЕСКИЙ УРОН:"
+		"DOTA_Tooltip_ability_frostivus2018_huskar_burning_spear_spear_aoe"							"<font color='#70EA72'>РАДИУС ПОДЖОГА:</font>"
+
+		"DOTA_Tooltip_ability_tinker_rearm_datadriven"							                  "Rearm"
+		"DOTA_Tooltip_ability_tinker_rearm_datadriven_Description"					              "ПРЕРЫВАЕМАЯ — сбрасывает время перезарядки способностей и большинства предметов героя."
+		"DOTA_Tooltip_ability_tinker_rearm_datadriven_channel_tooltip"					          "ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_tinker_rearm_datadriven_Note0"					                  "Не оказывает влияния на некоторые способности."
+
+		"DOTA_Tooltip_ability_axe_counter_helix_lua"								    "Counter Helix"
+		"DOTA_Tooltip_ability_axe_counter_helix_lua_Description"						"Герой с некоторой вероятностью отвечает на удары противников, нанося чистый урон всем врагам вокруг себя."
+		"DOTA_Tooltip_ability_axe_counter_helix_lua_Lore"								"Могул Хан — сам себе войско."
+		"DOTA_Tooltip_ability_axe_counter_helix_lua_damage"								"УРОН:"
+		"DOTA_Tooltip_ability_axe_counter_helix_lua_radius"								"РАДИУС:"
+		"DOTA_Tooltip_ability_axe_counter_helix_lua_trigger_chance"						"%ШАНС КОНТРАТАКИ:"
+		"DOTA_Tooltip_modifier_axe_counter_helix_lua"									"Counter Helix"
+		"DOTA_Tooltip_ability_axe_counter_helix_lua_Note0"								"Counter Helix срабатывает от собственных атак."
+
+
+		"DOTA_Tooltip_ability_phantom_assassin_stifling_dagger_nb2017"							"Stifling Dagger"
+		"DOTA_Tooltip_ability_phantom_assassin_stifling_dagger_nb2017_Description"				"Бросает шквал кинжалов в цель и врагов вокруг нее. Каждый кинжал замедляет скорость передвижения врага, наносит цели физический урон в размере %base_damage% + %attack_factor_tooltip%%% от атаки героя, а также накладывает эффекты предметов и способностей."
+		"DOTA_Tooltip_ability_phantom_assassin_stifling_dagger_nb2017_Note0"				    "Эффекты атаки срабатывают с обычной для них вероятностью."
+		"DOTA_Tooltip_ability_phantom_assassin_stifling_dagger_nb2017_Lore"						"Первый навык, изучаемый Сестрами вуали, часто предвещает скорый удар."
+		"DOTA_Tooltip_ability_phantom_assassin_stifling_dagger_nb2017_move_slow"			    "%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
+		"DOTA_Tooltip_ability_phantom_assassin_stifling_dagger_nb2017_duration"					"ДЛИТЕЛЬНОСТЬ ЗАМЕДЛЕНИЯ:"
+		"DOTA_Tooltip_ability_phantom_assassin_stifling_dagger_nb2017_base_damage"				"БАЗОВЫЙ УРОН:"
+		"DOTA_Tooltip_ability_phantom_assassin_stifling_dagger_nb2017_attack_factor_tooltip"  	"%УРОН ОТ АТАКИ:"
+		"DOTA_Tooltip_ability_phantom_assassin_stifling_dagger_nb2017_dagger_count"				"КОЛ-ВО КИНЖАЛОВ:"
+		"DOTA_Tooltip_ability_phantom_assassin_stifling_dagger_nb2017_dagger_range"				"РАДИУС КИНЖАЛОВ:"
+
+		"DOTA_Tooltip_ability_necrolyte_reapers_scythe_datadriven"                                 "Reaper's Scythe"
+		"DOTA_Tooltip_ability_necrolyte_reapers_scythe_datadriven_Description"                     "Оглушает выбранного вражеского героя, а затем наносит ему урон, пропорциональный отсутствующему у него здоровью. Герой, убитый этой способностью, возрождается на %respawn_constant% сек. дольше обычного. Убийство врага под действием этой способности засчитывается её владельцу\n\nUpgradable by Aghanim's Scepter."
+		"DOTA_Tooltip_ability_necrolyte_reapers_scythe_datadriven_Lore"                            "Смерть и страдания, витающие в воздухе, усиливают чумную магию Ротунд'йера."
+		"DOTA_Tooltip_ability_necrolyte_reapers_scythe_datadriven_Note0"                           "Урон наносится сразу после оглушения."
+		"DOTA_Tooltip_ability_necrolyte_reapers_scythe_datadriven_Note1"                           "Оглушает невосприимчивых к магии врагов, но не наносит им урона."
+		"DOTA_Tooltip_ability_necrolyte_reapers_scythe_datadriven_damage_per_health"               "УРОН ЗА ЕД. ЗДОРОВЬЯ:"
+		"DOTA_Tooltip_ability_necrolyte_reapers_scythe_datadriven_stun_duration"                   "ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:"
+		"DOTA_Tooltip_ability_necrolyte_reapers_scythe_datadriven_mana_cost_scepter"               "СТОИМОСТЬ МАНЫ СО СКИПЕТРОМ:"
+		"DOTA_Tooltip_ability_necrolyte_reapers_scythe_datadriven_cooldown_scepter"                "ПЕРЕЗАРЯДКА СО СКИПЕТРОМ:"
+		"DOTA_Tooltip_ability_necrolyte_reapers_scythe_datadriven_damage_per_health_scepter"       "УРОН ЗА ЕД. ЗДОРОВЬЯ СО СКИПЕТРОМ:"
+		"DOTA_Tooltip_ability_necrolyte_reapers_scythe_datadriven_aghanim_description"             "Увеличивает урон за ед. здоровья противника, уменьшает стоимость маны на первом уровне, уменьшает перезарядку на 1 и 2 уровне. Убитые противники не могут выкупиться."
+
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows"							"Searing Arrows(Frosthaven)"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_Description"				"Наполняет стрелы героя огнём, увеличивая их урон <font color='#70EA72'>и нанося урон врагам позади основной цели</font>."
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_Lore"						"Лучник поджигает стрелы своей огненной сущностью, что придаёт им поистине разрушительную мощь."
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_Note0"					"Наносит урон постройкам."
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_Note1"					"Дополнительный урон напрямую прибавляется к физическому урону."
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_damage_bonus"				"ДОПОЛНИТЕЛЬНЫЙ УРОН:"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_attack_spill_range"		"ДАЛЬНОСТЬ ПРОБИТИЯ:"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_attack_spill_width"		"ШИРИНА ПРОБИТИЯ:"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_spill_damage_multiplier"	"МНОЖИТЕЛЬ УРОНА ПРОБИТИЯ:"
+
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk"						"Skeleton Walk(Frosthaven)"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_Description"			"Герой становится невидимым и передвигается сквозь других существ, пока не атакует или не применит способность. <font color='#70EA72'>Когда герой проходит сквозь вражеского юнита - он крадет часть его урона</font>"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_Lore"					"Вспышка огня, клубы дыма — и костяного лучника не видать."
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_Note0"					"Не останавливает большинство прерываемых способностей."
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_Note1"					"Задержка перед невидимостью — 0.6 сек."
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_duration"				     "ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_move_speed_bonus_pct"	     "%ДОП. СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_attack_steal_duration"	    "ДЛИТЕЛЬНОСТЬ КРАЖИ УРОНА:"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_bonus_base_dmg_per_stack"	"УРОНА ЗА ЗАРЯД:"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_max_stacks"			    "МАКСИМУМ ЗАРЯДОВ:"
+
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_burning_army"	            "Burning Army(Frosthaven)"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_burning_army_Description"	"Герой призывает армию огненных скелетов-лучников. Они неподвижны и умирают от двух атак героев. Скелеты используют способность Searing Arrows текущего уровня и <font color='#70EA72'>атакуя любых врагов</font>, наносят часть урона владельца и имеют его полную дальность атаки."
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_burning_army_duration"	    "ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_burning_army_range"	        "ДАЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_burning_army_count"	        "КОЛИЧЕСТВО ЛУЧНИКОВ:"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_burning_army_attack_rate"	"БАЗОВОЕ ВРЕМЯ АТАКИ ЛУЧНИКОВ:"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_burning_army_spawn_interval"	"ИНТЕРВАЛ ПОЯВЛЕНИЯ:"
+
+		"DOTA_Tooltip_ability_death_pact_datadriven"										"Death Pact"
+		"DOTA_Tooltip_ability_death_pact_datadriven_Description"							"Герой пожирает союзного или вражеского крипа, увеличивая свои максимальное здоровье и урон в зависимости от здоровья жертвы. \n<font color='#FF7800'> Основано на нормальном здоровье юнита</font> \n<font color='#FF7800'>Каждый раунд уменьшает текущую мощность на 5%.</font>"
+		"DOTA_Tooltip_ability_death_pact_datadriven_Lore"									"Связь жизни и смерти стала частью лучника, и теперь его старые кости наполняет жизнь каждого принесённого в жертву низшего существа."
+		"DOTA_Tooltip_ability_death_pact_datadriven_Note0"									"При применении на врага вы получите опыт и золото, как за его убийство."
+		"DOTA_Tooltip_ability_death_pact_datadriven_Note1"									"Увеличивает и текущий, и максимальный запас здоровья."
+		"DOTA_Tooltip_ability_death_pact_datadriven_Note2"									"По окончании действия способности максимальный уровень здоровья уменьшается до обычного, но текущее здоровье остаётся прежним."
+		"DOTA_Tooltip_ability_death_pact_datadriven_duration"								"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_death_pact_datadriven_health_gain_pct"						"%ДОП. ЗДОРОВЬЕ:"
+		"DOTA_Tooltip_ability_death_pact_datadriven_damage_gain_pct"						"%ДОП. УРОН:"
+
+		"DOTA_Tooltip_ability_pugna_ward_winter_2018"	                                    "Saprophytic Ward(Frosthaven)"
+		"DOTA_Tooltip_ability_pugna_ward_winter_2018_Description"	                        "Герой устанавливает тотем бездны, которые восстаналивает здоровье окражающим союзникам, когда они тратят ману"
+		"DOTA_Tooltip_ability_pugna_ward_winter_2018_aura_radius"	                        "РАДИУС АУРЫ:"
+		"DOTA_Tooltip_ability_pugna_ward_winter_2018_mana_multiplier"                       "ЗДОРОВЬЯ ЗА ЕД. МАНЫ:"
+		"DOTA_Tooltip_ability_pugna_ward_winter_2018_aura_mana_regen"	                    "МАНА РЕГЕН (АУРА):"
+		"DOTA_Tooltip_ability_pugna_ward_winter_2018_attacks_to_destroy_tooltip"	        "АТАК ДЛЯ РАЗРУШЕНИЯ ТОТЕМА:"
+		"DOTA_Tooltip_ability_pugna_ward_winter_2018_ward_duration"	                        "ДЛИТЕЛЬНОСТЬ:"
+		"npc_dota_pugna_ward_winter_2018"                     								"Saprophytic Ward"
+		"DOTA_Tooltip_modifier_pugna_ward_winter_2018_effect"                       		"Saprophytic Ward"
+
+		"DOTA_Tooltip_ability_dark_seer_wall_of_replica_nb2017"								    "Wall of Replica(Dark Moon)"
+		"DOTA_Tooltip_ability_dark_seer_wall_of_replica_nb2017_Description"					    "Создаёт стену преломлённого света, которая замедляет проходящих сквозь неё <font color='#70EA72'>любых врагов</font> и создаёт их копии, подконтрольные владельцу способности. <font color='#70EA72'>Герой может одновременно иметь только одну копию отдельного вражеского юнита</font> Иллюзии пропадут, если их уничтожить или если закончится время действия стены.\n\nУлучшается с Aghanim's Scepter."
+		"DOTA_Tooltip_ability_dark_seer_wall_of_replica_Lore"						        	"Пусть Иш'Кафэль и не в состоянии вернуться домой, силой разума он может призвать осколок призматической стены, вызывая смятение в рядах врагов."
+		"DOTA_Tooltip_ability_dark_seer_wall_of_replica_nb2017_Note0"							"Не создаёт иллюзии других иллюзий."
+		"DOTA_Tooltip_ability_dark_seer_wall_of_replica_nb2017_Note1"							"Стена имеет ширину в 1000 единиц и создаётся перпендикулярно прямой между героем и точкой применения способности."
+		"DOTA_Tooltip_ability_dark_seer_wall_of_replica_nb2017_duration"						"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_dark_seer_wall_of_replica_nb2017_tooltip_outgoing"				"%УРОН ИЛЛЮЗИЙ:"
+		"DOTA_Tooltip_ability_dark_seer_wall_of_replica_nb2017_tooltip_replica_total_damage_incoming"		"%УРОН ПО ИЛЛЮЗИЯМ:"
+		"DOTA_Tooltip_ability_dark_seer_wall_of_replica_nb2017_range_tooltip"					"ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:"
+		"DOTA_Tooltip_ability_dark_seer_wall_of_replica_nb2017_tooltip_outgoing_scepter"		"%УРОН ИЛЛЮЗИЙ СО СКИПЕТРОМ:"
+		"DOTA_Tooltip_ability_dark_seer_wall_of_replica_nb2017_movement_slow"		            "%ЗАМЕДЛЕНИЕ:"
+		"DOTA_Tooltip_ability_dark_seer_wall_of_replica_nb2017_slow_duration"		            "ДЛИТЕЛЬНОСТЬ ЗАМЕДЛЕНИЯ:"
+
+		"DOTA_Tooltip_ability_terrorblade_sunder_datadriven"							          "Sunder"
+		"DOTA_Tooltip_ability_terrorblade_sunder_datadriven_Description"					      "Меняет местами жизненные силы героя и его цели. Некоторая часть здоровья остаётся на месте."
+		"DOTA_Tooltip_ability_terrorblade_sunder_datadriven_hit_point_minimum_pct"				  "МИН. ЗДОРОВЬЕ ПОСЛЕ ОБМЕНА:"
+
+
+		
+    	"DOTA_Tooltip_ability_invoker_cold_snap_lua" 						"Cold Snap"
+		"DOTA_Tooltip_ability_invoker_cold_snap_lua_Description"			"Вытягивает тепло из врага на время. Враг получит урон и будет ненадолго заморожен. Последующий урон, полученный в этом состоянии, вновь заморозит врага и нанесёт ему дополнительный урон"
+		"DOTA_Tooltip_ability_invoker_cold_snap_lua_Lore" 					"Длительная дрожь Садрона."
+		"DOTA_Tooltip_ability_invoker_cold_snap_lua_Note0" 					"Повторное оглушение сработает, только если нанести больше 10 урона."
+		"DOTA_Tooltip_ability_invoker_cold_snap_lua_duration" 				"ДЛИТЕЛЬНОСТЬ COLD SNAP:"
+		"DOTA_Tooltip_ability_invoker_cold_snap_lua_freeze_duration" 		"ДЛИТЕЛЬНОСТЬ ЗАМОРОЗКИ:"
+		"DOTA_Tooltip_ability_invoker_cold_snap_lua_freeze_damage" 			"УРОН ОТ ЗАМОРОЗКИ:"
+		"DOTA_Tooltip_ability_invoker_cold_snap_lua_freeze_cooldown" 		"ЧАСТОТА ЗАМОРОЗКИ:"
+		
+		"DOTA_Tooltip_ability_invoker_ghost_walk_lua"						"Ghost Walk"
+		"DOTA_Tooltip_ability_invoker_ghost_walk_lua_Description"			"Герой комбинирует стихии льда и молнии, становясь невидимым. Несовместимость элементов создаёт магическое поле, замедляющее врагов, однако и сам герой замедляется"
+		"DOTA_Tooltip_ability_invoker_ghost_walk_lua_self_slow"				"%СКОРОСТЬ INVOKER:"
+		"DOTA_Tooltip_ability_invoker_ghost_walk_lua_duration"				"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_invoker_ghost_walk_lua_area_of_effect"		"РАДИУС:"
+		"DOTA_Tooltip_ability_invoker_ghost_walk_lua_enemy_slow"			"%ЗАМЕДЛЕНИЕ ВРАГА:"
+		"DOTA_Tooltip_modifier_invoker_ghost_walk_lua_self"					"Ghost Walk"
+		"DOTA_Tooltip_modifier_invoker_ghost_walk_lua_self_Description"		"Невидим, скорость передвижения изменена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% и замедляет ближайших врагов."
+		"DOTA_Tooltip_modifier_invoker_ghost_walk_lua_enemy"				"Ghost Walk"
+		"DOTA_Tooltip_modifier_invoker_ghost_walk_lua_enemy_Description"	"Рядом призрак! Замедлен на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+		"DOTA_Tooltip_ability_invoker_ghost_walk_lua_Lore"					"Призрак Мирота."
+		"DOTA_Tooltip_ability_invoker_ghost_walk_lua_Note0"					"Не замедляет врагов, невосприимчивых к магии."
+
+		"DOTA_Tooltip_ability_invoker_tornado_lua" 							"Tornado"
+		"DOTA_Tooltip_ability_invoker_tornado_lua_Description"				"Выпускает стремительный торнадо, который поднимает в воздух врагов на своём пути, а затем обрушивает их на землю. От падения противники получают урон"
+		"DOTA_Tooltip_ability_invoker_tornado_lua_Lore" 					"Когти Торнаруса."
+		"DOTA_Tooltip_ability_invoker_tornado_lua_Note0" 					"Поднятые в воздух враги неуязвимы, но они получат урон от падения."
+		"DOTA_Tooltip_ability_invoker_tornado_lua_travel_distance" 			"ДИСТАНЦИЯ ПЕРЕДВИЖЕНИЯ:"
+		"DOTA_Tooltip_ability_invoker_tornado_lua_area_of_effect" 			"РАДИУС:"
+		"DOTA_Tooltip_ability_invoker_tornado_lua_lift_duration" 			"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_invoker_tornado_lua_base_damage" 				"УРОН:"
+
+		"DOTA_Tooltip_ability_invoker_emp_lua"                     			"EMP"
+		"DOTA_Tooltip_ability_invoker_emp_lua_Description"         			"Создаёт концентрированный сгусток энергии, который спустя %delay% секунды взрывается, выжигая ману у всех врагов в области действия. Каждая единица выжженной маны наносит врагам урон и восстанавливает 0,5 маны владельцу способности. Герой восстаналивает 50%% от выжженой маны."
+		"DOTA_Tooltip_ability_invoker_emp_lua_Lore"                			"Недоброе коловращение Эндолеона."
+		"DOTA_Tooltip_ability_invoker_emp_lua_Note0"               			"Не действует на существ, поднятых в воздух (например, с помощью Tornado или Eul's Scepter of Divinity)."
+		"DOTA_Tooltip_ability_invoker_emp_lua_delay"               			"ВРЕМЯ ЗАРЯДА:"
+		"DOTA_Tooltip_ability_invoker_emp_lua_area_of_effect"      			"РАДИУС:"
+		"DOTA_Tooltip_ability_invoker_emp_lua_mana_burned"         			"МАКС. МАНЫ СЖИГАЕТ:\n"
+		"DOTA_Tooltip_ability_invoker_emp_lua_damage_per_mana_pct" 			"%УРОН:"
+
+		"DOTA_Tooltip_ability_invoker_alacrity_lua" 						"Alacrity"
+		"DOTA_Tooltip_ability_invoker_alacrity_lua_Description" 			"Вызывает у союзника прилив сил, увеличивая его скорость атаки и повышая урон от атак."
+		"DOTA_Tooltip_ability_invoker_alacrity_lua_Lore" 					"Заклятие стремительности Гастера."
+		"DOTA_Tooltip_ability_invoker_alacrity_lua_bonus_attack_speed" 		"ДОП. СКОРОСТЬ АТАКИ:\n"
+		"DOTA_Tooltip_ability_invoker_alacrity_lua_bonus_damage" 			"ДОПОЛНИТЕЛЬНЫЙ УРОН:\n"
+		"DOTA_Tooltip_ability_invoker_alacrity_lua_duration" 				"ДЛИТЕЛЬНОСТЬ:"
+
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_lua" 					"Chaos Meteor"
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_lua_Description"			"Герой низвергает с небес пылающий метеорит, который после падения катится вперёд. Прикосновение к метеориту наносит урон, и ненадолго охватывает жертву огнём, наносящим периодический урон."
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_lua_Lore" 				"Огонь небес Тарака."
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_lua_Note0" 				"Касание метеорита наносит урон раз в 0.5 сек. и поджигает врагов на 3 сек."
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_lua_Note1" 				"Метеорит катится со скоростью 300."
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_lua_land_time" 			"ВРЕМЯ ПАДЕНИЯ:"
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_lua_area_of_effect" 		"РАДИУС:"
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_lua_travel_distance" 	"РАССТОЯНИЕ:\n"
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_lua_main_damage" 		"УРОН ОТ КАСАНИЯ:\n"
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_lua_damage_interval" 	"ИНТЕРВАЛ УРОНА ОТ КАСАНИЯ:"
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_lua_burn_duration" 		"ВРЕМЯ ДЕЙСТВИЯ ОГНЯ:"
+		"DOTA_Tooltip_ability_invoker_chaos_meteor_lua_burn_dps" 			"УРОН ОТ ОГНЯ:\n"
+
+		"DOTA_Tooltip_ability_invoker_forge_spirit_lua" 					"Forge Spirit"
+		"DOTA_Tooltip_ability_invoker_forge_spirit_lua_Description" 		"Призывает рукотворного духа, живое воплощение сил льда и огня. Атаки духа снижают броню вражеских героев."
+		"DOTA_Tooltip_ability_invoker_forge_spirit_lua_lod_Lore" 			"Хитроумные конструкции Кальвина."
+		"DOTA_Tooltip_ability_invoker_forge_spirit_lua_Note0" 				"Призыв новых духов уничтожит старых."
+		"DOTA_Tooltip_ability_invoker_forge_spirit_lua_spirit_damage" 		"УРОН:"
+		"DOTA_Tooltip_ability_invoker_forge_spirit_lua_spirit_hp" 			"ЗДОРОВЬЕ:"
+		"DOTA_Tooltip_ability_invoker_forge_spirit_lua_spirit_armor" 		"БРОНЯ:"
+		"DOTA_Tooltip_ability_invoker_forge_spirit_lua_spirit_attack_range" "ДАЛЬНОСТЬ АТАКИ:"
+		"DOTA_Tooltip_ability_invoker_forge_spirit_lua_spirit_duration" 	"ДАЛЬНОСТЬ:"
+
+		"DOTA_Tooltip_ability_invoker_ice_wall_lod" 						"Ice Wall"
+		"DOTA_Tooltip_ability_invoker_ice_wall_lod_Description"				"Создаёт перед героем ледяную стену. Она сильно замедляет врагов и наносит им урон<br><br><font color='#FF4949'>Внимание:</font> Aghanim's Scepter заблокирует характеристики способности на ее первом уровне"
+		"DOTA_Tooltip_ability_invoker_ice_wall_lod_Lore" 					"Гибельная стена Корикса."
+		"DOTA_Tooltip_ability_invoker_ice_wall_lod_lod_lod_Note0" 			"Замедление не сбрасывается, если получить невосприимчивость к магии после касания стены."
+		"DOTA_Tooltip_ability_invoker_ice_wall_lod_lod_duration" 			"ВРЕМЯ ДЕЙСТВИЯ:\n"
+		"DOTA_Tooltip_ability_invoker_ice_wall_lod_slow" 					"%ЗАМЕДЛЕНИЕ:\n"
+		"DOTA_Tooltip_ability_invoker_ice_wall_lod_slow_duration" 			"ДЛИТ. ЗАМЕДЛЕНИЯ:"
+		"DOTA_Tooltip_ability_invoker_ice_wall_lod_damage_per_second" 		"УРОНА В СЕКУНДУ:\n"
+
+		"DOTA_Tooltip_modifier_imba_essence_aura_buff"								            "Essence Aura"
+		"DOTA_Tooltip_modifier_imba_essence_aura_buff_Description"						        "Использование умений может восстановить часть маны"
+		"DOTA_Tooltip_ability_obsidian_destroyer_essence_aura_datadriven"					    "Essence Aura"
+		"DOTA_Tooltip_ability_obsidian_destroyer_essence_aura_datadriven_Description"			"Когда сам герой или союзники рядом с ним используют заклинания, они могут восстановить часть своей маны. Также даёт пассивный бонус к базовому запасу маны. <font color='#FF7800'>Некоторые умения без перезарядки и переключаемые умения не могут вызать срабатывание Essence Aura.</font>"
+		"DOTA_Tooltip_ability_obsidian_destroyer_essence_aura_datadriven_Lore"					"Кристаллы Внемирья вырабатывают тёмную энергию, и Предвестник направляет её в мир смертных."
+		"DOTA_Tooltip_ability_obsidian_destroyer_essence_aura_datadriven_restore_amount"		"%ВОССТ. МАНЫ:"
+		"DOTA_Tooltip_ability_obsidian_destroyer_essence_aura_datadriven_bonus_mana"			"БОНУС К МАНЕ:"
+		"DOTA_Tooltip_ability_obsidian_destroyer_essence_aura_datadriven_radius"				"РАДИУС:"
+		"DOTA_Tooltip_ability_obsidian_destroyer_essence_aura_datadriven_restore_chance"		"%ШАНС СРАБАТЫВАНИЯ:"
+
+		"DOTA_Tooltip_ability_frostivus2018_dark_willow_bedlam"									"Bedlam(Frosthaven)"
+		"DOTA_Tooltip_ability_frostivus2018_dark_willow_bedlam_Description"						"Герой призывает на помощь ручного светлячка, который начинает вращаться вокруг своего владельца, быстро атакуя ближайших противников. <font color='#70EA72'>Каждая атака отражается от противников вокруг осовной цели.</font> Невозможно применить во время действия способности Terrorize."
+		"DOTA_Tooltip_ability_frostivus2018_dark_willow_bedlam_Lore"               				"Прошу, не обижайся на Джекса. Просто ему очень нравится убивать."
+		"DOTA_Tooltip_ability_frostivus2018_dark_willow_bedlam_attack_damage"	   				"УРОН:"
+		"DOTA_Tooltip_ability_frostivus2018_dark_willow_bedlam_attack_interval"	   				"ИНТЕРВАЛ МЕЖДУ АТАКАМИ:"
+		"DOTA_Tooltip_ability_frostivus2018_dark_willow_bedlam_attack_radius"	   				"ДАЛЬНОСТЬ АТАКИ:"
+		"DOTA_Tooltip_ability_frostivus2018_dark_willow_bedlam_attack_targets"	   				"ЦЕЛЕЙ АТАКИ:"
+		"DOTA_Tooltip_ability_frostivus2018_dark_willow_bedlam_roaming_radius"	   				"РАДИУС ОБЛЁТА:"
+		"DOTA_Tooltip_ability_frostivus2018_dark_willow_bedlam_roaming_duration"				"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_frostivus2018_dark_willow_bedlam_secondary_targets"				"ДОП. ЦЕЛЕЙ:"
+
+		"DOTA_Tooltip_modifier_hero_refreshing"                                     "Fountain Aura"
+		"DOTA_Tooltip_modifier_hero_refreshing_Description"                         "Неуязвимость. Значительно увеличивает восстановление маны и здоровья. Ускоряет перезарядку умений и предметов на 1 секунду каждую секунду"
+
+		"DOTA_Tooltip_modifier_creature_berserk"                                    "Berserk"
+		"DOTA_Tooltip_modifier_creature_berserk_Description"                        "Время раунда истекло. Существо получает дополнительные скорость и урон. Атаки снижают броню цели."
+
+		"DOTA_Tooltip_ability_item_recipe_kaya_2"                	"Рецепт Sky Staff"
+		"DOTA_Tooltip_ability_item_kaya_2"                       	"Sky Staff"
+		"DOTA_Tooltip_ability_item_kaya_2_Description"           	"Не оказывает эффекта на способности наносящие урон в % от здоровья цели<br><br>Усиление способнсотей не сочетается<br><br>Усиление на пассивные способности работает только на 50%%<br><br>Если цель способнсоти - вражеский герой, эффективность предмета снижается до 40%%"
+		"DOTA_Tooltip_ability_item_kaya_2_bonus_intellect"       	"+$int"
+		"DOTA_Tooltip_ability_item_kaya_2_spell_amp"             	"%+Усиление Способностей"
+		"DOTA_Tooltip_ability_item_kaya_2_manacost_reduction"  		"%+к уменьшению расхода и потери маны"
+
+		"DOTA_Tooltip_ability_item_recipe_kaya_3"                   "Рецепт Force of Star"
+		"DOTA_Tooltip_ability_item_kaya_3"                          "Force of Star"
+		"DOTA_Tooltip_ability_item_kaya_3_Description"              "Не оказывает эффекта на способности наносящие урон в % от здоровья цели<br><br>Усиление способнсотей не сочетается<br><br>Усиление на пассивные способности работает только на 50%%<br><br>Если цель способнсоти - вражеский герой, эффективность предмета снижается до 40%%"
+		"DOTA_Tooltip_ability_item_kaya_3_bonus_intellect"          "+$int"
+		"DOTA_Tooltip_ability_item_kaya_3_spell_amp"               	"%+Усиление Способностей"
+		"DOTA_Tooltip_ability_item_kaya_3_manacost_reduction"      	"%+к уменьшению расхода и потери маны"
+
+		"DOTA_Tooltip_ability_frostbitten_icicle"                	"Frostbitten Icicle"
+		"DOTA_Tooltip_ability_frostbitten_icicle_Description"    	"Создает ледяной взрыв вокруг цели, нанося всем в области вокруг нее урон и замедляя передвижение"
+		"DOTA_Tooltip_ability_frostbitten_icicle_radius"         	"РАДИУС:"
+		"DOTA_Tooltip_ability_frostbitten_icicle_freeze_duration"	"ДЛИТЕЛЬНОСТЬ ОБМОРОЖЕНИЯ"
+
+		"DOTA_Tooltip_ability_creature_ogre_jump_smash"                    	"Jump Smash"
+		"DOTA_Tooltip_ability_creature_ogre_jump_smash_Description"        	"Совершает прыжок, после приземления нанося урон и оглушая всех врагов."
+		"DOTA_Tooltip_ability_creature_ogre_jump_smash_impact_radius"      	"РАДИУС:"
+		"DOTA_Tooltip_ability_creature_ogre_jump_smash_stun_duration"      	"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_creature_ogre_jump_smash_damage"             	"УРОН:"
+
+		"DOTA_Tooltip_ability_creature_ogreseal_flop"                      	"Ogreseal Flop"
+		"DOTA_Tooltip_ability_creature_ogreseal_flop_Description"          	"Совершает рывок вперед, нанося врагам урон и оглушая их на %stun_duration% сек."
+
+		"DOTA_Tooltip_ability_item_book_of_strength"						"Книга Силы"
+		"DOTA_Tooltip_ability_item_book_of_strength_Description"			"Навсегда повышает Силу на 3"
+		"DOTA_Tooltip_ability_item_book_of_agility"							"Книга Ловкости"
+		"DOTA_Tooltip_ability_item_book_of_agility_Description"				"Навсегда повышает Ловкость на 3"
+		"DOTA_Tooltip_ability_item_book_of_intelligence"					"Книга Интеллекта"
+		"DOTA_Tooltip_ability_item_book_of_intelligence_Description"		"Навсегда повышает Интеллект на 3"
+
+		"DOTA_Tooltip_modifier_book_of_strength"							"Книга Силы"
+		"DOTA_Tooltip_modifier_book_of_strength_Description"				"Сила, полученная от использования книг"
+		"DOTA_Tooltip_modifier_book_of_agility"								"Книга Ловкости"
+		"DOTA_Tooltip_modifier_book_of_agility_Description"					"Ловкость, полученная от использования книг"
+		"DOTA_Tooltip_modifier_book_of_intelligence"					  	"Книга Интеллекта"
+		"DOTA_Tooltip_modifier_book_of_intelligence_Description"			"Интеллект, полученный от использования книг"
+
+
+		"DOTA_Tooltip_modifier_creature_berserk_debuff"             		"Пробитая Броня"
+		"DOTA_Tooltip_modifier_creature_berserk_debuff_Description" 		"Кажды заряд понижают броню на 1"
+
+		"cheat_no_record"													"Активирован чит-режим. Рейтинг после игры не изменится."
+
+		"DOTA_Tooltip_ability_necrolyte_heartstopper_aura_lua"                    		"Heartstopper Aura"
+		"DOTA_Tooltip_ability_necrolyte_heartstopper_aura_lua_Description"        		"Герой останавливает сердца врагов вокруг, отчего они постепенно теряют часть максимального здоровья. Также на %regen_duration% сек. ускоряет восстановление здоровья и маны за каждое убитое существо."
+		"DOTA_Tooltip_ability_necrolyte_heartstopper_aura_lua_aura_radius"        		"РАДИУС:"
+		"DOTA_Tooltip_ability_necrolyte_heartstopper_aura_lua_aura_damage"        		"%УМЕНЬШЕНИЕ ЗДОРОВЬЯ:"
+		"DOTA_Tooltip_modifier_necrolyte_heartstopper_aura_lua_effect"					"Heartstopper Aura"
+		"DOTA_Tooltip_modifier_necrolyte_heartstopper_aura_lua_effect_Description"		"Теряет процент от максимального здоровья ежесекундно, пока находится рядом с Necrophos."
+		"DOTA_Tooltip_ability_necrolyte_heartstopper_aura_lua_Lore"						"Душами своих жертв Ротунд'йер стирает грань между жизнью и смертью."
+		"DOTA_Tooltip_ability_necrolyte_heartstopper_aura_lua_Note0"					"Урон не запрещает использовать такие предметы, как Blink Dagger."
+		"DOTA_Tooltip_ability_necrolyte_heartstopper_aura_lua_Note1"					"Не действует на древних крипов."
+		"DOTA_Tooltip_modifier_necrolyte_heartstopper_aura_lua" 						"Heartstopper Aura"
+		"DOTA_Tooltip_ability_necrolyte_heartstopper_aura_lua_health_regen"				"ВОССТАНОВЛЕНИЕ ЗДОРОВЬЯ ЗА УБИЙСТВО:"
+		"DOTA_Tooltip_ability_necrolyte_heartstopper_aura_lua_mana_regen" 				"ВОССТАНОВЛЕНИЕ МАНЫ ЗА УБИЙСТВО:"
+		"DOTA_Tooltip_ability_necrolyte_heartstopper_aura_lua_regen_duration"			"ДЛИТЕЛЬНОСТЬ ВОССТАНОВЛЕНИЯ:"
+		"DOTA_Tooltip_ability_necrolyte_heartstopper_aura_lua_hero_multiplier"			"МНОЖИТЕЛЬ ВОССТАНОВЛЕНИЯ ПРИ УБИЙСТВЕ ГЕРОЯ:"
+		"DOTA_Tooltip_modifier_necrolyte_heartstopper_aura_lua_counter" 				"Heartstopper Regen"
+		"DOTA_Tooltip_modifier_necrolyte_heartstopper_aura_lua_counter_Description"		"Восстановление здоровья временно увеличено на %fMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%, а восстановление маны — на %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT%."
+
+		"record_ability"                                                            "Пожалуйства, выберите умение"
+		"AbilitySpellSelection_Close_Label"                                         "Может, позже.."
+		"AbilitySpellSelection_Close_Description"                                   "Получить пустую книгу заклинаний."
+
+		"DOTA_Tooltip_ability_item_spell_book_empty_lua"                        "Пустой Свиток Заклинаний"
+		"DOTA_Tooltip_ability_item_spell_book_empty_lua_Description"            "<h1>Consume:Record</h1>Запишите одно из ваших умений на выбор в свиток. Он сохранит информацию о уровне и перезарядке заклинания."
+		"DOTA_Tooltip_ability_item_spell_book_lua"                              "Свиток Заклинаний"
+		"DOTA_Tooltip_ability_item_spell_book_lua_Description"                  "<h1>Consume:Fetch</h1>Прочитайте свиток, что-бы изучить заклинание, которое в нем содержится."
+		"save_spell_book"                                                       "Сохранить умение в свиток заклинаний(150 золота)"
+
+		"DOTA_Tooltip_ability_creature_tear_armor"                              "Пробитая броня"
+		"DOTA_Tooltip_ability_creature_tear_armor_Description"                  "Каждая атака уменьшает вражескую броню."
+		"DOTA_Tooltip_ability_creature_tear_armor_armor_reduce"                 "Снижение брони за каждый заряд"
+
+		"DOTA_Tooltip_modifier_loser_curse"                                     "Проклятье Проигравшего"
+		"DOTA_Tooltip_modifier_loser_curse_Description"                         "Проигравший в дуэли получает наказание. Каждый заряд увеличивает входящий урона на 15%% и умньшает исходящй урона на 15%%.(Эффект от наказания на работает во время дуэли)"
+
+		"lose_aegis"                                                            "потерпел поражение в дуэли и теряет заряд Aegis."
+		"stack_curse"                                                           "потерпел поражение в дуэли и получает Проклятье Проигравшего"
+
+		"npc_dota_clinkz_skeleton_archer_frostivus2018"                         "Burning Army"
+
+		"DOTA_Tooltip_ability_faceless_void_backtrack"                          "Backtrack"
+		"DOTA_Tooltip_ability_faceless_void_backtrack_Description"              "Герой имеет шанс полностью избежать получения урона"
+		"DOTA_Tooltip_ability_faceless_void_backtrack_Lore"                     "Безликий узрит то, чему только предстоит случиться."
+		"DOTA_Tooltip_ability_faceless_void_backtrack_dodge_chance_pct"         "%ШАНС СРАБАТЫВАНИЯ:"
+
+		"AbilityRelearnCloseSelection_Label"                                    "Отказ"
+		"AbilityRelearnSelection_Description"                                   "Отказался и получил книгу обратно"
+
+		"DOTA_Tooltip_ability_item_relearn_book_lua"                            "Книга Переобучения"
+		"DOTA_Tooltip_ability_item_relearn_book_lua_Description"                "<h1>Consume:Retraining</h1>Выберите одно из своих умений и замените его на другое."
+
+		"unlearn_ability"                                                       "Выберите умение для замены"
+
+		"round"                                                                 "Раунд "
+		"finish"                                                                " Завершен "
+		"compensate_relearn_book"                                               "Получил Книгу Переобучения"
+
+		"DOTA_Tooltip_ability_shredder_chakram"                                 "Chakram(Unremovable)"
+
+		"DOTA_Tooltip_ability_invoker_sun_strike_lua"               			"Sun Strike"
+		"DOTA_Tooltip_ability_invoker_sun_strike_lua_Description"   			"Посылает катастрофический луч ожесточённой энергии солнца в заданную точку, который сжигает всех стоящих под ним врагов, как только достигнет земли. Урон равномерно распределяется по всем задетым противникам."
+		"DOTA_Tooltip_ability_invoker_sun_strike_lua_area_of_effect"			"РАДИУС:"
+		"DOTA_Tooltip_ability_invoker_sun_strike_lua_delay"         			"ЗАДЕРЖКА:"
+		"DOTA_Tooltip_ability_invoker_sun_strike_lua_damage"        			"УРОН:"
+		"DOTA_Tooltip_ability_invoker_sun_strike_lua_Lore"          			"Заклятие испепеления Харлека."
+		"DOTA_Tooltip_ability_invoker_sun_strike_lua_Note0"         			"Перед ударом луч даёт обзор области, в которую направлен."
+		"DOTA_Tooltip_ability_invoker_sun_strike_lua_Note1"         			"Наносит половину урона при использование Cataclysm."
+
+		"DOTA_Tooltip_ability_invoker_deafening_blast_lua"                     			"Deafening Blast"
+		"DOTA_Tooltip_ability_invoker_deafening_blast_lua_Description"         			"Выпускает мощную звуковую волну, наносящую всем задетым врагам урон. Исключительная мощь волны отталкивает противников и обезоруживает их."
+		"DOTA_Tooltip_ability_invoker_deafening_blast_lua_damage"              			"УРОН:"
+		"DOTA_Tooltip_ability_invoker_deafening_blast_lua_knockback_duration"  			"ПРОДОЛЖИТЕЛЬНОСТЬ ТОЛЧКА:"
+		"DOTA_Tooltip_ability_invoker_deafening_blast_lua_disarm_duration"     			"ПРОДОЛЖИТЕЛЬНОСТЬ РАЗОРУЖЕНИЯ:"
+		"DOTA_Tooltip_modifier_invoker_deafening_blast_lua_knockback"          			"Отталкивание от Deafening Blast"
+		"DOTA_Tooltip_modifier_invoker_deafening_blast_lua_knockback_Description" 		"Отталкивается заклинанием Deafening Blast."
+		"DOTA_Tooltip_modifier_invoker_deafening_blast_lua_disarm"          			"Разоружение от Deafening Blast"
+		"DOTA_Tooltip_modifier_invoker_deafening_blast_lua_disarm_Description"    		"Не может атаковать."
+		"DOTA_Tooltip_ability_invoker_deafening_blast_lua_Lore"           				"Звуковой обездвиживатель Булуфонта."
+		"DOTA_Tooltip_ability_invoker_deafening_blast_lua_travel_distance"      		"ДАЛЬНОСТЬ:"
+
+		"DOTA_Tooltip_ability_monkey_king_wukongs_command"                  "Wukongs Command(Unremovable)"
+		"DOTA_Tooltip_ability_elder_titan_ancestral_spirit"                 "Ancestral Spirit(Unremovable)"
+
+		"DOTA_Tooltip_modifier_drow_ranger_trueshot_lua_aura_effect"           		"Precision Aura"
+		"DOTA_Tooltip_modifier_drow_ranger_trueshot_lua_aura_effect_Description"    "Урон от атак увеличен на %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%"
+
+		"DOTA_Tooltip_ability_drow_ranger_trueshot_lua"                 			"Precision Aura"
+		"DOTA_Tooltip_ability_drow_ranger_trueshot_lua_Description"					"Увеличивает физический урон всех союзных героев, <font color='#FF7800'>дальнего боя</font> , основываясь на ловкости владельца способности. Активация способности дарует этот бонус крипам дальнего боя на 30 секунд."
+		"DOTA_Tooltip_ability_drow_ranger_trueshot_lua_Lore"						"Коротая своё одиночество в бесконечных тренировках, Траксекс научилась передавать толику своего мастерства любому лучнику."
+		"DOTA_Tooltip_ability_drow_ranger_trueshot_lua_trueshot_ranged_damage"		"%ДОПОЛНИТЕЛЬНЫЙ УРОН:"
+		"DOTA_Tooltip_ability_drow_ranger_trueshot_lua_radius"              		"РАДИУС:"
+
+		"DOTA_Tooltip_modifier_charge_counter"								"Заряды Умения"
+		"DOTA_Tooltip_modifier_charge_counter_Description"					"Это умение имеет несколько зарядов"
+
+		"next_ability_round_3"                                              "Следующий раунд для выбора дополнительного умения - 3"
+		"next_ability_round_6"                                              "Следующий раунд для выбора дополнительного умения - 6"
+		"next_ability_round_9"                                              "Следующий раунд для выбора дополнительного умения - 9"
+
+		"DOTA_Tooltip_ability_zuus_static_field_datadriven"                     "Static Field(Old Version)"
+		"DOTA_Tooltip_ability_zuus_static_field_datadriven_Description"         "Герой поражает током врагов поблизости каждый раз, когда произносит заклинание. Урон пропорционален уровню текущего здоровья жертв.<br><br><font color='#FF7800'>Умения без перезарядки или стоимости маны не вызывают срабатываения Static Field.</font>"
+		"DOTA_Tooltip_ability_zuus_static_field_datadriven_Lore"                "Когда владыка грома ступает по земле, даже воздух вокруг него искрится от напряжения."
+		"DOTA_Tooltip_ability_zuus_static_field_datadriven_Note0"               "Уменьшение здоровья происходит раньше, чем наносится урон от применённой способности."
+		"DOTA_Tooltip_ability_zuus_static_field_datadriven_Note1"               "Cрабатывает от использования предметов."
+		"DOTA_Tooltip_ability_zuus_static_field_datadriven_Note2"               "Не действует на существ вне видимости."
+		"DOTA_Tooltip_ability_zuus_static_field_datadriven_damage_health_pct"   "%СНИЖЕНИЕ ЗДОРОВЬЯ:"
+		"DOTA_Tooltip_ability_zuus_static_field_datadriven_radius"              "РАДИУС:"
+
+
+		"DOTA_Tooltip_ability_spider_nethertoxin_lua"                               "Nethertoxin"
+	    "DOTA_Tooltip_ability_spider_nethertoxin_lua_Description"                   "Покрывает землю особым ядом. Противники в отравленной области получают периодический урон, а их пассивные способности не работают."
+	    "DOTA_Tooltip_ability_spider_nethertoxin_lua_duration"                      "ДЛИТЕЛЬНОСТЬ:"
+	    "DOTA_Tooltip_ability_spider_nethertoxin_lua_radius"                        "РАДИУС:"
+
+	    "npc_dota_spider_melee"                                                     "Blood Thirst Spider"
+	    "npc_dota_spider_range"                                                     "Toxin Spider"
+	    "DOTA_Tooltip_modifier_spider_nethertoxin_lua"                              "Nethertoxin"
+	    "DOTA_Tooltip_modifier_spider_nethertoxin_lua_Description"                  "Пассивные способности отключены, получает периодический урон."
+
+
+	    "DOTA_Tooltip_ability_spider_explode_lua"                                   "Toxin Pustule"
+	    "DOTA_Tooltip_ability_spider_explode_lua_Description"                       "Оставляет на месте смерте ядовитую область, в которой противники получают периодический урон, а их пассивные способности не работают."
+
+	    "npc_dota_explode_spider"                                                   "Baneling"
+	    "Round_Explode_Spider"                                                      "Baneling"
+	    "Round_Spider"                                                              "Toxin Spider"
+
+		"AbilityOrder_Close"                                                    "Закрыть"
+		"AbilityOrderTitle"                                                     "Перемещение Способностей"
+
+		"suicide_note"                                                          "В одиночном режиме вы можете использовать команду -suicide что-бы досрочно законить игру."
+        
+        "Round_Skeleton"                                                            "Skeleton"
+	    "Round_Kobold"                                                              "Kobold"
+	    "Round_Troll"                                                               "Troll"
+	    "Round_Troll_And_Kobold"                                                    "Kobold Master"
+	    "Round_Gnoll_Assassin"                                                      "Gnoll Assassin"
+	    "Round_Ghost"                                                               "Ghost"
+	    "Round_Harpy"                                                               "Harpy"
+	    "Round_Crocodilian"                                                         "Crocodilian"
+	    "Round_Chameleon"                                                           "Chameleon"
+	    "Round_Greevil"                                                             "Greevil"
+	    "Round_Centaur"                                                             "Centaur"
+	    "Round_Wolf"                                                                "Gaint Wolf"
+	    "Round_Satyr"                                                               "Satyr Mindstealer"
+	    "Round_Ogre"                                                                "Ogre"
+	    "Round_Golem"                                                               "Mud Golem"
+	    "Round_Centaur_Big"                                                         "Centaur Conqueror"
+	    "Round_Satyr_Big"                                                           "Satyr Banisher"
+	    "Round_Hellbear"                                                            "Hellbear"
+	    "Round_Wild"                                                                "Wildwing"
+	    "Round_Dark_Troll"                                                          "Dark Troll"
+	    "Round_Ogreseal"                                                            "Ogreseal"
+	    "Round_Ogre_Warlord"                                                        "Ogre Warlord"
+	    "Round_Dragon"                                                              "Dragon"
+	    "Round_Large_Golem"                                                         "Large Golem"
+	    "Round_Thunder_Lizard"                                                      "Thunder Lizard"
+	    "Round_Prowler"                                                             "Ancient Prowler"
+	    "Round_Frostbitten"                                                         "Frostbitten"
+	    "Round_Roshan"                                                              "Roshan"
+
+
+		"DOTA_Tooltip_ability_special_bonus_custom_morphling_6"           "{s:value} Зарядов Waveform"
+
+		"DOTA_Tooltip_ability_special_bonus_custom_tiny_2"                "{s:value} Зарядов Toss"
+		"DOTA_Tooltip_ability_special_bonus_custom_ember_spirit_4"        "{s:value} Зарядов Sleight of Fist"
+		"DOTA_Tooltip_ability_special_bonus_custom_shadow_demon_7"        "{s:value} Зарядов Disruption"
+		"DOTA_Tooltip_ability_special_bonus_custom_gyrocopter_1"          "{s:value} Зарядов Homing Missile"
+		"DOTA_Tooltip_ability_special_bonus_custom_void_spirit_9"         "+{s:value} Зарядов Astral Step"
+		"DOTA_Tooltip_ability_special_bonus_custom_ember_spirit_5"        "-{s:value} Восстановление Зарядов Remnant"
+
+		"player_ready_for_round"	"Готов"
+		"Swap_Button"				"Обмен"
+
+		"swap_proposed"				"Предложение обмна от"
+		"approve_swap"				"Принять"
+		"decline_swap"				"Отклонить"
+
+		"auto_duel_vision"				"Автоматически наблюдать за дуэлью"
+		"auto_duel_vision_hint"			"При окончании Вашего раунда, камера автоматически будет наблюдать за дуэлью"
+
+		"auto_creeps_camera"			"Автоматически наблюдать за другими игроками"
+		"auto_creeps_camera_hint"		"По окончании Вашего раунда, камера автоматически переместится к случайной сражающейся команде"
+
+		"DOTA_Tooltip_ability_ogre_magi_multicast_lua" 							"Multicast"
+		"DOTA_Tooltip_ability_ogre_magi_multicast_lua_Description" 				"Позволяет способностям героя срабатывать по нескольку раз за одно применение и усиливает каждую из них: <font color="#EEF10D">Fireblast</font> получает уменьшенное время перезарядки и увеличенную дальность применения. <font color="#DE8930">Ignite</font> действует на область вокруг цели, получает увеличенную дальность применения и может сработать на случайных врагов вокруг. <font color="#E34F4F">Bloodlust</font> получает уменьшенное время перезарядки и может сработать на случайных союзников вокруг."
+		"DOTA_Tooltip_ability_ogre_magi_multicast_lua_multicast_2_times"			"%ШАНС 2Х:"
+		"DOTA_Tooltip_ability_ogre_magi_multicast_lua_multicast_3_times"			"%ШАНС 3Х:"
+		"DOTA_Tooltip_ability_ogre_magi_multicast_lua_multicast_4_times"			"%ШАНС 4Х:"
+		"DOTA_Tooltip_ability_ogre_magi_multicast_lua_fireblast_cooldown"		"FIREBLAST COOLDOWN REDUCTION:"
+		"DOTA_Tooltip_ability_ogre_magi_multicast_lua_ignite_aoe"				"IGNITE RADIUS:"
+		"DOTA_Tooltip_ability_ogre_magi_multicast_lua_ignite_cast_range"			"IGNITE CAST RANGE INCREASE:"
+		"DOTA_Tooltip_ability_ogre_magi_multicast_lua_bloodlust_aoe"				"BLOODLUST RADIUS:"
+		"DOTA_Tooltip_ability_ogre_magi_multicast_lua_bloodlust_cooldown"		"BLOODLUST COOLDOWN REDUCTION:"
+		"DOTA_Tooltip_ability_ogre_magi_multicast_lua_aghanim_description"		"Adds the Unrefined Fireblast ability. Multicast can be used on allies to give them chance to multicast for some time. Multicast chance on ultimates is decreased by 50%"
+		"DOTA_Tooltip_modifier_multicast_lua"										"Multicast"
+
+
+		"reroll_hero"				"Заменить Героя"
+		"reroll_hero_not_enough"	"Попыток Не Осталось"
+		"no_gold_for_reroll"		"У вас не хватает золота для замены героя"
+
+		"activate_bots"				"Активировать ботов"
+
+		"auto_duel_vision"				"Автоматически наблюдать за дуэлью"
+		"auto_duel_vision_hint"			"При окончании Вашего раунда, камера автоматически будет наблюдать за дуэлью"
+
+		"auto_creeps_camera"			"Автоматически наблюдать за другими игроками"
+		"auto_creeps_camera_hint"		"По окончании Вашего раунда, камера автоматически переместится к случайной сражающейся команде"
+
+		"swap_proposed"			       "Предложение обмена от"
+		"approve_swap"			   	   "Принять"
+		"decline_swap"				   "Отклонить"
+
+
+		"swap_locked"								"Это способность уже в процессе обмене!"
+		"swap_cooldown"								"Обмен для этой способности перезаряжается!"
+
+		"cannot_retrain_swap_cooldowning_ability"	"Нельзя сменить недавно обменянную способность!"
+        "cannot_hide_cooldown_ability"				"Нельзя сохранить недавно обменянную способность в свиток!"
+
+        "already_have_this_ability"					"У вас уже есть эта способность!"
+		"player_has_this_ability"					"У этого игрока уже есть эта способность!"
+
+
+		//Abaddon
+		"DOTA_Tooltip_ability_abaddon_borrowed_time_ability_note"               "Перезарядка не сбрасывается способностью<font color='#B694FF'>Rearm</font>"
+		 
+		//Arc Warden
+		"DOTA_Tooltip_ability_arc_warden_tempest_double_ability_note"           "Перезарядка не сбрасывается способностью<font color='#B694FF'>Rearm</font>"
+		 
+		//Axe
+		 
+		//Bane
+		"DOTA_Tooltip_ability_bane_enfeeble_ability_note"                       "Не работает со способностями, <font color='#B694FF'>направленными на точку</font>"
+		 
+		//Batrider
+		 
+		//Beastmaster
+		 
+		//Bloodseeker
+		 	 
+		//Bounty Hunter
+		 		
+		//Brewmaster
+		 	 
+		//Bristleback
+		 
+		//Broodmother
+		 
+		//Centaur Warrunner
+		 
+		//Chaos Knight
+		 		
+		//Chen
+		 
+		//Clinkz
+		 
+		//Clockwerk
+		"DOTA_Tooltip_ability_arc_warden_tempest_double_ability_note"            "Перезарядка не сбрасывается способностью<font color='#B694FF'>Rearm</font>"
+	 
+		//Crystal Maiden
+		 
+		 
+		//Dark Seer
+		 
+		 
+		//Dark Willow
+		 
+		//Dazzle
+		"DOTA_Tooltip_ability_dazzle_bad_juju_ability_note"                     "Невозможно найти <font color='#B694FF'>Puck's <b>Phase Shift</b></font> если у вас есть <font color='#B694FF'>Bad Juju</font>"
+		"DOTA_Tooltip_ability_dazzle_shallow_grave_ability_note"                "Перезарядка не сбрасывается способностью<font color='#B694FF'>Rearm</font>"
+		 
+		//Death Prophet
+		 
+		//Disruptor
+		 	 
+		//Doom
+		 
+		//Dragon Knight
+		 
+		//Drow Ranger
+		 
+		//Earth Spirit
+		 
+		 
+		//Earthshaker
+		 
+		 
+		//Elder Titan
+ 
+		//Ember Spirit
+		 
+		//Enchantress
+		 
+		//Enigma
+		 
+		//Faceless Void
+
+		//Grimstroke
+		 
+		//Gyrocopter
+		"DOTA_Tooltip_ability_gyrocopter_flak_cannon_note"                      "<font color='#B694FF'>Aghanim's Sceptre</font> работает только на<font color='#B694FF'>Gyrocopter</font>"
+		 
+		//Huskar
+		"DOTA_Tooltip_ability_frostivus2018_huskar_burning_spear_ability_note"     "На умение оказывают влияние <font color='#B694FF'>таланты</font> Huskar"
+		
+		//Io
+		 
+		//Jakiro
+		 
+		//Juggernaut
+		//Keeper of the Light
+		 	
+		//Kunkka
+		 
+		 
+		//Legion Commander
+		 
+		 
+		//Leshrac
+		 
+		 
+		//Lich
+		 
+		//Lifestealer
+		 
+		//Lina
+		 
+		 
+		//Lion
+		 
+		 
+		//Lone Druid
+		"DOTA_Tooltip_ability_lone_druid_spirit_bear_ability_note"              "Может быть убит на <font color='#B694FF'>фонтане</font> другими игроками<br>Что-бы обновить характеристики <font color='#B694FF'>spirit bear</font>, которые дает ему <font color='#B694FF'>Crown of the Dominator</font>, необходимо перепризвать медведя, убить его или купить <font color='#B694FF'>Aghanim's Scepter</font>"
+		"DOTA_Tooltip_ability_lone_druid_true_form_ability_note"                "Взяв эту способность вы также получите <font color='#B694FF'>Battle Cry</font> и <font color='#B694FF'>Druid Form</font>"
+		 
+		//Luna
+		 
+		//Lycan
+		 
+		//Magnus
+		 	
+		//Mars
+		 
+		//Medusa
+		 
+		//Meepo
+		 
+		 
+		//Mirana
+		 
+		 
+		//Monkey King
+		 
+		//Morphling
+		 
+		//Naga Siren
+		 
+		//Nature's Prophet
+		"DOTA_Tooltip_ability_furion_wrath_of_nature_ability_note"          "Перезарядка не сбрасывается способностью<font color='#B694FF'>Rearm</font>"
+		 
+		//Necrophos
+		 
+		//Night Stalker
+		 
+		//Nyx Assassin
+		 
+		//Ogre Magi
+		 
+		//Omniknight
+		 
+		//Oracle
+		"DOTA_Tooltip_ability_oracle_false_promise_ability_note"            "Перезарядка не сбрасывается способностью<font color='#B694FF'>Rearm</font>"
+		 
+		//Outworld Devourer
+		 
+		//Pangolier
+		 
+		//Phantom Assassin
+		"DOTA_Tooltip_ability_phantom_assassin_stifling_dagger_nb2017_ability_note"				"На умение не оказывает влияние <font color='#B694FF'>талант \"Strike Stifling по трём целям\"</font>"
+		 
+		//Phantom Lancer
+		 
+		 
+		//Phoenix
+		"DOTA_Tooltip_ability_phoenix_supernova_ability_note"               "Перезарядка не сбрасывается способностью<font color='#B694FF'>Rearm</font>"
+		 
+		//Puck
+		"DOTA_Tooltip_ability_puck_phase_shift_ability_note"            "Невозможно найти <font color='#B694FF'>Dazzle's <b>Bad Juju</b></font> если у вас есть <font color='#B694FF'>Phase Shift</font>"
+		 
+		//Pudge
+		 
+		//Pugna
+		 
+		//Queen of Pain
+		 
+		//Razor
+		 
+		//Riki
+		 		
+		//Rubick		 
+		
+		//Sand King
+		 		
+		//Shadow Demon
+		 		 
+		//Shadow Fiend
+		"DOTA_Tooltip_ability_nevermore_requiem_ability_note"                  "Для работы требует <font color='#B694FF'>Necromastery</font>"
+		 
+		//Shadow Shaman
+		"DOTA_Tooltip_ability_shadow_shaman_mass_serpent_ward_ability_note"     "Перезарядка не сбрасывается способностью<font color='#B694FF'>Rearm</font>"
+		 
+		//Silencer
+		 
+		 
+		//Skywrath Mage
+		 
+		 
+		//Slardar
+		"DOTA_Tooltip_ability_snapfire_lil_shredder_ability_note"     "<font color='#B694FF'>Усиление способностей</font> не работает на это"
+		 
+		 
+		//Slark
+		"DOTA_Tooltip_ability_slark_shadow_dance_ability_note"       "Перезарядка не сбрасывается способностью<font color='#B694FF'>Rearm</font>"
+		 
+		//Snapfire
+		 
+		//Sniper
+		 
+		//Spectre
+		"DOTA_Tooltip_ability_spectre_haunt_ability_note"		"Перезарядка не сбрасывается способностью<font color='#B694FF'>Rearm</font>"
+
+		//Spirit Breaker
+		"DOTA_Tooltip_ability_spirit_breaker_nether_strike_ability_note"   "Требует <font color='#B694FF'>Greater Bash</font> чтобы застанить цель"
+		 
+		//Storm Spirit
+		 
+		//Sven
+		"DOTA_Tooltip_ability_sven_great_cleave_ability_note"   "Работает как на героях <font color='#B694FF'>дальнего бля</font>, так и на героях <font color='#B694FF'>ближнего боя</font><br><font color='#B694FF'>Cleave</font>Радиус сплэша начинается с <font color='#B694FF'><b>героя</b></font>"
+		 
+		//Techies
+		 
+		//Templar Assassin
+		 
+		//Terrorblade
+		
+		//Tidehunter
+		 
+		//Timbersaw
+		"DOTA_Tooltip_ability_shredder_chakram_ability_note"                    "На эту способность не работает <font color='#B694FF'>Multicast</font><br>Эту способность невозможно<font color='#B694FF'>переобучить</font> или <font color='#B694FF'>обменять</font>"
+		"DOTA_Tooltip_ability_shredder_chakram_2_ability_note"                  "На эту способность не работает <font color='#B694FF'>Multicast</font>"
+		 
+		//Tinker
+		 
+		//Tiny
+		 
+		//Treant Protector
+		 
+		//Troll Warlord
+		 
+		//Tusk
+		 
+		//Underlord
+		"DOTA_Tooltip_ability_abyssal_underlord_firestorm_ability_note"   "Периодический урон от максимального здоровья этой способности не действует на <font color='#B694FF'>Рошана</font>"
+		 
+		//Undying
+		"DOTA_Tooltip_ability_undying_tombstone_ability_note"           "Перезарядка не сбрасывается способностью<font color='#B694FF'>Rearm</font>"
+		 
+		//Ursa
+		 
+		//Vengeful Spirit
+		 
+		//Venomancer
+		 
+		//Viper
+		 		 
+		//Visage
+		 	 
+		//Void Spirit
+		"DOTA_Tooltip_ability_void_spirit_aether_remnant_ability_note"      "Эту способность невозможно<font color='#B694FF'>переобучить</font> или <font color='#B694FF'>обменять</font>"
+
+		//Warlock
+		"DOTA_Tooltip_ability_warlock_fatal_bonds_ability_note"				"На эту способность не работает <font color='#B694FF'>Multicast</font><br><font color='#B694FF'>Усиление способностей</font> влияет на распространяющийся урон"
+		"DOTA_Tooltip_ability_warlock_rain_of_chaos_ability_note"			"Перезарядка не сбрасывается способностью<font color='#B694FF'>Rearm</font>"
+		 
+		//Weaver
+		 
+		//Windranger
+		 
+		//Winter Wyvern
+		 	
+		//Witch Doctor
+		 
+		//Wraith King
+		"DOTA_Tooltip_ability_skeleton_king_reincarnation_ability_note"         "Перезарядка не сбрасывается способностью<font color='#B694FF'>Rearm</font><br>Эффект от <font color='#B694FF'>Aghanim's Scepter</font> удалён"
+
+		//Zeus
+		"DOTA_Tooltip_ability_zuus_thundergods_wrath_ability_note"          "Перезарядка не сбрасывается способностью<font color='#B694FF'>Rearm</font>"
+		"DOTA_Tooltip_ability_zuus_static_field_ability_note"           	"Срабатывание способности вызывают тольк обычные заклинания <font color='#B694FF'>Zeus</font><br><font color='#B694FF'>Усиление способностей</font> влияет на урон от умения"
+
+	} 
+}
