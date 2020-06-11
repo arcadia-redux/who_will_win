@@ -6,7 +6,7 @@
 	align: center top;
 	height: 60px;
 	width: 500px;
-	margin-top: 70px;
+	margin-top: 75px;
 	overflow: noclip noclip;
 }
 .betsBg Label{
@@ -37,13 +37,13 @@
 	height: 100%;
 	width: 50%;
 	align: left center;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #103683 ), color-stop( .5, #1D37FD), to( #103683 ) );
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #0070dF ), color-stop( .5, #0E80eF), to( #0070dF ) );
 }
 #rightBar{
 	height: 100%;
 	width: 50%;
 	align: right center;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #831010 ), color-stop( .5, #fd1d1d), to( #831010 ) );
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #e00a0a ), color-stop( .5, #ed0d0d), to( #e00a0a ) );
 }
 .betsBar Label{
 	font-size: 13;
@@ -130,12 +130,12 @@ Label{
 
 .topbar {
 	align: center top;
-	height: 70px;
+	height: 75px;
 	flow-children: right;
 }
 
 .playertb {
-	width: 65px;
+	width: 110px;
 	height: 100%;
 
 	transition-property: position;
@@ -145,9 +145,21 @@ Label{
 
 #gold {
 	color: gold;
-	margin-top: 50px;
+	margin-top: 0px;
+	margin-left: 65px;
 
-	horizontal-align: center;
+}
+
+#bet {
+	margin-top: 20px;
+	color: gold;
+	margin-left: 65px;
+}
+
+#profit {
+	margin-top: 40px;
+	color: #50AF1B;
+	margin-left: 65px;
 }
 
 .hpbg{
@@ -162,13 +174,15 @@ Label{
 	align: right bottom;
 	background-color: gradient( linear, 0% 50%, 100% 50%, from( #208310 ), color-stop( .5, #28FD1D), to( #208310 ) );
 }
+
 .avatarimage
 {
-	align: center top;
-	width: 50px;
-	height: 50px;
+	align: left top;
+	width: 60px;
+	height: 60px;
 	box-shadow: #000000aa 0px 0px 5px 0px;
 }
+
 .hpbg Label{
 	color:white;
 	font-weight: bold;
@@ -529,7 +543,7 @@ Label{
 	border-radius: 0px;
 	width: 50px;
 	height: 4px;
-	transform: rotateZ(-90deg) translateX(-1px) translateY(34px);
+	transform: rotateZ(-90deg) translateX(-2px) translateY(37px);
 	opacity-mask: url("s2r://panorama/images/hud/reborn/statbranch_progress_mask_psd.vtex") 1.0;
 	horizontal-align: right;
     //visibility: collapse;
@@ -564,10 +578,11 @@ Label{
 
 .LevelProgressBlur
 {
-	height: 9px;
+	height: 8px;
 	blur: gaussian( 3 );
 	z-index: -1;
-	transform: rotateZ(-90deg) translateX(-1px) translateY(31px);
+	transform: rotateZ(-90deg) translateX(-2px) translateY(34px);
+	//opacity: 0;
 }
 
 #StatLevelProgressBar, #StatLevelProgressBarBlur {
@@ -731,3 +746,43 @@ Label{
 	vertical-align: center;
 }
 
+.TeamIcon
+{
+	width: 32px;
+	height: 32px;
+	vertical-align: bottom;
+	//margin-left: 3px;
+	margin-right: 3px;
+	z-index: 2;
+	visibility: collapse;
+}
+
+.TeamIcon Image
+{
+	width: 32px;
+	height: 32px;
+}
+
+.TeamIcon #IconShadow
+{
+	width: 32px;
+	height: 32px;
+
+	//img-shadow: 0px 0px 4px 2.0 #000000ff;
+}
+
+.Left .TeamIcon, .Right .TeamIcon {
+	visibility: visible;
+}
+
+.Left .TeamIcon #ShieldColor {
+	wash-color: #1E90FF;
+}
+
+.Right .TeamIcon #ShieldColor {
+	wash-color: #f01a1a;
+}
+
+.Loser #gold {
+	opacity: 0;
+}

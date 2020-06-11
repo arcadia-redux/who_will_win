@@ -29,6 +29,8 @@
     <Panel>
         <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/hud.xml" />
         <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/units.xml" />
+        <!--<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/bet_list.xml" />-->
+
 
         <!-- From Overthrow.
             url("s2r://panorama/images/control_icons/brackets_png.vtex")

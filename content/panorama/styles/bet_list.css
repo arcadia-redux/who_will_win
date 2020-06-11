@@ -1,0 +1,98 @@
+.betList {
+	vertical-align: bottom;
+}
+
+
+#BetsTable {
+	flow-children: down;
+}
+
+#TableHeader, .PlayerRow {
+	flow-children: right;
+
+	background-color: #1D2333e0;
+}
+
+.Even {
+	background-color: #272F44e0;
+}
+
+#TableRows {
+	flow-children: down;
+}
+
+#TableHeader, .PlayerRow {
+	height: 40px;
+}
+
+.ColPlayerName {
+	width: 180px;
+}
+
+#TableHeader .ColPlayerName {
+	flow-children: right;
+	text-align: center;
+	vertical-align: center;
+}
+
+#TableRows .ColPlayerName  {
+	flow-children: right;
+	height: 40px;
+}
+
+.ColBet {
+	width: 70px;
+}
+
+.ColProfit {
+	width: 80px;
+}
+
+#TableHeader Label {
+	color: #7380A6;
+}
+
+Label {
+	width: 100%;
+	height: 25px;
+	text-align: center;
+	vertical-align: center;
+
+	text-shadow: 2px 2px 2px 2.0 #1D2333;
+	font-size: 20px;
+}
+
+#TableRows #PlayerName {
+	text-align: left;
+}
+
+.PlayerRow #Bet {
+	color: gold;
+	text-shadow: none;
+}
+
+.PlayerRow #Profit {
+	color: #50AF1B;
+	text-shadow: none;
+}
+
+.TeamIcon
+{
+	width: 32px;
+	height: 32px;
+	vertical-align: center;
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+.TeamIcon Image
+{
+	width: 32px;
+	height: 32px;
+}
+
+.TeamIcon #IconShadow
+{
+	width: 32px;
+	height: 32px;
+}

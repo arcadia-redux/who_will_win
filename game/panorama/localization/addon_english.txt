@@ -3,5 +3,9 @@
 	"minimal_bet"						"Minimal Bet: {d:minimal_bet}"
 	"baw_ready_to_round"				"Ready"
 	"bet_help"							""
+
+	"bets_header_player"				"PLAYER"
+	"bets_header_bet"					"BET"
+	"bets_header_profit"				"PROFIT"
 }
 

@@ -75,7 +75,8 @@ function Gambling:RoundStart()
 	CustomNetTables:SetTableValue("bets", "bets", self.bets)
 end
 
-function Gambling:RoundEnd(winnerTeam)
+function Gambling:RoundEnd(loserTeam)
+	local winnerTeam = loserTeam == "left" and "right" or "left"
 	local winnerBetSum = 0
 	local loserBetSum = 0
 	
@@ -92,7 +93,11 @@ function Gambling:RoundEnd(winnerTeam)
 		local profit = 0
 
 		if bet.team == winnerTeam then
-			profit = bet.gold/winnerBetSum * loserBetSum
+			if IsSoloGame() then
+				profit = bet.gold * 1.5
+			else
+				profit = bet.gold/winnerBetSum * loserBetSum
+			end
 		else
 			profit = -bet.gold
 		end

@@ -1,0 +1,44 @@
+<root>
+	<styles>
+    	<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+    	<include src="s2r://panorama/styles/hud/hud_reborn.vcss_c"/>
+    	<include src="file://{resources}/styles/bet_list.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/bet_list.js" />
+	</scripts>
+	<snippets>
+		<snippet name="PlayerRow">
+			<Panel class="PlayerRow" hittest='false'>
+				<Panel class="ColPlayerName" >
+					<Panel class="TeamIcon">
+						<Image id="IconShadow" src="file://{images}/custom_game/team_icons/team_shield_shadow_01.psd" />
+						<Image id="ShieldBorder" src="file://{images}/custom_game/team_icons/team_shield_border_01.psd" />
+						<Image id="ShieldColor" src="file://{images}/custom_game/team_icons/team_shield_color_01.psd" />
+						<Image id="TeamIcon" style="wash-color: black;" src="" />
+					</Panel>
+					<Label id="PlayerName" class="" text="Player" />
+				</Panel>
+
+				<Label id="Bet" class="ColBet" text="10000" />
+				<Label id="Profit" class="ColProfit" text="10000" />
+			</Panel>
+		</snippet>
+		
+	</snippets>
+	<Panel class="betList" hittest='false'>
+		<Panel id="BetsTable">
+			<Panel id="TableHeader">
+				<Label id="PlayerName" class="ColPlayerName" text="#bets_header_player" />
+					
+				
+				<Label id="Bet" class="ColBet" text="#bets_header_bet" />
+				<Label id="Profit" class="ColProfit" text="#bets_header_profit" />
+			</Panel>
+			<Panel id="TableRows" />
+		</Panel>
+	</Panel>
+
+	<!-- src="file://{images}/custom_game/team_icons/team_icon_tiger_01.png" !-->
+	<!-- src="file://{images}/custom_game/team_icons/team_icon_horse_01.png" !-->
+</root>

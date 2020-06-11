@@ -164,6 +164,8 @@ function BAW:InitGameMode()
     mode:SetTopBarTeamValuesVisible(true)
     mode:SetCustomGameForceHero("npc_dota_hero_wisp")
 
+
+
 	self:linkmodifiers()
 
     ListenToGameEvent("dota_player_pick_hero",Dynamic_Wrap(self,"OnHeroPicked"),self)
@@ -367,10 +369,22 @@ function BAW:OnGameRulesStateChange()
 	if nNewState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
 	elseif nNewState == DOTA_GAMERULES_STATE_HERO_SELECTION then
 	elseif nNewState == DOTA_GAMERULES_STATE_PRE_GAME then
+		SendToConsole("dota_bot_populate")
 	elseif nNewState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 10)
 		Gambling:Init()
 		self:StartGame()
+
+		PlayerResource:SetCustomPlayerColor(0, 51, 117, 255)
+	    PlayerResource:SetCustomPlayerColor(1, 102, 255, 191)
+	    PlayerResource:SetCustomPlayerColor(2, 191, 0, 191)
+	    PlayerResource:SetCustomPlayerColor(3, 243, 240, 11)
+	    PlayerResource:SetCustomPlayerColor(4, 255, 107, 0)
+	    PlayerResource:SetCustomPlayerColor(5, 254, 134, 194)
+	    PlayerResource:SetCustomPlayerColor(6, 161, 180, 71)
+	    PlayerResource:SetCustomPlayerColor(7, 101, 217, 247)
+	    PlayerResource:SetCustomPlayerColor(8, 0, 131, 33)
+	    PlayerResource:SetCustomPlayerColor(9, 164, 105, 0)
 	end
 end
 

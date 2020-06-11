@@ -34,6 +34,14 @@ function new_round(t) {
 	$("#ReadyToRound").checked = false
 	$("#ReadyToRound").visible = Players.GetGamblingGold(Game.GetLocalPlayerID()) > 0
 	$("#BetContainer").visible = Players.GetGamblingGold(Game.GetLocalPlayerID()) > 0
+
+	$("#topbar").Children().forEach(panel => {
+		panel.FindChild("bet").visible = false
+		panel.FindChild("profit").visible = false
+		panel.RemoveClass("Left")
+		panel.RemoveClass("Right")
+		panel.SetHasClass("Loser", Players.GetGamblingGold(panel.playerID) <= 0)
+	}) 
 }
 function checkHp() {
 	$.Schedule(0.1, checkHp)
@@ -302,6 +310,41 @@ function UpdateBets(data) {
 	$("#leftBar").style.width = `${left}%`
 	$("#rightPct").text = `${rightGold} (${right}%)`
 	$("#rightBar").style.width = `${right}%`
+
+	let count = 0
+	$("#topbar").Children().forEach(panel => {
+		const bet = data[panel.playerID]
+		panel.RemoveClass("Left")
+		panel.RemoveClass("Right")
+		panel.SetHasClass("Loser", Players.GetGamblingGold(panel.playerID) == 0)
+		if (bet) {
+			let gold = bet.gold
+			let profit = 0
+			if (bet.team == "left") {
+				profit =  gold/leftGold * rightGold
+				panel.AddClass("Left")
+				panel.FindChildTraverse("TeamIcon").SetImage("file://{images}/custom_game/team_icons/team_icon_horse_01.png")
+			}
+			else {
+				profit =  gold/rightGold * leftGold
+				panel.AddClass("Right")
+				panel.FindChildTraverse("TeamIcon").SetImage("file://{images}/custom_game/team_icons/team_icon_tiger_01.png")
+			}
+
+			profit = profit.toFixed(0)
+			
+			panel.FindChild("bet").text = `${gold}`
+			panel.FindChild("profit").text = `${profit}`
+			panel.FindChild("bet").visible = true
+			panel.FindChild("profit").visible = true
+		}
+		else {
+			panel.FindChild("bet").visible = false
+			panel.FindChild("profit").visible = false
+
+		}
+	})
+
 }
 
 function OnBetsChanged(table_name, key, data) {

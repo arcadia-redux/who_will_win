@@ -66,3 +66,28 @@ function TrainTalent(unit, talent)
     AbilityIndex = talent:entindex(),
   })
 end
+
+
+function CountPlayers()
+  local count = 0
+  for pID=0,23 do
+    if PlayerResource:IsValidTeamPlayerID(pID) then
+      count = count + 1
+    end
+  end
+  return count
+end
+
+function CountActivePlayers()
+  local count = 0
+  for pID=0,23 do
+    if PlayerResource:IsValidTeamPlayerID(pID) and Gambling:GetGold(pID) > 0 and PlayerResource:GetConnectionState(pID) ~= DOTA_CONNECTION_STATE_ABANDONED then
+      count = count + 1
+    end
+  end
+  return count
+end
+
+function IsSoloGame() 
+  return CountPlayers() == 1
+end
