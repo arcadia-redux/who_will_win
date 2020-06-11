@@ -15,14 +15,16 @@ if BAW == nil then
 
 	PLAYER_READY = {}
 
-	LEFT_SPAWN_POS = Vector(-1280,-1088,128)
-	RIGHT_SPAWN_POS = Vector(1280,1088,128)
+	_G.LEFT_SPAWN_POS = Vector(-1280,-1088,128)
+	_G.RIGHT_SPAWN_POS = Vector(1280,1088,128)
 end
 
 require('timers')
 require('utils')
 require('bet')
-require('ai')
+
+require('ai_unit')
+require('ai_hero')
 
 function Precache( context )
 	--[[
@@ -446,9 +448,15 @@ function BAW:StartFight()
 			for i,v in ipairs(e) do
 				if not v:IsControllableByAnyPlayer() and not IsIgnored(v) then
 					count = count + 1
-					if not v.bInitialized then
-						v.targetPoint = Vector(0,0,0)
-						v:StartAI()
+				end
+
+				if not v:IsControllableByAnyPlayer() and not v.InitAI then
+					v.InitAI = true
+					v.targetPoint = Vector(0,0,0)
+					if v:IsRealHero() then
+						v:SetContextThink("OnHeroThink", function() return HeroAI:OnHeroThink(v) end, 1)
+					else
+						v:SetContextThink("OnUnitThink", function() return UnitAI:OnUnitThink(v) end, 1)
 					end
 				end
 			end
