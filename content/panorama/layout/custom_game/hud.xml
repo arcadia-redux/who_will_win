@@ -16,6 +16,9 @@
 					<Image id="ShieldBorder" src="file://{images}/custom_game/team_icons/team_shield_border_01.psd" />
 					<Image id="ShieldColor" src="file://{images}/custom_game/team_icons/team_shield_color_01.psd" />
 					<Image id="TeamIcon" style="wash-color: black;" src="file://{images}/custom_game/team_icons/team_icon_tiger_01.png" />
+
+					<!-- src="file://{images}/custom_game/team_icons/team_icon_tiger_01.png" !-->
+					<!-- src="file://{images}/custom_game/team_icons/team_icon_horse_01.png" !-->
 				</Panel>
 				<DOTAAvatarImage id="image" class="avatarimage" steamid="local" nocompendiumborder="true"/>
 				<Label id="gold" text="800"/>

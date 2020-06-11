@@ -172,6 +172,7 @@ function BAW:InitGameMode()
 
     ListenToGameEvent("dota_player_pick_hero",Dynamic_Wrap(self,"OnHeroPicked"),self)
 	ListenToGameEvent("game_rules_state_change",Dynamic_Wrap(self,'OnGameRulesStateChange'),self)
+	ListenToGameEvent("player_chat", Dynamic_Wrap(self, 'OnPlayerChat'), self)	
     --CustomGameEventManager:RegisterListener("Pick", Dynamic_Wrap(self, 'Pick'))
     CustomGameEventManager:RegisterListener("speedup", Dynamic_Wrap(self, 'speedup'))
     CustomGameEventManager:RegisterListener("player_ready_to_round", Dynamic_Wrap(self, 'PlayerReady'))
@@ -265,6 +266,20 @@ function BAW:InitGameMode()
 
 end
 
+function BAW:OnPlayerChat(event)	  
+    local playerID = event.playerid
+    local text = event.text
+	local command = splitString(text, " ")
+
+    if IsInToolsMode() then
+        if command[1] == "next" then
+            
+        end
+    end
+
+
+end
+
 function CalculateUnitPoints(unitName, kv)
 	local points = 0
 
@@ -297,9 +312,19 @@ end
 
 function BAW:speedup(t)
 	local pid = t.PlayerID
-	if _G.FIGHT and not table.contains(VOTED_ID,pid) then
-		table.insert(VOTED_ID, pid)
-		if #VOTED_ID >= PLAYERS then
+	if _G.FIGHT and not VOTED_ID[pid] then
+		VOTED_ID[pid] = true
+
+		local allVoted = true
+		for pID=0,23 do
+			if PlayerResource:IsValidTeamPlayerID(pID) and Gambling:GetGold(pID) > 0 and PlayerResource:GetConnectionState(pID) == DOTA_CONNECTION_STATE_CONNECTED then
+				if not VOTED_ID[pID] then
+					allVoted = false
+				end
+			end
+		end
+
+		if allVoted then
 			Convars:SetFloat("host_timescale", 3)
 		end
 	end
