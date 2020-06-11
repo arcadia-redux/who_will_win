@@ -68,6 +68,8 @@
 					<Label id="unitmptext" text="10000"></Label>
 					<Label id="unitmpplus" text="+1"></Label>
 				</Panel>
+
+				<Label id="UnitCounter" text="x{d:unit_count}"/> 
 			</Panel>
 		</snippet>
 		<snippet name="TalentDisplay">

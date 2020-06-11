@@ -10,16 +10,28 @@ function new_round(t) {
 	$("#leftTeamG").RemoveAndDeleteChildren()
 	$("#rightTeamG").RemoveAndDeleteChildren()
 	cur_units = t.indexes
+
+
+
 	for(let k in t.indexes){
-		for(let i in t.indexes[k]){
+		if (k != "left" && k != "right") continue;
+		t.indexes[k] = LuaTableToArray(t.indexes[k])
+
+		t.indexes[k].sort(function(a,b) {
+			return Entities.GetMaxHealth(b) - Entities.GetMaxHealth(a)
+		})
+
+		let teamUnits = GroupUnits(t.indexes[k])
+
+		for(let i in teamUnits){
 			if(k == "left"){
 				// $.CreatePanel("Label", $("#leftTeamG"), "lb").text = $.Localize(Entities.GetUnitName(t.indexes[k][i]))
 				// let pan = $.CreatePanel("Panel", $("#leftTeamG"), "lb"),
-				createSceneVersus(t,k,i,$("#leftTeamG"))
+				createSceneVersus(t,teamUnits[i],$("#leftTeamG"))
 			}else if(k == "right"){
 				// $.CreatePanel("Label", $("#rightTeamG"), "lb").text = $.Localize(Entities.GetUnitName(t.indexes[k][i]))
 				// let pan = $.CreatePanel("Panel", $("#rightTeamG"), "lb"),
-				createSceneVersus(t,k,i,$("#rightTeamG"))
+				createSceneVersus(t,teamUnits[i],$("#rightTeamG"))
 			}
 		}
 	}
@@ -77,36 +89,48 @@ function checkHp() {
 		}
 	})	
 }
-function createSceneVersus(t,k,i,parent) {
-	let pan = $.CreatePanel("Panel", parent, "lb"),
-	name = Entities.GetUnitName(t.indexes[k][i]),
+function createSceneVersus(t,unitID,parent) {
+
+
+
+	let pan = $.CreatePanel("Panel", parent, "lb")
+	pan.BLoadLayoutSnippet("teamScene")
+
+	if (Array.isArray(unitID)) {
+		pan.SetDialogVariableInt("unit_count", unitID.length)
+		pan.FindChildTraverse("UnitCounter").visible = true
+
+		unitID = unitID[0]
+	}
+
+
+	let name = Entities.GetUnitName(unitID),
 	ab,abpan,abname
 
-	const unitID = t.indexes[k][i]
 	const isHero = Entities.GetUnitName(unitID).includes("npc_dota_hero")
 
-	pan.BLoadLayoutSnippet("teamScene")
+	
 	pan.BCreateChildren('<DOTAScenePanel id="unit" class="teamScene" light="global_light" environment="default" particleonly="false" renderwaterreflections="true" antialias="true" drawbackground="0" renderdeferred="false" unit="'+name+'"/>')
-	AddUnitTooltip(pan.FindChildTraverse("unit"),t.indexes[k][i])
+	AddUnitTooltip(pan.FindChildTraverse("unit"),unitID)
 	pan.FindChildTraverse("name").text = $.Localize(name)
-	pan.FindChildTraverse("unithptext").text = Entities.GetMaxHealth(t.indexes[k][i])
-	pan.FindChildTraverse("unitmptext").text = Entities.GetMaxMana(t.indexes[k][i])
+	pan.FindChildTraverse("unithptext").text = Entities.GetMaxHealth(unitID)
+	pan.FindChildTraverse("unitmptext").text = Entities.GetMaxMana(unitID)
  // $.Msg(t.indexes['regens'][t.indexes[k][i]])
-	pan.FindChildTraverse("unitdamage").text = t.indexes['regens'][t.indexes[k][i]]["3"]
-	pan.FindChildTraverse("unitarmor").text = t.indexes['regens'][t.indexes[k][i]]["4"].toFixed(1)
-	pan.FindChildTraverse("unitatkspd").text = t.indexes['regens'][t.indexes[k][i]]["5"].toFixed(2)+"s"
-	pan.FindChildTraverse("unitatkrng").text = t.indexes['regens'][t.indexes[k][i]]["6"]
+	pan.FindChildTraverse("unitdamage").text = t.indexes['regens'][unitID]["3"]
+	pan.FindChildTraverse("unitarmor").text = t.indexes['regens'][unitID]["4"].toFixed(1)
+	pan.FindChildTraverse("unitatkspd").text = t.indexes['regens'][unitID]["5"].toFixed(2)+"s"
+	pan.FindChildTraverse("unitatkrng").text = t.indexes['regens'][unitID]["6"]
 
 	pan.SetDialogVariableInt("level", Entities.GetLevel(unitID))
 
 	// $.Msg([t.indexes[k][i],Entities.GetHealthThinkRegen(t.indexes[k][i]),Entities.GetManaThinkRegen(t.indexes[k][i])])
-	pan.FindChildTraverse("unithpplus").text = FormatRegen(t.indexes['regens'][t.indexes[k][i]]["1"])
-	pan.FindChildTraverse("unitmpplus").text = FormatRegen(t.indexes['regens'][t.indexes[k][i]]["2"])
+	pan.FindChildTraverse("unithpplus").text = FormatRegen(t.indexes['regens'][unitID]["1"])
+	pan.FindChildTraverse("unitmpplus").text = FormatRegen(t.indexes['regens'][unitID]["2"])
 	let abs = pan.FindChildTraverse("abils")
 	for (let d = 0; d < 6; d++) {
 		const abilityContainer = $.CreatePanel("Panel", abs, "ability"+d)
 		abilityContainer.AddClass("AbilityContainer")
-		ab = Entities.GetAbility(t.indexes[k][i],d)
+		ab = Entities.GetAbility(unitID,d)
 		const abpan = $.CreatePanel("DOTAAbilityImage", abilityContainer, "ab")
 		abname = Abilities.GetAbilityName(ab)
 		// abpan.abilityname = abname
@@ -114,7 +138,7 @@ function createSceneVersus(t,k,i,parent) {
 		abpan.contextEntityIndex = ab
 		abpan.SetHasClass("no_level", Abilities.GetLevel(ab) < 1)
 		if(ab != -1){
-			abpan.SetPanelEvent('onmouseover',ShowAbTooltip(abpan,t.indexes[k][i],abname))
+			abpan.SetPanelEvent('onmouseover',ShowAbTooltip(abpan,unitID,abname))
 			abpan.SetPanelEvent('onmouseout',function() {
 				$.DispatchEvent('DOTAHideAbilityTooltip',abpan);
 			})
@@ -138,13 +162,13 @@ function createSceneVersus(t,k,i,parent) {
 	}
 	let items = pan.FindChildTraverse("items"),itm,item 
 	for (let d = 0; d < 6; d++) {
-		let item = Entities.GetItemInSlot(t.indexes[k][i],d)
+		let item = Entities.GetItemInSlot(unitID,d)
 
 		if(item != -1){
 			const itemName = Abilities.GetAbilityName(item) 
 			itm = items.GetChild(d)
 			itm.contextEntityIndex = item
-			itm.SetPanelEvent('onmouseover',ShowAbTooltip(itm,t.indexes[k][i],itemName))
+			itm.SetPanelEvent('onmouseover',ShowAbTooltip(itm,unitID,itemName))
 			itm.SetPanelEvent('onmouseout',function() {
 				$.DispatchEvent('DOTAHideAbilityTooltip',itm);
 			})
@@ -374,6 +398,51 @@ function GetHeroFirstTalentID(heroID) {
 	}
 
 	return -1
+}
+
+function LuaTableToArray(nt) {
+	var result = []
+	for (var i in nt) {
+		result[i-1] = nt[i]
+	}
+	return result
+}
+
+function GroupUnits(originalArray) {
+	let count = {}
+	let unitIDs = {}
+	originalArray.forEach(function(unitID, index) {
+		const unitName = Entities.GetUnitName(unitID)
+		count[unitName] = count[unitName] ? count[unitName] + 1 : 1 
+
+		const arr = unitIDs[unitName]
+		if (arr) {
+			arr.push(unitID)
+		}
+		else {
+			unitIDs[unitName] = [unitID]
+		}
+		
+	})
+
+	let newArray = []
+	originalArray.forEach(function(unitID) {
+		const unitName = Entities.GetUnitName(unitID)
+		const isHero = unitName.includes("npc_dota_hero")
+
+		if (count[unitName] >= 2 && !isHero) {
+			if (unitIDs[unitName]) {
+				const ids = unitIDs[unitName]
+				delete unitIDs[unitName]
+				newArray.push(ids)
+			}
+		}
+		else {
+			newArray.push(unitID)
+		}
+	})
+
+	return newArray
 }
 
 
