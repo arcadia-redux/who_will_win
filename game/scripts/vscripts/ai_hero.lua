@@ -76,6 +76,7 @@ DontCastItems = {
     [6] = "item_smoke_of_deceit",
     [7] = "item_tome_of_upgrade",
     [8] = "item_scroll_of_time",
+    [9] = "item_courier",
 }
 
 PriorityCastNoTargetAbility = {
@@ -626,6 +627,19 @@ function HeroAI:OnHeroThink(hero)
             highestData = cmdData
         end
     end
+
+--[[
+    print(HERO_CMD_LIST[highestScoreCommand])
+
+    if highestData then
+        for k,v in pairs(highestData) do
+            print(k,v)
+            if k == "ability" then
+                print(v:GetAbilityName())
+            end
+        end
+    end
+]]
 
     hero.LastThinkTime = GameRules:GetGameTime()
 

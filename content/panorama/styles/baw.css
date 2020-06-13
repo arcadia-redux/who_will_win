@@ -732,7 +732,7 @@ Label{
 	vertical-align: bottom;
 	horizontal-align: right;
 
-	margin-bottom: 160px;
+	margin-bottom: 15px;
 	margin-right: 280px;
 }
 
@@ -744,6 +744,17 @@ Label{
 	background-size: contain;
 
 	vertical-align: center;
+}
+
+#BetPercentButtons {
+	flow-children: right;
+
+	margin-bottom: 5px;
+	margin-left: -10px;
+}
+
+#BetPercentButtons .Button {
+	margin-right: 5px;
 }
 
 .TeamIcon

@@ -1,4 +1,9 @@
+"use strict"
+
 let cur_units = {}
+let maxHealthLeft = 0
+let maxHealthRight = 0
+
 function new_round(t) {
 	// $("#leftTeam").text = t.left
 	// $("#rightTeam").text = t.right
@@ -11,7 +16,8 @@ function new_round(t) {
 	$("#rightTeamG").RemoveAndDeleteChildren()
 	cur_units = t.indexes
 
-
+	maxHealthLeft = 0
+	maxHealthRight = 0
 
 	for(let k in t.indexes){
 		if (k != "left" && k != "right") continue;
@@ -21,14 +27,23 @@ function new_round(t) {
 			return Entities.GetMaxHealth(b) - Entities.GetMaxHealth(a)
 		})
 
+		t.indexes[k].forEach((unit) => {
+			if (k == "left")
+				maxHealthLeft = maxHealthLeft + Entities.GetMaxHealth(unit)
+			else
+				maxHealthRight = maxHealthRight + Entities.GetMaxHealth(unit)
+		})
+
 		let teamUnits = GroupUnits(t.indexes[k])
 
 		for(let i in teamUnits){
 			if(k == "left"){
+				
 				// $.CreatePanel("Label", $("#leftTeamG"), "lb").text = $.Localize(Entities.GetUnitName(t.indexes[k][i]))
 				// let pan = $.CreatePanel("Panel", $("#leftTeamG"), "lb"),
 				createSceneVersus(t,teamUnits[i],$("#leftTeamG"))
 			}else if(k == "right"){
+				
 				// $.CreatePanel("Label", $("#rightTeamG"), "lb").text = $.Localize(Entities.GetUnitName(t.indexes[k][i]))
 				// let pan = $.CreatePanel("Panel", $("#rightTeamG"), "lb"),
 				createSceneVersus(t,teamUnits[i],$("#rightTeamG"))
@@ -63,15 +78,15 @@ function checkHp() {
 		for(let k in cur_units){
 			if(k != "regens"){
 				for(let i in cur_units[k]){
-					hps[k] += Entities.GetHealth(cur_units[k][i])
-					hps[k+"max"] += Entities.GetMaxHealth(cur_units[k][i])
+					const health = Entities.GetHealth(cur_units[k][i])
+					hps[k] += health == -1 ? 0 : health
 				}
 			}
-		}
+		} 
 		$("#leftHpPct").text = hps.left
 		$("#rightHpPct").text = hps.right
-		$("#lefthp").style.width = Math.round(hps.left/hps.leftmax*100)+"%"
-		$("#righthp").style.width = Math.round(hps.right/hps.rightmax*100)+"%"
+		$("#lefthp").style.width = Math.round(hps.left/maxHealthLeft*100)+"%"
+		$("#righthp").style.width = Math.round(hps.right/maxHealthRight*100)+"%"
 	}
 
 	const topBar = $("#topbar")
@@ -317,7 +332,7 @@ function UpdateBets(data) {
 	let leftGold = 0
 	let rightGold = 0
 
-	for (bet in data) {
+	for (const bet in data) {
 		if (data[bet].team == "left") {
 			leftGold += +data[bet].gold
 		}
@@ -380,12 +395,17 @@ function OnBetsChanged(table_name, key, data) {
 	}
 }
 
+function OnCameraPosition(event) {
+	GameUI.SetCameraTargetPosition(event.vector, 0.1)
+}
+
 CustomNetTables.SubscribeNetTableListener("bets", OnBetsChanged)
 
 GameEvents.Subscribe("dota_player_update_query_unit",UpdateSelectedUnit)
 GameEvents.Subscribe('dota_player_update_hero_selection', UpdateSelectedUnit);
 GameEvents.Subscribe('dota_player_update_selected_unit', UpdateSelectedUnit);
 GameEvents.Subscribe('game_rules_state_change', GRSChange);
+GameEvents.Subscribe('camera_position', OnCameraPosition);
 
 checkHp()
 

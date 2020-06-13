@@ -11,6 +11,40 @@ function BetMax(value) {
 	$("#BetSlider").value = value
 }
 
+function Bet(team, x) {
+	const playerGold = GetGold(Game.GetLocalPlayerID())
+
+	const table = CustomNetTables.GetTableValue("bets", "minimalBet") 
+	const minBet = table ? (table.minimalBet || 50) : 50
+
+	let bet = 0
+
+	bet = Math.round(playerGold * x)
+
+	if (bet < minBet) 
+		bet = playerGold < minBet ? playerGold : minBet
+
+	if (bet <= 0) return
+
+	if (team == "left") {
+		$("#LeftBetGold").text = bet
+		$("#RightBetGold").text = 0
+	}
+	else {
+		$("#LeftBetGold").text = 0
+		$("#RightBetGold").text = bet
+	}
+
+	GameEvents.SendCustomGameEventToServer("player_bet",{ team: team, gold: bet})
+
+	let newValue = bet/playerGold / 2
+	if (team == "right") 
+		newValue += 0.5
+	else 
+		newValue = 0.5 - newValue
+	$("#BetSlider").SetValueNoEvents(newValue)
+}
+
 function BetChanged() {
 	const slider = $("#BetSlider")
 

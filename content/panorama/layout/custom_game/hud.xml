@@ -154,6 +154,12 @@
 
 			<Panel id="BetContainer" >
 				<Panel id="LeftInfo" class="Betinfo">
+					<Panel id="BetPercentButtons">
+						<TextButton id="Min" class="Button" text="MIN" onactivate="Bet('left',-1);"/>
+						<TextButton id="Perc25" class="Button" text="25%" onactivate="Bet('left',0.25);"/>
+						<TextButton id="Perc50" class="Button" text="50%" onactivate="Bet('left',0.50);"/>
+						<TextButton id="Perc75" class="Button" text="75%" onactivate="Bet('left',0.75);"/>
+					</Panel>
 					<Panel id="LeftBet" >
 						<Label id="LeftBetGold" class="BetGoldLabel" text="0"/>
 						<Image class="BetGold" src="s2r://panorama/images/hud/reborn/gold_small_psd.vtex"/>
@@ -162,6 +168,12 @@
 				</Panel>
 				<Slider id="BetSlider" class="HorizontalSlider" direction="horizontal" min="0" max="1" default="0.5" onvaluechanged="BetChanged()"/>
 				<Panel id="RightInfo" class="Betinfo">
+					<Panel id="BetPercentButtons">
+						<TextButton id="Min" class="Button" text="MIN" onactivate="Bet('right',-1);"/>
+						<TextButton id="Perc25" class="Button" text="25%" onactivate="Bet('right',0.25);"/>
+						<TextButton id="Perc50" class="Button" text="50%" onactivate="Bet('right',0.50);"/>
+						<TextButton id="Perc75" class="Button" text="75%" onactivate="Bet('right',0.75);"/>
+					</Panel>
 					<Panel id="RightBet" >
 						<Image class="BetGold" src="s2r://panorama/images/hud/reborn/gold_small_psd.vtex"/>
 						<Label id="RightBetGold" class="BetGoldLabel" text="0"/>

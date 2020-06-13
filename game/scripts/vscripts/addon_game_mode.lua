@@ -15,8 +15,8 @@ if BAW == nil then
 
 	PLAYER_READY = {}
 
-	_G.LEFT_SPAWN_POS = Vector(-1280,-1088,128)
-	_G.RIGHT_SPAWN_POS = Vector(1280,1088,128)
+	_G.LEFT_SPAWN_POS = Vector(-3260,0,303)
+	_G.RIGHT_SPAWN_POS = Vector(3300,0,306)
 end
 
 require('timers')
@@ -107,7 +107,7 @@ bannedUnits = {
 	npc_dota_venomancer_plague_ward_4 = true,
 	npc_dota_hero_chen = true,
 	npc_dota_hero_lone_druid = true,
-	npc_dota_hero_invoker = true,
+	--npc_dota_hero_invoker = true,
 	npc_dota_hero_wisp = true,
 	npc_dota_hero_target_dummy = true,
 	npc_dota_hero_base = true,
@@ -166,28 +166,16 @@ function BAW:InitGameMode()
     mode:SetTopBarTeamValuesVisible(true)
     mode:SetCustomGameForceHero("npc_dota_hero_wisp")
 
-
-
 	self:linkmodifiers()
 
     ListenToGameEvent("dota_player_pick_hero",Dynamic_Wrap(self,"OnHeroPicked"),self)
 	ListenToGameEvent("game_rules_state_change",Dynamic_Wrap(self,'OnGameRulesStateChange'),self)
 	ListenToGameEvent("player_chat", Dynamic_Wrap(self, 'OnPlayerChat'), self)	
-    --CustomGameEventManager:RegisterListener("Pick", Dynamic_Wrap(self, 'Pick'))
+	ListenToGameEvent('npc_spawned', Dynamic_Wrap(self, 'OnNPCSpawned'), self)
+    
     CustomGameEventManager:RegisterListener("speedup", Dynamic_Wrap(self, 'speedup'))
     CustomGameEventManager:RegisterListener("player_ready_to_round", Dynamic_Wrap(self, 'PlayerReady'))
-    -- print('"DOTAUnits"')
-    -- print("{")
-   --  for k,v in pairs(HeroesKV) do
-   --  	if not bannedUnits[k] then
-   --  		print('	"'..k..'"')
-		 --    print("	{")
-		 --    print('		"vscripts"					"ai.lua"')
-		 --    print('		"AttackAcquisitionRange"	"5000"')
-			-- print('	}')
-   --  	end
-   --  end
-	-- print('}')
+
     for k,v in pairs(UnitsKV) do
     	if not bannedUnits[k] and type(v) == "table" and v['AttackCapabilities'] ~= "DOTA_UNIT_CAP_NO_ATTACK" and ((v["AttackDamageMin"] or 0) ~= 0 or (v["AttackDamageMax"] or 0) ~= 0) then
     		UNIT2POINT[k] = CalculateUnitPoints(k,v)
@@ -207,60 +195,6 @@ function BAW:InitGameMode()
     	end
     end
 
-    --[[
-    local points = 1000
-    local cachepoints
-    local cache
-    local teams
-    local cheapest
-    local cacheteams
-    local check
-    local rand
-    for i=1,10 do
-    	cache = {}
-    	cheapest = {points,''}
-    	teams = {left = {},right = {}}
-    	for k,v in pairs(UNIT2POINT) do
-    		if v <= points then
-    			table.insert(cache, {v,k})
-    			if cheapest[1] > v then
-    				cheapest = {v,k}
-    			end
-    		end
-    	end
-    	cacheteams = {left = cache,right = cache}
-    	for j=1,2 do
-    		if j == 1 then
-    			check = 'left'
-    		else
-    			check = 'right'
-    		end
-	    	cachepoints = points
-	    	while cachepoints > cheapest[1] do 
-	    		rand = RandomInt(1, #cacheteams[check])
-	    		table.insert(teams[check],cacheteams[check][rand][2])
-	    		cachepoints = cachepoints - cacheteams[check][rand][1]
-	    		cache = {}
-		    	for k,v in ipairs(cacheteams[check]) do
-		    		if v[1] <= cachepoints then
-		    			table.insert(cache, v)
-		    		end
-		    	end
-		    	cacheteams[check] = cache
-	    	end
-    	end
-    	-- DeepPrintTable(teams)
-    	-- local sum = 0
-    	-- for k,v in pairs(teams) do
-    	-- 	sum = 0
-    	-- 	for i,p in ipairs(v) do
-    	-- 		sum = sum + p[1]
-    	-- 	end
-    	-- 	print(k..": "..sum)
-    	-- end
-    	points = points + 500
-    end
-    ]]
 
     self:NextRoundUnits() 
 
@@ -273,6 +207,25 @@ function BAW:OnPlayerChat(event)
 
     if IsInToolsMode() then
         if command[1] == "next" then
+        	if command[2] and table.contains(AllHeroes, command[2]) and command[3] and table.contains(AllHeroes, command[2]) then
+        		local count = command[4] or 1
+        		local teams = {
+        			left = {},
+        			right = {},
+        		}
+
+        		for i=1,count do 
+					table.insert(teams.left, command[2])
+					table.insert(teams.right, command[3])
+        		end
+
+        		NEXT_ROUND = {
+					teams = teams,
+					lefthero = command[2],
+					righthero = command[3],
+					heroes = true,
+				}
+        	end
             
         end
     end
@@ -353,16 +306,26 @@ function BAW:PlayerReady(event)
 
 end
 
-function BAW:OnHeroPicked(t)
-	if t.player == -1 then
+function BAW:OnNPCSpawned(event)
+	if not _G.FIGHT then return end
+
+	local unit = EntIndexToHScript( event.entindex )
+	if unit and not unit.InitAI and unit:GetUnitName() ~= "npc_dota_thinker" then
+		print(unit:GetUnitName())
+		unit.InitAI = true
+		unit.targetPoint = Vector(0,0,0)
+		unit:SetContextThink("OnUnitThink", function() return UnitAI:OnUnitThink(unit) end, 1)
+	end
+end
+
+function BAW:OnHeroPicked(event)
+	if event.player == -1 then
 		return
 	end
-    local hero = EntIndexToHScript(t.heroindex)
-    local playerowner = hero:GetPlayerOwner()
-    local playerownerid = hero:GetPlayerOwnerID()
-    --local steam_id = PlayerResource:GetSteamAccountID(playerownerid)
-    local team = hero:GetTeam()
 
+    local hero = EntIndexToHScript(event.heroindex)
+    local playerownerid = hero:GetPlayerOwnerID()
+    
     for i=0,6 do
     	local ab = hero:GetAbilityByIndex(i)
     	if ab then 
@@ -416,8 +379,17 @@ function BAW:OnGameRulesStateChange()
 end
 
 function IsIgnored(unit)
-	if unit:GetUnitName() == "npc_dota_thinker" then
-		return true
+	local ignoredUnitNames = {
+		"npc_dota_thinker",
+		"npc_dota_observer_wards"
+	}
+	
+	local unitName = unit:GetUnitName()
+
+	for _,name in pairs(ignoredUnitNames) do
+		if name == unitName then
+			return true
+		end
 	end
 
 	if unit:IsIllusion() then
@@ -429,6 +401,56 @@ function IsIgnored(unit)
 	end
 
 	return false
+end
+
+local time = 120
+function BAW:FightThink()
+	local unitType = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BUILDING
+	local unitFlags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES+DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD
+
+	ALIVES = {
+		left = FindUnitsInRadius(DOTA_TEAM_GOODGUYS, Vector(0,0,0), nil, 10000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, unitType, unitFlags, FIND_UNITS_EVERYWHERE, false),
+		right = FindUnitsInRadius(DOTA_TEAM_BADGUYS, Vector(0,0,0), nil, 10000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, unitType, unitFlags, FIND_UNITS_EVERYWHERE, false)
+	}
+
+	for d,e in pairs(ALIVES) do
+		local count = 0
+		for i,v in ipairs(e) do
+			if not v:IsControllableByAnyPlayer() and not IsIgnored(v) then
+				count = count + 1
+			end
+
+			if not v:IsControllableByAnyPlayer() and not v.InitAI then
+				v.InitAI = true
+				v.targetPoint = Vector(0,0,0)
+				if v:IsRealHero() then
+					v:SetContextThink("OnHeroThink", function() return HeroAI:OnHeroThink(v) end, 1)
+				else
+					v:SetContextThink("OnUnitThink", function() return UnitAI:OnUnitThink(v) end, 1)
+				end
+			end
+		end
+
+		if count <= 0 then
+			Gambling:RoundEnd(d)
+
+			Timers:CreateTimer(2, function()
+				BAW:StartGame()
+			end)
+			
+			return nil
+		end
+	end
+	
+	CustomGameEventManager:Send_ServerToAllClients('new_timer',{time=time})
+	time = time - 1
+	
+	if time <= 0 then
+		BAW:StartGame()
+		return nil
+	end
+
+	return 1
 end
 
 function BAW:StartFight()
@@ -446,69 +468,16 @@ function BAW:StartFight()
 		end
 	end
 
+	CustomGameEventManager:Send_ServerToAllClients("camera_position", { vector = Vector(0,0,0)} )
+
 	CustomGameEventManager:Send_ServerToAllClients('hide_versus',{})
-	local time = 120
+	time = 120
 	CustomGameEventManager:Send_ServerToAllClients('new_timer',{time=time})
-	Timers:CreateTimer(function()
-		ALIVES = {left = FindUnitsInRadius(DOTA_TEAM_GOODGUYS,
-          Vector(0, 0, 0),
-          nil,
-          10000,
-          DOTA_UNIT_TARGET_TEAM_FRIENDLY,
-          DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BUILDING,
-          DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES+DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD,
-          FIND_UNITS_EVERYWHERE,
-          false),
-		right = FindUnitsInRadius(DOTA_TEAM_BADGUYS,
-          Vector(0, 0, 0),
-          nil,
-          10000,
-          DOTA_UNIT_TARGET_TEAM_FRIENDLY,
-          DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BUILDING,
-          DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES+DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD,
-          FIND_UNITS_EVERYWHERE,
-          false)}
-		for d,e in pairs(ALIVES) do
-			local count = 0
-			for i,v in ipairs(e) do
-				if not v:IsControllableByAnyPlayer() and not IsIgnored(v) then
-					count = count + 1
-				end
 
-				if not v:IsControllableByAnyPlayer() and not v.InitAI then
-					v.InitAI = true
-					v.targetPoint = Vector(0,0,0)
-					if v:IsRealHero() then
-						v:SetContextThink("OnHeroThink", function() return HeroAI:OnHeroThink(v) end, 1)
-					else
-						v:SetContextThink("OnUnitThink", function() return UnitAI:OnUnitThink(v) end, 1)
-					end
-				end
-			end
-			if count <= 0 then
-				Gambling:RoundEnd(d)
+	Timers:CreateTimer( function() return BAW:FightThink() end)
 
-				Timers:CreateTimer(2, function()
-					BAW:StartGame()
-				end)
-				
-				CustomGameEventManager:Send_ServerToAllClients('new_timer',{time=45})
-				return nil
-			end
-		end
-		CustomGameEventManager:Send_ServerToAllClients('new_timer',{time=time})
-		time = time - 1
-		if time <= 0 then
-			BAW:StartGame()
-			CustomGameEventManager:Send_ServerToAllClients('new_timer',{time=45})
-			return nil
-		end
-		return 1
-	end)
 	CustomGameEventManager:Send_ServerToAllClients('start_fight', nil)
 
-
-	
 end
 
 function BAW:NextRoundUnits() 
@@ -611,6 +580,17 @@ function BAW:CleanMap()
 	for _,think in ipairs(thinkers) do
 		think:ForceKill(false)
 	end
+
+	local lastParticleID = ParticleManager:CreateParticle( "particles/dev/library/base_ranged_attack.vpcf", PATTACH_ABSORIGIN, nil)
+	for i = lastParticleID, lastParticleID-500, -1 do
+		if i > 0 then
+			--print(i)
+			ParticleManager:DestroyParticle(i, true)
+		else
+			break
+		end
+	end
+
 end
 
 function UpgradeHeroAbilities(unit)
@@ -726,9 +706,11 @@ function BAW:StartGame()
 	local left = teams['left']
 	local right = teams['right']
 	local itemsg = false
+
 	if RollPercentage(50) and heroes then
 		itemsg = true
 	end
+
 	local itemsArRight = {}
 	local itemsArLeft = {}
 	if itemsg then

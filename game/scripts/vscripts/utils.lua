@@ -91,3 +91,11 @@ end
 function IsSoloGame() 
   return CountPlayers() == 1
 end
+
+function splitString(line, separator)
+    local list = {}
+    for token in string.gmatch(line, "[^"..separator.."]+") do
+      table.insert(list, token)
+    end
+    return list
+end
