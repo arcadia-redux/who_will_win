@@ -6,11 +6,12 @@ if BAW == nil then
 	VOTED_ID = {}
 	PICKED_ID = {}
 	PLAYERS_ID = {}
-	PLAYERS = 0
 	PICKED = {}
 	ALIVES = {}
 	_G.ROUND = 0
 	POINTS = 1000
+	ROUND_DURATION = 120
+	VOTE_DURATION = 15
 	NEXT_ROUND = {}
 
 	PLAYER_READY = {}
@@ -25,6 +26,10 @@ require('bet')
 
 require('ai_unit')
 require('ai_hero')
+
+LinkLuaModifier("modifier_removed_hero", "modifiers/modifier_removed_hero", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_speedup", "modifiers/modifier_speedup", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_spacing", "modifiers/modifier_spacing", LUA_MODIFIER_MOTION_NONE)
 
 function Precache( context )
 	--[[
@@ -120,9 +125,11 @@ bannedUnits = {
 
 
 }
+
 -- bannedItems = {
 -- 	item_gem
 -- }
+
 function BAW:InitGameMode()
 	GameRules:SetStartingGold(322)
 	GameRules:SetGoldPerTick(0)
@@ -166,14 +173,12 @@ function BAW:InitGameMode()
     mode:SetTopBarTeamValuesVisible(true)
     mode:SetCustomGameForceHero("npc_dota_hero_wisp")
 
-	self:linkmodifiers()
-
     ListenToGameEvent("dota_player_pick_hero",Dynamic_Wrap(self,"OnHeroPicked"),self)
 	ListenToGameEvent("game_rules_state_change",Dynamic_Wrap(self,'OnGameRulesStateChange'),self)
 	ListenToGameEvent("player_chat", Dynamic_Wrap(self, 'OnPlayerChat'), self)	
 	ListenToGameEvent('npc_spawned', Dynamic_Wrap(self, 'OnNPCSpawned'), self)
     
-    CustomGameEventManager:RegisterListener("speedup", Dynamic_Wrap(self, 'speedup'))
+    CustomGameEventManager:RegisterListener("speedup", Dynamic_Wrap(self, 'SpeedUpRequest'))
     CustomGameEventManager:RegisterListener("player_ready_to_round", Dynamic_Wrap(self, 'PlayerReady'))
 
     for k,v in pairs(UnitsKV) do
@@ -181,6 +186,7 @@ function BAW:InitGameMode()
     		UNIT2POINT[k] = CalculateUnitPoints(k,v)
     	end
     end
+
     local itemsc = _G.Items
     _G.items = {}
     for k,v in pairs(itemsc) do
@@ -188,6 +194,7 @@ function BAW:InitGameMode()
 	    	_G.items[k] = v['ItemCost']
 	    end
     end
+
     _G.AllHeroes = {}
     for k,v in pairs(HeroesKV) do
     	if type(v) == "table" and not bannedUnits[k] then
@@ -195,9 +202,7 @@ function BAW:InitGameMode()
     	end
     end
 
-
     self:NextRoundUnits() 
-
 end
 
 function BAW:OnPlayerChat(event)	  
@@ -225,12 +230,9 @@ function BAW:OnPlayerChat(event)
 					righthero = command[3],
 					heroes = true,
 				}
-        	end
-            
+        	end 
         end
     end
-
-
 end
 
 function CalculateUnitPoints(unitName, kv)
@@ -256,15 +258,13 @@ function CalculateUnitPoints(unitName, kv)
     	damageBased = damageBased * 1.1
     end
 
-
 	points = damageBased + attackRange + effectiveHP + mana + healthRegen + manaRegen
-
 
 	return math.floor(points)
 end
 
-function BAW:speedup(t)
-	local pid = t.PlayerID
+function BAW:SpeedUpRequest(event)
+	local pid = event.PlayerID
 	if _G.FIGHT and not VOTED_ID[pid] then
 		VOTED_ID[pid] = true
 
@@ -307,15 +307,20 @@ function BAW:PlayerReady(event)
 end
 
 function BAW:OnNPCSpawned(event)
-	if not _G.FIGHT then return end
-
 	local unit = EntIndexToHScript( event.entindex )
+
+	if unit and unit:IsHero() and not unit:IsControllableByAnyPlayer() then
+		unit:AddNewModifier(nil, nil, "modifier_spacing", nil)
+	end
+
+	if not _G.FIGHT then return end
+	
 	if unit and not unit.InitAI and unit:GetUnitName() ~= "npc_dota_thinker" then
-		print(unit:GetUnitName())
 		unit.InitAI = true
 		unit.targetPoint = Vector(0,0,0)
 		unit:SetContextThink("OnUnitThink", function() return UnitAI:OnUnitThink(unit) end, 1)
 	end
+
 end
 
 function BAW:OnHeroPicked(event)
@@ -332,26 +337,8 @@ function BAW:OnHeroPicked(event)
     		hero:RemoveAbility(ab:GetName())
     	end
     end
-	PLAYERS = PLAYERS + 1
 	hero:AddNewModifier(hero,nil,'modifier_removed_hero',{})
 	table.insert(PLAYERS_ID, playerownerid)
-end
-
-function BAW:linkmod(string,motion)
-    LinkLuaModifier(string, "modifiers/"..string, motion or LUA_MODIFIER_MOTION_NONE)
-end
-
-function BAW:linkmodifiers()
-    local modTable = {
-        'modifier_removed_hero',
-    }  
-    for k,v in pairs(modTable) do
-        if type(v) == "number" then
-            BAW:linkmod(k,v)
-        else
-            BAW:linkmod(v)
-        end
-    end
 end
 
 function BAW:OnGameRulesStateChange()
@@ -376,6 +363,42 @@ function BAW:OnGameRulesStateChange()
 	    PlayerResource:SetCustomPlayerColor(8, 0, 131, 33)
 	    PlayerResource:SetCustomPlayerColor(9, 164, 105, 0)
 	end
+end
+
+function BAW:GameEnd(winner)
+	GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
+	CustomGameEventManager:Send_ServerToAllClients("game_winner", { winnerID = winner } )
+end
+
+function BAW:RoundEnd(loserTeam)
+	Gambling:RoundEnd(loserTeam)
+
+	if IsSoloGame() then
+		if Gambling:GetGold(PLAYERS_ID[1]) <= 0 then
+			BAW:GameEnd(-1)
+			return
+		end
+	else
+		local lastOne = -1
+		local playerCount = 0
+		for pID=0,23 do
+			if Gambling:GetGold(pID) > 0 then
+				lastOne = pID
+				playerCount = playerCount + 1
+			end
+		end
+
+		if playerCount <= 1 then
+			BAW:GameEnd(lastOne)
+			return
+		end
+	end
+
+--
+
+	Timers:CreateTimer(2, function()
+		BAW:StartGame()
+	end)
 end
 
 function IsIgnored(unit)
@@ -403,7 +426,6 @@ function IsIgnored(unit)
 	return false
 end
 
-local time = 120
 function BAW:FightThink()
 	local unitType = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BUILDING
 	local unitFlags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES+DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD
@@ -432,22 +454,9 @@ function BAW:FightThink()
 		end
 
 		if count <= 0 then
-			Gambling:RoundEnd(d)
-
-			Timers:CreateTimer(2, function()
-				BAW:StartGame()
-			end)
-			
+			BAW:RoundEnd(d)
 			return nil
 		end
-	end
-	
-	CustomGameEventManager:Send_ServerToAllClients('new_timer',{time=time})
-	time = time - 1
-	
-	if time <= 0 then
-		BAW:StartGame()
-		return nil
 	end
 
 	return 1
@@ -456,28 +465,31 @@ end
 function BAW:StartFight()
 	_G.FIGHT = true
 	PLAYER_READY = {}
+	Timers:RemoveTimer("VoteTime")
 	Gambling:RoundStart()
 
-	for k,v in pairs(ALIVES) do
-		for e,u in pairs(v) do
-			if k == "left" then
-				u:SetTeam(DOTA_TEAM_GOODGUYS)
+	for team,v in pairs(ALIVES) do
+		for e,unit in pairs(v) do
+			if team == "left" then
+				unit:SetTeam(DOTA_TEAM_GOODGUYS)
 			else
-				u:SetTeam(DOTA_TEAM_BADGUYS)
+				unit:SetTeam(DOTA_TEAM_BADGUYS)
 			end
+
+			unit:AddNewModifier(nil, nil, "modifier_speedup", {duration = 3})
 		end
 	end
 
 	CustomGameEventManager:Send_ServerToAllClients("camera_position", { vector = Vector(0,0,0)} )
-
-	CustomGameEventManager:Send_ServerToAllClients('hide_versus',{})
-	time = 120
-	CustomGameEventManager:Send_ServerToAllClients('new_timer',{time=time})
+	CustomGameEventManager:Send_ServerToAllClients("hide_versus",{})
+	CustomGameEventManager:Send_ServerToAllClients("new_timer", { time = ROUND_DURATION, start_time = GameRules:GetGameTime() } )
+	CustomGameEventManager:Send_ServerToAllClients("start_fight", nil)
 
 	Timers:CreateTimer( function() return BAW:FightThink() end)
-
-	CustomGameEventManager:Send_ServerToAllClients('start_fight', nil)
-
+	Timers:CreateTimer("RoundTime" , {
+		endTime = ROUND_DURATION,
+		callback = function() BAW:StartGame() end
+	})
 end
 
 function BAW:NextRoundUnits() 
@@ -553,7 +565,7 @@ function BAW:CleanMap()
           10000,
           DOTA_UNIT_TARGET_TEAM_BOTH,
           DOTA_UNIT_TARGET_ALL,
-          DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES+DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD,
+          DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES+DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD+DOTA_UNIT_TARGET_FLAG_DEAD,
           FIND_UNITS_EVERYWHERE,
           false)
 	
@@ -674,13 +686,15 @@ function BAW:StartGame()
 	PICKED_ID = {}
 	VOTED_ID = {}
 	Convars:SetFloat("host_timescale", 1)
+	Timers:RemoveTimer("RoundTime")
+
+	_G.FIGHT = false
+
 	for i,v in ipairs(PLAYERS_ID) do
 		PlayerResource:GetPlayer(v):SetTeam(DOTA_TEAM_GOODGUYS)
 	end
 
 	BAW:CleanMap()
-
-	_G.FIGHT = false
 
 	Gambling:NewRound()
 
@@ -723,7 +737,7 @@ function BAW:StartGame()
 	local leftpw = 0
 	local rightpw = 0
 	for k,v in ipairs(left) do
-		leftpw,unit = BAW:SpawnUnits(v,"left", LEFT_SPAWN_POS,Vector(0,0,0),leftpw)
+		leftpw, unit = BAW:SpawnUnits(v, "left", LEFT_SPAWN_POS, Vector(0,0,0), leftpw)
 
 		if unit:GetHullRadius() < 45 and not unit:IsHero() then
 			unit:SetHullRadius(45)
@@ -737,14 +751,13 @@ function BAW:StartGame()
 			UpgradeHeroAbilities(unit)
 		end
 
-		--unit:AddNewModifier(unit, nil, "modifier_phased", {duration=0.3})
 		for i,v in ipairs(itemsArLeft) do
 			unit:AddItemByName(v)
 		end
 	end
 
 	for k,v in ipairs(right) do
-		rightpw,unit = BAW:SpawnUnits(v,"right", RIGHT_SPAWN_POS,Vector(0,0,0),rightpw)
+		rightpw, unit = BAW:SpawnUnits(v,"right", RIGHT_SPAWN_POS, Vector(0,0,0), rightpw)
 
 		if unit:GetHullRadius() < 45 and not unit:IsHero() then
 			unit:SetHullRadius(45)
@@ -758,7 +771,6 @@ function BAW:StartGame()
 			UpgradeHeroAbilities(unit)
 		end
 		
-		--unit:AddNewModifier(unit, nil, "modifier_phased", {duration=0.3})
 		for i,v in ipairs(itemsArRight) do
 			unit:AddItemByName(v)
 		end
@@ -766,42 +778,31 @@ function BAW:StartGame()
 
 	local ar = {left = {},right = {},regens = {}}
 	local index
-	for k,v in pairs(ALIVES) do
-		for e,u in pairs(v) do
-			index = u:entindex()
-			ar['regens'][index] = {u:GetHealthRegen(),u:GetManaRegen(),(u:GetBaseDamageMax()+u:GetBaseDamageMin())*0.5,u:GetPhysicalArmorValue(false),u:GetSecondsPerAttack(),u:Script_GetAttackRange()}
-			if k == "left" then
-				table.insert(ar['left'],index)
+	for team,v in pairs(ALIVES) do
+		for e,unit in pairs(v) do
+			index = unit:entindex()
+			ar['regens'][index] = {unit:GetHealthRegen(), unit:GetManaRegen(), unit:GetSecondsPerAttack(), unit:Script_GetAttackRange()}
+			if team == "left" then
+				table.insert(ar['left'], index)
 			else
-				table.insert(ar['right'],index)
+				table.insert(ar['right'], index)
 			end
 		end
 	end
-	ROUND = ROUND + 1
-	CustomGameEventManager:Send_ServerToAllClients('new_round',{
-		left=leftpw,
-		right=rightpw,
-		indexes=ar
-	})
-	local timer = 15
-	Timers:CreateTimer(function()
-		
-		if timer <= 0 then
-			if not _G.FIGHT then
-				BAW:StartFight()
-			end
-	
-			return nil
-		end
 
-		if not _G.FIGHT then
-			timer = timer - 1
-			CustomGameEventManager:Send_ServerToAllClients('new_timer',{time=timer})
-			return 1
-		else
-			return nil
-		end
-	end)
+	ROUND = ROUND + 1
+
+	CustomGameEventManager:Send_ServerToAllClients('new_round', {
+		left = leftpw,
+		right = rightpw,
+		indexes = ar
+	})
+	
+	CustomGameEventManager:Send_ServerToAllClients('new_timer', { time = VOTE_DURATION, start_time = GameRules:GetGameTime() } )
+	Timers:CreateTimer("VoteTime", {
+		endTime = VOTE_DURATION,
+		callback = function() BAW:StartFight() end
+	})
 
 	self:NextRoundUnits() 
 

@@ -2,6 +2,7 @@
 	margin-top: 60px;
 
 	width: 100%;
+	height: 100%;
 }
 
 .UnitPanel {
@@ -19,6 +20,8 @@
 	transition-duration: 1s;
 	transition-timing-function: ease-in;
 	//transition-delay: 1s;
+
+	height: 73%;
 }
 
 #LeftUnits.Hidden {

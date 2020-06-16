@@ -4,6 +4,9 @@ let cur_units = {}
 let maxHealthLeft = 0
 let maxHealthRight = 0
 
+let time = 0
+let startTime = 0
+
 function new_round(t) {
 	// $("#leftTeam").text = t.left
 	// $("#rightTeam").text = t.right
@@ -74,7 +77,7 @@ function checkHp() {
 	$.Schedule(0.1, checkHp)
 
 	if(Object.keys(cur_units).length){
-		let hps = {"left":0,"right":0,"leftmax":0,"rightmax":0}
+		let hps = {"left":0,"right":0}
 		for(let k in cur_units){
 			if(k != "regens"){
 				for(let i in cur_units[k]){
@@ -103,10 +106,13 @@ function checkHp() {
 			}
 		}
 	})	
+
+	let counter = startTime + time - Game.GetGameTime()
+	if (counter < 0) counter = 0
+	$("#time").text = FormatTime(counter)
 }
+
 function createSceneVersus(t,unitID,parent) {
-
-
 
 	let pan = $.CreatePanel("Panel", parent, "lb")
 	pan.BLoadLayoutSnippet("teamScene")
@@ -131,10 +137,10 @@ function createSceneVersus(t,unitID,parent) {
 	pan.FindChildTraverse("unithptext").text = Entities.GetMaxHealth(unitID)
 	pan.FindChildTraverse("unitmptext").text = Entities.GetMaxMana(unitID)
  // $.Msg(t.indexes['regens'][t.indexes[k][i]])
-	pan.FindChildTraverse("unitdamage").text = t.indexes['regens'][unitID]["3"]
-	pan.FindChildTraverse("unitarmor").text = t.indexes['regens'][unitID]["4"].toFixed(1)
-	pan.FindChildTraverse("unitatkspd").text = t.indexes['regens'][unitID]["5"].toFixed(2)+"s"
-	pan.FindChildTraverse("unitatkrng").text = t.indexes['regens'][unitID]["6"]
+	pan.FindChildTraverse("unitdamage").text = (Entities.GetDamageMax(unitID) + Entities.GetDamageMin(unitID)) / 2
+	pan.FindChildTraverse("unitarmor").text = Entities.GetPhysicalArmorValue(unitID).toFixed(0)
+	pan.FindChildTraverse("unitatkspd").text = t.indexes['regens'][unitID]["3"].toFixed(2)+"s"
+	pan.FindChildTraverse("unitatkrng").text = t.indexes['regens'][unitID]["4"]
 
 	pan.SetDialogVariableInt("level", Entities.GetLevel(unitID))
 
@@ -247,13 +253,13 @@ function createSceneVersus(t,unitID,parent) {
 				$.DispatchEvent("UIHideCustomLayoutTooltip", talentPanel, "TalentTooltip")      
 			})
 		}
-
-
 }
+
 function FormatRegen( regen )
 {
 	return (regen >= 0 ? "+" : "" ) + regen.toFixed(1);
 }
+
 function AddUnitTooltip( panel, unit )
 {
 	panel.SetPanelEvent("onmouseover", function(){
@@ -263,11 +269,13 @@ function AddUnitTooltip( panel, unit )
 		$.DispatchEvent("UIHideCustomLayoutTooltip", panel, panel.id)
 	})
 }
+
 function ShowAbTooltip(panel,ent,abname) {
 	return function() {
 		$.DispatchEvent('DOTAShowAbilityTooltipForEntityIndex',panel,abname,ent);
 	}
 }
+
 let round = 0
 function change(t) {
 	let all = t.left + t.right,
@@ -282,6 +290,7 @@ function change(t) {
 function hide_versus() {
 	$("#makeBetPanel").style.visibility = "collapse"
 }
+
 function Start() {	
 	let ids = Game.GetAllPlayerIDs()
 	$("#topbar").RemoveAndDeleteChildren()
@@ -295,10 +304,12 @@ function Start() {
 		panel.playerID = id
 	})
 }
-const timerEl = $("#time")
+
 function timer(t) {
-	timerEl.text = t.time
+	time = t.time
+	startTime = t.start_time
 }
+
 GameEvents.Subscribe("new_round",new_round);
 GameEvents.Subscribe("change_top",change);
 GameEvents.Subscribe("new_timer",timer);
@@ -313,6 +324,7 @@ function UpdateSelectedUnit() {
 		GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ACTION_PANEL, true );
 	}
 }
+
 function vote() {
 	GameEvents.SendCustomGameEventToServer("speedup",{})
 }
@@ -326,6 +338,7 @@ function GRSChange() {
 		Start()
 	}
 }
+
 GRSChange()
 
 function UpdateBets(data) {
@@ -465,19 +478,9 @@ function GroupUnits(originalArray) {
 	return newArray
 }
 
-
-
-// [GCClient] Recv msg 26 (k_ESOMsg_UpdateMultiple), 390 bytes
-// [PanoramaScript] [0,1]
-// [PanoramaScript] !! (panorama\scripts\baw.js, line:116, col:68) - V8ParamToPanoramaType expected Number type to convert, but got something else (undefined)
-// [PanoramaScript] !! (panorama\scripts\baw.js, line:116, col:45) - Failed to set property value (property=height)(value=NaN%)
-// C:Gamerules: entering state 'DOTA_GAMERULES_STATE_GAME_IN_PROGRESS'
-// [Client] CDOTA_Hud_Main::EventGameRulesStateChanged DOTA_GAMERULES_STATE_GAME_IN_PROGRESS
-// [PanoramaScript] [0,1]
-// [PanoramaScript] !! (panorama\scripts\baw.js, line:35, col:8) - TypeError: Cannot read property 'FindChildTraverse' of null
-// [GCClient] Recv msg 7273 (k_EMsgGCChatMessage), 221 bytes
-// [GCClient] Recv msg 26 (k_ESOMsg_UpdateMultiple), 394 bytes
-// [PanoramaScript] {"right":0,"left":1}
-// Set target panel parameter "unit" to the value "248"
-// Set target panel parameter "unit" to the value "251"
-// [PanoramaScript] {"right":1,"left":1}
+function FormatTime(seconds) {
+	seconds = Math.ceil(seconds)
+	const minuts = Math.floor(seconds/60) 
+	const sec = seconds % 60
+	return (minuts > 9 ? ""+minuts : "0"+minuts) + ":" + (sec > 9 ? ""+sec : "0"+sec)
+}

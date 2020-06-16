@@ -264,7 +264,8 @@ Label{
 	text-align: center;
 	margin: 0;
 	width: 100%;
-	font-size: 10;
+	font-size: 14;
+	text-overflow: shrink;
 	z-index: 10;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #103683 ), color-stop( .5, #1D37FD), to( #103683 ) );
 }
@@ -380,6 +381,7 @@ Label{
 #time{
 	align: center bottom;
 	margin-bottom: -5px;
+	margin-left: 5px;
 	font-size: 20;
 }
 .unitstat{
@@ -606,6 +608,8 @@ Label{
 	width: 60%;
 	height: 50px;
 	horizontal-align: center;
+
+	vertical-align: center;
 }
 
 #BetSlider #SliderTrackProgress {
