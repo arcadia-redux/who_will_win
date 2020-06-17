@@ -1,0 +1,78 @@
+  
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/round_end.css" />
+		<include src="file://{resources}/styles/bet_list.css" />
+	</styles>
+
+	<scripts>
+		<include src="file://{resources}/scripts/round_end.js" />
+		<include src="file://{resources}/scripts/bet_list.js" />
+	</scripts>
+
+	<snippets>
+		<snippet name="PlayerRow">
+			<Panel class="PlayerRow" hittest='false'>
+				<Panel class="ColPlayerName" >
+					<Panel class="TeamIcon">
+						<Image id="IconShadow" src="file://{images}/custom_game/team_icons/team_shield_shadow_01.psd" />
+						<Image id="ShieldBorder" src="file://{images}/custom_game/team_icons/team_shield_border_01.psd" />
+						<Image id="ShieldColor" src="file://{images}/custom_game/team_icons/team_shield_color_01.psd" />
+						<Image id="TeamIcon" style="wash-color: black;" src="" />
+					</Panel>
+					<Label id="PlayerName" class="" text="Player" />
+				</Panel>
+
+				<Panel class="ColBet" hittest='false'>
+					<Panel class="HorizCenter FlowRight" >
+						<Label id="Bet" class="" text="10000" />
+						<Image class="BetGold" src="s2r://panorama/images/hud/reborn/gold_small_psd.vtex"/>
+					</Panel>
+				</Panel>
+
+				<Panel class="ColProfit" hittest='false'>
+					<Panel class="HorizCenter FlowRight" >
+						<Label id="Profit" class="" text="10000" />
+						<Image class="BetGold" src="s2r://panorama/images/hud/reborn/gold_small_psd.vtex"/>
+					</Panel>
+				</Panel>
+
+				<Panel class="ColTotal" hittest='false'>
+					<Panel class="HorizCenter FlowRight" >
+						<Label id="Total" class="" text="10000" />
+						<Image class="BetGold" src="s2r://panorama/images/hud/reborn/gold_small_psd.vtex"/>
+					</Panel>
+				</Panel>
+				
+			</Panel>
+		</snippet>
+		
+	</snippets>
+	
+	<Panel class="RoundEnd" >
+
+		<Panel id="WinLabelContainer" hittest="false">
+			<DOTAScenePanel id="VictoryBackgroundScene" map="backgrounds/accept_popup_test" camera="shot_camera" hittest="false" particleonly="true"/>
+			<Label id="VictoryLabel" class="TitleFont" text="{s:victory_title}" hittest="false"/>
+		</Panel>
+
+
+		<Panel id="BetsTable">
+			<Panel id="TableHeader">
+				<Label id="PlayerName" class="ColPlayerName" text="#bets_header_player" />
+					
+				
+				<Label id="Bet" class="ColBet" text="#bets_header_bet" />
+				<Label id="Profit" class="ColProfit" text="#bets_header_profit" />
+				<Label id="Total" class="ColTotal" text="#bets_header_total" />
+			</Panel>
+			<Panel id="TableRows" />
+		</Panel>
+
+
+
+
+
+	</Panel>
+</root>

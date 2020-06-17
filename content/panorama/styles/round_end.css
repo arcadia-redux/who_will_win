@@ -1,0 +1,159 @@
+.RoundEnd
+{
+	width: 100%;
+	height: 95%;
+
+	transition-property: background-color;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in;
+
+	background-color: #00000000;
+}
+
+#WinLabelContainer
+{
+	horizontal-align: center;
+	margin-top: -80px;
+	width: 1024px;
+	height: 640px;
+}
+
+
+#VictoryLabel
+{
+	horizontal-align: center;
+	vertical-align: center;
+	font-size: 90px;
+	color: white;
+	text-align: center;
+	text-shadow: 0px 0px 8px 5.0 #1E90FF11;	
+	
+	pre-transform-scale2d: 1;
+	opacity: 0.0;
+	padding-left: 16px;
+	padding-right: 16px;
+
+	transition-property: opacity, transform, pre-transform-scale2d;
+	transition-delay: 0.0s;
+	transition-duration: 0.8s;
+	transition-timing-function: ease-in;
+
+	animation-duration: 5.1s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: 1;
+}
+
+.DireWin #VictoryLabel
+{
+	color: black;
+	text-shadow: 0px 0px 8px 5.0 #FF3300ff;		
+}
+
+@keyframes 'LabelGrowDire'
+{
+	0%
+	{
+		pre-transform-scale2d: 1.8;
+		text-shadow: 0px 0px 8px 5.0 #FF330099;	
+	}
+	
+	10%
+	{
+		pre-transform-scale2d: 0.92;
+		text-shadow: 0px 0px 8px 5.0 #FF3300ff;	
+	}
+	
+	100%
+	{
+		pre-transform-scale2d: 1;
+		text-shadow: 0px 0px 8px 5.0 #FF3300ff;	
+	}
+}
+
+@keyframes 'LabelGrow'
+{
+	0%
+	{
+		pre-transform-scale2d: 1.8;
+		text-shadow: 0px 0px 8px 5.0 #1E90FF99;	
+	}
+	
+	10%
+	{
+		pre-transform-scale2d: 0.92;
+		text-shadow: 0px 0px 8px 5.0 #1E90FFff;	
+	}
+	
+	100%
+	{
+		pre-transform-scale2d: 1;
+		text-shadow: 0px 0px 8px 5.0 #1E90FF11;	
+	}
+}
+		
+
+.ShowVictory #VictoryLabel,
+.ShowVictory #VictoryBackgroundScene
+{
+	pre-transform-scale2d: 1;
+	opacity: 1;
+}
+
+.ShowVictory.RadiantWin #VictoryLabel
+{
+	animation-name: LabelGrow;
+}
+
+.ShowVictory.DireWin #VictoryLabel
+{
+	animation-name: LabelGrowDire;
+}
+
+#VictoryBackgroundScene
+{ 
+	background-color: gradient( radial, 50% 50%, 0% 0%, 80% 80%, from( #000000ff ), to( #00000000 ) );
+	width: 100%;
+	height: 100%;
+
+	horizontal-align: center;
+	vertical-align: top;
+	wash-color: #2FCDaF;
+	opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex");
+
+	opacity: 0.0;
+	pre-transform-scale2d: .2;
+
+	transition-property: opacity, transform, pre-transform-scale2d;
+	transition-delay: 0.0s;
+	transition-duration: 0.8s;
+	transition-timing-function: ease-in;
+}
+
+/* Turn off the background particle effect when running on a low-end machine. */
+.LowVisualQuality #VictoryBackgroundScene
+{
+	//visibility: collapse;
+}
+
+.DireWin #VictoryBackgroundScene
+{
+	wash-color: #aa3000;
+	hue-rotation: 90deg;
+}
+
+.RadiantWin #VictoryBackgroundScene
+{
+	wash-color: #0030aa;
+	hue-rotation: 90deg;
+}
+
+#BetsTable {
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.5s;
+}
+
+
+.ShowVictory #BetsTable {
+	opacity: 1;
+}

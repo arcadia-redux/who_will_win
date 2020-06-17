@@ -29,6 +29,7 @@
     <Panel>
         <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/hud.xml" />
         <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/units.xml" />
+        <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/round_end.xml" />
         <!--<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/bet_list.xml" />-->
 
 

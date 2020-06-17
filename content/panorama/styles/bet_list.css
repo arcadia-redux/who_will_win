@@ -1,20 +1,28 @@
-.betList {
-	vertical-align: bottom;
-}
 
 
 #BetsTable {
 	flow-children: down;
+
+	vertical-align: top;
+	horizontal-align: center;
+
+	margin-top: 400px;
+
+	box-shadow: #1D2333e0 0px 0px 16px 0px;
 }
 
 #TableHeader, .PlayerRow {
 	flow-children: right;
 
-	background-color: #1D2333e0;
+	background-color: #1D2333f0;
+}
+
+.PlayerRow.LocalPlayer {
+	background-color: #474F64f0;
 }
 
 .Even {
-	background-color: #272F44e0;
+	background-color: #272F44f0;
 }
 
 #TableRows {
@@ -23,10 +31,6 @@
 
 #TableHeader, .PlayerRow {
 	height: 40px;
-}
-
-.ColPlayerName {
-	width: 180px;
 }
 
 #TableHeader .ColPlayerName {
@@ -40,19 +44,23 @@
 	height: 40px;
 }
 
-.ColBet {
-	width: 70px;
+#TableRows .ColBet  {
+	flow-children: right;
+	height: 40px;
 }
 
-.ColProfit {
-	width: 80px;
+
+#TableRows .ColProfit  {
+	flow-children: right;
+	height: 40px;
 }
+
 
 #TableHeader Label {
 	color: #7380A6;
 }
 
-Label {
+.ColPlayerName, .ColBet, .ColProfit, .ColTotal {
 	width: 100%;
 	height: 25px;
 	text-align: center;
@@ -62,18 +70,38 @@ Label {
 	font-size: 20px;
 }
 
-#TableRows #PlayerName {
-	text-align: left;
+.ColPlayerName {
+	width: 220px;
 }
 
-.PlayerRow #Bet {
+.ColBet {
+	width: 100px;
+}
+
+.ColProfit {
+	width: 120px;
+}
+
+.ColTotal {
+	width: 120px;
+}
+
+#TableRows #PlayerName {
+	text-align: left;
+	vertical-align: center;
+}
+
+.PlayerRow #Bet, .PlayerRow #Total{
 	color: gold;
 	text-shadow: none;
+	vertical-align: center;
 }
 
 .PlayerRow #Profit {
 	color: #50AF1B;
 	text-shadow: none;
+	vertical-align: center;
+	horizontal-align: center;
 }
 
 .TeamIcon
@@ -95,4 +123,23 @@ Label {
 {
 	width: 32px;
 	height: 32px;
+}
+
+#Profit.Red {
+	color: red;
+}
+
+.BetGold {
+	width: 25px;
+	height: 25px;
+	vertical-align: center;
+}
+
+.HorizCenter {
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.FlowRight {
+	flow-children: right;
 }

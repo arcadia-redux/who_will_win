@@ -402,8 +402,12 @@ function BAW:RoundEnd(loserTeam)
 	end
 
 --
+	CustomGameEventManager:Send_ServerToAllClients("round_end", { 
+		winnerTeam = loserTeam == "left" and "right" or "left",
+		bets = Gambling.history[#Gambling.history],
+	})
 
-	Timers:CreateTimer(2, function()
+	Timers:CreateTimer(5, function()
 		BAW:StartGame()
 	end)
 end

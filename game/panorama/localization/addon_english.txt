@@ -7,5 +7,9 @@
 	"bets_header_player"				"PLAYER"
 	"bets_header_bet"					"BET"
 	"bets_header_profit"				"PROFIT"
+	"bets_header_total"					"TOTAL"
+
+	"round_win_left"					"BLUE TEAM WIN"
+	"round_win_right" 					"RED TEAM WIN"
 }
 

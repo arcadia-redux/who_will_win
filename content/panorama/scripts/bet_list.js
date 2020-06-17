@@ -1,6 +1,9 @@
 "use strict";
 
-function UpdateBets(bets) {
+function UpdateBets(event) {
+
+	let bets = event.bets
+	const winner = event.winnerTeam
 
 	const rows = $("#TableRows")
 	rows.RemoveAndDeleteChildren()
@@ -20,13 +23,14 @@ function UpdateBets(bets) {
 	})
 
 	bets.sort(function(a,b) {
-		if (a.team == "left" && b.team == "right")
-			return -1
-		else if(a.team == "right" && b.team == "left")
+		if (a.team != winner && b.team == winner)
 			return 1
+		else if(a.team == winner && b.team != winner)
+			return -1
 
 		return b.gold - a.gold
 	})
+
 	
 	let count = 0
 	bets.forEach(bet => {
@@ -38,23 +42,41 @@ function UpdateBets(bets) {
 		panel.FindChildTraverse("PlayerName").text = Players.GetPlayerName(bet.pID)
 		panel.FindChildTraverse("PlayerName").style.color = GetPlayerColor(bet.pID)
 		if (bet.team == "left") {
-			panel.FindChildTraverse("TeamIcon").SetImage("file://{images}/custom_game/team_icons/team_icon_tiger_01.png")
-			panel.FindChildTraverse("ShieldColor").style.washColor = "red"
-		}
-		else {
 			panel.FindChildTraverse("TeamIcon").SetImage("file://{images}/custom_game/team_icons/team_icon_horse_01.png")
 			panel.FindChildTraverse("ShieldColor").style.washColor = "blue"
 		}
+		else {
+			panel.FindChildTraverse("TeamIcon").SetImage("file://{images}/custom_game/team_icons/team_icon_tiger_01.png")
+			panel.FindChildTraverse("ShieldColor").style.washColor = "red"
+		}
 
-		panel.FindChild("Bet").text = bet.gold
+		panel.FindChildTraverse("Bet").text = bet.gold
 
 		let profit = 0
-		if (bet.team == "left") 
-			profit =  bet.gold/leftSum * rightSum
-		else 
-			profit =  bet.gold/rightSum * leftSum
+		if (bet.team == event.winnerTeam) {
+			if (bet.team == "left") 
+				profit =  bet.gold/leftSum * rightSum
+			else 
+				profit =  bet.gold/rightSum * leftSum
+		}
+		else {
+			profit = -bet.gold
+		}
 
-		panel.FindChild("Profit").text = profit.toFixed(0)
+		panel.FindChildTraverse("Profit").text = profit.toFixed(0)
+		panel.FindChildTraverse("Profit").SetHasClass("Red", profit < 0)
+
+		panel.FindChildTraverse("Total").text = Players.GetGamblingGold(bet.pID)
+
+		if (bet.pID == Game.GetLocalPlayerID()) {
+			panel.AddClass("LocalPlayer")
+			if (profit > 0) {
+				if (profit <= bet.gold)
+					$.Schedule(1, function() { Game.EmitSound("General.Coins") } )
+				else
+					$.Schedule(1, function() { Game.EmitSound("General.CoinsBig") } )
+			}
+		}
 
 		count++
 	})
@@ -73,9 +95,9 @@ function NewRound() {
 }
 
 (function() {
-	CustomNetTables.SubscribeNetTableListener("bets", OnBetsChanged)
-	GameEvents.Subscribe("new_round", NewRound);
-	GameEvents.Subscribe("start_fight", StartFight);
+	//CustomNetTables.SubscribeNetTableListener("bets", OnBetsChanged)
+	//GameEvents.Subscribe("new_round", NewRound);
+	//GameEvents.Subscribe("start_fight", StartFight);
 })()
 
 function LuaTableToArray(nt) {
