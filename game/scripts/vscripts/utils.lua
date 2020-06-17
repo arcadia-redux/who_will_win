@@ -23,6 +23,15 @@ function removeFromTable(t,val)
 	end
 end
 
+function Vector_clone(vector)
+    local new = Vector(
+        vector.x,
+        vector.y,
+        vector.z
+    )
+    return new
+end
+
 
 local precachedUnits = precachedUnits or {}
 function PrecacheUnitList(unitList, idx)

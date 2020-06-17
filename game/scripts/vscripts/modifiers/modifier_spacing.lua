@@ -20,19 +20,22 @@ if IsServer() then
 		local hullSize = 45
 		local speed = 45
 
-		if self:GetParent():IsMoving() then return end
+		local parent = self:GetParent()
 
-		local origin = self:GetParent():GetAbsOrigin()
+		if parent:IsMoving() then return end
+
+		local origin = parent:GetAbsOrigin()
 		local unitType = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BUILDING
-		local unitFlags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD
+		local unitFlags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE
 		local units = FindUnitsInRadius(DOTA_TEAM_GOODGUYS, origin, nil, hullSize, DOTA_UNIT_TARGET_TEAM_BOTH, unitType, unitFlags, FIND_ANY_ORDER, false)
 
 		local random = false
 		local center = Vector(0,0,0)
 		if #units > 1 then
 			for _,unit in pairs(units) do
+				--print(unit:GetUnitName(), parent:GetUnitName())
 
-				if unit:GetAbsOrigin() == origin and unit ~= self:GetParent() then
+				if unit:GetAbsOrigin() == origin and unit ~= parent then
 					random = true
 					break
 				end
@@ -53,7 +56,7 @@ if IsServer() then
 
 		vel = vel*speed*GameRules:GetGameFrameTime()
 
-		FindClearSpaceForUnit(self:GetParent(), origin+vel, true)
+		FindClearSpaceForUnit(parent, origin+vel, true)
 
 		return 0
 	end

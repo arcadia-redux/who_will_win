@@ -232,6 +232,10 @@ function BAW:OnPlayerChat(event)
 				}
         	end 
         end
+
+        if command[1] == "win" then
+        	GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
+        end
     end
 end
 
@@ -309,9 +313,11 @@ end
 function BAW:OnNPCSpawned(event)
 	local unit = EntIndexToHScript( event.entindex )
 
-	if unit and unit:IsHero() and not unit:IsControllableByAnyPlayer() then
-		unit:AddNewModifier(nil, nil, "modifier_spacing", nil)
-	end
+	Timers:CreateTimer(1, function() 
+		if unit and IsValidEntity(unit) and unit:IsRealHero() and not unit:IsControllableByAnyPlayer() then
+			unit:AddNewModifier(nil, nil, "modifier_spacing", nil)
+		end
+	end)
 
 	if not _G.FIGHT then return end
 	
@@ -371,6 +377,7 @@ function BAW:GameEnd(winner)
 end
 
 function BAW:RoundEnd(loserTeam)
+	Convars:SetFloat("host_timescale", 1)
 	Gambling:RoundEnd(loserTeam)
 
 	if IsSoloGame() then
@@ -404,7 +411,8 @@ end
 function IsIgnored(unit)
 	local ignoredUnitNames = {
 		"npc_dota_thinker",
-		"npc_dota_observer_wards"
+		"npc_dota_observer_wards",
+		"npc_dota_elder_titan_ancestral_spirit",
 	}
 	
 	local unitName = unit:GetUnitName()
@@ -429,6 +437,8 @@ end
 function BAW:FightThink()
 	local unitType = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BUILDING
 	local unitFlags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES+DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD
+
+	if not _G.FIGHT then return end
 
 	ALIVES = {
 		left = FindUnitsInRadius(DOTA_TEAM_GOODGUYS, Vector(0,0,0), nil, 10000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, unitType, unitFlags, FIND_UNITS_EVERYWHERE, false),
@@ -494,6 +504,11 @@ end
 
 function BAW:NextRoundUnits() 
 	local heroes = RollPercentage(50)
+
+	if _G.ROUND == 0 then
+		heroes = false
+	end
+
 	local minPoints = POINTS * 0.05
 	local leftHero, rightHero
 	local teams = {left = {}, right = {}}
@@ -685,7 +700,6 @@ end
 function BAW:StartGame()
 	PICKED_ID = {}
 	VOTED_ID = {}
-	Convars:SetFloat("host_timescale", 1)
 	Timers:RemoveTimer("RoundTime")
 
 	_G.FIGHT = false
@@ -734,10 +748,24 @@ function BAW:StartGame()
 	POINTS = POINTS + 500
 	PICKED = {left = {},right = {}}
 	ALIVES = {left = {},right = {}}
+	
 	local leftpw = 0
 	local rightpw = 0
+
+	local yDist = 125
+	local yDiff = - (math.floor(#left/2) * yDist)
+
+
 	for k,v in ipairs(left) do
-		leftpw, unit = BAW:SpawnUnits(v, "left", LEFT_SPAWN_POS, Vector(0,0,0), leftpw)
+		local spawnPos = Vector_clone(LEFT_SPAWN_POS)
+
+		if heroes then 
+			spawnPos.y = spawnPos.y + yDiff
+			spawnPos.x = spawnPos.x + RandomInt(-50, 50)
+		end
+		yDiff = yDiff + yDist
+
+		leftpw, unit = BAW:SpawnUnits(v, "left", spawnPos, Vector(0,0,0), leftpw)
 
 		if unit:GetHullRadius() < 45 and not unit:IsHero() then
 			unit:SetHullRadius(45)
@@ -756,8 +784,18 @@ function BAW:StartGame()
 		end
 	end
 
+	yDiff = - (math.floor(#right/2) * 100)
+
 	for k,v in ipairs(right) do
-		rightpw, unit = BAW:SpawnUnits(v,"right", RIGHT_SPAWN_POS, Vector(0,0,0), rightpw)
+		local spawnPos = Vector_clone(RIGHT_SPAWN_POS)
+
+		if heroes then 
+			spawnPos.y = spawnPos.y + yDiff
+			spawnPos.x = spawnPos.x + RandomInt(-50, 50)
+		end
+		yDiff = yDiff + yDist
+
+		rightpw, unit = BAW:SpawnUnits(v,"right", spawnPos, Vector(0,0,0), rightpw)
 
 		if unit:GetHullRadius() < 45 and not unit:IsHero() then
 			unit:SetHullRadius(45)
@@ -790,7 +828,7 @@ function BAW:StartGame()
 		end
 	end
 
-	ROUND = ROUND + 1
+	_G.ROUND = _G.ROUND + 1
 
 	CustomGameEventManager:Send_ServerToAllClients('new_round', {
 		left = leftpw,
