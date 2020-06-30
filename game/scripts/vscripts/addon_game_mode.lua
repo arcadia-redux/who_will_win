@@ -272,14 +272,19 @@ function BAW:SpeedUpRequest(event)
 	if _G.FIGHT and not VOTED_ID[pid] then
 		VOTED_ID[pid] = true
 
+		local count = 0
 		local allVoted = true
 		for pID=0,23 do
 			if PlayerResource:IsValidTeamPlayerID(pID) and Gambling:GetGold(pID) > 0 and PlayerResource:GetConnectionState(pID) == DOTA_CONNECTION_STATE_CONNECTED then
+				count = count + 1
 				if not VOTED_ID[pID] then
 					allVoted = false
 				end
 			end
 		end
+
+		local state = { players_voted = VOTED_ID, total_count = count, all_voted = allVoted}
+		CustomNetTables:SetTableValue("game", "speedup_state", state)
 
 		if allVoted then
 			Convars:SetFloat("host_timescale", 3)
@@ -352,7 +357,10 @@ function BAW:OnGameRulesStateChange()
 	if nNewState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
 	elseif nNewState == DOTA_GAMERULES_STATE_HERO_SELECTION then
 	elseif nNewState == DOTA_GAMERULES_STATE_PRE_GAME then
-		SendToConsole("dota_bot_populate")
+		if IsSoloGame() then
+			SendToConsole("dota_bot_populate")
+			CustomNetTables:SetTableValue("game", "solo", { solo = true } )
+		end
 	elseif nNewState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 10)
 		Gambling:Init()
@@ -379,6 +387,9 @@ end
 function BAW:RoundEnd(loserTeam)
 	Convars:SetFloat("host_timescale", 1)
 	Gambling:RoundEnd(loserTeam)
+
+	local state = { players_voted = {}, total_count = 1, all_voted = false}
+	CustomNetTables:SetTableValue("game", "speedup_state", state)
 
 	if IsSoloGame() then
 		if Gambling:GetGold(PLAYERS_ID[1]) <= 0 then

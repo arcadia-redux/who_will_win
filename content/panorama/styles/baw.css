@@ -175,7 +175,7 @@ Label{
 	background-color: gradient( linear, 0% 50%, 100% 50%, from( #208310 ), color-stop( .5, #28FD1D), to( #208310 ) );
 }
 
-.avatarimage
+.avatarimage, #BotIcon
 {
 	align: left top;
 	width: 60px;
@@ -318,21 +318,29 @@ Label{
 	text-align: center;
 	font-size: 10;
 }
-.vote{
-	background-color: #195903;
-	padding: 10px;
-	box-shadow: #000000f5 -3px -2.5px 5px 5px;
-	align: right bottom;
-	margin: 100px;
-	margin-right: 350px;
-	z-index: -2;
+
+.vote {
+	min-width: 90px;
+	width: 120px;
+	height: 20px;
+	margin-top: 12px;
+	margin-left: 25px;
 }
-.vote:hover{
-	brightness: 2;
+
+.vote Label {
+	text-overflow: shrink;
+	text-transform: uppercase;
 }
-.vote:active{
-	brightness: 0.7;
+
+.vote.ready {
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #1f3d25), to( #2b562c ) );
+
+	border-top-color: #132416;
+	border-left-color: #192f1b;
+	border-bottom-color: #386b3b;
+	border-right-color: #264a29;
 }
+
 .bar{
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #232323 ), color-stop( .5, #4D4D4D), to( #232323 ) );
 	width: 100%;
@@ -816,4 +824,39 @@ Label{
 	margin-left: 5px;
 
 	z-index: 11;
+}
+
+#LowerRight {
+	horizontal-align: right;
+	vertical-align: bottom;
+}
+
+#GoldContainer {
+	flow-children: right;
+
+	horizontal-align: right;
+	vertical-align: center;
+
+	margin-right: 10px;
+}
+
+#Gold {
+	color: gold;
+	font-size: 24px;
+
+	margin-right: 5px;
+
+	vertical-align: center;
+}
+
+.GoldIcon {
+	width: 36px;
+	height: 36px;
+}
+
+#LowerRightBG {
+	width: 278px;
+	height: 60px;
+	background-image: url("s2r://panorama/images/hud/reborn/courier_gold_bg_262_psd.vtex");
+	background-size: 100%;
 }

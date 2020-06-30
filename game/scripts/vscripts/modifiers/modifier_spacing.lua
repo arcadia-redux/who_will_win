@@ -56,7 +56,14 @@ if IsServer() then
 
 		vel = vel*speed*GameRules:GetGameFrameTime()
 
-		FindClearSpaceForUnit(parent, origin+vel, true)
+		local oldOrigin = parent:GetAbsOrigin()
+		local newOrigin = origin + vel
+		FindClearSpaceForUnit(parent, newOrigin, true)
+
+		--try to avoid teleports 
+		if parent:GetAbsOrigin() ~= newOrigin then
+			parent:SetAbsOrigin(oldOrigin)
+		end
 
 		return 0
 	end

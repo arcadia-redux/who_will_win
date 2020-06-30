@@ -72,6 +72,7 @@ function new_round(t) {
 		panel.RemoveClass("Right")
 		panel.SetHasClass("Loser", Players.GetGamblingGold(panel.playerID) <= 0)
 	}) 
+
 }
 function checkHp() {
 	$.Schedule(0.1, checkHp)
@@ -289,19 +290,29 @@ function change(t) {
 
 function hide_versus() {
 	$("#makeBetPanel").style.visibility = "collapse"
+	$("#SpeedupButton").enabled = true
 }
 
 function Start() {	
 	let ids = Game.GetAllPlayerIDs()
 	$("#topbar").RemoveAndDeleteChildren()
 	ids.forEach(function(id,_) {
-		let plysteamid = Game.GetPlayerInfo(id).player_steamid,
+		const playerInfo = Game.GetPlayerInfo(id)
+		let plysteamid = playerInfo.player_steamid,
 			hero = Players.GetSelectedEntities(id)[0],
 			panel = $.CreatePanel("Panel", $("#topbar"), "player_"+id)
 		panel.BLoadLayoutSnippet("topBarPlayer")
-		panel.FindChildTraverse("image").steamid = plysteamid
 		panel.FindChild("gold").text = Players.GetGamblingGold(id)
 		panel.playerID = id
+
+		const avatar = panel.FindChildTraverse("image")
+		const botIcon = panel.FindChildTraverse("BotIcon")
+
+		
+		botIcon.visible = playerInfo.player_connection_state == DOTAConnectionState_t.DOTA_CONNECTION_STATE_NOT_YET_CONNECTED
+		botIcon.style.backgroundColor = "black"
+		botIcon.style.washColor = GetPlayerColor(id)
+		avatar.steamid = plysteamid
 	})
 }
 
@@ -310,10 +321,11 @@ function timer(t) {
 	startTime = t.start_time
 }
 
-GameEvents.Subscribe("new_round",new_round);
-GameEvents.Subscribe("change_top",change);
-GameEvents.Subscribe("new_timer",timer);
-GameEvents.Subscribe("hide_versus",hide_versus);
+function OnRoundEnd() {
+	$("#SpeedupButton").RemoveClass("ready")
+	$("#SpeedupButton").enabled = false
+}
+
 
 function UpdateSelectedUnit() {
 	let selectedEntity = Players.GetLocalPlayerPortraitUnit(),
@@ -396,7 +408,32 @@ function UpdateBets(data) {
 
 		}
 	})
+}
 
+function UpdateGold(data) {
+	const goldLabel = $("#LowerRight").FindChildTraverse("Gold")
+	const gold = data[Game.GetLocalPlayerID()] || 0
+	
+	goldLabel.SetDialogVariableInt("gold", gold)
+	$("#LowerRight").visible = gold > 0
+}
+
+function OnSpeedupStateChanged(data) {
+	const voteButton = $("#SpeedupButton")
+	const localVoted = data.players_voted[Game.GetLocalPlayerID()] == 1
+
+	$.Msg(typeof(data.players_voted))
+
+	voteButton.SetHasClass("ready", localVoted)
+
+	if (localVoted) {
+		voteButton.SetDialogVariableInt("count", Object.values(data.players_voted).length)
+		voteButton.SetDialogVariableInt("total_count", data.total_count)
+		voteButton.FindChild("SpeedupText").text = $.Localize("speedup_state", voteButton)
+	}
+	else {
+		voteButton.FindChild("SpeedupText").text = $.Localize("speedup_vote")
+	}
 }
 
 function OnBetsChanged(table_name, key, data) {
@@ -406,6 +443,15 @@ function OnBetsChanged(table_name, key, data) {
 	else if (key == "bets") {
 		UpdateBets(data)
 	}
+	else if (key == "gold") {
+		UpdateGold(data)
+	}
+}
+
+function OnGameChanged(table_name, key, data) {
+	if (key == "speedup_state") {
+		OnSpeedupStateChanged(data)
+	}
 }
 
 function OnCameraPosition(event) {
@@ -413,6 +459,13 @@ function OnCameraPosition(event) {
 }
 
 CustomNetTables.SubscribeNetTableListener("bets", OnBetsChanged)
+CustomNetTables.SubscribeNetTableListener("game", OnGameChanged)
+
+GameEvents.Subscribe("new_round",new_round);
+GameEvents.Subscribe("change_top",change);
+GameEvents.Subscribe("new_timer",timer);
+GameEvents.Subscribe("hide_versus",hide_versus);
+GameEvents.Subscribe("round_end", OnRoundEnd);
 
 GameEvents.Subscribe("dota_player_update_query_unit",UpdateSelectedUnit)
 GameEvents.Subscribe('dota_player_update_hero_selection', UpdateSelectedUnit);
@@ -483,4 +536,10 @@ function FormatTime(seconds) {
 	const minuts = Math.floor(seconds/60) 
 	const sec = seconds % 60
 	return (minuts > 9 ? ""+minuts : "0"+minuts) + ":" + (sec > 9 ? ""+sec : "0"+sec)
+}
+
+function GetPlayerColor(pID) {
+  var color = Players.GetPlayerColor( pID ).toString(16);
+  color = color.substring(6, 8) + color.substring(4, 6) + color.substring(2, 4) + color.substring(0, 2);
+  return "#" + color;
 }

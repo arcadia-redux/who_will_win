@@ -1,5 +1,7 @@
 "use strict";
 
+const loseMessages = $.GetContextPanel().FindChildTraverse("LoseMessages")
+
 function UpdateBets(event) {
 
 	let bets = event.bets
@@ -31,6 +33,7 @@ function UpdateBets(event) {
 		return b.gold - a.gold
 	})
 
+	loseMessages.RemoveAndDeleteChildren()
 	
 	let count = 0
 	bets.forEach(bet => {
@@ -43,11 +46,11 @@ function UpdateBets(event) {
 		panel.FindChildTraverse("PlayerName").style.color = GetPlayerColor(bet.pID)
 		if (bet.team == "left") {
 			panel.FindChildTraverse("TeamIcon").SetImage("file://{images}/custom_game/team_icons/team_icon_horse_01.png")
-			panel.FindChildTraverse("ShieldColor").style.washColor = "blue"
+			panel.FindChildTraverse("ShieldColor").style.washColor = "#1E90FF"
 		}
 		else {
 			panel.FindChildTraverse("TeamIcon").SetImage("file://{images}/custom_game/team_icons/team_icon_tiger_01.png")
-			panel.FindChildTraverse("ShieldColor").style.washColor = "red"
+			panel.FindChildTraverse("ShieldColor").style.washColor = "#f01a1a"
 		}
 
 		panel.FindChildTraverse("Bet").text = bet.gold
@@ -78,10 +81,24 @@ function UpdateBets(event) {
 			}
 		}
 
+		if (Players.GetGamblingGold(bet.pID) <= 0) {
+			AddLoseMessage(bet.pID)
+		}
+
 		count++
 	})
 
 	$.GetContextPanel().visible = true
+}
+
+function AddLoseMessage(pID) {
+	const label = $.CreatePanel("Label", loseMessages, "")
+	const playerColor = GetPlayerColor(pID)
+	const text = `<font color='${playerColor}'>` + Players.GetPlayerName(pID) + "</font>"
+	label.SetDialogVariable("player_name", text)
+
+	label.html = true
+	label.text = $.Localize("round_end_player_lose", label)
 }
 
 function OnBetsChanged(table_name, key, data) {

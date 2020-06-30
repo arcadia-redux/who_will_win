@@ -20,7 +20,8 @@
 					<!-- src="file://{images}/custom_game/team_icons/team_icon_tiger_01.png" !-->
 					<!-- src="file://{images}/custom_game/team_icons/team_icon_horse_01.png" !-->
 				</Panel>
-				<DOTAAvatarImage id="image" class="avatarimage" steamid="local" nocompendiumborder="true"/>
+				<Image id="BotIcon" src="s2r://panorama/images/players/portrait_png.vtex" />
+				<DOTAAvatarImage id="image" class="avatarimage" steamid="local" nocompendiumborder="true"/> 
 				<Label id="gold" text="800"/>
 				<Label id="bet" text="200" /> 
 				<Label id="profit" text="100"/> 
@@ -138,6 +139,18 @@
 			</Panel>
 			<Label id="time" text="120"></Label>
 		</Panel>
+
+		<Panel id="LowerRight">
+			<Panel id="LowerRightBG"/>
+			<Panel id="GoldContainer">
+				<Label id="Gold" text="{d:gold}" />
+				<Image class="GoldIcon" src="s2r://panorama/images/hud/reborn/gold_small_psd.vtex"/>
+			</Panel>
+			<Button id="SpeedupButton" class="vote ButtonBevel" onmouseactivate="vote()">
+				<Label id="SpeedupText" text="#speedup_vote" />
+			</Button>
+		</Panel>
+
 		<Panel id="makeBetPanel" class="makeBetPanel">
 			<Label class="pwlabel" id="pwleft" text="Power: 1000"/>
 			<Label class="pwlabel" id="pwright" text="Power: 1000"/>
@@ -185,8 +198,6 @@
 			<ToggleButton id="ReadyToRound" text="#baw_ready_to_round" onactivate="ReadyToRound()" />
 
 		</Panel>
-		<Button class="vote" onmouseactivate="vote()">
-			<Label text="Vote to speed-up"></Label>
-		</Button>
+		
 	</Panel>
 </root>

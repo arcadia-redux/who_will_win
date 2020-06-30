@@ -11,5 +11,10 @@
 
 	"round_win_left"					"BLUE TEAM WIN"
 	"round_win_right" 					"RED TEAM WIN"
+
+	"round_end_player_lose" 			"Player {s:player_name} lose all money and leaves the game."
+	
+	"speedup_vote" 						"SPEED-UP"
+	"speedup_state" 					"{d:count} OF {d:total_count} VOTED"
 }
 

@@ -80,6 +80,16 @@ end
 function CountPlayers()
   local count = 0
   for pID=0,23 do
+    if PlayerResource:IsValidTeamPlayerID(pID) and not PlayerResource:IsFakeClient(pID) then
+      count = count + 1
+    end
+  end
+  return count
+end
+
+function CountPlayersIncludeBots()
+  local count = 0
+  for pID=0,23 do
     if PlayerResource:IsValidTeamPlayerID(pID) then
       count = count + 1
     end

@@ -93,11 +93,11 @@ function Gambling:RoundEnd(loserTeam)
 		local profit = 0
 
 		if bet.team == winnerTeam then
-			if IsSoloGame() then
-				profit = bet.gold * 1.5
-			else
+			--if IsSoloGame() then
+			--	profit = bet.gold * 1.5
+			--else
 				profit = bet.gold/winnerBetSum * loserBetSum
-			end
+			--end
 		else
 			profit = -bet.gold
 		end
