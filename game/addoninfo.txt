@@ -25,3 +25,4 @@
 	PenaltiesEnabled = false
 	TeamCount = -1
 }
+
