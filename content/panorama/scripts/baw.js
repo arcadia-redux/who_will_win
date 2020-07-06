@@ -1,8 +1,8 @@
 "use strict"
 
 let cur_units = {}
-let maxHealthLeft = 0
-let maxHealthRight = 0
+let maxHealthLeft = 1
+let maxHealthRight = 1
 
 let time = 0
 let startTime = 0
@@ -19,40 +19,6 @@ function new_round(t) {
 	$("#rightTeamG").RemoveAndDeleteChildren()
 	cur_units = t.indexes
 
-	maxHealthLeft = 0
-	maxHealthRight = 0
-
-	for(let k in t.indexes){
-		if (k != "left" && k != "right") continue;
-		t.indexes[k] = LuaTableToArray(t.indexes[k])
-
-		t.indexes[k].sort(function(a,b) {
-			return Entities.GetMaxHealth(b) - Entities.GetMaxHealth(a)
-		})
-
-		t.indexes[k].forEach((unit) => {
-			if (k == "left")
-				maxHealthLeft = maxHealthLeft + Entities.GetMaxHealth(unit)
-			else
-				maxHealthRight = maxHealthRight + Entities.GetMaxHealth(unit)
-		})
-
-		let teamUnits = GroupUnits(t.indexes[k])
-
-		for(let i in teamUnits){
-			if(k == "left"){
-				
-				// $.CreatePanel("Label", $("#leftTeamG"), "lb").text = $.Localize(Entities.GetUnitName(t.indexes[k][i]))
-				// let pan = $.CreatePanel("Panel", $("#leftTeamG"), "lb"),
-				createSceneVersus(t,teamUnits[i],$("#leftTeamG"))
-			}else if(k == "right"){
-				
-				// $.CreatePanel("Label", $("#rightTeamG"), "lb").text = $.Localize(Entities.GetUnitName(t.indexes[k][i]))
-				// let pan = $.CreatePanel("Panel", $("#rightTeamG"), "lb"),
-				createSceneVersus(t,teamUnits[i],$("#rightTeamG"))
-			}
-		}
-	}
 	$("#leftPct").text = "0%"
 	$("#rightPct").text = "0%"
 	$("#leftBar").style.width = "50%"
@@ -73,7 +39,57 @@ function new_round(t) {
 		panel.SetHasClass("Loser", Players.GetGamblingGold(panel.playerID) <= 0)
 	}) 
 
+	PopulateSceneVersus(t)
 }
+
+function PopulateSceneVersus(t) {
+
+	const leftUnits = Object.values(t.indexes["left"])
+	const rightUnits = Object.values(t.indexes["right"])
+
+	//wait until units created clientside
+	if ( leftUnits.some((unitID) => !Entities.IsValidEntity(unitID)) && rightUnits.some((unitID) => !Entities.IsValidEntity(unitID)) ) {
+		$.Schedule(0, PopulateSceneVersus(t))
+		return
+	}
+
+	GameUI.NewRound(t)
+	
+	maxHealthLeft = 0
+	maxHealthRight = 0
+
+	for(let k in t.indexes){
+		if (k != "left" && k != "right") continue;
+		t.indexes[k] = LuaTableToArrayDec(t.indexes[k])
+
+		$.Msg(t.indexes[k])
+
+		t.indexes[k].sort(function(a,b) {
+			return Entities.GetMaxHealth(b) - Entities.GetMaxHealth(a)
+		})
+
+		t.indexes[k].forEach((unit) => {
+			$.Msg(unit, " ", Entities.GetUnitName(unit), " ", Entities.IsValidEntity(unit))
+			if (k == "left")
+				maxHealthLeft = maxHealthLeft + Entities.GetMaxHealth(unit)
+			else
+				maxHealthRight = maxHealthRight + Entities.GetMaxHealth(unit)
+		})
+
+		let teamUnits = GroupUnits(t.indexes[k])
+
+		for(let i in teamUnits){
+			if (k == "left") {
+				createSceneVersus(t, teamUnits[i], $("#leftTeamG"))
+			}
+			else if (k == "right") {
+				createSceneVersus(t, teamUnits[i], $("#rightTeamG"))
+			}
+		}
+	}
+}
+
+
 function checkHp() {
 	$.Schedule(0.1, checkHp)
 
@@ -138,8 +154,8 @@ function createSceneVersus(t,unitID,parent) {
 	pan.FindChildTraverse("unithptext").text = Entities.GetMaxHealth(unitID)
 	pan.FindChildTraverse("unitmptext").text = Entities.GetMaxMana(unitID)
  // $.Msg(t.indexes['regens'][t.indexes[k][i]])
-	pan.FindChildTraverse("unitdamage").text = (Entities.GetDamageMax(unitID) + Entities.GetDamageMin(unitID)) / 2
-	pan.FindChildTraverse("unitarmor").text = Entities.GetPhysicalArmorValue(unitID).toFixed(0)
+	pan.FindChildTraverse("unitdamage").text = t.indexes['regens'][unitID]["6"].toFixed(0)
+	pan.FindChildTraverse("unitarmor").text = t.indexes['regens'][unitID]["5"].toFixed(1)
 	pan.FindChildTraverse("unitatkspd").text = t.indexes['regens'][unitID]["3"].toFixed(2)+"s"
 	pan.FindChildTraverse("unitatkrng").text = t.indexes['regens'][unitID]["4"]
 
@@ -422,8 +438,6 @@ function OnSpeedupStateChanged(data) {
 	const voteButton = $("#SpeedupButton")
 	const localVoted = data.players_voted[Game.GetLocalPlayerID()] == 1
 
-	$.Msg(typeof(data.players_voted))
-
 	voteButton.SetHasClass("ready", localVoted)
 
 	if (localVoted) {
@@ -458,88 +472,31 @@ function OnCameraPosition(event) {
 	GameUI.SetCameraTargetPosition(event.vector, 0.1)
 }
 
-CustomNetTables.SubscribeNetTableListener("bets", OnBetsChanged)
-CustomNetTables.SubscribeNetTableListener("game", OnGameChanged)
+(function() {
+	CustomNetTables.SubscribeNetTableListener("bets", OnBetsChanged)
+	CustomNetTables.SubscribeNetTableListener("game", OnGameChanged)
 
-GameEvents.Subscribe("new_round",new_round);
-GameEvents.Subscribe("change_top",change);
-GameEvents.Subscribe("new_timer",timer);
-GameEvents.Subscribe("hide_versus",hide_versus);
-GameEvents.Subscribe("round_end", OnRoundEnd);
+	GameEvents.Subscribe("new_round",new_round);
+	GameEvents.Subscribe("change_top",change);
+	GameEvents.Subscribe("new_timer",timer);
+	GameEvents.Subscribe("hide_versus",hide_versus);
+	GameEvents.Subscribe("round_end", OnRoundEnd);
 
-GameEvents.Subscribe("dota_player_update_query_unit",UpdateSelectedUnit)
-GameEvents.Subscribe('dota_player_update_hero_selection', UpdateSelectedUnit);
-GameEvents.Subscribe('dota_player_update_selected_unit', UpdateSelectedUnit);
-GameEvents.Subscribe('game_rules_state_change', GRSChange);
-GameEvents.Subscribe('camera_position', OnCameraPosition);
+	GameEvents.Subscribe("dota_player_update_query_unit",UpdateSelectedUnit)
+	GameEvents.Subscribe('dota_player_update_hero_selection', UpdateSelectedUnit);
+	GameEvents.Subscribe('dota_player_update_selected_unit', UpdateSelectedUnit);
+	GameEvents.Subscribe('game_rules_state_change', GRSChange);
+	GameEvents.Subscribe('camera_position', OnCameraPosition);
 
-checkHp()
+	checkHp()
 
-function GetHeroFirstTalentID(heroID) {
-	for (let i = 0; i < 24; i++) {
-		const abilityName = Abilities.GetAbilityName(Entities.GetAbility(heroID, i))
+	const goldTable = CustomNetTables.GetTableValue("bets", "gold")
+	if (goldTable) UpdateGold(goldTable)
 
-		if (abilityName.includes("special_bonus"))
-			return i
-	}
+	const betTable = CustomNetTables.GetTableValue("bets", "bets")
+	if (betTable) UpdateBets(betTable)
 
-	return -1
-}
+	const speedupTable = CustomNetTables.GetTableValue("game", "speedup_state")
+	if (speedupTable) OnSpeedupStateChanged(speedupTable)
 
-function LuaTableToArray(nt) {
-	var result = []
-	for (var i in nt) {
-		result[i-1] = nt[i]
-	}
-	return result
-}
-
-function GroupUnits(originalArray) {
-	let count = {}
-	let unitIDs = {}
-	originalArray.forEach(function(unitID, index) {
-		const unitName = Entities.GetUnitName(unitID)
-		count[unitName] = count[unitName] ? count[unitName] + 1 : 1 
-
-		const arr = unitIDs[unitName]
-		if (arr) {
-			arr.push(unitID)
-		}
-		else {
-			unitIDs[unitName] = [unitID]
-		}
-		
-	})
-
-	let newArray = []
-	originalArray.forEach(function(unitID) {
-		const unitName = Entities.GetUnitName(unitID)
-		const isHero = unitName.includes("npc_dota_hero")
-
-		if (count[unitName] >= 2 && !isHero) {
-			if (unitIDs[unitName]) {
-				const ids = unitIDs[unitName]
-				delete unitIDs[unitName]
-				newArray.push(ids)
-			}
-		}
-		else {
-			newArray.push(unitID)
-		}
-	})
-
-	return newArray
-}
-
-function FormatTime(seconds) {
-	seconds = Math.ceil(seconds)
-	const minuts = Math.floor(seconds/60) 
-	const sec = seconds % 60
-	return (minuts > 9 ? ""+minuts : "0"+minuts) + ":" + (sec > 9 ? ""+sec : "0"+sec)
-}
-
-function GetPlayerColor(pID) {
-  var color = Players.GetPlayerColor( pID ).toString(16);
-  color = color.substring(6, 8) + color.substring(4, 6) + color.substring(2, 4) + color.substring(0, 2);
-  return "#" + color;
-}
+})()

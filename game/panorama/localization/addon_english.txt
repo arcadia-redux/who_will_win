@@ -1,6 +1,6 @@
 "addon"
 {
-	"minimal_bet"						"Minimal Bet: {d:minimal_bet}"
+	"minimal_bet"						"Minimum Bet: {d:minimal_bet}"
 	"baw_ready_to_round"				"Ready"
 	"bet_help"							""
 
@@ -11,6 +11,8 @@
 
 	"round_win_left"					"BLUE TEAM WIN"
 	"round_win_right" 					"RED TEAM WIN"
+	"round_win"							"YOU WIN"
+	"round_lose"						"YOU LOSE"
 
 	"round_end_player_lose" 			"Player {s:player_name} lose all money and leaves the game."
 	

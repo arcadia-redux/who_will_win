@@ -88,6 +88,7 @@
 #TableRows #PlayerName {
 	text-align: left;
 	vertical-align: center;
+	height: 25px;
 }
 
 .PlayerRow #Bet, .PlayerRow #Total{

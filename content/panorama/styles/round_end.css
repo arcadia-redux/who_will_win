@@ -43,10 +43,14 @@
 	animation-iteration-count: 1;
 }
 
-.DireWin #VictoryLabel
+.DireWin #VictoryLabel, .Lose #VictoryLabel
 {
 	color: black;
 	text-shadow: 0px 0px 8px 5.0 #FF3300ff;		
+}
+
+.Win #VictoryLabel {
+	text-shadow: 0px 0px 8px 5.0 #A1FFAC11;	
 }
 
 @keyframes 'LabelGrowDire'
@@ -90,6 +94,27 @@
 		text-shadow: 0px 0px 8px 5.0 #1E90FF11;	
 	}
 }
+
+@keyframes 'LabelGrowWin'
+{
+	0%
+	{
+		pre-transform-scale2d: 1.8;
+		text-shadow: 0px 0px 8px 5.0 #A1FFAC99;	
+	}
+	
+	10%
+	{
+		pre-transform-scale2d: 0.92;
+		text-shadow: 0px 0px 8px 5.0 #A1FFACff;	
+	}
+	
+	100%
+	{
+		pre-transform-scale2d: 1;
+		text-shadow: 0px 0px 8px 5.0 #A1FFAC11;	
+	}
+}
 		
 
 .ShowVictory #VictoryLabel,
@@ -107,6 +132,11 @@
 .ShowVictory.DireWin #VictoryLabel
 {
 	animation-name: LabelGrowDire;
+}
+
+.ShowVictory.Win #VictoryLabel
+{
+	animation-name: LabelGrowWin;
 }
 
 #VictoryBackgroundScene
@@ -135,7 +165,7 @@
 	//visibility: collapse;
 }
 
-.DireWin #VictoryBackgroundScene
+.DireWin #VictoryBackgroundScene, .Lose #VictoryBackgroundScene
 {
 	wash-color: #aa3000;
 	hue-rotation: 90deg;
@@ -144,6 +174,12 @@
 .RadiantWin #VictoryBackgroundScene
 {
 	wash-color: #0030aa;
+	hue-rotation: 90deg;
+}
+
+.Win #VictoryBackgroundScene
+{
+	wash-color: #30aa30;
 	hue-rotation: 90deg;
 }
 

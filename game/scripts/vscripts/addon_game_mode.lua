@@ -11,7 +11,7 @@ if BAW == nil then
 	_G.ROUND = 0
 	POINTS = 1000
 	ROUND_DURATION = 120
-	VOTE_DURATION = 15
+	VOTE_DURATION = 25
 	NEXT_ROUND = {}
 
 	PLAYER_READY = {}
@@ -39,6 +39,7 @@ function Precache( context )
     	end
     end
     ]]
+    PrecacheUnitByNameAsync("npc_dota_hero_wisp", context)
 end
 
 function Activate()
@@ -359,6 +360,8 @@ function BAW:OnGameRulesStateChange()
 	elseif nNewState == DOTA_GAMERULES_STATE_PRE_GAME then
 		if IsSoloGame() then
 			SendToConsole("dota_bot_populate")
+			--SendToConsole("dota_bot_populate")
+			GameRules:AddBotPlayerWithEntityScript("npc_dota_hero_wisp", "Tommy", DOTA_TEAM_GOODGUYS, "", false)
 			CustomNetTables:SetTableValue("game", "solo", { solo = true } )
 		end
 	elseif nNewState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
@@ -835,6 +838,7 @@ function BAW:StartGame()
 		for e,unit in pairs(v) do
 			index = unit:entindex()
 			ar['regens'][index] = {unit:GetHealthRegen(), unit:GetManaRegen(), unit:GetSecondsPerAttack(), unit:Script_GetAttackRange()}
+			ar['regens'][index] = {unit:GetHealthRegen(), unit:GetManaRegen(), unit:GetSecondsPerAttack(), unit:Script_GetAttackRange(), unit:GetPhysicalArmorValue(false), unit:GetAverageTrueAttackDamage(nil)}
 			if team == "left" then
 				table.insert(ar['left'], index)
 			else

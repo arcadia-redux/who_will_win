@@ -55,16 +55,7 @@ function UpdateBets(event) {
 
 		panel.FindChildTraverse("Bet").text = bet.gold
 
-		let profit = 0
-		if (bet.team == event.winnerTeam) {
-			if (bet.team == "left") 
-				profit =  bet.gold/leftSum * rightSum
-			else 
-				profit =  bet.gold/rightSum * leftSum
-		}
-		else {
-			profit = -bet.gold
-		}
+		let profit = bet.profit
 
 		panel.FindChildTraverse("Profit").text = profit.toFixed(0)
 		panel.FindChildTraverse("Profit").SetHasClass("Red", profit < 0)
@@ -117,16 +108,3 @@ function NewRound() {
 	//GameEvents.Subscribe("start_fight", StartFight);
 })()
 
-function LuaTableToArray(nt) {
-	var result = []
-	for (var i in nt) {
-		result[i] = nt[i]
-	}
-	return result
-}
-
-function GetPlayerColor(pID) {
-  var color = Players.GetPlayerColor( pID ).toString(16);
-  color = color.substring(6, 8) + color.substring(4, 6) + color.substring(2, 4) + color.substring(0, 2);
-  return "#" + color;
-}

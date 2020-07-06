@@ -5,6 +5,7 @@
     	<include src="file://{resources}/styles/baw.css" />
 	</styles>
 	<scripts>
+		<include src="file://{resources}/scripts/shared.js" /> 
 		<include src="file://{resources}/scripts/baw.js" />
 		<include src="file://{resources}/scripts/bet.js" />
 	</scripts>
@@ -140,13 +141,13 @@
 			<Label id="time" text="120"></Label>
 		</Panel>
 
-		<Panel id="LowerRight">
+		<Panel id="LowerRight" style="visibility: collapse;">
 			<Panel id="LowerRightBG"/>
 			<Panel id="GoldContainer">
 				<Label id="Gold" text="{d:gold}" />
 				<Image class="GoldIcon" src="s2r://panorama/images/hud/reborn/gold_small_psd.vtex"/>
 			</Panel>
-			<Button id="SpeedupButton" class="vote ButtonBevel" onmouseactivate="vote()">
+			<Button id="SpeedupButton" class="vote ButtonBevel" enabled="false" onmouseactivate="vote()">
 				<Label id="SpeedupText" text="#speedup_vote" />
 			</Button>
 		</Panel>

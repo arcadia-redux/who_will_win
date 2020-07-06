@@ -98,9 +98,11 @@ function Gambling:RoundEnd(loserTeam)
 			--else
 				profit = bet.gold/winnerBetSum * loserBetSum
 			--end
-		else
+		elseif winnerBetSum > 0 then --if no winners losers dont lose money
 			profit = -bet.gold
 		end
+
+		profit = math.floor(profit + 0.5)
 
 		gold = gold + profit
 		if gold <= 0 then 

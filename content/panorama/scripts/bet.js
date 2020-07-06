@@ -35,7 +35,7 @@ function Bet(team, x) {
 		$("#RightBetGold").text = bet
 	}
 
-	GameEvents.SendCustomGameEventToServer("player_bet",{ team: team, gold: bet})
+	GameEvents.SendCustomGameEventToServer("player_bet", { team: team, gold: bet } )
 
 	let newValue = bet/playerGold / 2
 	if (team == "right") 
@@ -54,7 +54,6 @@ function BetChanged() {
 
 	const table = CustomNetTables.GetTableValue("bets", "minimalBet") 
 	const minBet = table ? (table.minimalBet || 50) : 50
-	
 
 	if (gold < minBet) {
 		gold = minBet

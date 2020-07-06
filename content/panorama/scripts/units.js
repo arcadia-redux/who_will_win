@@ -343,8 +343,8 @@ function Update() {
 }
 
 function NewRound(data) {
-	let leftUnitsID = LuaTableToArray(data.indexes["left"])
-	let rightUnitsID = LuaTableToArray(data.indexes["right"])
+	let leftUnitsID = LuaTableToArrayDec(data.indexes["left"])
+	let rightUnitsID = LuaTableToArrayDec(data.indexes["right"])
 	let leftUnits = $("#LeftUnits")
 	let rightUnits = $("#RightUnits")
 
@@ -409,54 +409,11 @@ function StartFight() {
 		CreateUnitPanel(String(i), rightUnits)
 	}
 	
-	GameEvents.Subscribe("new_round", NewRound);
+	//GameEvents.Subscribe("new_round", NewRound);
+	GameUI.NewRound = NewRound
+
 	GameEvents.Subscribe("start_fight", StartFight);
 
 	Update() 
 
 })()
-
-function LuaTableToArray(nt) {
-	var result = []
-	for (var i in nt) {
-		result[i-1] = nt[i]
-	}
-	return result
-}
-
-function GroupUnits(originalArray) {
-	let count = {}
-	let unitIDs = {}
-	originalArray.forEach(function(unitID, index) {
-		const unitName = Entities.GetUnitName(unitID)
-		count[unitName] = count[unitName] ? count[unitName] + 1 : 1 
-
-		const arr = unitIDs[unitName]
-		if (arr) {
-			arr.push(unitID)
-		}
-		else {
-			unitIDs[unitName] = [unitID]
-		}
-		
-	})
-
-	let newArray = []
-	originalArray.forEach(function(unitID) {
-		const unitName = Entities.GetUnitName(unitID)
-		const isHero = unitName.includes("npc_dota_hero")
-
-		if (count[unitName] >= 2 && !isHero) {
-			if (unitIDs[unitName]) {
-				const ids = unitIDs[unitName]
-				delete unitIDs[unitName]
-				newArray.push(ids)
-			}
-		}
-		else {
-			newArray.push(unitID)
-		}
-	})
-
-	return newArray
-}
