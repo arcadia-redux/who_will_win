@@ -48,6 +48,7 @@ end
 
 _G.UnitsKV = LoadKeyValues("scripts/npc/npc_units.txt")
 _G.HeroesKV = LoadKeyValues("scripts/npc/npc_heroes.txt")
+_G.AbilitiesKV = LoadKeyValues("scripts/npc/npc_abilities.txt")
 _G.Items = LoadKeyValues("scripts/npc/items.txt")
 _G.AbilityPowers = LoadKeyValues("scripts/kv/ability_power.txt")
 
@@ -359,7 +360,6 @@ function BAW:OnGameRulesStateChange()
 	elseif nNewState == DOTA_GAMERULES_STATE_HERO_SELECTION then
 	elseif nNewState == DOTA_GAMERULES_STATE_PRE_GAME then
 		if IsSoloGame() then
-			SendToConsole("dota_bot_populate")
 			--SendToConsole("dota_bot_populate")
 			GameRules:AddBotPlayerWithEntityScript("npc_dota_hero_wisp", "Tommy", DOTA_TEAM_GOODGUYS, "", false)
 			CustomNetTables:SetTableValue("game", "solo", { solo = true } )
@@ -638,81 +638,83 @@ function BAW:CleanMap()
 
 end
 
-function UpgradeHeroAbilities(unit)
-	local level = unit:GetLevel()
 
-	local abilityIndexes = {0,1,2,5}
+function GetHeroSkillBuild(heroName, level)
+	local skillBuild = {}
+	local abilityIndexes = {0,1,2}
 
-	if unit:GetUnitName() == "npc_dota_hero_nevermore" then
-		abilityIndexes = {0,3,4,5}
+	if heroName == "npc_dota_hero_nevermore" then
+		abilityIndexes = {0,3,4}
 	end
 
-	if unit:GetUnitName() == "npc_dota_hero_monkey_king" then
-		abilityIndexes = {0,1,3,5}
+	if heroName == "npc_dota_hero_monkey_king" or heroName == "npc_dota_hero_troll_warlord" then
+		abilityIndexes = {0,1,3}
 	end
 
-	if level == 1 then
-		unit:GetAbilityByIndex(abilityIndexes[RandomInt(1, 3)]):SetLevel(1)
-	elseif level == 6 then
-		local ab = abilityIndexes[RandomInt(1, 3)]
-		unit:GetAbilityByIndex(ab):SetLevel(3)
-		for i=1,3 do
-			if abilityIndexes[i] ~= ab then
-				unit:GetAbilityByIndex(abilityIndexes[i]):SetLevel(1)
+	local levels = {}
+
+	for _,abi in pairs(abilityIndexes) do
+		levels[abi] = 0
+	end
+	levels[5] = 0  --ultimate, always has abilityIndex 5
+
+	local maxLevel = heroName == "npc_dota_hero_invoker" and 7 or 4
+
+	--skill build is randomized 
+	for i=1,level do
+		if i > 5 and math.fmod(i,5) == 0 then --talents
+			skillBuild[i] = RandomInt(0,1)+((math.floor(i/5)-2)*2)
+		else
+			if math.fmod(i,6) == 0 and heroName ~= "npc_dota_hero_invoker" and levels[5] < 3 then --ultimate
+				levels[5] = levels[5] + 1
+				skillBuild[i] = 5
+			else --other abilities
+				while #abilityIndexes > 0 do
+					local rand = RandomInt(1, #abilityIndexes)
+					local ability = abilityIndexes[rand]
+					--local abilityName = _G.HeroesKV[heroName]["Ability"..ability+1]
+
+					if skillBuild[i-1] ~= ability or i>=7 then
+						levels[ability] = levels[ability] + 1
+						skillBuild[i] = ability
+
+						if levels[ability] >= maxLevel then
+							table.remove(abilityIndexes, rand)
+						end
+
+						break
+					end
+				end
 			end
-		end
-		unit:GetAbilityByIndex(5):SetLevel(1)
-	elseif level == 16 then
-		unit:GetAbilityByIndex(0):SetLevel(4)
-		unit:GetAbilityByIndex(1):SetLevel(4)
-		unit:GetAbilityByIndex(2):SetLevel(4)
-		unit:GetAbilityByIndex(5):SetLevel(3)
-	elseif level == 30 then
-		for i=1,4 do
-			local ab = unit:GetAbilityByIndex(abilityIndexes[i])
-			if ab then
-				ab:SetLevel(ab:GetMaxLevel())
-			end
+
 		end
 	end
 
+	return skillBuild
+end
+
+--DeepPrintTable(GetHeroSkillBuild("npc_dota_hero_invoker",26))
+
+function UpgradeHeroAbilities(unit, skillBuild)
 	local abilityTalentStart = GetHeroFirstTalentID(unit)
 
+	for i=1,30 do
+		if skillBuild[i] then
+			if i > 5 and math.fmod(i,5) == 0 then
+				local talent = unit:GetAbilityByIndex(abilityTalentStart+skillBuild[i])
 
-	if abilityTalentStart ~= -1 and level < 30 then
-		if level >= 10 then
-			if RollPercentage(50) then
-				TrainTalent(unit, unit:GetAbilityByIndex(abilityTalentStart))
+				if talent then
+					TrainTalent(unit, talent)
+				end
 			else
-				TrainTalent(unit, unit:GetAbilityByIndex(abilityTalentStart+1))
-			end
-		end
+				local ability = unit:GetAbilityByIndex(skillBuild[i])
 
-		if level >= 15 then
-			if RollPercentage(50) then
-				TrainTalent(unit, unit:GetAbilityByIndex(abilityTalentStart+2))
-			else
-				TrainTalent(unit, unit:GetAbilityByIndex(abilityTalentStart+3))
-			end
-		end
-
-		if level >= 20 then
-			if RollPercentage(50) then
-				TrainTalent(unit, unit:GetAbilityByIndex(abilityTalentStart+4))
-			else
-				TrainTalent(unit, unit:GetAbilityByIndex(abilityTalentStart+5))
-			end
-		end
-
-		if level >= 25  then
-			if RollPercentage(50) then
-				TrainTalent(unit, unit:GetAbilityByIndex(abilityTalentStart+6))
-			else
-				TrainTalent(unit, unit:GetAbilityByIndex(abilityTalentStart+7))
+				if ability then
+					ability:UpgradeAbility(true)
+				end
 			end
 		end
 	end
-
 end
 
 function BAW:StartGame()
@@ -735,6 +737,7 @@ function BAW:StartGame()
     local lefthero = NEXT_ROUND.lefthero
     local righthero = NEXT_ROUND.righthero 
     local level
+    local leftSkillBuild, rightSkillBuild
 
 	if heroes then
 		level = RandomInt(1, 4)
@@ -747,6 +750,9 @@ function BAW:StartGame()
 		elseif level == 4 then
 			level = 30
 		end
+
+		leftSkillBuild = GetHeroSkillBuild(lefthero, level)
+		rightSkillBuild = GetHeroSkillBuild(righthero, level)
 	end
 	
 	local left = teams['left']
@@ -773,7 +779,6 @@ function BAW:StartGame()
 	local yDist = 125
 	local yDiff = - (math.floor(#left/2) * yDist)
 
-
 	for k,v in ipairs(left) do
 		local spawnPos = Vector_clone(LEFT_SPAWN_POS)
 
@@ -794,7 +799,7 @@ function BAW:StartGame()
 			for i=1,level-1 do
 				unit:HeroLevelUp(false)
 			end
-			UpgradeHeroAbilities(unit)
+			UpgradeHeroAbilities(unit, leftSkillBuild)
 		end
 
 		for i,v in ipairs(itemsArLeft) do
@@ -824,7 +829,7 @@ function BAW:StartGame()
 			for i=1,level-1 do
 				unit:HeroLevelUp(false)
 			end
-			UpgradeHeroAbilities(unit)
+			UpgradeHeroAbilities(unit, rightSkillBuild)
 		end
 		
 		for i,v in ipairs(itemsArRight) do
@@ -837,7 +842,6 @@ function BAW:StartGame()
 	for team,v in pairs(ALIVES) do
 		for e,unit in pairs(v) do
 			index = unit:entindex()
-			ar['regens'][index] = {unit:GetHealthRegen(), unit:GetManaRegen(), unit:GetSecondsPerAttack(), unit:Script_GetAttackRange()}
 			ar['regens'][index] = {unit:GetHealthRegen(), unit:GetManaRegen(), unit:GetSecondsPerAttack(), unit:Script_GetAttackRange(), unit:GetPhysicalArmorValue(false), unit:GetAverageTrueAttackDamage(nil)}
 			if team == "left" then
 				table.insert(ar['left'], index)
