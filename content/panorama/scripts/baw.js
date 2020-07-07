@@ -39,20 +39,21 @@ function new_round(t) {
 		panel.SetHasClass("Loser", Players.GetGamblingGold(panel.playerID) <= 0)
 	}) 
 
-	PopulateSceneVersus(t)
+	const units = Object.values(t.indexes["left"]).concat(Object.values(t.indexes["right"]))
+
+	const func = () => {
+		if (units.some((unitID) => !Entities.IsValidEntity(unitID))) {
+			$.Schedule(0, func)
+		}
+		else {
+			PopulateSceneVersus(t)
+		}
+	}
+
+	func()
 }
 
 function PopulateSceneVersus(t) {
-
-	const leftUnits = Object.values(t.indexes["left"])
-	const rightUnits = Object.values(t.indexes["right"])
-
-	//wait until units created clientside
-	if ( leftUnits.some((unitID) => !Entities.IsValidEntity(unitID)) && rightUnits.some((unitID) => !Entities.IsValidEntity(unitID)) ) {
-		$.Schedule(0, PopulateSceneVersus(t))
-		return
-	}
-
 	GameUI.NewRound(t)
 	
 	maxHealthLeft = 0
