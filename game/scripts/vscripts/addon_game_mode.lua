@@ -181,7 +181,20 @@ function BAW:InitGameMode()
 	ListenToGameEvent('npc_spawned', Dynamic_Wrap(self, 'OnNPCSpawned'), self)
     
     CustomGameEventManager:RegisterListener("speedup", Dynamic_Wrap(self, 'SpeedUpRequest'))
-    CustomGameEventManager:RegisterListener("player_ready_to_round", Dynamic_Wrap(self, 'PlayerReady'))
+	CustomGameEventManager:RegisterListener("player_ready_to_round", Dynamic_Wrap(self, 'PlayerReady'))
+	
+	-- Handle Unit Colors to represent Blue & Red Team
+	self.m_TeamColors = {}
+	self.m_TeamColors[DOTA_TEAM_GOODGUYS] = {0, 112, 223} -- Blue
+	self.m_TeamColors[DOTA_TEAM_BADGUYS] = {224, 10, 10} -- Red
+
+	for team = 0, (DOTA_TEAM_COUNT-1) do
+		color = self.m_TeamColors[ team ]
+		if color then
+			SetTeamCustomHealthbarColor(team, color[1], color[2], color[3])
+		end
+	end
+
 
     for k,v in pairs(UnitsKV) do
     	if not bannedUnits[k] and type(v) == "table" and v['AttackCapabilities'] ~= "DOTA_UNIT_CAP_NO_ATTACK" and ((v["AttackDamageMin"] or 0) ~= 0 or (v["AttackDamageMax"] or 0) ~= 0) then

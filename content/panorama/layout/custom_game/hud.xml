@@ -23,9 +23,9 @@
 				</Panel>
 				<Image id="BotIcon" src="s2r://panorama/images/players/portrait_png.vtex" />
 				<DOTAAvatarImage id="image" class="avatarimage" steamid="local" nocompendiumborder="true"/> 
-				<Label id="gold" text="800"/>
-				<Label id="bet" text="200" /> 
-				<Label id="profit" text="100"/> 
+				<Label id="gold" text="800" onmouseover="UIShowTextTooltip(#CurrentGold)" onmouseout="UIHideTextTooltip()"/>
+				<Label id="bet" text="200" onmouseover="UIShowTextTooltip(#CurrentBet)" onmouseout="UIHideTextTooltip()"/> 
+				<Label id="profit" text="100" onmouseover="UIShowTextTooltip(#Profit)" onmouseout="UIHideTextTooltip()"/> 
 			</Panel>
 		</snippet>
 		<snippet name="teamScene">
@@ -143,18 +143,18 @@
 
 		<Panel id="LowerRight" style="visibility: collapse;">
 			<Panel id="LowerRightBG"/>
-			<Panel id="GoldContainer">
+			<Panel id="GoldContainer" class="vote ButtonBevel">
 				<Label id="Gold" text="{d:gold}" />
 				<Image class="GoldIcon" src="s2r://panorama/images/hud/reborn/gold_small_psd.vtex"/>
 			</Panel>
-			<Button id="SpeedupButton" class="vote ButtonBevel" enabled="false" onmouseactivate="vote()">
+			<Button id="SpeedupButton" class="vote ButtonBevel" enabled="false" onmouseactivate="vote()" onmouseover="UIShowTextTooltip(#VoteSpeed)" onmouseout="UIHideTextTooltip()">
 				<Label id="SpeedupText" text="#speedup_vote" />
 			</Button>
 		</Panel>
 
 		<Panel id="makeBetPanel" class="makeBetPanel">
-			<Label class="pwlabel" id="pwleft" text="Power: 1000"/>
-			<Label class="pwlabel" id="pwright" text="Power: 1000"/>
+			<Label class="pwlabelBlue" id="pwleft" text="Power: 1000"/>
+			<Label class="pwlabelRed" id="pwright" text="Power: 1000"/>
 			<Panel class="teamG" id="leftTeamG">
 			</Panel>
 			<Panel class="teamG" id="rightTeamG">
@@ -163,7 +163,6 @@
 
 			<Panel id="MinimalBetCont" >
 				<Label id="MinimalBet" text="#minimal_bet"/> 
-				<Panel id="HelpIcon" onmouseover="DOTAShowTextTooltip(bet_help)" onmouseout="DOTAHideTextTooltip()" />
 			</Panel>
 
 			<Panel id="BetContainer" >
@@ -197,7 +196,6 @@
 				<TextButton id="Reset" class="Button" text="RESET" onactivate="BetReset();"/>
 			</Panel>
 			<ToggleButton id="ReadyToRound" text="#baw_ready_to_round" onactivate="ReadyToRound()" />
-
 		</Panel>
 		
 	</Panel>

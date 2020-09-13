@@ -23,7 +23,7 @@ function new_round(t) {
 	$("#rightPct").text = "0%"
 	$("#leftBar").style.width = "50%"
 	$("#rightBar").style.width = "50%"
-	$("#round").text = ++round
+	$("#round").text = "Round " + ++round
 
 	BetReset()
 	$("#BetSlider").SetValueNoEvents(0.5)
@@ -360,6 +360,7 @@ function vote() {
 
 function ReadyToRound() {
 	GameEvents.SendCustomGameEventToServer("player_ready_to_round", { isReady: $("#ReadyToRound").checked })
+	Game.EmitSound("General.ButtonClick")
 }
 
 function GRSChange() {

@@ -204,9 +204,9 @@
 
 #LoseMessages {
 	flow-children: down;
-
+	background-color: #000000dd;
 	margin-top: 5px;
-	
+	align: center center;
 	opacity: 0;
 }
 

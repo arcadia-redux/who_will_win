@@ -4,7 +4,7 @@
 }
 .betsBg{
 	align: center top;
-	height: 60px;
+	height: 100px;
 	width: 500px;
 	margin-top: 75px;
 	overflow: noclip noclip;
@@ -12,8 +12,8 @@
 .betsBg Label{
 	color:white;
 	font-weight: bold;
-	font-size: 16;
-	text-shadow: 1px 1px 1px 2 #00000099;
+	font-size: 19;
+	text-transform: uppercase;
 }
 #rightTeam{
 	align: right top;
@@ -21,35 +21,41 @@
 }
 .betsBar{
 	align: center bottom;
-	height: 15px;
+	height: 30px;
 	width: 100%;
 	background-color: #6E0909;
 	box-shadow: #000000f5 -4px -4px 8px 8px;
 	border-radius: 5px;
-	margin-bottom: 20px;
+	margin-bottom: 45px;
 }
 .hpbarbg{
 	align: center bottom;
-	height: 10px;
+	height: 25px;
 	width: 100%;
+	margin-bottom: 15px;
 }
 #leftBar{
 	height: 100%;
 	width: 50%;
 	align: left center;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #0070dF ), color-stop( .5, #0E80eF), to( #0070dF ) );
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #103683 ), color-stop( .5, #1D37FD), to( #103683 ) );
+	box-shadow: inset #000 1px 1px 3px 3px;	
 }
 #rightBar{
 	height: 100%;
 	width: 50%;
 	align: right center;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #e00a0a ), color-stop( .5, #ed0d0d), to( #e00a0a ) );
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #831010 ), color-stop( .5, #fd1d1d), to( #831010 ) );
+	box-shadow: inset #000 1px 1px 3px 3px;	
 }
 .betsBar Label{
-	font-size: 13;
+	font-size: 16;
+	text-align: center center;
 }
 #rightPct{
 	margin-left: 5px;
+	margin-top: 1px;
+	align: left center;
 }
 #leftPct{
 	text-align: right;
@@ -77,8 +83,6 @@
 .makeBetPanel Button{
 	height: 30px;
 	width: 100px;
-	background-color: #1D37FD;
-	box-shadow: #000000f5 -4px -4px 8px 8px;
 	align: left bottom;
 }
 .makeBetPanel Button:hover{
@@ -141,25 +145,33 @@ Label{
 	transition-property: position;
 	transition-duration: 0.5s;
 	transition-timing-function: ease-in-out;
+	margin-right: 5px;
+	margin-bottom: 14px;
+	background-color: #000a;
 }
 
 #gold {
 	color: gold;
-	margin-top: 0px;
+	margin-top: 1px;
 	margin-left: 65px;
-
+	text-shadow: 1px 1px 2px 3.0 #000000;
+	font-family: titlefont;
 }
 
 #bet {
 	margin-top: 20px;
 	color: gold;
 	margin-left: 65px;
+	text-shadow: 1px 1px 2px 3.0 #000000;
+	font-family: titlefont;
 }
 
 #profit {
 	margin-top: 40px;
 	color: #50AF1B;
 	margin-left: 65px;
+	text-shadow: 1px 1px 2px 3.0 #000000;
+	font-family: titlefont;
 }
 
 .hpbg{
@@ -196,7 +208,7 @@ Label{
 	width: 204px;
 	border: 1px solid black;
 	background-size: 100%;
-	background-image: url("s2r://panorama/images/backgrounds/dashboard_background_ingame_psd.vtex");
+	background-image:url('file://{images}/custom_game/bg_profile_psd.png');
 }
 .teamScene{
 	height: 70%;
@@ -258,16 +270,17 @@ Label{
 	border-radius: 0px;
 }
 
-
 .teamSceneLabel{
 	align: center top;
 	text-align: center;
+	text-shadow: 1px 1px 2px 3.0 #000000;
 	margin: 0;
 	width: 100%;
 	font-size: 14;
 	text-overflow: shrink;
 	z-index: 10;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #103683 ), color-stop( .5, #1D37FD), to( #103683 ) );
+	box-shadow: inset #000 1px 1px 3px 3px;	
 }
 #rightTeamG .teamSceneLabel{
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #831010 ), color-stop( .5, #fd1d1d), to( #831010 ) );
@@ -290,33 +303,55 @@ Label{
 	border: 1px solid black;
 	border-bottom: 1px solid #ffffff06;
 }
-.pwlabel{
+.pwlabelRed{
 	font-size: 30px;
+	text-shadow: 1px 1px 2px 3.0 #000000;
+	text-transform: uppercase;
+	color: #831010;
+	brightness: 3;
+}
+.pwlabelBlue{
+	font-size: 30px;
+	text-shadow: 1px 1px 2px 3.0 #000000;
+	text-transform: uppercase;
+	color: #103683;
+	brightness: 2.5;
 }
 #pwleft{
-	text-align: right;
+	text-align: center;
 	margin: 70px 0 0 15%;
+	background-color: #000000dd;
+	width: 200px;
+	height: 36px;
+	border-radius: 5px;
 }
 #pwright{
 	align: right top;
+	text-align: center;
 	margin: 70px 15% 0 0;
+	background-color: #000000dd;
+	width: 200px;
+	height: 36px;
+	border-radius: 5px;
 }
 .hpteambg{
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #232323 ), color-stop( .5, #4D4D4D), to( #232323 ) );
 	box-shadow: #000000f5 -3px -2.5px 5px 5px;
 	border-radius: 5px;
 	height: 100%;
-	width: 45%;
+	width: 43%;
 }
 .teamhp{
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #0F4F00 ), color-stop( .5, #167400), to( #0F4F00 ) );
 	height: 100%;
 	width: 100%;
+	box-shadow: inset #000 1px 1px 3px 3px;	
 }
 .hpteambg Label{
 	align: center center;
 	text-align: center;
-	font-size: 10;
+	font-size: 16;
+	text-shadow: 1px 1px 2px 3.0 #000000;
 }
 
 .vote {
@@ -356,6 +391,7 @@ Label{
 	text-align: center;
 	font-size: 13;
 	margin-bottom: 2px;
+	text-shadow: 1px 1px 2px 2.0 #000000;
 }
 #unithp{
 	height: 100%;
@@ -388,19 +424,23 @@ Label{
 }
 #time{
 	align: center bottom;
-	margin-bottom: -5px;
-	margin-left: 5px;
+	margin-bottom: 15px;
 	font-size: 20;
+	text-align: center;
+	text-shadow: 1px 1px 2px 3.0 #000000;
 }
 .unitstat{
-	color: #aaa;
+	color: white;
 	font-weight: normal;
 	font-size: 14px;
+	margin-right: 3px;
+	margin-top: 1px;
 }
 .unitstats{
 	flow-children: down;
 	align: right top;
-	margin: 14px 3px 0 0;
+	margin: 18px 3px 0 0;
+	background-color: #000a;
 }
 .unitstat{
 	text-align: right;
@@ -421,8 +461,6 @@ Label{
 }
 #unitatkrng{
 	background-image: url("s2r://panorama/images/hud/reborn/icon_attack_range_psd.vtex");
-	wash-color: #aaa;
-	color: white;
 }
 
 .no_level 
@@ -705,6 +743,7 @@ Label{
 
 .Button:hover{
 	brightness: 2;
+	background-color: #242121ad;
 }
 
 #MaxLeft, #MaxRight {
@@ -712,12 +751,11 @@ Label{
 	color: #A5A5A5;
 	margin: 5px;
 	width: 50px;
-	
-
 }
 
 #MaxLeft:hover, #MaxRight:hover {
 	brightness: 2;
+	background-color: #242121ad;
 }
 
 #Reset {
@@ -736,16 +774,20 @@ Label{
 
 #MinimalBet {
 	horizontal-align: center;
-
 	font-size: 24px;
+	text-shadow: 1px 1px 2px 3.0 #000000;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: white;
 }
 
-#ReadyToRound {
+#ReadyToRound
+{
 	vertical-align: bottom;
 	horizontal-align: right;
 
-	margin-bottom: 15px;
-	margin-right: 280px;
+	margin-bottom: 10px;
+	margin-right: 286px;
 }
 
 #HelpIcon
@@ -782,14 +824,15 @@ Label{
 
 .TeamIcon Image
 {
-	width: 32px;
-	height: 32px;
+	width: 24px;
+	height: 24px;
+	align: left bottom;
 }
 
 .TeamIcon #IconShadow
 {
-	width: 32px;
-	height: 32px;
+	width: 24px;
+	height: 24px;
 
 	//img-shadow: 0px 0px 4px 2.0 #000000ff;
 }
@@ -835,7 +878,7 @@ Label{
 	flow-children: right;
 
 	horizontal-align: right;
-	vertical-align: center;
+
 
 	margin-right: 10px;
 }
@@ -843,9 +886,8 @@ Label{
 #Gold {
 	color: gold;
 	font-size: 24px;
-
 	margin-right: 5px;
-
+	text-shadow: 1px 1px 2px 3.0 #000000;
 	vertical-align: center;
 }
 
@@ -855,8 +897,17 @@ Label{
 }
 
 #LowerRightBG {
-	width: 278px;
+	width: 285px;
 	height: 60px;
 	background-image: url("s2r://panorama/images/hud/reborn/courier_gold_bg_262_psd.vtex");
 	background-size: 100%;
+}
+
+#SpeedupButton {
+	tooltip-position: top;
+}
+
+#SpeedupText {
+	color: white;
+	text-shadow: 1px 1px 2px 3.0 #000000;
 }

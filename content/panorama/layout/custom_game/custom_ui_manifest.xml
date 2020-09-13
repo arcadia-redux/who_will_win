@@ -34,6 +34,7 @@
     }
 
     GetRoot().FindChildTraverse("GlyphScanContainer").visible = false
+    GetRoot().FindChildTraverse("ToggleScoreboardButton").visible = false
 
     </script> 
 

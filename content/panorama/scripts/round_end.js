@@ -1,6 +1,7 @@
 "use strict"
 
 function RoundEnd(event) {
+	Game.EmitSound("Game_End_Scoreboard_Appear")
 	const context = $.GetContextPanel()
 
 	context.AddClass("ShowVictory")
@@ -17,10 +18,12 @@ function RoundEnd(event) {
 		if (event.winnerTeam == localPlayerBet.team) {
 			context.SetDialogVariable("victory_title", $.Localize("#round_win"))
 			context.AddClass("Win")
+			Game.EmitSound("crowd.lv_01")
 		}
 		else {
 			context.SetDialogVariable("victory_title", $.Localize("#round_lose"))
 			context.AddClass("Lose")
+			Game.EmitSound("Frostivus.PointScored.Enemy")
 		}
 	}
 	else {

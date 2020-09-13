@@ -1,6 +1,7 @@
 "use strict";
 
 function BetReset() {
+	Game.EmitSound("Draft.PickMade")
 	$("#BetSlider").SetValueNoEvents(0.5)
 	$("#RightBetGold").text = 0
 	$("#LeftBetGold").text = 0
@@ -9,6 +10,7 @@ function BetReset() {
 
 function BetMax(value) {
 	$("#BetSlider").value = value
+	Game.EmitSound("General.CoinsBig")
 }
 
 function Bet(team, x) {
@@ -43,6 +45,7 @@ function Bet(team, x) {
 	else 
 		newValue = 0.5 - newValue
 	$("#BetSlider").SetValueNoEvents(newValue)
+	Game.EmitSound("Quickbuy.Confirmation")
 }
 
 function BetChanged() {
