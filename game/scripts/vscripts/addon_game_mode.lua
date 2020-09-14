@@ -535,14 +535,19 @@ end
 
 function BAW:NextRoundUnits() 
 	local heroes = RollPercentage(50)
-
 	if _G.ROUND == 0 then
 		heroes = false
 	end
 
 	local minPoints = POINTS * 0.05
 	local leftHero, rightHero
+	local lefthero1, lefthero2, lefthero3, lefthero4, lefthero5
+	local righthero1, righthero2, righthero3, righthero4, righthero5
 	local teams = {left = {}, right = {}}
+	local DetermineRound
+	DetermineRound = RandomInt(1, 21)
+	print("Printing DetermineRound Random: " .. DetermineRound)
+	
 	if not heroes then
 	    local cachepoints
 	    local cache = {}
@@ -582,7 +587,10 @@ function BAW:NextRoundUnits()
 		    	cacheteams[check] = cache
 	    	end
 		end
-	else
+	end
+	
+	if heroes and DetermineRound == 1 then
+		print("Random Hero Function")
 		local howmany = RandomInt(1, 5)
 		lefthero = AllHeroes[RandomInt(1, #AllHeroes)]
 		righthero = AllHeroes[RandomInt(1, #AllHeroes)]
@@ -591,17 +599,418 @@ function BAW:NextRoundUnits()
 			table.insert(teams['left'], lefthero)
 			table.insert(teams['right'], righthero)
 		end
+	end 
+	
+	if heroes and DetermineRound == 2 then
+		-- [PREDEFINED ROUND] OG vs Team Liquid - TI 9 Finals - Match 3
+		lefthero1 = AllHeroes[47] -- Faceless Void
+		lefthero2 = AllHeroes[10] -- Tiny
+		lefthero3 = AllHeroes[3] -- Pugna
+		lefthero4 = AllHeroes[50] -- Enchantress
+		lefthero5 = AllHeroes[25] -- Grimstroke
+		
+		righthero1 = AllHeroes[106] -- Juggernaut
+		righthero2 = AllHeroes[22] -- Templar Assassin
+		righthero3 = AllHeroes[6] -- Tidehunter
+		righthero4 = AllHeroes[5] -- Ogre Magi
+		righthero5 = AllHeroes[68] -- Rubick
+		
+		
+		table.insert(teams['left'], lefthero1)
+		table.insert(teams['left'], lefthero2)
+		table.insert(teams['left'], lefthero3)
+		table.insert(teams['left'], lefthero4)
+		table.insert(teams['left'], lefthero5)
+
+		
+		table.insert(teams['right'], righthero1)
+		table.insert(teams['right'], righthero2)
+		table.insert(teams['right'], righthero3)
+		table.insert(teams['right'], righthero4)
+		table.insert(teams['right'], righthero5)
+	end
+	
+	if heroes and DetermineRound == 3 then
+		-- [PREDEFINED ROUND] OG vs Team Liquid - TI 9 Finals - Match 2
+		lefthero1 = AllHeroes[12] -- Monkey King
+		lefthero2 = AllHeroes[113] -- Ember Spirit
+		lefthero3 = AllHeroes[10] -- Tiny
+		lefthero4 = AllHeroes[89] -- Omniknight
+		lefthero5 = AllHeroes[25] -- Grimstroke
+		
+		righthero1 = AllHeroes[46] -- Lifestealer
+		righthero2 = AllHeroes[22] -- Templar Assassin
+		righthero3 = AllHeroes[6] -- Tidehunter
+		righthero4 = AllHeroes[99] -- Shadow Shaman
+		righthero5 = AllHeroes[15] -- Enigma
+		
+		table.insert(teams['left'], lefthero1)
+		table.insert(teams['left'], lefthero2)
+		table.insert(teams['left'], lefthero3)
+		table.insert(teams['left'], lefthero4)
+		table.insert(teams['left'], lefthero5)
+
+		
+		table.insert(teams['right'], righthero1)
+		table.insert(teams['right'], righthero2)
+		table.insert(teams['right'], righthero3)
+		table.insert(teams['right'], righthero4)
+		table.insert(teams['right'], righthero5)
+	end
+	
+	if heroes and DetermineRound == 4 then
+		-- [PREDEFINED ROUND] OG vs PSG.LGD - TI 8 Finals - Match 5
+		lefthero1 = AllHeroes[113] -- Ember Spirit
+		lefthero2 = AllHeroes[87] -- Zeus
+		lefthero3 = AllHeroes[91] -- Nature's Prophet
+		lefthero4 = AllHeroes[26] -- Magnus
+		lefthero5 = AllHeroes[68] -- Rubick
+		
+		righthero1 = AllHeroes[70] -- Terrorblade
+		righthero2 = AllHeroes[37] -- Kunkka
+		righthero3 = AllHeroes[71] -- Batrider
+		righthero4 = AllHeroes[49] -- Earthshaker
+		righthero5 = AllHeroes[83] -- Silencer
+		
+		table.insert(teams['left'], lefthero1)
+		table.insert(teams['left'], lefthero2)
+		table.insert(teams['left'], lefthero3)
+		table.insert(teams['left'], lefthero4)
+		table.insert(teams['left'], lefthero5)
+		
+		table.insert(teams['right'], righthero1)
+		table.insert(teams['right'], righthero2)
+		table.insert(teams['right'], righthero3)
+		table.insert(teams['right'], righthero4)
+		table.insert(teams['right'], righthero5)
+	end 
+	
+	if heroes and DetermineRound == 5 then
+		-- [PREDEFINED ROUND] OG vs PSG.LGD - TI 8 Finals - Match 1
+		lefthero1 = AllHeroes[84] -- Spectre
+		lefthero2 = AllHeroes[12] -- Monkey King
+		lefthero3 = AllHeroes[45] -- Treant Protector
+		lefthero4 = AllHeroes[49] -- Earthshaker
+		lefthero5 = AllHeroes[40] -- Winter Wyvern
+		
+		righthero1 = AllHeroes[104] -- Bloodseeker
+		righthero2 = AllHeroes[100] -- Storm Spirit
+		righthero3 = AllHeroes[63] -- Elder Titan
+		righthero4 = AllHeroes[50] -- Enchantress
+		righthero5 = AllHeroes[92] -- Crystal Maiden
+		
+		table.insert(teams['left'], lefthero1)
+		table.insert(teams['left'], lefthero2)
+		table.insert(teams['left'], lefthero3)
+		table.insert(teams['left'], lefthero4)
+		table.insert(teams['left'], lefthero5)
+		
+		table.insert(teams['right'], righthero1)
+		table.insert(teams['right'], righthero2)
+		table.insert(teams['right'], righthero3)
+		table.insert(teams['right'], righthero4)
+		table.insert(teams['right'], righthero5)
 	end
 
+	if heroes and DetermineRound == 6 then
+		-- [PREDEFINED ROUND] Team Secret vs OG - OMEGA League: Immortal Division Finals - Match 2
+		lefthero1 = AllHeroes[46] -- Lifestealer
+		lefthero2 = AllHeroes[82] -- Outworld Devourer
+		lefthero3 = AllHeroes[104] -- Bloodseeker
+		lefthero4 = AllHeroes[50] -- Enchantress
+		lefthero5 = AllHeroes[51] -- Earth Spirit
+		
+		righthero1 = AllHeroes[58] -- Troll Warlord
+		righthero2 = AllHeroes[10] -- Tiny
+		righthero3 = AllHeroes[55] -- Tusk
+		righthero4 = AllHeroes[89] -- Omniknight
+		righthero5 = AllHeroes[25] -- Grimstroke
+		
+		table.insert(teams['left'], lefthero1)
+		table.insert(teams['left'], lefthero2)
+		table.insert(teams['left'], lefthero3)
+		table.insert(teams['left'], lefthero4)
+		table.insert(teams['left'], lefthero5)
+		
+		table.insert(teams['right'], righthero1)
+		table.insert(teams['right'], righthero2)
+		table.insert(teams['right'], righthero3)
+		table.insert(teams['right'], righthero4)
+		table.insert(teams['right'], righthero5)
+	end
+	
+	if	heroes and DetermineRound == 7 then
+		-- [PREDEFINED ROUND] Nigma vs OG - OMEGA League: Immortal Division LBF - Match 1
+		lefthero1 = AllHeroes[98] -- Sven
+		lefthero2 = AllHeroes[26] -- Magnus
+		lefthero3 = AllHeroes[104] -- Nature's Prophet
+		lefthero4 = AllHeroes[49] -- Earthshaker
+		lefthero5 = AllHeroes[9] -- Windranger
+		
+		righthero1 = AllHeroes[70] -- Terrorblade
+		righthero2 = AllHeroes[116] -- Viper
+		righthero3 = AllHeroes[44] -- Phoenix
+		righthero4 = AllHeroes[31] -- Sand King
+		righthero5 = AllHeroes[67] -- Disruptor
+		
+		table.insert(teams['left'], lefthero1)
+		table.insert(teams['left'], lefthero2)
+		table.insert(teams['left'], lefthero3)
+		table.insert(teams['left'], lefthero4)
+		table.insert(teams['left'], lefthero5)
+		
+		table.insert(teams['right'], righthero1)
+		table.insert(teams['right'], righthero2)
+		table.insert(teams['right'], righthero3)
+		table.insert(teams['right'], righthero4)
+		table.insert(teams['right'], righthero5)
+	end
+
+	if  heroes and DetermineRound == 8 then
+		-- PREDEFINED ROUND] Nigma vs OG - OMEGA League: Immortal Division LBF - Match 2
+		lefthero1 = AllHeroes[12] -- Monkey King
+		lefthero2 = AllHeroes[10] -- Tiny
+		lefthero3 = AllHeroes[44] -- Phoenix
+		lefthero4 = AllHeroes[45] -- Treant Protector
+		lefthero5 = AllHeroes[63] -- Elder Titan
+		
+		righthero1 = AllHeroes[28] -- Slark
+		righthero2 = AllHeroes[26] -- Magnus
+		righthero3 = AllHeroes[19] -- Timbersaw
+		righthero4 = AllHeroes[68] -- Rubick
+		righthero5 = AllHeroes[97] -- Vengeful Spirit
+		
+		table.insert(teams['left'], lefthero1)
+		table.insert(teams['left'], lefthero2)
+		table.insert(teams['left'], lefthero3)
+		table.insert(teams['left'], lefthero4)
+		table.insert(teams['left'], lefthero5)
+		
+		table.insert(teams['right'], righthero1)
+		table.insert(teams['right'], righthero2)
+		table.insert(teams['right'], righthero3)
+		table.insert(teams['right'], righthero4)
+		table.insert(teams['right'], righthero5)
+	end
+	
+	if  heroes and DetermineRound == 9 then
+		-- [PREDEFINED ROUND] OG vs Secret - OMEGA League: Immortal Division UBF - Match 2
+		lefthero1 = AllHeroes[11] -- Morphling
+		lefthero2 = AllHeroes[85] -- Invoker
+		lefthero3 = AllHeroes[41] -- Underlords
+		lefthero4 = AllHeroes[54] -- Dark Willow
+		lefthero5 = AllHeroes[63] -- Elder Titan
+		
+		righthero1 = AllHeroes[22] -- Templar Assassin
+		righthero2 = AllHeroes[91] -- Nature's Prophet
+		righthero3 = AllHeroes[74] -- Mars
+		righthero4 = AllHeroes[44] -- Phoenix
+		righthero5 = AllHeroes[76] -- Shadow Demon
+		
+		table.insert(teams['left'], lefthero1)
+		table.insert(teams['left'], lefthero2)
+		table.insert(teams['left'], lefthero3)
+		table.insert(teams['left'], lefthero4)
+		table.insert(teams['left'], lefthero5)
+		
+		table.insert(teams['right'], righthero1)
+		table.insert(teams['right'], righthero2)
+		table.insert(teams['right'], righthero3)
+		table.insert(teams['right'], righthero4)
+		table.insert(teams['right'], righthero5)
+	end
+	
+	if  heroes and DetermineRound == 10 then
+		-- [PREDEFINED ROUND] Evil Geniuses vs Alliance - OMEGA League: Immortal Division Lower Bracket Round 2 - Match 2
+		lefthero1 = AllHeroes[47] -- Faceless Void
+		lefthero2 = AllHeroes[85] -- Invoker
+		lefthero3 = AllHeroes[30] -- Abaddon
+		lefthero4 = AllHeroes[50] -- Enchantress
+		lefthero5 = AllHeroes[51] -- Earth Spirit
+		
+		righthero1 = AllHeroes[98] -- Sven
+		righthero2 = AllHeroes[10] -- Tiny
+		righthero3 = AllHeroes[80] -- Axe
+		righthero4 = AllHeroes[44] -- Phoenix
+		righthero5 = AllHeroes[8] -- Jakiro
+		
+		table.insert(teams['left'], lefthero1)
+		table.insert(teams['left'], lefthero2)
+		table.insert(teams['left'], lefthero3)
+		table.insert(teams['left'], lefthero4)
+		table.insert(teams['left'], lefthero5)
+		
+		table.insert(teams['right'], righthero1)
+		table.insert(teams['right'], righthero2)
+		table.insert(teams['right'], righthero3)
+		table.insert(teams['right'], righthero4)
+		table.insert(teams['right'], righthero5)
+	end
+	
+	if  heroes and DetermineRound == 11 then
+		-- [PREDEFINED ROUND] Vici Gaming vs Team DK - The International 2013 - Match 1
+		lefthero1 = AllHeroes[52] -- Leshrach
+		lefthero2 = AllHeroes[18] -- Razor
+		lefthero3 = AllHeroes[91] -- Nature's Prophet
+		lefthero4 = AllHeroes[3] -- Pugna
+		lefthero5 = AllHeroes[76] -- Shadow Demon
+		
+		righthero1 = AllHeroes[33] -- Anti Mage
+		righthero2 = AllHeroes[110] -- Tinker
+		righthero3 = AllHeroes[79] -- Beastmaster
+		righthero4 = AllHeroes[69] -- Undying
+		righthero5 = AllHeroes[99] -- Shadow Shaman
+		
+		table.insert(teams['left'], lefthero1)
+		table.insert(teams['left'], lefthero2)
+		table.insert(teams['left'], lefthero3)
+		table.insert(teams['left'], lefthero4)
+		table.insert(teams['left'], lefthero5)
+		
+		table.insert(teams['right'], righthero1)
+		table.insert(teams['right'], righthero2)
+		table.insert(teams['right'], righthero3)
+		table.insert(teams['right'], righthero4)
+		table.insert(teams['right'], righthero5)
+	end
+	
+	if heroes and DetermineRound == 12 then
+		-- [PREDEFINED ROUND] Tiny vs Tiny
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[10] -- Tiny
+		righthero = AllHeroes[10] -- Tiny
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
+	if heroes and DetermineRound == 13 then
+		-- [PREDEFINED ROUND] Techies vs Techies
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[42] -- Techies
+		righthero = AllHeroes[42] -- Techies
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
+	if heroes and DetermineRound == 14 then
+		-- [PREDEFINED ROUND] Faceless Void  vs Faceless Void 
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[47] -- Faceless Void 
+		righthero = AllHeroes[47] -- Faceless Void 
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
+	if heroes and DetermineRound == 15 then
+		-- [PREDEFINED ROUND] Zeus vs Mars
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[87] -- Zeus 
+		righthero = AllHeroes[74] -- Mars
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
+	if heroes and DetermineRound == 16 then
+		-- [PREDEFINED ROUND] Zeus vs Skywrath Mage
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[87] -- Zeus 
+		righthero = AllHeroes[105] -- Skywrath Mage
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
+	if heroes and DetermineRound == 17 then
+		-- [PREDEFINED ROUND] Vengeful Spirit vs Skywrath Mage
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[97] -- Vengeful Spirit 
+		righthero = AllHeroes[105] -- Skywrath Mage
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
+	if heroes and DetermineRound == 18 then
+		-- [PREDEFINED ROUND] Lina vs Crystal Maiden
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[23] -- Lina 
+		righthero = AllHeroes[92] -- Crystal Maiden
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
+	if heroes and DetermineRound == 19 then
+		-- [PREDEFINED ROUND] Rubick vs Invoker
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[68] -- Rubick 
+		righthero = AllHeroes[85] -- Invoker
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
+	if heroes and DetermineRound == 20 then
+		-- [PREDEFINED ROUND] Anti Mage vs Terrorblade
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[33] -- Anti Mage 
+		righthero = AllHeroes[70] -- Terrorblade
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
+	if heroes and DetermineRound == 21 then
+		-- [PREDEFINED ROUND] Chaos Knight vs Keeper of the Light
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[115] -- Chaos Knight
+		righthero = AllHeroes[60] -- Keeper of the Light
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
 	NEXT_ROUND = {
 		teams = teams,
 		lefthero = lefthero,
 		righthero = righthero,
+		lefthero1 = lefthero1,
+		lefthero2 = lefthero2,
+		lefthero3 = lefthero3,
+		lefthero4 = lefthero4,
+		lefthero5 = lefthero5,
+		righthero1 = righthero1,
+		righthero2 = righthero2,
+		righthero3 = righthero3,
+		righthero4 = righthero4,
+		righthero5 = righthero5,
 		heroes = heroes,
 	}
-
-	return teams, leftHero, rightHero
-
+	return teams, leftHero, rightHero, lefthero1, lefthero2, lefthero3, lefthero4, lefthero5, righthero1, righthero2, righthero3, righthero4, righthero5
 end
 
 function BAW:CleanMap()
@@ -747,8 +1156,8 @@ function BAW:StartGame()
 
 	local heroes = NEXT_ROUND.heroes
     local teams = NEXT_ROUND.teams
-    local lefthero = NEXT_ROUND.lefthero
-    local righthero = NEXT_ROUND.righthero 
+    local lefthero = NEXT_ROUND.lefthero, NEXT_ROUND.lefthero1, NEXT_ROUND.lefthero2, NEXT_ROUND.lefthero3, NEXT_ROUND.lefthero4, NEXT_ROUND.lefthero5
+    local righthero = NEXT_ROUND.righthero, NEXT_ROUND.righthero1, NEXT_ROUND.righthero2, NEXT_ROUND.righthero3, NEXT_ROUND.righthero4, NEXT_ROUND.righthero5
     local level
     local leftSkillBuild, rightSkillBuild
 
