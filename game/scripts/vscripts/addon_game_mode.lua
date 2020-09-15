@@ -216,7 +216,6 @@ function BAW:InitGameMode()
     		table.insert(_G.AllHeroes,k)
     	end
     end
-
     self:NextRoundUnits() 
 end
 
@@ -541,11 +540,18 @@ function BAW:NextRoundUnits()
 
 	local minPoints = POINTS * 0.05
 	local leftHero, rightHero
-	local lefthero1, lefthero2, lefthero3, lefthero4, lefthero5
-	local righthero1, righthero2, righthero3, righthero4, righthero5
+	local lefthero1
+	local lefthero2
+	local lefthero3
+	local lefthero4
+	local lefthero5
+	local righthero1
+	local righthero2
+	local righthero3
+	local righthero4
+	local righthero5
 	local teams = {left = {}, right = {}}
-	local DetermineRound
-	DetermineRound = RandomInt(1, 21)
+	local DetermineRound = RandomInt(1, 37)
 	print("Printing DetermineRound Random: " .. DetermineRound)
 	
 	if not heroes then
@@ -615,13 +621,11 @@ function BAW:NextRoundUnits()
 		righthero4 = AllHeroes[5] -- Ogre Magi
 		righthero5 = AllHeroes[68] -- Rubick
 		
-		
 		table.insert(teams['left'], lefthero1)
 		table.insert(teams['left'], lefthero2)
 		table.insert(teams['left'], lefthero3)
 		table.insert(teams['left'], lefthero4)
 		table.insert(teams['left'], lefthero5)
-
 		
 		table.insert(teams['right'], righthero1)
 		table.insert(teams['right'], righthero2)
@@ -994,6 +998,199 @@ function BAW:NextRoundUnits()
 		end
 	end
 	
+	if heroes and DetermineRound == 22 then
+		-- [PREDEFINED ROUND] Shadow Fiend vs Doom
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[65] -- Shadow Fiend
+		righthero = AllHeroes[94] -- Doom
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
+	if heroes and DetermineRound == 23 then
+		-- [PREDEFINED ROUND] Tinker vs Tinker
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[110] -- Tinker
+		righthero = AllHeroes[110] -- Tinker
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
+	if heroes and DetermineRound == 24 then
+		-- [PREDEFINED ROUND] Storm Spirit vs Ember Spirit
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[100] -- Storm Spirit
+		righthero = AllHeroes[113] -- Ember Spirit
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
+	if heroes and DetermineRound == 25 then
+		-- [PREDEFINED ROUND] Huskar vs Dazzle
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[24] -- Huskar
+		righthero = AllHeroes[66] -- Dazzle
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
+	if heroes and DetermineRound == 26 then
+		-- [PREDEFINED ROUND] Naga Siren vs Slardar
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[4] -- Naga Siren
+		righthero = AllHeroes[7] -- Slardar
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
+	if heroes and DetermineRound == 27 then
+		-- [PREDEFINED ROUND] Omniknight vs Windranger (Slacks vs Windranger)
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[59] -- Omniknight
+		righthero = AllHeroes[9] -- Windranger
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
+	if heroes and DetermineRound == 28 then
+		-- [PREDEFINED ROUND] Nature's Prophet vs Timbersaw
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[91] -- Nature's Prophet
+		righthero = AllHeroes[19] -- Timbersaw
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
+	if heroes and DetermineRound == 29 then
+		-- [PREDEFINED ROUND] Treant vs Timbersaw
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[45] -- Treant
+		righthero = AllHeroes[19] -- Timbersaw
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
+	if heroes and DetermineRound == 30 then
+		-- [PREDEFINED ROUND] Anti-Mage vs Invoker
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[33] -- Anti-Mage
+		righthero = AllHeroes[85] -- Invoker
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
+	if heroes and DetermineRound == 31 then
+		-- [PREDEFINED ROUND] Phantom Lancer vs Phantom Assassin
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[61] -- Phantom Lancer
+		righthero = AllHeroes[73] -- Phantom Assassin
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
+	if heroes and DetermineRound == 32 then
+		-- [PREDEFINED ROUND] Windranger vs Drow Ranger
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[9] -- Windranger
+		righthero = AllHeroes[2] -- Drow Ranger
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
+	if heroes and DetermineRound == 33 then
+		-- [PREDEFINED ROUND] Enigma vs Enigma
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[15] -- Enigma
+		righthero = AllHeroes[15] -- Enigma
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
+	if heroes and DetermineRound == 34 then
+		-- [PREDEFINED ROUND] Axe vs Legion Commander
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[80] -- Axe
+		righthero = AllHeroes[34] -- Legion Commander
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
+	if heroes and DetermineRound == 35 then
+		-- [PREDEFINED ROUND] Centaur Warrunner vs Magnus
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[57] -- Centaur Warrunner
+		righthero = AllHeroes[26] -- Magnus
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
+	if heroes and DetermineRound == 36 then
+		-- [PREDEFINED ROUND] Pudge vs Pudge
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[39] -- Pudge
+		righthero = AllHeroes[39] -- Pudge
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
+	if heroes and DetermineRound == 37 then
+		-- [PREDEFINED ROUND] Juggernaut vs Juggernaut
+		local howmany = RandomInt(1, 5)
+		lefthero = AllHeroes[106] -- Juggernaut
+		righthero = AllHeroes[106] -- Juggernaut
+	
+		for i=1,howmany do
+			table.insert(teams['left'], lefthero)
+			table.insert(teams['right'], righthero)
+		end
+	end
+	
+	
 	NEXT_ROUND = {
 		teams = teams,
 		lefthero = lefthero,
@@ -1156,10 +1353,21 @@ function BAW:StartGame()
 
 	local heroes = NEXT_ROUND.heroes
     local teams = NEXT_ROUND.teams
-    local lefthero = NEXT_ROUND.lefthero, NEXT_ROUND.lefthero1, NEXT_ROUND.lefthero2, NEXT_ROUND.lefthero3, NEXT_ROUND.lefthero4, NEXT_ROUND.lefthero5
-    local righthero = NEXT_ROUND.righthero, NEXT_ROUND.righthero1, NEXT_ROUND.righthero2, NEXT_ROUND.righthero3, NEXT_ROUND.righthero4, NEXT_ROUND.righthero5
+    local lefthero = NEXT_ROUND.lefthero
+    local righthero = NEXT_ROUND.righthero
+	local lefthero1 = NEXT_ROUND.lefthero1
+	local lefthero2 = NEXT_ROUND.lefthero2
+	local lefthero3 = NEXT_ROUND.lefthero3
+	local lefthero4 = NEXT_ROUND.lefthero4
+	local lefthero5 = NEXT_ROUND.lefthero5
+	local righthero1 = NEXT_ROUND.righthero1
+	local righthero2 = NEXT_ROUND.righthero2
+	local righthero3 = NEXT_ROUND.righthero3
+	local righthero4 = NEXT_ROUND.righthero4
+	local righthero5 = NEXT_ROUND.righthero5
     local level
     local leftSkillBuild, rightSkillBuild
+	local predefinedleftSkillBuild, predefinedrightSkillBuild
 
 	if heroes then
 		level = RandomInt(1, 4)
@@ -1171,6 +1379,11 @@ function BAW:StartGame()
 			level = 16
 		elseif level == 4 then
 			level = 30
+		end
+		
+		for i=1, 5 do
+			predefinedleftSkillBuild = GetHeroSkillBuild("lefthero" .. i, level)
+			predefinedrightSkillBuild = GetHeroSkillBuild("righthero" .. i, level)
 		end
 
 		leftSkillBuild = GetHeroSkillBuild(lefthero, level)
@@ -1187,9 +1400,15 @@ function BAW:StartGame()
 
 	local itemsArRight = {}
 	local itemsArLeft = {}
+	local itemsArRightpredefined = {}
+	local itemsArLeftpredefined = {}
 	if itemsg then
 		itemsArRight = GetHeroBuild(righthero, level)
 		itemsArLeft = GetHeroBuild(lefthero, level)
+		for i=1, 5 do
+			itemsArRightpredefined = GetHeroBuild("righthero" .. i, level)
+			itemsArLeftpredefined = GetHeroBuild("lefthero" .. i, level)
+		end
 	end
 	POINTS = POINTS + 500
 	PICKED = {left = {},right = {}}
@@ -1222,9 +1441,14 @@ function BAW:StartGame()
 				unit:HeroLevelUp(false)
 			end
 			UpgradeHeroAbilities(unit, leftSkillBuild)
+			UpgradeHeroAbilities(unit, predefinedleftSkillBuild)
+			
 		end
 
 		for i,v in ipairs(itemsArLeft) do
+			unit:AddItemByName(v)
+		end
+		for i,v in ipairs(itemsArLeftpredefined) do
 			unit:AddItemByName(v)
 		end
 	end
@@ -1252,9 +1476,13 @@ function BAW:StartGame()
 				unit:HeroLevelUp(false)
 			end
 			UpgradeHeroAbilities(unit, rightSkillBuild)
+			UpgradeHeroAbilities(unit, predefinedrightSkillBuild)
 		end
 		
 		for i,v in ipairs(itemsArRight) do
+			unit:AddItemByName(v)
+		end
+		for i,v in ipairs(itemsArRightpredefined) do
 			unit:AddItemByName(v)
 		end
 	end
