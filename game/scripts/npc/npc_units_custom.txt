@@ -1504,37 +1504,37 @@
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_death_prophet"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_drow_ranger"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_pugna"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_naga_siren"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_wisp"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"Version"
 	{
@@ -1544,690 +1544,690 @@
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_tidehunter"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_slardar"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_jakiro"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_windrunner"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_tiny"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_morphling"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_monkey_king"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_lycan"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_medusa"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_enigma"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_snapfire"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_oracle"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_razor"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_shredder"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_clinkz"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_void_spirit"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_templar_assassin"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_lina"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_huskar"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_grimstroke"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_magnataur"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_skeleton_king"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_slark"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_weaver"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_abaddon"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_sand_king"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_puck"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_antimage"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_legion_commander"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_pangolier"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_bane"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_target_dummy"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_kunkka"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_base"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_arc_warden"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_pudge"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_winter_wyvern"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_abyssal_underlord"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_techies"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_ancient_apparition"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_phoenix"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_treant"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_life_stealer"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_faceless_void"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_venomancer"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_earthshaker"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_enchantress"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_earth_spirit"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_leshrac"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_necrolyte"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_dark_willow"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_tusk"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_bristleback"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_centaur"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_troll_warlord"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_visage"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_keeper_of_the_light"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_phantom_lancer"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_spirit_breaker"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_elder_titan"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_rattletrap"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_nevermore"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_dazzle"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_disruptor"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_rubick"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_undying"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_terrorblade"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_batrider"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_meepo"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_phantom_assassin"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_mars"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_brewmaster"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_shadow_demon"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_luna"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_lion"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_beastmaster"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_axe"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_warlock"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_obsidian_destroyer"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_silencer"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_spectre"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_invoker"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_bounty_hunter"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_zuus"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_alchemist"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_omniknight"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_gyrocopter"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_furion"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_crystal_maiden"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_chen"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_broodmother"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_doom_bringer"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_ursa"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_night_stalker"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_vengefulspirit"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_sven"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_shadow_shaman"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_storm_spirit"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_dark_seer"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_queenofpain"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_sniper"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_bloodseeker"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_skywrath_mage"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_juggernaut"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_riki"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_nyx_assassin"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_lich"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_tinker"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_dragon_knight"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_mirana"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_ember_spirit"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_witch_doctor"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_chaos_knight"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 	"npc_dota_hero_viper"
 	{
 		"AttackAcquisitionRange"	"5000"
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"200"
+		"RingRadius"				"100"
 	}
 }
