@@ -636,7 +636,7 @@ function BAW:NextRoundUnits()
 	
 	if heroes and DetermineRound == 3 then
 		-- [PREDEFINED ROUND] OG vs Team Liquid - TI 9 Finals - Match 2
-		lefthero1 = AllHeroes[12] -- Monkey King
+		lefthero1 = AllHeroes[87] -- Zeus
 		lefthero2 = AllHeroes[113] -- Ember Spirit
 		lefthero3 = AllHeroes[10] -- Tiny
 		lefthero4 = AllHeroes[89] -- Omniknight
@@ -692,7 +692,7 @@ function BAW:NextRoundUnits()
 	if heroes and DetermineRound == 5 then
 		-- [PREDEFINED ROUND] OG vs PSG.LGD - TI 8 Finals - Match 1
 		lefthero1 = AllHeroes[84] -- Spectre
-		lefthero2 = AllHeroes[12] -- Monkey King
+		lefthero2 = AllHeroes[37] -- Kunkka
 		lefthero3 = AllHeroes[45] -- Treant Protector
 		lefthero4 = AllHeroes[49] -- Earthshaker
 		lefthero5 = AllHeroes[40] -- Winter Wyvern
@@ -772,7 +772,7 @@ function BAW:NextRoundUnits()
 
 	if  heroes and DetermineRound == 8 then
 		-- PREDEFINED ROUND] Nigma vs OG - OMEGA League: Immortal Division LBF - Match 2
-		lefthero1 = AllHeroes[12] -- Monkey King
+		lefthero1 = AllHeroes[37] -- Kunkka
 		lefthero2 = AllHeroes[10] -- Tiny
 		lefthero3 = AllHeroes[44] -- Phoenix
 		lefthero4 = AllHeroes[45] -- Treant Protector

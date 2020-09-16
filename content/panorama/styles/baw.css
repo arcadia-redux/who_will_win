@@ -876,10 +876,7 @@ Label{
 
 #GoldContainer {
 	flow-children: right;
-
 	horizontal-align: right;
-
-
 	margin-right: 10px;
 }
 
@@ -892,8 +889,8 @@ Label{
 }
 
 .GoldIcon {
-	width: 36px;
-	height: 36px;
+	width: 32px;
+	height: 32px;
 }
 
 #LowerRightBG {

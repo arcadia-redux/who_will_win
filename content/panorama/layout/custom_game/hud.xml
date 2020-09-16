@@ -145,7 +145,7 @@
 			<Panel id="LowerRightBG"/>
 			<Panel id="GoldContainer" class="vote ButtonBevel">
 				<Label id="Gold" text="{d:gold}" />
-				<Image class="GoldIcon" src="s2r://panorama/images/hud/reborn/gold_small_psd.vtex"/>
+				<Image class="GoldIcon" src="s2r://panorama/images/hud/icon_gold_psd.vtex"/>
 			</Panel>
 			<Button id="SpeedupButton" class="vote ButtonBevel" enabled="false" onmouseactivate="vote()" onmouseover="UIShowTextTooltip(#VoteSpeed)" onmouseout="UIHideTextTooltip()">
 				<Label id="SpeedupText" text="#speedup_vote" />
