@@ -53,8 +53,6 @@ function UpdateBets(event) {
 			panel.FindChildTraverse("ShieldColor").style.washColor = "#f01a1a"
 		}
 
-		panel.FindChildTraverse("Bet").text = bet.gold
-
 		let profit = bet.profit
 
 		panel.FindChildTraverse("Profit").text = profit.toFixed(0)

@@ -6,7 +6,7 @@
 
 	"bets_header_player"				"PLAYER"
 	"bets_header_bet"					"BET"
-	"bets_header_profit"				"PROFIT"
+	"bets_header_profit"				"INCOME"
 	"bets_header_total"					"TOTAL"
 
 	"round_win_left"					"BLUE TEAM WIN"
@@ -22,6 +22,6 @@
 	"VoteSpeed"							"Vote to speed up the battle"
 	"CurrentGold"						"Current Gold"
 	"CurrentBet"						"Current Bet"
-	"Profit"							"Profit"
+	"Profit"							"Potential Winning"
 }
 

@@ -96,7 +96,8 @@ function Gambling:RoundEnd(loserTeam)
 			--if IsSoloGame() then
 			--	profit = bet.gold * 1.5
 			--else
-				profit = bet.gold/winnerBetSum * loserBetSum
+				profit = bet.gold * 2
+				gold = gold - bet.gold
 			--end
 		elseif winnerBetSum > 0 then --if no winners losers dont lose money
 			profit = -bet.gold

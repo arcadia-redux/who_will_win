@@ -403,12 +403,12 @@ function UpdateBets(data) {
 			let gold = bet.gold
 			let profit = 0
 			if (bet.team == "left") {
-				profit =  gold/leftGold * rightGold
+				profit =  gold * 2
 				panel.AddClass("Left")
 				panel.FindChildTraverse("TeamIcon").SetImage("file://{images}/custom_game/team_icons/team_icon_horse_01.png")
 			}
 			else {
-				profit =  gold/rightGold * leftGold
+				profit =  gold * 2
 				panel.AddClass("Right")
 				panel.FindChildTraverse("TeamIcon").SetImage("file://{images}/custom_game/team_icons/team_icon_tiger_01.png")
 			}

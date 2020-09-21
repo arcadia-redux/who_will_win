@@ -25,13 +25,6 @@
 					<Label id="PlayerName" class="" text="Player" />
 				</Panel>
 
-				<Panel class="ColBet" hittest='false'>
-					<Panel class="HorizCenter FlowRight" >
-						<Label id="Bet" class="" text="10000" />
-						<Image class="BetGold" src="s2r://panorama/images/hud/reborn/gold_small_psd.vtex"/>
-					</Panel>
-				</Panel>
-
 				<Panel class="ColProfit" hittest='false'>
 					<Panel class="HorizCenter FlowRight" >
 						<Label id="Profit" class="" text="10000" />
@@ -62,9 +55,6 @@
 			<Panel id="BetsTable">
 				<Panel id="TableHeader">
 					<Label id="PlayerName" class="ColPlayerName" text="#bets_header_player" />
-						
-					
-					<Label id="Bet" class="ColBet" text="#bets_header_bet" />
 					<Label id="Profit" class="ColProfit" text="#bets_header_profit" />
 					<Label id="Total" class="ColTotal" text="#bets_header_total" />
 				</Panel>

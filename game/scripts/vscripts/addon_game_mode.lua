@@ -144,11 +144,11 @@ function BAW:InitGameMode()
 	GameRules:SetPreGameTime(5)
 	GameRules:SetFirstBloodActive(false)
 	GameRules:SetHideKillMessageHeaders(true)
-    GameRules:SetCustomGameSetupAutoLaunchDelay(0)
+    GameRules:SetCustomGameSetupAutoLaunchDelay(5)
     GameRules:LockCustomGameSetupTeamAssignment(true)
     GameRules:EnableCustomGameSetupAutoLaunch(true)
 	GameRules:SetHeroRespawnEnabled(false)
-	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, 10)
+	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, 8)
 	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 0)
 
     local mode = GameRules:GetGameModeEntity()
@@ -533,7 +533,7 @@ function BAW:StartFight()
 end
 
 function BAW:NextRoundUnits() 
-	local heroes = RollPercentage(50)
+	local heroes = RollPercentage(75)
 	if _G.ROUND == 0 then
 		heroes = false
 	end
