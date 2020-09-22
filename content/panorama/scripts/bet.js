@@ -92,9 +92,6 @@ function BetChanged() {
 	slider.SetValueNoEvents(newValue)*/
 }
 
-
-
-
 function GetGold(pID) {
 	const table = CustomNetTables.GetTableValue("bets", "gold") 
 	return table ? (table[pID] || 0) : 0

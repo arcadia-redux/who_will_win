@@ -22,3 +22,21 @@
 	font-family: titleFont;
 	font-weight: bold;
 }
+
+.CompendiumBody
+{
+
+	width: 21%;
+	height: 503px;
+	background-color: #000000aa;
+	align: right top;
+	margin-top: 260px;
+	border-bottom-left-radius: 10px;
+	border-top-left-radius: 11px;
+
+
+	/* TI8 */
+    background-color: gradient( linear, 0% 0%, 0% 0.01%, from( bp_color1&22 ), color-stop( 0.01, bp_color3&cc), color-stop( 0.5, bp_color1&22), to( bp_color3&cc ) );
+	border-top: 1px solid bp_color10&66;
+	border-bottom: 1px solid bp_color10&33;
+}

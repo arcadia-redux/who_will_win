@@ -36,11 +36,9 @@ function RoundEnd(event) {
 			context.AddClass("DireWin")
 		}
 	}
-
+	
 	GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ACTION_PANEL, false );
-
 	UpdateBets(event)
-
 }
 
 function NewRound(event) {
