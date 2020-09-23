@@ -35,7 +35,8 @@
 
     GetRoot().FindChildTraverse("GlyphScanContainer").visible = false
     GetRoot().FindChildTraverse("ToggleScoreboardButton").visible = false
-
+    GetRoot().FindChildTraverse("DashboardButton").visible = false
+    GetRoot().FindChildTraverse("SettingsButton").visible = false
     </script> 
 
     <Panel>

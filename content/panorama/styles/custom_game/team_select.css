@@ -741,9 +741,10 @@ DOTAAvatarImage.EventPointTierPlatinum #AvatarImage {
     width: 32px;
 	height: 32px;
     opacity: 1.5;
-    background-image: url("s2r://panorama/images/compendium/international2020/totaltokens_psd.vtex");
+    background-image: url("s2r://panorama/images/control_icons/wagertoken_psd.vtex");
     background-size: 32px 32px;
 	background-repeat: no-repeat;
     background-position: 50% 50%;
     margin-left: 8px;
+    wash-color: #D69600;
 }

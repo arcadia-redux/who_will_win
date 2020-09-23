@@ -40,3 +40,29 @@
 	border-top: 1px solid bp_color10&66;
 	border-bottom: 1px solid bp_color10&33;
 }
+
+.DiscordBody
+{
+	width: 21%;
+	height: 120px;
+	align: right bottom;
+	border-bottom-left-radius: 10px;
+	border-top-left-radius: 11px;
+    background-color: gradient( linear, 0% 0%, 0% 0.01%, from( bp_color1&22 ), color-stop( 0.01, bp_color3&cc), color-stop( 0.5, bp_color1&22), to( bp_color3&cc ) );
+	border-top: 1px solid bp_color10&66;
+	border-bottom: 1px solid bp_color10&33;
+	margin-bottom: 180px;
+}
+
+#DiscordLogo
+{
+	width: 300px;
+	height: 94px;
+	align: center center;
+	border-radius: 10px;
+}
+
+#DiscordLogo:hover
+{
+	opacity: 3;
+}

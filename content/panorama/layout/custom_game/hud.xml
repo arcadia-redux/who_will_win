@@ -112,6 +112,10 @@
 		</snippet>
 	</snippets>
 	<Panel class="bawhud" hittest='false'>
+		<Panel hittest="false" class="TopLeftMenu">
+			<Button id="NewDashboardButton" class="TopLeftMenuButton" onactivate="DOTAHUDShowDashboard();" onmouseover="UIShowTextTooltip(DOTA_HUD_BackToDashboard)"  onmouseout="UIHideTextTooltip()" />
+			<Button id="NewSettingsButton" class="TopLeftMenuButton" onactivate="DOTAShowSettingsPopup();" onmouseover="UIShowTextTooltip(DOTA_HUD_Settings)"  onmouseout="UIHideTextTooltip()" />
+		</Panel>
 		<Panel id="topbar" class="topbar">
 		</Panel>
 		<Panel class="betsBg">
@@ -143,9 +147,9 @@
 
 		<Panel id="LowerRight" style="visibility: collapse;">
 			<Panel id="LowerRightBG"/>
-			<Panel id="GoldContainer" class="vote ButtonBevel">
+			<Panel id="GoldContainer" class="vote ButtonBevel" onmouseover="UIShowTextTooltip(#CurrentGold)" onmouseout="UIHideTextTooltip()">
 				<Label id="Gold" text="{d:gold}" />
-				<Image class="GoldIcon" src="s2r://panorama/images/hud/icon_gold_psd.vtex"/>
+				<Image class="GoldIcon" src="s2r://panorama/images/compendium/international2020/totaltokens_psd.vtex"/>
 			</Panel>
 			<Button id="SpeedupButton" class="vote ButtonBevel" enabled="false" onmouseactivate="vote()" onmouseover="UIShowTextTooltip(#VoteSpeed)" onmouseout="UIHideTextTooltip()">
 				<Label id="SpeedupText" text="#speedup_vote" />
@@ -175,7 +179,7 @@
 					</Panel>
 					<Panel id="LeftBet" >
 						<Label id="LeftBetGold" class="BetGoldLabel" text="0"/>
-						<Image class="BetGold" src="s2r://panorama/images/hud/reborn/gold_small_psd.vtex"/>
+						<Image class="BetGold" src="s2r://panorama/images/compendium/international2020/totaltokens_psd.vtex"/>
 					</Panel>
 					<TextButton id="MaxLeft" class="Button" text="MAX" onactivate="BetMax(0);"/>
 				</Panel>
@@ -188,7 +192,7 @@
 						<TextButton id="Perc75" class="Button" text="75%" onactivate="Bet('right',0.75);"/>
 					</Panel>
 					<Panel id="RightBet" >
-						<Image class="BetGold" src="s2r://panorama/images/hud/reborn/gold_small_psd.vtex"/>
+						<Image class="BetGold" src="s2r://panorama/images/compendium/international2020/totaltokens_psd.vtex"/>
 						<Label id="RightBetGold" class="BetGoldLabel" text="0"/>
 					</Panel>
 					<TextButton id="MaxRight" class="Button" text="MAX" onactivate="BetMax(1);"/>

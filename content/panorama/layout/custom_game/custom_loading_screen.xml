@@ -18,8 +18,9 @@
 	</scripts>
 	
 	<Panel hittest="false" class="AddonLoadingRoot">
-
-		<Panel class="CompendiumBody">
+		<Panel class="CompendiumBody"/>
+		<Panel class="DiscordBody">
+			<Image id="DiscordLogo" src="file://{images}/custom_game/loading_screen/discord2.png" onload="DOTAShowTextTooltip('#JoinDiscord')" onactivate="ExternalBrowserGoToURL('https://discord.gg/U6uf5Jf');"/>
 		</Panel>
 	</Panel>
 </root>

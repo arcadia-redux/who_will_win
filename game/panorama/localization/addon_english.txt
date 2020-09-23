@@ -14,14 +14,16 @@
 	"round_win"							"YOU WIN"
 	"round_lose"						"YOU LOSE"
 
-	"round_end_player_lose" 			"Player {s:player_name} lose all money and leaves the game"
+	"round_end_player_lose" 			"Player {s:player_name} loses all the chips and leaves the table"
 	
 	"speedup_vote" 						"SPEED-UP"
 	"speedup_state" 					"{d:count} OF {d:total_count} VOTED"
 	
 	"VoteSpeed"							"Vote to speed up the battle"
-	"CurrentGold"						"Current Gold"
+	"CurrentGold"						"Current Chips"
 	"CurrentBet"						"Current Bet"
 	"Profit"							"Potential Winning"
+
+	"JoinDiscord"						"Join the Discord Server!"
 }
 
