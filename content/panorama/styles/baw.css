@@ -725,6 +725,8 @@ Label{
 	vertical-align: center;
 
 	padding: 5px;
+
+	opacity: 1.6;
 }
 
 .Button {
@@ -750,7 +752,7 @@ Label{
 	horizontal-align: center;
 	color: #A5A5A5;
 	margin: 5px;
-	width: 50px;
+	width: 60px;
 }
 
 #MaxLeft:hover, #MaxRight:hover {
@@ -842,11 +844,11 @@ Label{
 }
 
 .Left .TeamIcon #ShieldColor {
-	wash-color: #1E90FF;
+	wash-color: #0070df;
 }
 
 .Right .TeamIcon #ShieldColor {
-	wash-color: #f01a1a;
+	wash-color: #e00a0a;
 }
 
 .Loser #gold {
@@ -894,6 +896,7 @@ Label{
 .GoldIcon {
 	width: 32px;
 	height: 32px;
+	opacity: 1.6;
 }
 
 #LowerRightBG {
@@ -939,7 +942,7 @@ Label{
 }
 
 #NewDashboardButton {
-	background-image: url("s2r://panorama/images/control_icons/dota_logo_white_png.vtex");
+	background-image: url("file://{images}/custom_game/ReturnToGame.png");
     background-size: 100%;
     margin-top: 4px;
     margin-left: 20px;
@@ -962,6 +965,16 @@ Label{
     background-image: url("s2r://panorama/images/control_icons/hamburger_png.vtex");
     background-size: 26px;
     margin-top: 6px;
+    margin-left: 110px;
+    transition-duration: 0.3s;
+    transition-property: wash-color;
+    transition-timing-function: ease-in-out;
+}
+
+#NewDiscordButton {
+    background-image: url("file://{images}/custom_game/DiscordWhite.png");
+    background-size: 100%;
+    margin-top: 4px;
     margin-left: 110px;
     transition-duration: 0.3s;
     transition-property: wash-color;

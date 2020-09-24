@@ -45,12 +45,10 @@ function UpdateBets(event) {
 		panel.FindChildTraverse("PlayerName").text = Players.GetPlayerName(bet.pID)
 		panel.FindChildTraverse("PlayerName").style.color = GetPlayerColor(bet.pID)
 		if (bet.team == "left") {
-			panel.FindChildTraverse("TeamIcon").SetImage("file://{images}/custom_game/team_icons/team_icon_horse_01.png")
-			panel.FindChildTraverse("ShieldColor").style.washColor = "#1E90FF"
+			panel.FindChildTraverse("ShieldColor").style.washColor = "#0070df"
 		}
 		else {
-			panel.FindChildTraverse("TeamIcon").SetImage("file://{images}/custom_game/team_icons/team_icon_tiger_01.png")
-			panel.FindChildTraverse("ShieldColor").style.washColor = "#f01a1a"
+			panel.FindChildTraverse("ShieldColor").style.washColor = "#e00a0a"
 		}
 
 		let profit = bet.profit

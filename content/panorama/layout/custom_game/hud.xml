@@ -16,7 +16,7 @@
 					<Image id="IconShadow" src="file://{images}/custom_game/team_icons/team_shield_shadow_01.psd" />
 					<Image id="ShieldBorder" src="file://{images}/custom_game/team_icons/team_shield_border_01.psd" />
 					<Image id="ShieldColor" src="file://{images}/custom_game/team_icons/team_shield_color_01.psd" />
-					<Image id="TeamIcon" style="wash-color: black;" src="file://{images}/custom_game/team_icons/team_icon_tiger_01.png" />
+					<Image id="TeamIcon" style="wash-color: black;" src="" />
 
 					<!-- src="file://{images}/custom_game/team_icons/team_icon_tiger_01.png" !-->
 					<!-- src="file://{images}/custom_game/team_icons/team_icon_horse_01.png" !-->
@@ -115,6 +115,7 @@
 		<Panel hittest="false" class="TopLeftMenu">
 			<Button id="NewDashboardButton" class="TopLeftMenuButton" onactivate="DOTAHUDShowDashboard();" onmouseover="UIShowTextTooltip(DOTA_HUD_BackToDashboard)"  onmouseout="UIHideTextTooltip()" />
 			<Button id="NewSettingsButton" class="TopLeftMenuButton" onactivate="DOTAShowSettingsPopup();" onmouseover="UIShowTextTooltip(DOTA_HUD_Settings)"  onmouseout="UIHideTextTooltip()" />
+			<Button id="NewDiscordButton" class="TopLeftMenuButton"  onactivate="ExternalBrowserGoToURL('https://discord.gg/U6uf5Jf');" onmouseover="UIShowTextTooltip('#JoinDiscord')"  onmouseout="UIHideTextTooltip()" />
 		</Panel>
 		<Panel id="topbar" class="topbar">
 		</Panel>
@@ -149,7 +150,7 @@
 			<Panel id="LowerRightBG"/>
 			<Panel id="GoldContainer" class="vote ButtonBevel" onmouseover="UIShowTextTooltip(#CurrentGold)" onmouseout="UIHideTextTooltip()">
 				<Label id="Gold" text="{d:gold}" />
-				<Image class="GoldIcon" src="s2r://panorama/images/compendium/international2020/totaltokens_psd.vtex"/>
+				<Image class="GoldIcon" src="s2r://panorama/images/compendium/international2020/logicon_wonwager_psd.vtex"/>
 			</Panel>
 			<Button id="SpeedupButton" class="vote ButtonBevel" enabled="false" onmouseactivate="vote()" onmouseover="UIShowTextTooltip(#VoteSpeed)" onmouseout="UIHideTextTooltip()">
 				<Label id="SpeedupText" text="#speedup_vote" />
@@ -179,9 +180,9 @@
 					</Panel>
 					<Panel id="LeftBet" >
 						<Label id="LeftBetGold" class="BetGoldLabel" text="0"/>
-						<Image class="BetGold" src="s2r://panorama/images/compendium/international2020/totaltokens_psd.vtex"/>
+						<Image class="BetGold" src="s2r://panorama/images/compendium/international2020/logicon_wonwager_psd.vtex"/>
 					</Panel>
-					<TextButton id="MaxLeft" class="Button" text="MAX" onactivate="BetMax(0);"/>
+					<TextButton id="MaxLeft" class="Button" text="ALL IN" onactivate="BetMax(0);"/>
 				</Panel>
 				<Slider id="BetSlider" class="HorizontalSlider" direction="horizontal" min="0" max="1" default="0.5" onvaluechanged="BetChanged()"/>
 				<Panel id="RightInfo" class="Betinfo">
@@ -192,10 +193,10 @@
 						<TextButton id="Perc75" class="Button" text="75%" onactivate="Bet('right',0.75);"/>
 					</Panel>
 					<Panel id="RightBet" >
-						<Image class="BetGold" src="s2r://panorama/images/compendium/international2020/totaltokens_psd.vtex"/>
+						<Image class="BetGold" src="s2r://panorama/images/compendium/international2020/logicon_wonwager_psd.vtex"/>
 						<Label id="RightBetGold" class="BetGoldLabel" text="0"/>
 					</Panel>
-					<TextButton id="MaxRight" class="Button" text="MAX" onactivate="BetMax(1);"/>
+					<TextButton id="MaxRight" class="Button" text="All IN" onactivate="BetMax(1);"/>
 				</Panel>
 				<TextButton id="Reset" class="Button" text="RESET" onactivate="BetReset();"/>
 			</Panel>

@@ -28,14 +28,14 @@
 				<Panel class="ColProfit" hittest='false'>
 					<Panel class="HorizCenter FlowRight" >
 						<Label id="Profit" class="" text="10000" />
-						<Image class="BetGold" src="s2r://panorama/images/compendium/international2020/totaltokens_psd.vtex"/>
+						<Image class="BetGold" src="s2r://panorama/images/compendium/international2020/logicon_wonwager_psd.vtex"/>
 					</Panel>
 				</Panel>
 
 				<Panel class="ColTotal" hittest='false'>
 					<Panel class="HorizCenter FlowRight" >
 						<Label id="Total" class="" text="10000" />
-						<Image class="BetGold" src="s2r://panorama/images/compendium/international2020/totaltokens_psd.vtex"/>
+						<Image class="BetGold" src="s2r://panorama/images/compendium/international2020/logicon_wonwager_psd.vtex"/>
 					</Panel>
 				</Panel>
 				
