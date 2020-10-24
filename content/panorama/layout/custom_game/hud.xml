@@ -115,10 +115,146 @@
 		<Panel hittest="false" class="TopLeftMenu">
 			<Button id="NewDashboardButton" class="TopLeftMenuButton" onactivate="DOTAHUDShowDashboard();" onmouseover="UIShowTextTooltip(DOTA_HUD_BackToDashboard)"  onmouseout="UIHideTextTooltip()" />
 			<Button id="NewSettingsButton" class="TopLeftMenuButton" onactivate="DOTAShowSettingsPopup();" onmouseover="UIShowTextTooltip(DOTA_HUD_Settings)"  onmouseout="UIHideTextTooltip()" />
+			<Button id="LeaderboardButton" class="TopLeftMenuButton" onactivate="OpenLeaderboard();" onmouseover="UIShowTextTooltip(#Leaderboard)"  onmouseout="UIHideTextTooltip()" />
 			<Button id="NewDiscordButton" class="TopLeftMenuButton"  onactivate="ExternalBrowserGoToURL('https://discord.gg/U6uf5Jf');" onmouseover="UIShowTextTooltip('#JoinDiscord')"  onmouseout="UIHideTextTooltip()" />
 		</Panel>
+		
+		<Panel hittest="false" id="LeaderboardsRoot">
+			<Panel hittest="false" id="LeaderboardsHeader">
+				<Button class="CloseLeaderboardButton" onactivate="CloseLeaderboard()">
+					<Image src="s2r://panorama/images/control_icons/x_close_png.vtex" />
+					<Label text="#Close" />
+				</Button>
+			</Panel>	
+			<Panel hittest="false" id="LeaderboardsLeft">
+				<Panel hittest="false" id="LeaderboardsListRoot">
+					<Panel hittest="false" class="LeaderboardsListHeader">
+						<Label text="#Leaderboard" />
+					</Panel>
+					<Panel hittest="false" class="LeaderboardsListCenter">
+						<Panel hittest="false" id="Rank1Row" class="Row">
+							<Panel hittest="false" id="RankBoxTOP1" class="RankBoxTOP">
+								<Label text="1" />
+							</Panel>
+							<Panel hittest="false" id="RankBoxAvatarTOP1" class="RankBoxAvatarTOP"/>
+							<Panel hittest="false" id="RankBoxNameContainerTOP1" class="RankBoxNameContainerTOP">
+								<Label id="PlayerNameTOP1" text="#Player1" />
+							</Panel>
+						</Panel>
+						<Panel hittest="false" id="Rank2Row" class="Row">
+							<Panel hittest="false" id="RankBoxTOP2" class="RankBoxTOP">
+								<Label text="2" />
+							</Panel>
+							<Panel hittest="false" id="RankBoxAvatarTOP2" class="RankBoxAvatarTOP"/>
+							<Panel hittest="false" id="RankBoxNameContainerTOP2" class="RankBoxNameContainerTOP">
+								<Label id="PlayerNameTOP2" text="#Player2" />
+							</Panel>
+						</Panel>
+						<Panel hittest="false" id="Rank3Row" class="Row">
+							<Panel hittest="false" id="RankBoxTOP3" class="RankBoxTOP">
+								<Label text="3" />
+							</Panel>
+							<Panel hittest="false" id="RankBoxAvatarTOP3" class="RankBoxAvatarTOP"/>
+							<Panel hittest="false" id="RankBoxNameContainerTOP3" class="RankBoxNameContainerTOP">
+								<Label id="PlayerNameTOP3" text="#Player3" />
+							</Panel>
+						</Panel>
+						<Panel hittest="false" id="Rank4Row" class="Row">
+							<Panel hittest="false" id="RankBoxTOP4" class="RankBoxTOP">
+								<Label text="4" />
+							</Panel>
+							<Panel hittest="false" id="RankBoxAvatarTOP4" class="RankBoxAvatarTOP"/>
+							<Panel hittest="false" id="RankBoxNameContainerTOP4" class="RankBoxNameContainerTOP">
+								<Label id="PlayerNameTOP4" text="#Player4" />
+							</Panel>
+						</Panel>
+						<Panel hittest="false" id="Rank5Row" class="Row">
+							<Panel hittest="false" id="RankBoxTOP5" class="RankBoxTOP">
+								<Label text="5" />
+							</Panel>
+							<Panel hittest="false" id="RankBoxAvatarTOP5" class="RankBoxAvatarTOP"/>
+							<Panel hittest="false" id="RankBoxNameContainerTOP5" class="RankBoxNameContainerTOP">
+								<Label id="PlayerNameTOP5" text="#Player5" />
+							</Panel>
+						</Panel>
+						<Panel hittest="false" id="Rank6Row" class="Row">
+							<Panel hittest="false" id="RankBoxTOP6" class="RankBoxTOP">
+								<Label text="6" />
+							</Panel>
+							<Panel hittest="false" id="RankBoxAvatarTOP6" class="RankBoxAvatarTOP"/>
+							<Panel hittest="false" id="RankBoxNameContainerTOP6" class="RankBoxNameContainerTOP">
+								<Label id="PlayerNameTOP6" text="#Player6" />
+							</Panel>
+						</Panel>
+						<Panel hittest="false" id="Rank7Row" class="Row">
+							<Panel hittest="false" id="RankBoxTOP7" class="RankBoxTOP">
+								<Label text="7" />
+							</Panel>
+							<Panel hittest="false" id="RankBoxAvatarTOP7" class="RankBoxAvatarTOP"/>
+							<Panel hittest="false" id="RankBoxNameContainerTOP7" class="RankBoxNameContainerTOP">
+								<Label id="PlayerNameTOP7" text="#Player7" />
+							</Panel>
+						</Panel>
+						<Panel hittest="false" id="Rank8Row" class="Row">
+							<Panel hittest="false" id="RankBoxTOP8" class="RankBoxTOP">
+								<Label text="8" />
+							</Panel>
+							<Panel hittest="false" id="RankBoxAvatarTOP8" class="RankBoxAvatarTOP"/>
+							<Panel hittest="false" id="RankBoxNameContainerTOP8" class="RankBoxNameContainerTOP">
+								<Label id="PlayerNameTOP8" text="#Player8" />
+							</Panel>
+						</Panel>
+						<Panel hittest="false" id="Rank9Row" class="Row">
+							<Panel hittest="false" id="RankBoxTOP9" class="RankBoxTOP">
+								<Label text="9" />
+							</Panel>
+							<Panel hittest="false" id="RankBoxAvatarTOP9" class="RankBoxAvatarTOP"/>
+							<Panel hittest="false" id="RankBoxNameContainerTOP9" class="RankBoxNameContainerTOP">
+								<Label id="PlayerNameTOP9" text="#Player9" />
+							</Panel>
+						</Panel>
+						<Panel hittest="false" id="Rank10Row" class="Row">
+							<Panel hittest="false" id="RankBoxTOP10" class="RankBoxTOP">
+								<Label text="10" />
+							</Panel>
+							<Panel hittest="false" id="RankBoxAvatarTOP10" class="RankBoxAvatarTOP"/>
+							<Panel hittest="false" id="RankBoxNameContainerTOP10" class="RankBoxNameContainerTOP">
+								<Label id="PlayerNameTOP10" text="#Player10" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel hittest="false" class="LeaderboardsListFooter">
+						<Panel hittest="false" id="RankPlayerRow" class="Row">
+							<Panel hittest="false" id="RankBoxTOPLocal" class="RankBoxTOP">
+								<Label text="?" />
+							</Panel>
+							<Panel hittest="false" id="RankBoxAvatarTOPLocal" class="RankBoxAvatarTOP"/>
+							<Panel hittest="false" id="RankBoxNameContainerTOPLocal" class="RankBoxNameContainerTOP">
+								<Label id="PlayerNameTOPLocal" text="#PlayerLocal" />
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+			
+			<Panel hittest="false" id="LeaderboardsCenter">
+				<Panel class="LeaderboardsDivider" />
+			</Panel>
+			
+			<Panel hittest="false" id="LeaderboardsRight">
+				<Panel hittest="false" id="StatisticsRoot">
+					<Panel hittest="false" class="StatisticsRootHeader">
+						<Label text="#Statistics" />
+					</Panel>
+					<Panel hittest="false" class="StatisticsRootCenter">
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+		
 		<Panel id="topbar" class="topbar">
 		</Panel>
+		
 		<Panel class="betsBg">
 			<Label id="leftTeam" text="Blue team"/>
 			<Label id="round" text="Round 1"/>

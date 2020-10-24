@@ -7,6 +7,19 @@ let maxHealthRight = 1
 let time = 0
 let startTime = 0
 
+/* LEADERBOARD */
+function OpenLeaderboard() {
+	var panel = $("#LeaderboardsRoot");
+	panel.visible = !panel.visible;
+	Game.EmitSound("ui_chat_slide_in")
+}
+
+function CloseLeaderboard() {
+	var panel = $("#LeaderboardsRoot");
+	panel.visible = !panel.visible;
+	Game.EmitSound("ui_chat_slide_out")
+}
+
 function new_round(t) {
 	// $("#leftTeam").text = t.left
 	// $("#rightTeam").text = t.right

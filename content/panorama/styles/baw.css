@@ -955,17 +955,17 @@ Label{
     background-image: url("s2r://panorama/images/control_icons/gear_png.vtex");
     background-size: 25px;
     margin-top: 7px;
-    margin-left: 67px;
+    margin-left: 60px;
     transition-duration: 0.3s;
     transition-property: wash-color;
     transition-timing-function: ease-in-out;
 }
 
-#NewScoreboardButton {
-    background-image: url("s2r://panorama/images/control_icons/hamburger_png.vtex");
+#LeaderboardButton {
+	background-image: url("s2r://panorama/images/control_icons/stats_psd.vtex");
     background-size: 26px;
     margin-top: 6px;
-    margin-left: 110px;
+    margin-left: 95px;
     transition-duration: 0.3s;
     transition-property: wash-color;
     transition-timing-function: ease-in-out;
@@ -974,18 +974,11 @@ Label{
 #NewDiscordButton {
     background-image: url("file://{images}/custom_game/DiscordWhite.png");
     background-size: 100%;
-    margin-top: 4px;
-    margin-left: 110px;
+    margin-top: 5px;
+    margin-left: 130px;
     transition-duration: 0.3s;
     transition-property: wash-color;
     transition-timing-function: ease-in-out;
-}
-
-#LeaderboardButton {
-	background-image: url("s2r://panorama/images/hud/reborn/icon_combat_log_psd.vtex");
-	background-size: 26px;
-	margin-top: 43px;
-	margin-left: 345px;
 }
 
 #NewDashboardButton:hover,
@@ -1001,3 +994,260 @@ Label{
 #NewSettingsButton:active { 
 	opacity: 1; 
 }
+
+.CloseLeaderboardButton {
+	flow-children: right;
+	align: right top;
+	margin-top: 10px;
+	margin-right: 15px;
+	transition: brightness 0.2s ease-in-out 0s;
+}
+.CloseLeaderboardButton:hover {
+	brightness: 1.8;
+	transition: brightness 0.1s ease-in-out 0s;
+}
+.CloseLeaderboardButton:active {
+	brightness: 1.2;
+}
+.CloseLeaderboardButton > Image {
+	width: 16px;
+	height: 16px;
+	vertical-align: center;
+	wash-color: #92a4bd;
+	margin-right: 4px;
+}
+.CloseLeaderboardButton > Label {
+	font-size: 16px;
+	text-transform: uppercase;
+	margin-top: 1px;
+	color: #92a4bd;
+}
+
+#LeaderboardsRoot {
+	width: 840px;
+	height: 640px;
+	align: center center;
+	background-image: url("file://{resources}/images/custom_game/leaderboards_background_1.png");
+	background-size: 100% 100%;
+	background-color: #4f5179;
+    box-shadow: fill #00000066 -4px -4px 8px 8px;
+	border-radius: 5px;
+	border: 1px solid #111111AA;
+}
+
+#LeaderboardsHeader {
+	width: 100%;
+	height: 6%;
+}
+
+#LeaderboardsLeft {
+	width: 49%;
+	height: 94%;
+	align: left bottom;
+}
+
+#LeaderboardsCenter {
+	width: 2%;
+	height: 92%;
+	align: center center;
+	margin-top: 5px;
+}
+
+.LeaderboardsDivider {
+	width: 15%;
+	height: 80%;
+	align: center center;
+	border-radius: 5px;
+	border: 1px solid #ffffff11;
+}
+
+#LeaderboardsRight {
+	width: 49%;
+	height: 94%;
+	align: right bottom;
+}
+
+#LeaderboardsListRoot {
+	width: 90%;
+	height: 90%;
+	align: center top;
+	margin-top: 10px;
+}
+
+.LeaderboardsListHeader {
+	width: 100%;
+	height: 6.2%;
+	background-color: #111111AA;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.LeaderboardsListHeader > Label {
+	font-size: 20px;
+	text-transform: uppercase;
+	color: white;
+	align: center center;
+}
+
+.LeaderboardsListCenter {
+	width: 100%;
+	height: 81.8%;
+	align: center center;
+	margin-bottom: 20px;
+	border-radius: 2px;
+	background-color: #111111AA;
+}
+
+.LeaderboardsListFooter {
+	width: 100%;
+	height: 10%;
+	vertical-align: bottom;
+	background-color: #111111AA;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.Row {
+	width: 98.8%;
+	height: 9.5%;
+	margin-left: 2px;
+	border: 1px solid #ffffff02;
+	box-shadow: 0px 0px 20px #000000aa;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #ffffff00 ), to( #ffffff03 ) );
+}
+
+#Rank1Row {
+	margin-top: 2px;
+}
+
+#Rank2Row {
+	margin-top: 46px;
+}
+
+#Rank3Row {
+	margin-top: 90px;
+}
+
+#Rank4Row {
+	margin-top: 134px;
+}
+
+#Rank5Row {
+	margin-top: 178px;
+}
+
+#Rank6Row {
+	margin-top: 222px;
+}
+
+#Rank7Row {
+	margin-top: 266px;
+}
+
+#Rank8Row {
+	margin-top: 310px;
+}
+
+#Rank9Row {
+	margin-top: 354px;
+}
+
+#Rank10Row {
+	margin-top: 398px;
+}
+
+#RankPlayerRow {
+	margin-top: 3px;
+	margin-right: 3px;
+	margin-left: 3px;
+	margin-bottom: 3px;
+	height: 90%;
+	width: 100%;
+	box-shadow: 0px 0px 20px #000000aa;
+}
+
+.RankBoxNameContainerTOP {
+	height: 100%;
+	width: 75%;
+	margin-left: 90px;
+}
+
+.RankBoxNameContainerTOP > Label {
+	font-size: 18px;
+	font-family: defaultFont;
+	color: white;
+	vertical-align: center;
+	margin-left: 5px;
+	text-overflow: shrink;
+}
+
+#StatisticsRoot {
+	width: 90%;
+	height: 90%;
+	align: center top;
+	margin-top: 10px;
+}
+
+.RankBoxTOP {
+	width: 12%;
+	height: 100%;
+	border: 1px solid #ffffff11;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #ffffff22 ), to( #ffffff10 ) );
+}
+
+#RankBoxTOP1 {
+	background-color: gradient( linear, 0% 100%, 0% 0%, from( #E0D292 ), to( #947039 ) );
+}
+
+#RankBoxTOP2 {
+	background-color: gradient( linear, 0% 100%, 0% 0%, from( #B7CED3 ), to( #607E80 ) );
+}
+
+#RankBoxTOP3 {
+	background-color: gradient( linear, 0% 100%, 0% 0%, from( #DFAB85 ), to( #966039 ));
+}
+
+.RankBoxTOP > Label {
+	font-size: 30px;
+	font-weight: bold;
+	text-shadow: #ffffff44 0px 0px 40px 0px;
+	font-family: defaultFont;
+	text-transform: uppercase;
+	color: white;
+	align: center center;
+}
+
+.RankBoxAvatarTOP {
+	width: 12%;
+	height: 100%;
+	margin-left: 44px;
+	background-image: url("file://{images}/custom_game/loading_screen/useravatar.png");
+    background-size: 100% 100%;
+}
+
+.StatisticsRootHeader {
+	width: 100%;
+	height: 6.2%;
+	background-color: #111111AA;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.StatisticsRootHeader > Label {
+	font-size: 20px;
+	text-transform: uppercase;
+	color: white;
+	align: center center;
+}
+
+.StatisticsRootCenter {
+	width: 100%;
+	height: 93.5%;
+	align: center bottom;
+	background-color: #111111AA;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+}
+
