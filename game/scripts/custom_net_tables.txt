@@ -4,5 +4,7 @@
 	[
 		"game",
 		"bets",
+		"leaderboards",
+		"player_stats",
 	]
 }

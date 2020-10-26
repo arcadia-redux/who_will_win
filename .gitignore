@@ -15,4 +15,6 @@ game/*.tmp
 *.vagrp_c
 *.vmdl_c
 *.vmorf_c
+*.vpk
+content/materials/overviews/*.tga
 /game/*.bin

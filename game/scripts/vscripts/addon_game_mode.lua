@@ -27,6 +27,8 @@ require('bet')
 require('ai_unit')
 require('ai_hero')
 
+require('webapi/init')
+
 LinkLuaModifier("modifier_removed_hero", "modifiers/modifier_removed_hero", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_speedup", "modifiers/modifier_speedup", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_spacing", "modifiers/modifier_spacing", LUA_MODIFIER_MOTION_NONE)
