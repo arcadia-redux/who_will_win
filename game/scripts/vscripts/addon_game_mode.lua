@@ -217,8 +217,8 @@ function BAW:InitGameMode()
     	if type(v) == "table" and not bannedUnits[k] then
     		table.insert(_G.AllHeroes,k)
     	end
-    end
-    self:NextRoundUnits() 
+	end
+	self:NextRoundUnits()
 end
 
 function BAW:OnPlayerChat(event)	  
@@ -615,7 +615,7 @@ predeterminedTeams =
 		}
 	},
 	
-	-- [PREDEFINED ROUND], OG vs PSG.LGD - TI 8 Finals - Match 1
+	-- [PREDEFINED ROUND] OG vs PSG.LGD - TI 8 Finals - Match 1
 	{
 		left = {
 			AllHeroes[84], -- Spectre
@@ -634,7 +634,7 @@ predeterminedTeams =
 		}
 	},
 
-	-- [PREDEFINED ROUND], Team Secret vs OG - OMEGA League: Immortal Division Finals - Match 2
+	-- [PREDEFINED ROUND] Team Secret vs OG - OMEGA League: Immortal Division Finals - Match 2
 	{
 		left = {
 			lefthero1 = AllHeroes[46], -- Lifestealer
@@ -653,7 +653,7 @@ predeterminedTeams =
 		}
 	},
 
-	-- [PREDEFINED ROUND], Nigma vs OG - OMEGA League: Immortal Division LBF - Match 1
+	-- [PREDEFINED ROUND] Nigma vs OG - OMEGA League: Immortal Division LBF - Match 1
 	{
 		left = {
 			AllHeroes[98], -- Sven
@@ -672,7 +672,7 @@ predeterminedTeams =
 		}
 	},
 
-	-- PREDEFINED ROUND], Nigma vs OG - OMEGA League: Immortal Division LBF - Match 2
+	-- PREDEFINED ROUND] Nigma vs OG - OMEGA League: Immortal Division LBF - Match 2
 	{
 		left = {
 			AllHeroes[37], -- Kunkka
@@ -691,7 +691,7 @@ predeterminedTeams =
 		}
 	},
 
-	-- [PREDEFINED ROUND], OG vs Secret - OMEGA League: Immortal Division UBF - Match 2
+	-- [PREDEFINED ROUND] OG vs Secret - OMEGA League: Immortal Division UBF - Match 2
 	{
 		left = {
 			AllHeroes[11], -- Morphling
@@ -710,7 +710,7 @@ predeterminedTeams =
 		}
 	},
 	
-	-- [PREDEFINED ROUND], Evil Geniuses vs Alliance - OMEGA League: Immortal Division Lower Bracket Round 2 - Match 2
+	-- [PREDEFINED ROUND] Evil Geniuses vs Alliance - OMEGA League: Immortal Division Lower Bracket Round 2 - Match 2
 	{
 		left = {
 			AllHeroes[47], -- Faceless Void
@@ -729,7 +729,7 @@ predeterminedTeams =
 		}
 	},
 	
-	-- [PREDEFINED ROUND], Vici Gaming vs Team DK - The International 2013 - Match 1
+	-- [PREDEFINED ROUND] Vici Gaming vs Team DK - The International 2013 - Match 1
 	{
 		left = {
 			AllHeroes[52], -- Leshrac
@@ -765,151 +765,151 @@ predeterminedSingleHeroTeams =
 		righthero = AllHeroes[10], -- Tiny
 	},
 
-	-- [PREDEFINED ROUND], Techies vs Techies
+	-- [PREDEFINED ROUND] Techies vs Techies
 	{
 		lefthero = AllHeroes[42], -- Techies
 		righthero = AllHeroes[42], -- Techies
 	},
 
-	-- [PREDEFINED ROUND], Faceless Void vs Faceless Void 
+	-- [PREDEFINED ROUND] Faceless Void vs Faceless Void 
 	{
 		lefthero = AllHeroes[47], -- Faceless Void 
 		righthero = AllHeroes[47], -- Faceless Void 
 	},
 
-	-- [PREDEFINED ROUND], Zeus vs Mars
+	-- [PREDEFINED ROUND] Zeus vs Mars
 	{
 		lefthero = AllHeroes[87], -- Zeus 
 		righthero = AllHeroes[74], -- Mars
 	},
 
-	-- [PREDEFINED ROUND], Zeus vs Skywrath Mage
+	-- [PREDEFINED ROUND] Zeus vs Skywrath Mage
 	{
 		lefthero = AllHeroes[87], -- Zeus 
 		righthero = AllHeroes[105], -- Skywrath Mage
 	},
 
-	-- [PREDEFINED ROUND], Vengeful Spirit vs Skywrath Mage
+	-- [PREDEFINED ROUND] Vengeful Spirit vs Skywrath Mage
 	{
 		lefthero = AllHeroes[97], -- Vengeful Spirit 
 		righthero = AllHeroes[105], -- Skywrath Mage
 	},
 
-	-- [PREDEFINED ROUND], Lina vs Crystal Maiden
+	-- [PREDEFINED ROUND] Lina vs Crystal Maiden
 	{
 		lefthero = AllHeroes[23], -- Lina 
 		righthero = AllHeroes[92], -- Crystal Maiden
 	},
 
-	-- [PREDEFINED ROUND], Rubick vs Invoker
+	-- [PREDEFINED ROUND] Rubick vs Invoker
 	{
 		lefthero = AllHeroes[68], -- Rubick 
 		righthero = AllHeroes[85], -- Invoker
 	},
 
-	-- [PREDEFINED ROUND], Anti Mage vs Terrorblade
+	-- [PREDEFINED ROUND] Anti Mage vs Terrorblade
 	{
 		lefthero = AllHeroes[33], -- Anti Mage 
 		righthero = AllHeroes[70], -- Terrorblade
 	},
 
-	-- [PREDEFINED ROUND], Chaos Knight vs Keeper of the Light
+	-- [PREDEFINED ROUND] Chaos Knight vs Keeper of the Light
 	{
 		lefthero = AllHeroes[115], -- Chaos Knight
 		righthero = AllHeroes[60], -- Keeper of the Light
 	},
 
-	-- [PREDEFINED ROUND], Shadow Fiend vs Doom
+	-- [PREDEFINED ROUND] Shadow Fiend vs Doom
 	{
 		lefthero = AllHeroes[65], -- Shadow Fiend
 		righthero = AllHeroes[94], -- Doom
 	},
 
-	-- [PREDEFINED ROUND], Tinker vs Tinker
+	-- [PREDEFINED ROUND] Tinker vs Tinker
 	{
 		lefthero = AllHeroes[110], -- Tinker
 		righthero = AllHeroes[110], -- Tinker
 	},
 
-	-- [PREDEFINED ROUND], Storm Spirit vs Ember Spirit
+	-- [PREDEFINED ROUND] Storm Spirit vs Ember Spirit
 	{
 		lefthero = AllHeroes[100], -- Storm Spirit
 		righthero = AllHeroes[113], -- Ember Spirit
 	},
 	
-	-- [PREDEFINED ROUND], Huskar vs Dazzle
+	-- [PREDEFINED ROUND] Huskar vs Dazzle
 	{
 		lefthero = AllHeroes[24], -- Huskar
 		righthero = AllHeroes[66], -- Dazzle
 	},
 
-	-- [PREDEFINED ROUND], Naga Siren vs Slardar
+	-- [PREDEFINED ROUND] Naga Siren vs Slardar
 	{
 		lefthero = AllHeroes[4], -- Naga Siren
 		righthero = AllHeroes[7], -- Slardar
 	},
 
-	-- [PREDEFINED ROUND], Omniknight vs Windranger (Slacks vs Windranger)
+	-- [PREDEFINED ROUND] Omniknight vs Windranger (Slacks vs Windranger)
 	{
 		lefthero = AllHeroes[59], -- Omniknight
 		righthero = AllHeroes[9], -- Windranger
 	},
 
-	-- [PREDEFINED ROUND], Nature's Prophet vs Timbersaw
+	-- [PREDEFINED ROUND] Nature's Prophet vs Timbersaw
 	{
 		lefthero = AllHeroes[91], -- Nature's Prophet
 		righthero = AllHeroes[19], -- Timbersaw
 	},
 
-	-- [PREDEFINED ROUND], Treant vs Timbersaw
+	-- [PREDEFINED ROUND] Treant vs Timbersaw
 	{
 		lefthero = AllHeroes[45], -- Treant
 		righthero = AllHeroes[19], -- Timbersaw
 	},
 
-	-- [PREDEFINED ROUND], Anti-Mage vs Invoker
+	-- [PREDEFINED ROUND] Anti-Mage vs Invoker
 	{
 		lefthero = AllHeroes[33], -- Anti-Mage
 		righthero = AllHeroes[85], -- Invoker
 	},
 
-	-- [PREDEFINED ROUND], Phantom Lancer vs Phantom Assassin
+	-- [PREDEFINED ROUND] Phantom Lancer vs Phantom Assassin
 	{
 		lefthero = AllHeroes[61], -- Phantom Lancer
 		righthero = AllHeroes[73], -- Phantom Assassin
 	},
 
-	-- [PREDEFINED ROUND], Windranger vs Drow Ranger
+	-- [PREDEFINED ROUND] Windranger vs Drow Ranger
 	{
 		lefthero = AllHeroes[9], -- Windranger
 		righthero = AllHeroes[2], -- Drow Ranger
 	},
 	
-	-- [PREDEFINED ROUND], Enigma vs Enigma
+	-- [PREDEFINED ROUND] Enigma vs Enigma
 	{
 		lefthero = AllHeroes[15], -- Enigma
 		righthero = AllHeroes[15], -- Enigma
 	},
 
-	-- [PREDEFINED ROUND], Axe vs Legion Commander
+	-- [PREDEFINED ROUND] Axe vs Legion Commander
 	{
 		lefthero = AllHeroes[80], -- Axe
 		righthero = AllHeroes[34], -- Legion Commander
 	},
 
-	-- [PREDEFINED ROUND], Centaur Warrunner vs Magnus
+	-- [PREDEFINED ROUND] Centaur Warrunner vs Magnus
 	{
 		lefthero = AllHeroes[57], -- Centaur Warrunner
 		righthero = AllHeroes[26], -- Magnus
 	},
 	
-	-- [PREDEFINED ROUND], Pudge vs Pudge
+	-- [PREDEFINED ROUND] Pudge vs Pudge
 	{
 		lefthero = AllHeroes[39], -- Pudge
 		righthero = AllHeroes[39], -- Pudge
 	},
 
-	-- [PREDEFINED ROUND], Juggernaut vs Juggernaut
+	-- [PREDEFINED ROUND] Juggernaut vs Juggernaut
 	{
 		lefthero = AllHeroes[106], -- Juggernaut
 		righthero = AllHeroes[106], -- Juggernaut
