@@ -8,6 +8,7 @@
 		<include src="file://{resources}/scripts/shared.js" /> 
 		<include src="file://{resources}/scripts/baw.js" />
 		<include src="file://{resources}/scripts/bet.js" />
+		<include src="file://{resources}/scripts/leaderboards.js" />
 	</scripts>
 	<snippets>
 		<snippet name="topBarPlayer">
