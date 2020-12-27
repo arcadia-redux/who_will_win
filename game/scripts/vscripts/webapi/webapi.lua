@@ -4,6 +4,71 @@ for playerId = 0, 23 do
 	WebApi.playerSettings[playerId] = WebApi.playerSettings[playerId] or {}
 end
 WebApi.matchId = IsInToolsMode() and RandomInt(-10000000, -1) or tonumber(tostring(GameRules:GetMatchID()))
+debug_leaderboards = 
+{
+	-- Leaderboards for debug testing
+	-- Assuming that players are ordered by rounds won
+	["76561198249367546"] = {
+        SteamId = 76561198249367546,
+        RoundsWon = 2020,
+        RoundsLost = 42,
+        Settings = {},
+    },
+    ["76561198054211176"] = {
+        SteamId = 76561198054211176,
+        RoundsWon = 1337,
+        RoundsLost = 420,
+        Settings = {},
+    },
+    ["76561198188258659"] = {
+        SteamId = 76561198188258659,
+        RoundsWon = 1000,
+        RoundsLost = 999,
+        Settings = {},
+    },
+    ["76561198054179075"] = {
+        SteamId = 76561198054179075,
+        RoundsWon = 777,
+        RoundsLost = 0,
+        Settings = {},
+    },
+    ["76561198271575954"] = {
+        SteamId = 76561198271575954,
+        RoundsWon = 666,
+        RoundsLost = 25,
+        Settings = {},
+    },
+    ["76561198083372481"] = {
+        SteamId = 76561198083372481,
+        RoundsWon = 500,
+        RoundsLost = 25,
+        Settings = {},
+    },
+    ["76561198132422587"] = {
+        SteamId = 76561198132422587,
+        RoundsWon = 469,
+        RoundsLost = 420,
+        Settings = {},
+    },
+    ["76561198110878775"] = {
+        SteamId = 76561198110878775,
+        RoundsWon = 300,
+        RoundsLost = 0,
+        Settings = {},
+    },
+    ["76561197999387723"] = {
+        SteamId = 76561197999387723,
+        RoundsWon = 200,
+        RoundsLost = 10,
+        Settings = {},
+    },
+    ["76561198002366151"] = {
+        SteamId = 76561198002366151,
+        RoundsWon = 100,
+        RoundsLost = 9,
+        Settings = {},
+    },
+}
 
 local serverHost = IsInToolsMode() and "https://whowillwin.animus.software" or "https://whowillwin.animus.software"
 local dedicatedServerKey = GetDedicatedServerKeyV2("1")
@@ -58,6 +123,9 @@ function WebApi:BeforeMatch()
 	end
 
 	WebApi:Send("match/before", { mapName = GetMapName(), players = players }, function(data)
+		-- Debug Leaderboard Test
+		data.leaderboards = debug_leaderboards
+
 		print("BEFORE MATCH")
 		table.print(data)
 		CustomNetTables:SetTableValue("leaderboards", "rounds", data.leaderboards)
