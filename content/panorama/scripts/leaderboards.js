@@ -18,19 +18,22 @@ function EditLeaderboards(data){
 
     // Filling leaderboard with current top players
     if(data.rounds != null){
-        let leaderboardPanel = $("#LeaderboardsRoot");
+        //let leaderboardPanel = $("#LeaderboardsRoot");
 
-        // Fringe case where we have less than 10 players playing the game :/
-        /* I'm not even sure if data.rounds is an array or an object...
-        for(let i = 0; i < Math.min(10, data.rounds.length); i++){
-
+        // We assume that there are at *least* 10 players in the leaderboards
+        let leaderboardEntries = data.rounds.entries();
+        for(let i = 0; i < 10; i++){
+            let rankSlot = leaderboardPlacements[i];
+            SetPlayerLeaderboards(rankSlot, leaderboardEntries[i]);
         }
-        */
     }
 }
 
 function SetPlayerLeaderboards(playerPanel, data){
-
+    var avatar = playerPanel.FindChildTraverse("RankBoxAvatarTOP");
+    var username = playerPanel.FindChildTraverse("PlayerName");
+    avatar.steamid = data.SteamId;
+    username.steamid = data.SteamId;
 }
 
 (function() {
