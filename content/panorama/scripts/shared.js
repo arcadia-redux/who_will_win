@@ -72,10 +72,9 @@ function FormatTime(seconds) {
 }
 
 function GetPlayerColor(pID) {
-  var color = Players.GetPlayerColor( pID ).toString(16);
-  color = color.substring(6, 8) + color.substring(4, 6) + color.substring(2, 4) + color.substring(0, 2);
-  return "#" + color;
+	var color = Players.GetPlayerColor( pID ).toString(16);
+	color = color.substring(6, 8) + color.substring(4, 6) + color.substring(2, 4) + color.substring(0, 2);
+	return "#" + color;
 }
-
 
 GameEvents.Subscribe("server_print", (event) => $.Msg(`[Server] ${event.message}`));

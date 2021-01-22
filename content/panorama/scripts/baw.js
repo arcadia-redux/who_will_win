@@ -343,6 +343,12 @@ function Start() {
 		botIcon.style.backgroundColor = "black"
 		botIcon.style.washColor = GetPlayerColor(id)
 		avatar.steamid = plysteamid
+
+		panel.FindChild("bet").visible = false
+		panel.FindChild("profit").visible = false
+		panel.RemoveClass("Left")
+		panel.RemoveClass("Right")
+		panel.SetHasClass("Loser", Players.GetGamblingGold(panel.playerID) <= 0)
 	})
 }
 
